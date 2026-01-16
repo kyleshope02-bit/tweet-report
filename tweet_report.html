@@ -1,0 +1,1646 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Twitter Stock Feed</title>
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:12px;font-size:12px}
+h2{margin:0 0 6px 0}
+h3{margin:10px 0 6px 0}
+.muted{color:#666;font-size:11px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.card{background:#fff;border-radius:10px;padding:10px;margin-bottom:10px;box-shadow:0 2px 4px rgba(0,0,0,.08)}
+table{width:100%;border-collapse:collapse}
+th{background:#263238;color:#fff;padding:6px;position:sticky;top:0}
+td{padding:5px 6px;border-bottom:1px solid #e0e0e0;vertical-align:top}
+tr:nth-child(even){background:#f1f5f8}
+tr:hover{background:#dde7f2}
+.pos{color:#1b5e20;font-weight:700}
+.neg{color:#b71c1c;font-weight:700}
+.flat{color:#455a64;font-weight:700}
+.badge{padding:2px 6px;border-radius:999px;font-weight:bold;font-size:11px;display:inline-block}
+.buy{background:#c8e6c9;color:#1b5e20}
+.sell{background:#ffcdd2;color:#b71c1c}
+.mixed{background:#fff3cd;color:#856404}
+.neutral{background:#eceff1;color:#263238}
+.clip{white-space:nowrap;max-width:680px;overflow:hidden;text-overflow:ellipsis}
+</style></head><body>
+<h2>Twitter Stock Feed</h2>
+<div class='muted'>Updated 2026-01-15 11:20 PM • Using America/New_York • Tweets shown oldest → newest</div>
+<div class='row'>
+<div class='card'>
+<h3>🔥 Top 10 Today</h3>
+<table><tr><th>Ticker</th><th>Tot</th><th>B</th><th>N</th><th>S</th><th>1D</th><th>1W</th></tr>
+<tr><td>$SPY</td><td>17</td><td>0</td><td>15</td><td>2</td><td class='chg1d' data-t='$SPY'>…</td><td class='chg1w' data-t='$SPY'>…</td></tr>
+<tr><td>$SPX</td><td>12</td><td>1</td><td>10</td><td>1</td><td class='chg1d' data-t='$SPX'>…</td><td class='chg1w' data-t='$SPX'>…</td></tr>
+<tr><td>$SNDK</td><td>8</td><td>1</td><td>6</td><td>1</td><td class='chg1d' data-t='$SNDK'>…</td><td class='chg1w' data-t='$SNDK'>…</td></tr>
+<tr><td>$META</td><td>6</td><td>1</td><td>5</td><td>0</td><td class='chg1d' data-t='$META'>…</td><td class='chg1w' data-t='$META'>…</td></tr>
+<tr><td>$QQQ</td><td>4</td><td>0</td><td>4</td><td>0</td><td class='chg1d' data-t='$QQQ'>…</td><td class='chg1w' data-t='$QQQ'>…</td></tr>
+<tr><td>$ASTS</td><td>4</td><td>0</td><td>4</td><td>0</td><td class='chg1d' data-t='$ASTS'>…</td><td class='chg1w' data-t='$ASTS'>…</td></tr>
+<tr><td>$LRCX</td><td>3</td><td>0</td><td>3</td><td>0</td><td class='chg1d' data-t='$LRCX'>…</td><td class='chg1w' data-t='$LRCX'>…</td></tr>
+<tr><td>$MSFT</td><td>3</td><td>0</td><td>1</td><td>2</td><td class='chg1d' data-t='$MSFT'>…</td><td class='chg1w' data-t='$MSFT'>…</td></tr>
+<tr><td>$HOOD</td><td>3</td><td>0</td><td>3</td><td>0</td><td class='chg1d' data-t='$HOOD'>…</td><td class='chg1w' data-t='$HOOD'>…</td></tr>
+<tr><td>$NBIS</td><td>3</td><td>0</td><td>3</td><td>0</td><td class='chg1d' data-t='$NBIS'>…</td><td class='chg1w' data-t='$NBIS'>…</td></tr>
+</table></div>
+<div class='card'>
+<h3>📈 Top 10 This Week</h3>
+<table><tr><th>Ticker</th><th>Tot</th><th>B</th><th>N</th><th>S</th><th>1D</th><th>1W</th></tr>
+<tr><td>$SPY</td><td>32</td><td>2</td><td>28</td><td>2</td><td class='chg1d' data-t='$SPY'>…</td><td class='chg1w' data-t='$SPY'>…</td></tr>
+<tr><td>$SPX</td><td>23</td><td>4</td><td>18</td><td>1</td><td class='chg1d' data-t='$SPX'>…</td><td class='chg1w' data-t='$SPX'>…</td></tr>
+<tr><td>$META</td><td>17</td><td>2</td><td>15</td><td>0</td><td class='chg1d' data-t='$META'>…</td><td class='chg1w' data-t='$META'>…</td></tr>
+<tr><td>$BABA</td><td>14</td><td>1</td><td>13</td><td>0</td><td class='chg1d' data-t='$BABA'>…</td><td class='chg1w' data-t='$BABA'>…</td></tr>
+<tr><td>$QQQ</td><td>12</td><td>2</td><td>10</td><td>0</td><td class='chg1d' data-t='$QQQ'>…</td><td class='chg1w' data-t='$QQQ'>…</td></tr>
+<tr><td>$BTC</td><td>12</td><td>0</td><td>12</td><td>0</td><td class='chg1d' data-t='$BTC'>…</td><td class='chg1w' data-t='$BTC'>…</td></tr>
+<tr><td>$SLV</td><td>10</td><td>0</td><td>10</td><td>0</td><td class='chg1d' data-t='$SLV'>…</td><td class='chg1w' data-t='$SLV'>…</td></tr>
+<tr><td>$SNDK</td><td>10</td><td>1</td><td>8</td><td>1</td><td class='chg1d' data-t='$SNDK'>…</td><td class='chg1w' data-t='$SNDK'>…</td></tr>
+<tr><td>$AMD</td><td>8</td><td>1</td><td>7</td><td>0</td><td class='chg1d' data-t='$AMD'>…</td><td class='chg1w' data-t='$AMD'>…</td></tr>
+<tr><td>$MSTR</td><td>7</td><td>1</td><td>6</td><td>0</td><td class='chg1d' data-t='$MSTR'>…</td><td class='chg1w' data-t='$MSTR'>…</td></tr>
+</table></div>
+</div>
+<div class='card'>
+<h3>Tweets (Chronological, most recent 300)</h3>
+<table>
+<tr><th>Author</th><th>Time</th><th>Tickers</th><th>Sig</th><th>Text</th><th>Link</th></tr>
+<tr><td>Mr_Derivatives</td><td>09/21 04:52PM EDT</td><td>$INTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$INTC Interesting Intel Chart for ya!  
+
+History doesn't always repeat, but can often rhyme.  
+
+The stock market sometimes are more symmetrical than is given credit for.  
+
+If this "symmetry" in Intel is to be repeated and certainly looks like a possibility and not a make'>$INTC Interesting Intel Chart for ya!  
+
+History doesn't always repeat, but can often rhyme.  
+
+The stock market sometimes are more symmetrical than is given cr…</td><td><a href='https://twitter.com/Mr_Derivatives/status/1969867269896638780' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>10/28 11:36AM EDT</td><td>$INTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$INTC Back to $42 today..
+
+If it can get past this $42-$44 resistance area, there is a good shot $50 is on the table.'>$INTC Back to $42 today..
+
+If it can get past this $42-$44 resistance area, there is a good shot $50 is on the table.</td><td><a href='https://twitter.com/Mr_Derivatives/status/1983196186464145736' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>12/11 06:13PM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Heisenberg's Play of the Month (or at least 30 trading days out or so):
+
+$BABA
+
+Look before you slam me, I get it. It's China. I know. But we cannot deny that it's been in this nice, yet volatile uptrend now for almost 2 full years.
+
+And it just seems like $200 is right there for'>Heisenberg's Play of the Month (or at least 30 trading days out or so):
+
+$BABA
+
+Look before you slam me, I get it. It's China. I know. But we cannot deny that i…</td><td><a href='https://twitter.com/Mr_Derivatives/status/1999256276061298944' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/01 09:19PM EST</td><td>$BABA,$BIDU,$FXI,$JD,$KWEB,$NIO,$PDD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Here’s your alpha for the day:
+
+Chinese New Years this year begins Feb 17th 2026 and ends March 3rd 2026.
+
+Get ahead of Chinese stocks.
+
+I said this in years past as well.
+
+$BABA $JD $PDD $BIDU $NIO $KWEB $FXI'>Here’s your alpha for the day:
+
+Chinese New Years this year begins Feb 17th 2026 and ends March 3rd 2026.
+
+Get ahead of Chinese stocks.
+
+I said this in years pa…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2006913184222031973' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/04 01:03AM EST</td><td>$BABA,$BIDU,$KWEB</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA Chart Update!
+
+Look if there was ever a time for a BIDU like pamp, it be right here right now.
+
+BABA is trading at a fresh 52wk low relative to $BIDU.
+
+But interestingly enough, BABA is nearing ATH's relative to the $KWEB etf.
+
+Also last year, name bottomed in mid January'>$BABA Chart Update!
+
+Look if there was ever a time for a BIDU like pamp, it be right here right now.
+
+BABA is trading at a fresh 52wk low relative to $BIDU.
+
+Bu…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2007694235789860934' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/05 01:15PM EST</td><td>$ASTS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ASTS Omg….
+
+Send it to Mars already.
+
+And if not Mars, then to $110.
+
+Tia.
+
+-Everyone with that red Letter A emoji on their X handle.'>$ASTS Omg….
+
+Send it to Mars already.
+
+And if not Mars, then to $110.
+
+Tia.
+
+-Everyone with that red Letter A emoji on their X handle.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2008240879467983260' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/05 06:00PM EST</td><td>$BABA,$BIDU</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $BIDU
+
+No relation between the two other than they both are China. 
+
+Simply comparing the charts.
+
+Is Alibaba read to go here?
+
+I think so.'>$BABA $BIDU
+
+No relation between the two other than they both are China. 
+
+Simply comparing the charts.
+
+Is Alibaba read to go here?
+
+I think so.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2008312695070871928' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/08 10:40PM EST</td><td>$GOOG</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GOOG One last hurrah before we see a consolidation/correction?
+
+Give me $350 or give me nothing..'>$GOOG One last hurrah before we see a consolidation/correction?
+
+Give me $350 or give me nothing..</td><td><a href='https://twitter.com/Mr_Derivatives/status/2009470243090116760' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/09 06:34AM EST</td><td>$IREN</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$IREN Lookin’ spiffy in pre almost back to $48..
+
+A breakout above $48.11ish where the 50dma can further confirm the IHS breakout and a measured move towards at least $53-$55 likely.'>$IREN Lookin’ spiffy in pre almost back to $48..
+
+A breakout above $48.11ish where the 50dma can further confirm the IHS breakout and a measured move towards at…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2009589712110203089' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/09 08:49PM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC Chart Update.
+
+Getting coiled.
+
+$98-$100k next price target imho.'>$BTC Chart Update.
+
+Getting coiled.
+
+$98-$100k next price target imho.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2009804697406971931' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/10 06:40AM EST</td><td>$CVX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CVX 3 month chart might be the biggest and cleanest base in the market.'>$CVX 3 month chart might be the biggest and cleanest base in the market.</td><td><a href='https://twitter.com/1ChartMaster/status/2009953429914038490' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/11 09:30AM EST</td><td>$YHOO</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$YHOO was once a $125B market cap powerhouse, equivalent to about $250B in today’s dollars.
+
+Today: Well, hard to say as it’s private now. Probably somewhere in the ~$10B valuation. Probably will become irrelevant like AOL in the next 5-10 years, wouldn’t be surprised. 
+
+Gonna be'>$YHOO was once a $125B market cap powerhouse, equivalent to about $250B in today’s dollars.
+
+Today: Well, hard to say as it’s private now. Probably somewhere in…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010358676956312019' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/11 10:38AM EST</td><td>$HOOD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Will $HOOD ever converge with the big boys?'>Will $HOOD ever converge with the big boys?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010375709378978249' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/11 11:49PM EST</td><td>$ETH,$SPX,$TSLA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX got within 24 handle points of 7,000.
+
+$TSLA got within $1.17 of $500.
+
+$ETH got within $44.10 of $5,000.
+
+Sometimes nice round whole numbers act as magnets.
+
+Sometimes nice round whole numbers act as resistance.
+
+So close!'>$SPX got within 24 handle points of 7,000.
+
+$TSLA got within $1.17 of $500.
+
+$ETH got within $44.10 of $5,000.
+
+Sometimes nice round whole numbers act as magnet…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010574867733901386' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 12:31AM EST</td><td>$OSCR</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='Wait $OSCR is backed by Jared Kushner and founded by his brother Joshua Kushner?!
+
+Well shit I didn’t know that. Stare at charts too long you forget to do other dd.
+
+Buy.'>Wait $OSCR is backed by Jared Kushner and founded by his brother Joshua Kushner?!
+
+Well shit I didn’t know that. Stare at charts too long you forget to do other…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010585326658764880' target='_blank'>Open</a></td></tr>
+<tr><td>Stocktwits</td><td>01/12 05:47AM EST</td><td>$COF</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$COF is tanking over 10% after President Trump calls for 10% credit card rate cap'>$COF is tanking over 10% after President Trump calls for 10% credit card rate cap</td><td><a href='https://twitter.com/Stocktwits/status/2010664948913918033' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 07:53AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $158.50’s overnight highs.
+
+Just get past $160’s and we might just have something here…'>$BABA $158.50’s overnight highs.
+
+Just get past $160’s and we might just have something here…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010696532761124881' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 07:59AM EST</td><td>$AMD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AMD gonna open red for it’s 6th straight red day today.
+
+$200 support be like:'>$AMD gonna open red for it’s 6th straight red day today.
+
+$200 support be like:</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010698143755846000' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 08:07AM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SLV Silver’s chart has to be one of the wildest one’s I have ever seen in my life.
+
+I normally joke about bending backwards. 
+
+But this thing not just bent backwards but rebent forward to straighten the backwards in a double loop into the 4th dimension freezing time, rewriting'>$SLV Silver’s chart has to be one of the wildest one’s I have ever seen in my life.
+
+I normally joke about bending backwards. 
+
+But this thing not just bent bac…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010700076897784176' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 09:07AM EST</td><td>$DUOL,$RBLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RBLX Sub 20 RSI and lowest RSI in its 5 yr history.
+
+Man even $DUOL bounced here and there. Cmon Roblox.'>$RBLX Sub 20 RSI and lowest RSI in its 5 yr history.
+
+Man even $DUOL bounced here and there. Cmon Roblox.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010715196910911654' target='_blank'>Open</a></td></tr>
+<tr><td>TreasuryEdge</td><td>01/12 09:43AM EST</td><td>$BTC,$MSTR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='SAYLOR'S STRATEGY $MSTR JUST BOUGHT 13,627 MORE BITCOIN $BTC LAST WEEK AT AN AVG OF $91,519.
+
+Total spent: $1.25 billion
+
+Updated holdings:
+• Total BTC: 687,410
+• Total cost basis: $51.8 billion
+• Average purchase price: $75,353
+
+Funded through ATM stock sales:
+• 6.8 million'>SAYLOR'S STRATEGY $MSTR JUST BOUGHT 13,627 MORE BITCOIN $BTC LAST WEEK AT AN AVG OF $91,519.
+
+Total spent: $1.25 billion
+
+Updated holdings:
+• Total BTC: 687,410…</td><td><a href='https://twitter.com/TreasuryEdge/status/2010724375251546392' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 09:52AM EST</td><td>$QQQ,$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPY and $QQQ about to flip green lol'>$SPY and $QQQ about to flip green lol</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010726580759527745' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 10:05AM EST</td><td>$CRWV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CRWV +10%
+
+Hey Ma, Heisenberg finally got one right!
+
+Can I get a woot woot.'>$CRWV +10%
+
+Hey Ma, Heisenberg finally got one right!
+
+Can I get a woot woot.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010729947955175497' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 10:08AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $165!!!!'>$BABA $165!!!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010730612030951802' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 10:12AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='So impressed with $BABA my god finally'>So impressed with $BABA my god finally</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010731739736674580' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 10:49AM EST</td><td>$BABA,$BIDU,$JD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA +10%
+
+$BIDU +6%
+
+$JD +4%
+
+Wow.
+
+Look China is not investable.
+
+But they sure are TRADABLE!'>$BABA +10%
+
+$BIDU +6%
+
+$JD +4%
+
+Wow.
+
+Look China is not investable.
+
+But they sure are TRADABLE!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010740985819713778' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:00AM EST</td><td>$IREN</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$IREN Almost $50!'>$IREN Almost $50!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010743686330507403' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:17AM EST</td><td>$AAPL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AAPL $261.30 intraday highs so far..
+
+That orange line still showing as a life saver support line.'>$AAPL $261.30 intraday highs so far..
+
+That orange line still showing as a life saver support line.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010748008099713532' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:20AM EST</td><td>$AMD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AMD $209.17 highs intraday.
+
+Was getting worried that $200 support would break today. But so far so good.'>$AMD $209.17 highs intraday.
+
+Was getting worried that $200 support would break today. But so far so good.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010748728391716929' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:31AM EST</td><td>$AMZN</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AMZN Almost $249’s today!'>$AMZN Almost $249’s today!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010751387874013670' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:36AM EST</td><td>$WDC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$WDC Beautiful 15% 2 day bounce.'>$WDC Beautiful 15% 2 day bounce.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010752662321709525' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:40AM EST</td><td>$ORCL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ORCL $206.60 highs today.
+
+Still want to see MOAR.
+
+Give me $220-$225 gap fill area next.'>$ORCL $206.60 highs today.
+
+Still want to see MOAR.
+
+Give me $220-$225 gap fill area next.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010753875985514853' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 11:57AM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX 13 of last 15 Fridays were green.
+
+$SPX 14 of the last 17 Mondays were green.*
+
+*if we close green today.'>$SPX 13 of last 15 Fridays were green.
+
+$SPX 14 of the last 17 Mondays were green.*
+
+*if we close green today.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010758013582487711' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 12:18PM EST</td><td>$DUOL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$DUOL Fresh 1.5 yr lows today.
+
+Yikes.'>$DUOL Fresh 1.5 yr lows today.
+
+Yikes.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010763289563971725' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 12:35PM EST</td><td>$CVNA,$KMX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CVNA is now 17x the market cap of $KMX
+
+$CVNA is now 4.5x the enterprise value of $KMX
+
+Such discrepancy.
+
+Maybe they should just join forces. 
+
+Kinda like Sirius and XM back in the day. Iono.'>$CVNA is now 17x the market cap of $KMX
+
+$CVNA is now 4.5x the enterprise value of $KMX
+
+Such discrepancy.
+
+Maybe they should just join forces. 
+
+Kinda like Sir…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010767480780628299' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 12:56PM EST</td><td>$SILVER,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='
+
+The $SPX is “crashing” to a 12 year low today!
+
+…relative to $SILVER.
+
+And not just the descent, but the velocity of the descent. 
+
+'>
+
+The $SPX is “crashing” to a 12 year low today!
+
+…relative to $SILVER.
+
+And not just the descent, but the velocity of the descent. 
+
+</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010772765553672484' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 01:17PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META at $647 is a crime.
+
+See you at $700.
+
+Not $699.
+
+Not $699.99.
+
+$700. 
+
+At least.
+
+Just HODL.
+
+Source: 
+
+Trust Me Bro. And The Trampoline .'>$META at $647 is a crime.
+
+See you at $700.
+
+Not $699.
+
+Not $699.99.
+
+$700. 
+
+At least.
+
+Just HODL.
+
+Source: 
+
+Trust Me Bro. And The Trampoline .</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010778095624794160' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 02:00PM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA Just an absolute MONSTER day for Alibaba:
+
+A nice further +3-5% follow up this week will get me very excited.
+
+$200 stock this year imho. And that is base case.'>$BABA Just an absolute MONSTER day for Alibaba:
+
+A nice further +3-5% follow up this week will get me very excited.
+
+$200 stock this year imho. And that is base…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010789104573956258' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 02:34PM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX Another day, another new ATH.
+
+7,000 is right at the doorsteps.
+
+CNBC interns already predrafting the headline and segment.'>$SPX Another day, another new ATH.
+
+7,000 is right at the doorsteps.
+
+CNBC interns already predrafting the headline and segment.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010797494398304284' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 02:40PM EST</td><td>$HIMS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$HIMS nice reversal candlestick today.
+
+Need a big follow through tomorrow to $34-$35’s.'>$HIMS nice reversal candlestick today.
+
+Need a big follow through tomorrow to $34-$35’s.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010799116667011115' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 02:43PM EST</td><td>$JD</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$JD BEAUTIFUL BREAKOUT today for JD!
+
+Almost to my $32.50 pt.
+
+Baby steps.
+
+Need to follow through now.'>$JD BEAUTIFUL BREAKOUT today for JD!
+
+Almost to my $32.50 pt.
+
+Baby steps.
+
+Need to follow through now.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010799906387345563' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 02:49PM EST</td><td>$NFLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NFLX looking bottom-y last two days. I know I know do not catch a falling knife. Well this is a mini falling knife. But let’s try anyways.
+
+Hold $88 and do not make fresh lows, I can see us going back to retest $100 if we break the $92 mini resistance area.
+
+Swingable trade set'>$NFLX looking bottom-y last two days. I know I know do not catch a falling knife. Well this is a mini falling knife. But let’s try anyways.
+
+Hold $88 and do not…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010801328940072961' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 08:26PM EST</td><td>$NVO</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NVO quietly up almost 50% from just 1.5 months ago.'>$NVO quietly up almost 50% from just 1.5 months ago.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010886010754974114' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 09:44PM EST</td><td>$MSOS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$MSOS Highly requested for some reason. 
+
+But chart looking spiffy lately.
+
+Nice rounding bottom last 1.5 year in the making.
+
+Spot a notable MOAT, and wouldn't be surprised price goes test it again around $7 ish.
+
+Nice 40% swing trade set up here.'>$MSOS Highly requested for some reason. 
+
+But chart looking spiffy lately.
+
+Nice rounding bottom last 1.5 year in the making.
+
+Spot a notable MOAT, and wouldn't…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010905813251162168' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/12 09:54PM EST</td><td>$BRK</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BRK.B Bollinger Bands tightest since July 2024. What happened then? Led to a nice 11.5% pop!
+
+Spot a nice MOAT that can act as major support.
+
+I think name is coiled here and ready to pop UP. See you back at ATH's this year. Easily.'>$BRK.B Bollinger Bands tightest since July 2024. What happened then? Led to a nice 11.5% pop!
+
+Spot a nice MOAT that can act as major support.
+
+I think name is …</td><td><a href='https://twitter.com/Mr_Derivatives/status/2010908226276266028' target='_blank'>Open</a></td></tr>
+<tr><td>AshCrypto</td><td>01/13 01:14AM EST</td><td>$NYC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='FORMER NYC MAYOR JUST RUGPULLED  
+
+Eric Adams, former NYC mayor, launched his own $NYC memecoin.
+
+The coin immediately hit $500 million in the market cap before Eric withdrew liquidity from the coin.
+
+This caused a massive 80% crash, and the token went below $100 million.
+
+As'>FORMER NYC MAYOR JUST RUGPULLED  
+
+Eric Adams, former NYC mayor, launched his own $NYC memecoin.
+
+The coin immediately hit $500 million in the market cap before…</td><td><a href='https://twitter.com/AshCrypto/status/2010958569659908412' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:07AM EST</td><td>$NVDA</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$NVDA is trading back to the same levels as July 2025.
+
+Calm before the storm?
+
+Or…
+
+Consolidation before the breakout?'>$NVDA is trading back to the same levels as July 2025.
+
+Calm before the storm?
+
+Or…
+
+Consolidation before the breakout?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011047475772342422' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:09AM EST</td><td>$AMD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AMD $212 pre. Nice.'>$AMD $212 pre. Nice.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011047915729613248' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:25AM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META This $635-$640 area is highly important from a technical analysis standpoint.
+
+Has bounced off this area a few times in the last couple months.
+
+And, more importantly, price is right at the 50dma and has been hugging it for several weeks now.
+
+Must bounce right here right'>$META This $635-$640 area is highly important from a technical analysis standpoint.
+
+Has bounced off this area a few times in the last couple months.
+
+And, more…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011051986666602891' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:41AM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX 7,000 then what?'>$SPX 7,000 then what?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011056012640559324' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:52AM EST</td><td>$INTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$INTC Just hit $46 and a fresh multi yr high.
+Wow'>$INTC Just hit $46 and a fresh multi yr high.
+Wow</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011058816696107275' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 07:58AM EST</td><td>$GOOG</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GOOG
+
+Name just won’t stop going up…
+
+Not even my jinx works.'>$GOOG
+
+Name just won’t stop going up…
+
+Not even my jinx works.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011060284585079222' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 08:09AM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC 12 straight days of closing above the 50dma.
+
+Longest stretch since August 2025.
+
+Bulls now gotta bounce off the 50dma hard.
+
+$94k-$95k clear and obvious resistance.
+
+Break that and we go test $98k up to $100k.'>$BTC 12 straight days of closing above the 50dma.
+
+Longest stretch since August 2025.
+
+Bulls now gotta bounce off the 50dma hard.
+
+$94k-$95k clear and obvious r…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011062964653343025' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:09AM EST</td><td>$SILVER</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='The market cap of $SILVER is now at ~$5T.
+
+My goodness.'>The market cap of $SILVER is now at ~$5T.
+
+My goodness.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011078066580390075' target='_blank'>Open</a></td></tr>
+<tr><td>Han_Akamatsu</td><td>01/13 09:15AM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SLV Just sharing a chart thesis:
+
+1. Outside the 1D Bollinger Bands.
+
+2. RSI not making new highs, buyers not that active at these levels.
+
+3. Volume still high. 
+
+4. Gamma levels indicating lower next days. 
+
+That’s a tough battle as Silver is close to the psychological level'>$SLV Just sharing a chart thesis:
+
+1. Outside the 1D Bollinger Bands.
+
+2. RSI not making new highs, buyers not that active at these levels.
+
+3. Volume still hig…</td><td><a href='https://twitter.com/Han_Akamatsu/status/2011079590991528344' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:23AM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Safe to say $SLV will close green for January.
+
+If so, that will be 9 straight green months, a record.'>Safe to say $SLV will close green for January.
+
+If so, that will be 9 straight green months, a record.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011081564843889125' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:35AM EST</td><td>$RBLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RBLX Almost $80. Ok ok… baby steps.'>$RBLX Almost $80. Ok ok… baby steps.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011084764095336519' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:45AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $168…. Lfg.'>$BABA $168…. Lfg.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011087178097648080' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:59AM EST</td><td>$GLD,$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GLD $SLV 
+
+Gold to Silver ratio now sits at 54, lowest since April 2013!!'>$GLD $SLV 
+
+Gold to Silver ratio now sits at 54, lowest since April 2013!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011090839016259946' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:02AM EST</td><td>$MA,$V</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$V -4%
+
+$MA -4%
+
+oof.'>$V -4%
+
+$MA -4%
+
+oof.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011091591923110185' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:40AM EST</td><td>$RBLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RBLX $83!!'>$RBLX $83!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011101146006634691' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:58AM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META is absolutely being a pos right now.
+
+Also Heisenberg: Doubling down.
+
+Also also Heisenberg:'>$META is absolutely being a pos right now.
+
+Also Heisenberg: Doubling down.
+
+Also also Heisenberg:</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011105489200038205' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:02AM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META Trading at the lowest forward multiple by far of the top 12 largest companies in the world.
+
+But to deaf’s ears.
+
+Cmon Facebook.'>$META Trading at the lowest forward multiple by far of the top 12 largest companies in the world.
+
+But to deaf’s ears.
+
+Cmon Facebook.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011106540934369364' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:09AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $170!!'>$BABA $170!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011108252461986171' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:31AM EST</td><td>$TSLA</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$TSLA Constructive lately.
+
+Broke back above the 50dma.
+
+Respected this blue support line.
+
+Stay long and strong.'>$TSLA Constructive lately.
+
+Broke back above the 50dma.
+
+Respected this blue support line.
+
+Stay long and strong.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011113869607907525' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 12:12PM EST</td><td>$MA,$V</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Selling a $MA and a $V CSP here.
+
+Just a couple each.
+
+If I get assigned, I’m ok with it.'>Selling a $MA and a $V CSP here.
+
+Just a couple each.
+
+If I get assigned, I’m ok with it.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011124217300074674' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 12:24PM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA Bulls, clear $170-171 mini resistance with conviction, we see next resistance retest around $182.50.
+
+Mush.'>$BABA Bulls, clear $170-171 mini resistance with conviction, we see next resistance retest around $182.50.
+
+Mush.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011127191485255719' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 12:29PM EST</td><td>$LULU</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$LULU back to $214 today.
+
+Need to break above that purple box then we see $250.'>$LULU back to $214 today.
+
+Need to break above that purple box then we see $250.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011128519602881008' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 01:35PM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC Big test here around $94-$95k. 
+
+Big big big test.'>$BTC Big test here around $94-$95k. 
+
+Big big big test.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011145035480514704' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 01:53PM EST</td><td>$RBLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RBLX +10% today. On top of yesterday’s. +6%. What a bounce.'>$RBLX +10% today. On top of yesterday’s. +6%. What a bounce.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011149504628842913' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 02:13PM EST</td><td>$GOOGL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GOOGL Humble beginnings.
+
+400,000x in 28 years.
+
+Likely to be 500,000x by this year possibly.
+
+Just wow.'>$GOOGL Humble beginnings.
+
+400,000x in 28 years.
+
+Likely to be 500,000x by this year possibly.
+
+Just wow.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011154730425467279' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 02:59PM EST</td><td>$TGT</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$TGT Hit $110 today. Nice dead cat bounce.
+
+But gonna come across a little resistance off the upper blue line.'>$TGT Hit $110 today. Nice dead cat bounce.
+
+But gonna come across a little resistance off the upper blue line.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011166308000518447' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 03:27PM EST</td><td>$ADBE</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$ADBE
+
+Made a fresh low today not seen since November of 2022.
+
+Has not participated at all during this entire bull market.
+
+Imagine where this name will be once we get an inevitable market correction…'>$ADBE
+
+Made a fresh low today not seen since November of 2022.
+
+Has not participated at all during this entire bull market.
+
+Imagine where this name will be onc…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011173155684204734' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 03:38PM EST</td><td>$FCX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$FCX ALL TIME HIGHS today.'>$FCX ALL TIME HIGHS today.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011176159707639927' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 03:44PM EST</td><td>$BTC,$ETH</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Big spot here for $BTC and $ETH.
+
+Can we see $100k and $3.5k respectively next?'>Big spot here for $BTC and $ETH.
+
+Can we see $100k and $3.5k respectively next?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011177466136817882' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 04:24PM EST</td><td>$AAPL</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$AAPL If I was a bear, this is my pondering on the stock:'>$AAPL If I was a bear, this is my pondering on the stock:</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011187650947162382' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 05:52PM EST</td><td>$BTC,$ETH</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC $ETH 
+
+Crypto poppin’..'>$BTC $ETH 
+
+Crypto poppin’..</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011209788886319447' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 06:20PM EST</td><td>$MRNA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='The second best performing S&amp;P500 component ytd is….
+
+$MRNA
+
+Did Covid come back or something!?'>The second best performing S&amp;P500 component ytd is….
+
+$MRNA
+
+Did Covid come back or something!?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011216760054460868' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 06:23PM EST</td><td>$IREN</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$IREN $54.30 highs in after hrs whoa.'>$IREN $54.30 highs in after hrs whoa.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011217570259755416' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/13 08:00PM EST</td><td>$QQQ,$SPX</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='TRADE PLAN for Wednesday 
+
+$SPX held the 6945 support and consolidated most of the day today. We have Supreme court tariff decision news and PPI data coming tmrw. $SPX needs a close between 6980-7000 to set up for the next bigger breakout towards 7100. 
+
+$QQQ keep a close eye'>TRADE PLAN for Wednesday 
+
+$SPX held the 6945 support and consolidated most of the day today. We have Supreme court tariff decision news and PPI data coming tmr…</td><td><a href='https://twitter.com/EliteOptions2/status/2011241891715567970' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/13 09:04PM EST</td><td>$BABA,$COIN,$IREN,$MSTR,$NBIS,$SNDK,$TSLA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Trade Ideas for Wednesday January 14th 
+
+$COIN 1/16 260C above 255
+$NBIS 1/23 115C above 109
+$IREN 1/30 60C above 53
+$TSLA 1/16 460C above 452
+$MSTR 2/20 200C above 180
+$BABA 1/30 180C over 171
+$SNDK 1/16 415 over 400
+
+Like if these are helpful! '>Trade Ideas for Wednesday January 14th 
+
+$COIN 1/16 260C above 255
+$NBIS 1/23 115C above 109
+$IREN 1/30 60C above 53
+$TSLA 1/16 460C above 452
+$MSTR 2/20 200C a…</td><td><a href='https://twitter.com/optionshoof/status/2011258085529268688' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:25PM EST</td><td>$IREN</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$IREN Hit my $55 target. Missed it by a few cents but close enough.'>$IREN Hit my $55 target. Missed it by a few cents but close enough.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011263417349550481' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 09:54PM EST</td><td>$AAPL,$AMZN,$GOOG,$META,$MSFT,$NVDA,$TSLA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META -21% off ATH’s
+
+$MSFT -16% off ATH’s
+
+$NVDA -13% off ATH’s
+
+$TSLA -11% off ATH’s
+
+$AAPL -10% off ATH’s
+
+$AMZN -6% off ATH’s
+
+$GOOG at ATH’s'>$META -21% off ATH’s
+
+$MSFT -16% off ATH’s
+
+$NVDA -13% off ATH’s
+
+$TSLA -11% off ATH’s
+
+$AAPL -10% off ATH’s
+
+$AMZN -6% off ATH’s
+
+$GOOG at ATH’s</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011270745528389765' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:07PM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA $171.20 overnight highs.
+
+Congrats to all the people who believed!
+
+This was all you can eat bbq in the $140-$150’s for weeks.'>$BABA $171.20 overnight highs.
+
+Congrats to all the people who believed!
+
+This was all you can eat bbq in the $140-$150’s for weeks.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011273894423109645' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:27PM EST</td><td>$AEHR</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$AEHR
+
+Like IREN's inverse head and shoulders breakout, AEHR looks like it's in the middle of it's own IHS breakout measured move towards $34ish. Conveniently where the prior highs are too. 
+
+The blue line could act with some resistance, but I like this name here for more upside'>$AEHR
+
+Like IREN's inverse head and shoulders breakout, AEHR looks like it's in the middle of it's own IHS breakout measured move towards $34ish. Conveniently w…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011278878686482721' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 10:42PM EST</td><td>$NFLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NFLX I like this name to $99-$100 near term.
+
+You are buying basically where it was back in the April 2025 tariffs lows. 
+
+Name is down 35% from ATH's, I think a DCB is due. 
+
+Not saying it will rocket back to ATH's overnight, but not egregious to think if it can stop creating'>$NFLX I like this name to $99-$100 near term.
+
+You are buying basically where it was back in the April 2025 tariffs lows. 
+
+Name is down 35% from ATH's, I think…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011282875241676926' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:03PM EST</td><td>$NBIS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NBIS Another Inverse Head and Shoulders spotted. Not sure if I drew the neckline properly here. If anyone want to chime in.
+
+But looks like if it can clear $110-$115ish with conviction, certainly a retest of the $135 ATH closing price on deck.
+
+I like this name.'>$NBIS Another Inverse Head and Shoulders spotted. Not sure if I drew the neckline properly here. If anyone want to chime in.
+
+But looks like if it can clear $11…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011288110097915926' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:09PM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SLV 
+
+What in the God’s universe is this monstrosity….'>$SLV 
+
+What in the God’s universe is this monstrosity….</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011289615261712523' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/13 11:52PM EST</td><td>$SMH</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SMH Hit $396.10 today…
+
+Getting interesting as it inches closer to that upper blue line.'>$SMH Hit $396.10 today…
+
+Getting interesting as it inches closer to that upper blue line.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011300243288330495' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:08AM EST</td><td>$V</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$V Will attempt it's 6th red day in a row tomorrow for it's longest losing streak since the April tariffs crash lows.
+
+RSI nearing oversold, high volume could suggest an interim selling climax, and if bulls can hold this blue line, we could see a bounce.'>$V Will attempt it's 6th red day in a row tomorrow for it's longest losing streak since the April tariffs crash lows.
+
+RSI nearing oversold, high volume could s…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011304352879952172' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:26AM EST</td><td>$MSTR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$MSTR
+
+$180 overnight.'>$MSTR
+
+$180 overnight.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011308992967147628' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:44AM EST</td><td>$RBLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RBLX Almost $86 overnight… nice bounce.'>$RBLX Almost $86 overnight… nice bounce.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011313498077475303' target='_blank'>Open</a></td></tr>
+<tr><td>jonasgal89</td><td>01/14 05:00AM EST</td><td>$AEVA,$NVDA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AEVA Can Become A Great EP
+
+My main focus this week was catching $AEVA after its huge move up on the highest volume ever.
+
+$AEVA exploded up on $NVDA partnership news, I missed the first followthrough up, but it gave a nice backtest that I caught using 
+@1ChartMaster
+ 30 min pivot'>$AEVA Can Become A Great EP
+
+My main focus this week was catching $AEVA after its huge move up on the highest volume ever.
+
+$AEVA exploded up on $NVDA partnersh…</td><td><a href='https://twitter.com/jonasgal89/status/2011377770044035547' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:37AM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SLV going absolutely apeshit again!'>$SLV going absolutely apeshit again!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011417476417098194' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:41AM EST</td><td>$INTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$INTC almost hit $50…'>$INTC almost hit $50…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011418332919132194' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:45AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='We finally got the +12% move in my PoTM in $BABA. Took a lot of patience with this one lol.
+
+You guys ready for another?'>We finally got the +12% move in my PoTM in $BABA. Took a lot of patience with this one lol.
+
+You guys ready for another?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011419384716439571' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:54AM EST</td><td>$SLV</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title='$SLV seems $100/oz is inevitable.
+
+Question now is:
+
+Do we moonshot there right here right now?
+
+Or do we get some mini pullbacks on the way there in awhile?
+
+And the REAL question is:
+
+Once it touches $100/oz, then what? Historic selloff for a “buy the rumor, sell the news”'>$SLV seems $100/oz is inevitable.
+
+Question now is:
+
+Do we moonshot there right here right now?
+
+Or do we get some mini pullbacks on the way there in awhile?
+
+A…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011421601367990325' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 08:26AM EST</td><td>$BTC,$GLD,$NVDA,$QQQ,$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Since the April 2020 Covid lows:
+
+$GLD up 3x
+
+$QQQ up 4x
+
+$SLV up 9x
+
+$BTC up 25x
+
+$NVDA up 41x'>Since the April 2020 Covid lows:
+
+$GLD up 3x
+
+$QQQ up 4x
+
+$SLV up 9x
+
+$BTC up 25x
+
+$NVDA up 41x</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011429697377448435' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 08:43AM EST</td><td>$TSLA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$TSLA The right move imho.
+
+I still haven’t tried FSD. Just autopilot.
+
+Ya, ya lame me.
+
+I’m behind.'>$TSLA The right move imho.
+
+I still haven’t tried FSD. Just autopilot.
+
+Ya, ya lame me.
+
+I’m behind.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011433967665451365' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 08:54AM EST</td><td>$MAGS,$META,$QQQ,$SPY</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$META nearing a 2 yr low relative to the $SPY
+
+$META nearing a 2 yr low relative to the $QQQ
+
+$META nearing a 2.5 yr low relative to it’s peers in the $MAGS
+
+People about to call me Inverse Heisenberg again if it keeps going down.
+
+Help me Zuck!!!!'>$META nearing a 2 yr low relative to the $SPY
+
+$META nearing a 2 yr low relative to the $QQQ
+
+$META nearing a 2.5 yr low relative to it’s peers in the $MAGS
+
+Pe…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011436776855048489' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/14 09:00AM EST</td><td>$MSTR,$SPX</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='TRADE PLAN for Jan 14th  
+
+$SPX gapping back lower after that late day rally we saw yesterday. SPX in a wide range from 6921-7000. IF SPX fails at 6921 it can test 6900 this week. I'd wait for SPX to move near 6980 before considering calls.
+
+$MSTR very close to a bigger'>TRADE PLAN for Jan 14th  
+
+$SPX gapping back lower after that late day rally we saw yesterday. SPX in a wide range from 6921-7000. IF SPX fails at 6921 it can t…</td><td><a href='https://twitter.com/EliteOptions2/status/2011438172392067272' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 09:01AM EST</td><td>$PDD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$PDD one of the China names not participating lately and has gone down -14% last couple days.
+
+Gonna try to yolo a swing here.
+
+Could be creating a potential IHS too. Maybe.'>$PDD one of the China names not participating lately and has gone down -14% last couple days.
+
+Gonna try to yolo a swing here.
+
+Could be creating a potential IH…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011438496616231318' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 09:26AM EST</td><td>$BAC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='I’m just casually scanning some names and saw that $BAC earnings was this morning. Cool. 
+
+Let’s pull up their chart.
+
+Their chart:
+
+My eyes…
+
+#wedhumor'>I’m just casually scanning some names and saw that $BAC earnings was this morning. Cool. 
+
+Let’s pull up their chart.
+
+Their chart:
+
+My eyes…
+
+#wedhumor</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011444751233663155' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 10:01AM EST</td><td>$VIX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$VIX almost kissed 18…'>$VIX almost kissed 18…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011453696027312312' target='_blank'>Open</a></td></tr>
+<tr><td>Basssem666</td><td>01/14 10:08AM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title='$SPY “I think we’ll see 690-688 soon.” I got some clowns mocking me for making that call at ATH. Who’s laughing now ? Sold my puts for +90% and could have been 120% if I held longer.
+
+Do I get wrong calls too ? Of course, but I’m right more. I assure you every trade I take has a'>$SPY “I think we’ll see 690-688 soon.” I got some clowns mocking me for making that call at ATH. Who’s laughing now ? Sold my puts for +90% and could have been …</td><td><a href='https://twitter.com/Basssem666/status/2011455377066385828' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/14 10:36AM EST</td><td>$BTC,$COIN,$ETH,$MSTR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC 100k coming $ETH to 3500.. Lots of relative strength with crypto compared to the stock market today
+
+$MSTR setting up for a run to 200, $COIN to 280 next'>$BTC 100k coming $ETH to 3500.. Lots of relative strength with crypto compared to the stock market today
+
+$MSTR setting up for a run to 200, $COIN to 280 next</td><td><a href='https://twitter.com/EliteOptions2/status/2011462320841793711' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 10:46AM EST</td><td>$BABA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BABA back to back to back to back to back days of nice gains. (Well one day was consolidation, but still).
+
+Awesome.'>$BABA back to back to back to back to back days of nice gains. (Well one day was consolidation, but still).
+
+Awesome.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011464976939278849' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/14 11:05AM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Quite a bit of negative exposure across $SPY. MVC is at $680, and gamma exposure there is growing. I have $690 as resistance and $685 as support.'>Quite a bit of negative exposure across $SPY. MVC is at $680, and gamma exposure there is growing. I have $690 as resistance and $685 as support.</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011469762543472688' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 11:06AM EST</td><td>$MSTR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$MSTR $190 highs today. Not bad.'>$MSTR $190 highs today. Not bad.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011469864834351249' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 11:08AM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC $97k!'>$BTC $97k!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011470530537525492' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:16AM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $BTC is nearing $98k, now up over 3.2% intraday as momentum accelerates and crypto strength builds.'> $BTC is nearing $98k, now up over 3.2% intraday as momentum accelerates and crypto strength builds.</td><td><a href='https://twitter.com/QuantData/status/2011472462127456486' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 11:16AM EST</td><td>$NVDA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='If you bought $NVDA 6 months ago and held to today, you would be up exactly 0%.
+
+And this is most definitely not a knock on Nvidia as it is up like 50x at its peak earlier last yr from the Covid lows.
+
+But just shows to you even the greats need to breathe a bit and consolidate..'>If you bought $NVDA 6 months ago and held to today, you would be up exactly 0%.
+
+And this is most definitely not a knock on Nvidia as it is up like 50x at its p…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011472564519162147' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:23AM EST</td><td>$SNDK</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' Boooooooom!!! $SNDK just hit $400 after we called it out on Friday, January 9th. The exposure tools on Quant Data mapped this move perfectly in advance. This is exactly why flow, GEX, and positioning matter. Follow the data.'> Boooooooom!!! $SNDK just hit $400 after we called it out on Friday, January 9th. The exposure tools on Quant Data mapped this move perfectly in advance. This i…</td><td><a href='https://twitter.com/QuantData/status/2011474369617281284' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 11:33AM EST</td><td>$GDDY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Out of 2,000 stocks with a market cap greater than $2B, the only name with a sub 20 Daily RSI is…..
+
+$GDDY
+
+Cmon. Go. Daddy. Eesh.'>Out of 2,000 stocks with a market cap greater than $2B, the only name with a sub 20 Daily RSI is…..
+
+$GDDY
+
+Cmon. Go. Daddy. Eesh.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011476702132912242' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:35AM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' 0DTE calls crossed above puts on $SPY right off the $686.84 Dark Pool level hold. Flow confirmed the bounce, but keep a close eye on potential convergence returning. Levels and options flow remain the roadmap.'> 0DTE calls crossed above puts on $SPY right off the $686.84 Dark Pool level hold. Flow confirmed the bounce, but keep a close eye on potential convergence retu…</td><td><a href='https://twitter.com/QuantData/status/2011477345408844020' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:41AM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' Breaking: IV Rank on $SPY just crossed 10% for the first time since Dec 17, 2025.'> Breaking: IV Rank on $SPY just crossed 10% for the first time since Dec 17, 2025.</td><td><a href='https://twitter.com/QuantData/status/2011478825465512447' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:45AM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY update: Price rejected the $688.99 level and is now sliding back toward the $686.84 Dark Pool zone. Watch these levels closely for intraday action!'> $SPY update: Price rejected the $688.99 level and is now sliding back toward the $686.84 Dark Pool zone. Watch these levels closely for intraday action!</td><td><a href='https://twitter.com/QuantData/status/2011479780135199000' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:48AM EST</td><td>$APP</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $APP is getting absolutely hammered today, down over $67 or 10% intraday.'> $APP is getting absolutely hammered today, down over $67 or 10% intraday.</td><td><a href='https://twitter.com/QuantData/status/2011480584279785882' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:51AM EST</td><td>$APP</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' Over $14M+ in single-leg calls sold on $APP today alongside $3.5M+ in puts bought. Price is getting wrecked! Keep an eye on this volatility.'> Over $14M+ in single-leg calls sold on $APP today alongside $3.5M+ in puts bought. Price is getting wrecked! Keep an eye on this volatility.</td><td><a href='https://twitter.com/QuantData/status/2011481278629990428' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 11:54AM EST</td><td>$CRWV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CRWV Hit $93.18 today.
+
+Jeez.
+
+Got lucky.'>$CRWV Hit $93.18 today.
+
+Jeez.
+
+Got lucky.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011482176421052857' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:00PM EST</td><td>$BTC,$QQQ</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC $QQQ The convergence has commenced...'>$BTC $QQQ The convergence has commenced...</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011483657861505155' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:12PM EST</td><td>$JPM</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$JPM almost in a technical correction (-10%) since last week.
+
+CSP time!'>$JPM almost in a technical correction (-10%) since last week.
+
+CSP time!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011486575209955395' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 12:13PM EST</td><td>$VIX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $VIX is back above $17.60, surpassing the post-2009 average. We’ve been flagging all the buying over the last two weeks as traders loaded up on cheap volatility.'> $VIX is back above $17.60, surpassing the post-2009 average. We’ve been flagging all the buying over the last two weeks as traders loaded up on cheap volatilit…</td><td><a href='https://twitter.com/QuantData/status/2011486936049852624' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 12:20PM EST</td><td>$ORCL</td><td><span class='badge sell'>SELL</span></td><td class='clip' title=' $ORCL sued by bondholders who claim losses after the company allegedly failed to disclose it needed to sell significant additional debt to fund AI infrastructure.'> $ORCL sued by bondholders who claim losses after the company allegedly failed to disclose it needed to sell significant additional debt to fund AI infrastructu…</td><td><a href='https://twitter.com/QuantData/status/2011488589645848781' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:25PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Not all my picks are good.
+
+$META going backwards.
+
+I’m sorry.
+
+But I’m still HODL’ing. Not giving up.  Maybe I’m insane.'>Not all my picks are good.
+
+$META going backwards.
+
+I’m sorry.
+
+But I’m still HODL’ing. Not giving up.  Maybe I’m insane.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011489938928189531' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 12:31PM EST</td><td>$AAPL</td><td><span class='badge buy'>BUY</span></td><td class='clip' title=' Inverse Cramer?! $AAPL is now down over $3.65 (-1.4%) since he called it a “buy.”'> Inverse Cramer?! $AAPL is now down over $3.65 (-1.4%) since he called it a “buy.”</td><td><a href='https://twitter.com/QuantData/status/2011491328006201386' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 12:39PM EST</td><td>$CVX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CVX  Breaking out of the base.'>$CVX  Breaking out of the base.</td><td><a href='https://twitter.com/1ChartMaster/status/2011493373530579114' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 12:47PM EST</td><td>$ADBE,$CRM,$PYPL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='The PAC etf is deeply on sale.
+
+Yes you ready to be a PAC man and gobble this ish up?!?!
+
+Ok that was lame. Joke machine off today.
+
+Anyways,
+
+P - $PYPL
+
+A - $ADBE
+
+C - $CRM
+
+Reminds me of UPS and TGT. So hated everyday, every week, every month, that it eventually got a nice'>The PAC etf is deeply on sale.
+
+Yes you ready to be a PAC man and gobble this ish up?!?!
+
+Ok that was lame. Joke machine off today.
+
+Anyways,
+
+P - $PYPL
+
+A - $A…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011495295730008348' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 01:21PM EST</td><td>$SPY</td><td><span class='badge buy'>BUY</span></td><td class='clip' title=' $SPY has been consolidating around the $686.84 Dark Pool level since 11:50am EST with little movement. Watch this zone closely for any breakout or rejection!'> $SPY has been consolidating around the $686.84 Dark Pool level since 11:50am EST with little movement. Watch this zone closely for any breakout or rejection!</td><td><a href='https://twitter.com/QuantData/status/2011504017004806144' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 01:28PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $META lays off 1,500 employees in its Metaverse division as the company refocuses on AI and cost management, WSJ reports.'> $META lays off 1,500 employees in its Metaverse division as the company refocuses on AI and cost management, WSJ reports.</td><td><a href='https://twitter.com/QuantData/status/2011505675268919323' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 01:32PM EST</td><td>$XOM</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$XOM blue skies breakout.'>$XOM blue skies breakout.</td><td><a href='https://twitter.com/1ChartMaster/status/2011506610061836631' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 01:32PM EST</td><td>$WMT</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$WMT is 4% away from hitting a $1 trillion dollar market capitalization.
+
+Walmart.
+
+Your new Maggy 7.'>$WMT is 4% away from hitting a $1 trillion dollar market capitalization.
+
+Walmart.
+
+Your new Maggy 7.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011506829558526449' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 01:35PM EST</td><td>$RSP</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$RSP - We have a new #1.'>$RSP - We have a new #1.</td><td><a href='https://twitter.com/VolumeLeaders/status/2011507356044022180' target='_blank'>Open</a></td></tr>
+<tr><td>TraderJohnny_</td><td>01/14 01:37PM EST</td><td>$ISSC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='If you focus on only trading the hottest themes you most likely didn't notice the big pullback in the indexes today in your portfolio. Space, memory, defense, rare earths, uranium etc super strong. I started a new position in $ISSC today.'>If you focus on only trading the hottest themes you most likely didn't notice the big pullback in the indexes today in your portfolio. Space, memory, defense, r…</td><td><a href='https://twitter.com/TraderJohnny_/status/2011508047164948735' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 01:44PM EST</td><td>$ADUR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ADUR
+
+The chart looks solid to me.
+
+I'm in. Let's see $15's..'>$ADUR
+
+The chart looks solid to me.
+
+I'm in. Let's see $15's..</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011509730116784415' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 01:50PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is stuck in a tight grind around the $686.84 Dark Pool level, chop central with barely any movement.'> $SPY is stuck in a tight grind around the $686.84 Dark Pool level, chop central with barely any movement.</td><td><a href='https://twitter.com/QuantData/status/2011511203110273167' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 01:52PM EST</td><td>$ADUR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ADUR new HOD.'>$ADUR new HOD.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011511866997060058' target='_blank'>Open</a></td></tr>
+<tr><td>SeaKingOptions</td><td>01/14 01:59PM EST</td><td>$IUSG</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Love when 
+@VolumeLeaders
+ Bruce pops in our chat to just drop a casual "shit you should know" $IUSG'>Love when 
+@VolumeLeaders
+ Bruce pops in our chat to just drop a casual "shit you should know" $IUSG</td><td><a href='https://twitter.com/SeaKingOptions/status/2011513460446871826' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 02:06PM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='This $SLV squeeze is one for the ages…
+
+Whenever it comes back down, whether at $100/oz, $125/oz, $150/oz, $200/oz, etc. it will be a spectacle as well.'>This $SLV squeeze is one for the ages…
+
+Whenever it comes back down, whether at $100/oz, $125/oz, $150/oz, $200/oz, etc. it will be a spectacle as well.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011515276899270790' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 02:09PM EST</td><td>$TTI</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$TTI  Trending up the 8 week. '>$TTI  Trending up the 8 week. </td><td><a href='https://twitter.com/1ChartMaster/status/2011516076073648270' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 02:17PM EST</td><td>$SLV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SLV Blue skies'>$SLV Blue skies</td><td><a href='https://twitter.com/1ChartMaster/status/2011517999359148301' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 02:21PM EST</td><td>$QQQ,$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Institutions are unusually active again today.  Growth ETFs again at the center of it.
+
+$SPY, $QQQ'>Institutions are unusually active again today.  Growth ETFs again at the center of it.
+
+$SPY, $QQQ</td><td><a href='https://twitter.com/VolumeLeaders/status/2011518939373981896' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/14 02:29PM EST</td><td>$META,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX held 6900 so far, market just consolidating and waiting on the SCOTUS decision regarding tariffs. No reason to get aggressive right now lots of uncertainty leading up to that announcement
+
+$META still getting crushed, avoid this for now, looks like we can retest 600 soon if'>$SPX held 6900 so far, market just consolidating and waiting on the SCOTUS decision regarding tariffs. No reason to get aggressive right now lots of uncertainty…</td><td><a href='https://twitter.com/optionshoof/status/2011521077332128179' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 02:31PM EST</td><td>$MP</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$MP Working on an engulfing caadle.'>$MP Working on an engulfing caadle.</td><td><a href='https://twitter.com/1ChartMaster/status/2011521613066617267' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 02:34PM EST</td><td>$XLE</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$XLE Energy Blue skies'>$XLE Energy Blue skies</td><td><a href='https://twitter.com/1ChartMaster/status/2011522321748803663' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 02:42PM EST</td><td>$QQQ</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$QQQ Interesting spot here....
+
+Bears have an open window to do something.'>$QQQ Interesting spot here....
+
+Bears have an open window to do something.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011524220992598105' target='_blank'>Open</a></td></tr>
+<tr><td>TheETFTracker</td><td>01/14 02:53PM EST</td><td>$AVGO,$JPM,$MSFT,$VIG</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Here are the top holdings in $VIG Vanguard Dividend Appreciation ETF:
+
+ Broadcom $AVGO 6.5%
+ Microsoft $MSFT 4.3%
+ JPMorgan Chase $JPM 4.2%'>Here are the top holdings in $VIG Vanguard Dividend Appreciation ETF:
+
+ Broadcom $AVGO 6.5%
+ Microsoft $MSFT 4.3%
+ JPMorgan Chase $JPM 4.2%</td><td><a href='https://twitter.com/TheETFTracker/status/2011526984908611885' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/14 03:22PM EST</td><td>$GLD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GLD sideways into the 8 week before making new ATHs.'>$GLD sideways into the 8 week before making new ATHs.</td><td><a href='https://twitter.com/1ChartMaster/status/2011534450719670291' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 03:25PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY back up at the $688.99 Dark Pool level. Earlier in the session this level caused a massive rejection.'> $SPY back up at the $688.99 Dark Pool level. Earlier in the session this level caused a massive rejection.</td><td><a href='https://twitter.com/QuantData/status/2011535266943811739' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/14 03:31PM EST</td><td>$BABA,$COIN,$MU,$SPX</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$SPX holding over 6900, near 6920 right now, which is a good sign
+
+$MU holding near the highs, as long as we hold 320 we can retest 340
+
+$BABA quite strong, holding 170, if we can consolidate above here 180, 200 tests can come in the coming weeks/months
+
+$COIN rejected that key'>$SPX holding over 6900, near 6920 right now, which is a good sign
+
+$MU holding near the highs, as long as we hold 320 we can retest 340
+
+$BABA quite strong, hol…</td><td><a href='https://twitter.com/optionshoof/status/2011536604880375833' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 03:41PM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' 0DTE calls are now leading puts by $2M+ intraday on $SPY as price rallies toward the $690.36 Dark Pool level.'> 0DTE calls are now leading puts by $2M+ intraday on $SPY as price rallies toward the $690.36 Dark Pool level.</td><td><a href='https://twitter.com/QuantData/status/2011539219588792736' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/14 03:43PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Over the last hour, the $690 strike on $SPY saw elevated activity. $690 is the MVC; it looks like it will be pinned into the close.'>Over the last hour, the $690 strike on $SPY saw elevated activity. $690 is the MVC; it looks like it will be pinned into the close.</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011539570723364973' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 03:43PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is now trading at the $690.36 Dark Pool level.'> $SPY is now trading at the $690.36 Dark Pool level.</td><td><a href='https://twitter.com/QuantData/status/2011539680597328154' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 03:46PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' You simply can’t make this up… $SPY just saw a near-perfect rejection off the $690.36 Dark Pool level.'> You simply can’t make this up… $SPY just saw a near-perfect rejection off the $690.36 Dark Pool level.</td><td><a href='https://twitter.com/QuantData/status/2011540327534936144' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 03:52PM EST</td><td>$DUOL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$DUOL -72% from ATH’s set just 8 months ago.
+
+Almost back to the same level as IPO trading day.
+
+Disaster….'>$DUOL -72% from ATH’s set just 8 months ago.
+
+Almost back to the same level as IPO trading day.
+
+Disaster….</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011542027260084277' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 03:55PM EST</td><td>$ADUR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ADUR $14.60 HOD. Nice.
+
+Give credit to TLI on this one.'>$ADUR $14.60 HOD. Nice.
+
+Give credit to TLI on this one.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011542588986442072' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 04:02PM EST</td><td>$ADUR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ADUR $15.04 in after hrs.
+
+Guhhh daymn.'>$ADUR $15.04 in after hrs.
+
+Guhhh daymn.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011544396492390644' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 04:28PM EST</td><td>$DIS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $DIS restructures its marketing strategy, creating a new enterprise marketing and brand organization and naming Asad Ayaz as Chief Marketing and Brand Officer.'> $DIS restructures its marketing strategy, creating a new enterprise marketing and brand organization and naming Asad Ayaz as Chief Marketing and Brand Officer.</td><td><a href='https://twitter.com/QuantData/status/2011551060968816979' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 04:50PM EST</td><td>$PYPL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$PYPL If there was ever a time to bounce.
+
+And I mean EVER EVER EVERRRRRRRRR a time to bounce this POS...
+
+It be right here, right now at this "critical bounce zone" where it has shown to be major support in year's past...
+
+#everrrrr'>$PYPL If there was ever a time to bounce.
+
+And I mean EVER EVER EVERRRRRRRRR a time to bounce this POS...
+
+It be right here, right now at this "critical bounce …</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011556493380981112' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 06:09PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META Wait… the Metaverse is still a thing?!'>$META Wait… the Metaverse is still a thing?!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011576418522841494' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:36PM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX I mean at some point...'>$SPX I mean at some point...</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011598356511146260' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 07:59PM EST</td><td>$IWM,$QQQ</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$IWM $QQQ
+
+Could 2026 be the year of the Russell 2000 outperforming the Nasdaq-100....?
+
+It feels overdue doesn't it?!'>$IWM $QQQ
+
+Could 2026 be the year of the Russell 2000 outperforming the Nasdaq-100....?
+
+It feels overdue doesn't it?!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011604063599903204' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/14 08:00PM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='TRADE PLAN for Thursday  
+
+$SPX sold off on the delay of Supreme Court Tariff ruling. SPX dropped from 6941 to 6885 but managed to reclaim 6921 by the close. The market seems to be waiting for this ruling before it makes it's next big move. If SPX reclaims 6945 or defends 6900'>TRADE PLAN for Thursday  
+
+$SPX sold off on the delay of Supreme Court Tariff ruling. SPX dropped from 6941 to 6885 but managed to reclaim 6921 by the close. Th…</td><td><a href='https://twitter.com/EliteOptions2/status/2011604273440686361' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/14 08:41PM EST</td><td>$AAPL,$AMD,$BABA,$COIN,$MP,$MSFT,$MSTR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Trade Ideas for Thursday January 15th
+
+$AAPL 2/20 270C over 262.75
+$AMD 1/23 232.5C over 228.12
+$BABA 1/30 180C over 173.66
+$COIN 1/23 270C over 262.91
+$MP 1/23 73C over 70
+$MSFT 1/16 450P under 456
+$MSTR 2/13 200C over 184 or 1/30 195C over 180
+
+Like if these are helpful! '>Trade Ideas for Thursday January 15th
+
+$AAPL 2/20 270C over 262.75
+$AMD 1/23 232.5C over 228.12
+$BABA 1/30 180C over 173.66
+$COIN 1/23 270C over 262.91
+$MP 1/23…</td><td><a href='https://twitter.com/optionshoof/status/2011614598370124164' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 09:55PM EST</td><td>$MAGS</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title='$MAGS - #1 is no longer being defended on the long side.  It was either a new long that was closed out in smaller chunks, a long exit, a short cover, or a patient short that took a little heat.
+
+Regardless, this position is not being defended on the long side.'>$MAGS - #1 is no longer being defended on the long side.  It was either a new long that was closed out in smaller chunks, a long exit, a short cover, or a patie…</td><td><a href='https://twitter.com/VolumeLeaders/status/2011633278864994494' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 10:00PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META - Lots of activity on Dec OPEX.  That cluster of trades amounted to $20.5B across 31M shares and was its largest cluster since inception.'>$META - Lots of activity on Dec OPEX.  That cluster of trades amounted to $20.5B across 31M shares and was its largest cluster since inception.</td><td><a href='https://twitter.com/VolumeLeaders/status/2011634487172743495' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 10:02PM EST</td><td>$BTC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BTC Hit $98k on the dot today.
+
+Clear this and we test the big kahuna in $100k.'>$BTC Hit $98k on the dot today.
+
+Clear this and we test the big kahuna in $100k.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011635172052185562' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 10:03PM EST</td><td>$MSFT</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$MSFT - The #1 level has shifted up to where #3 and #9 printed on Dec Opex.  The previous #1 level that sat at $435 now ranks #2.'>$MSFT - The #1 level has shifted up to where #3 and #9 printed on Dec Opex.  The previous #1 level that sat at $435 now ranks #2.</td><td><a href='https://twitter.com/VolumeLeaders/status/2011635387114905866' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 10:11PM EST</td><td>$COST</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$COST - A new #1 level was formed on Dec OPEX, and price has responded bullishly since.'>$COST - A new #1 level was formed on Dec OPEX, and price has responded bullishly since.</td><td><a href='https://twitter.com/VolumeLeaders/status/2011637401836556347' target='_blank'>Open</a></td></tr>
+<tr><td>VolumeLeaders</td><td>01/14 10:13PM EST</td><td>$V</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$V - Visa.  I haven't the foggiest.'>$V - Visa.  I haven't the foggiest.</td><td><a href='https://twitter.com/VolumeLeaders/status/2011637955589521755' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/14 10:16PM EST</td><td>$PDD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$PDD Temu, I mean Pinduoduo, ready to go?!
+
+I think so. 
+
+Swing trade here for a bounce play.'>$PDD Temu, I mean Pinduoduo, ready to go?!
+
+I think so. 
+
+Swing trade here for a bounce play.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011638551134552115' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/14 11:13PM EST</td><td>$AMD,$NVDA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' On Wednesday, President Trump  imposed a 25% tariff on select high-end AI chips from Nvidia $NVDA and AMD $AMD.
+
+The White House said the tariffs target advanced semiconductors including Nvidia’s H200 and AMD’s MI325X, following a nine month Section 232 national security'> On Wednesday, President Trump  imposed a 25% tariff on select high-end AI chips from Nvidia $NVDA and AMD $AMD.
+
+The White House said the tariffs target advanc…</td><td><a href='https://twitter.com/QuantData/status/2011653035005555054' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:25AM EST</td><td>$ASST</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ASST CEO buying.
+
+Tail the whale.
+
+'>$ASST CEO buying.
+
+Tail the whale.
+
+</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011671041169612932' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:39AM EST</td><td>$DIA,$IWM,$QQQ,$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='The $IWM made a new ATH today.
+
+The $SPY made a new ATH yesterday.
+
+The $DIA made a new ATH 2 days ago.
+
+The $QQQ has not made a new ATH in over 2.5 months.
+
+'>The $IWM made a new ATH today.
+
+The $SPY made a new ATH yesterday.
+
+The $DIA made a new ATH 2 days ago.
+
+The $QQQ has not made a new ATH in over 2.5 months.
+
+</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011674479861383646' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 05:38AM EST</td><td>$TSM</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$TSM ATH’s. Wow'>$TSM ATH’s. Wow</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011749766263377932' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 05:56AM EST</td><td>$MU,$SNDK,$STX,$WDC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SNDK $WDC $STX $MU All up nicely in premarket…
+
+Memory/storage going nuts again…'>$SNDK $WDC $STX $MU All up nicely in premarket…
+
+Memory/storage going nuts again…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011754473509831042' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 05:57AM EST</td><td>$SNDK</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$SNDK inside month leads to breakout. That kind of consolidation in a leader should never be ignored.  Gapping to new highs this morning. 
+Long AF'>$SNDK inside month leads to breakout. That kind of consolidation in a leader should never be ignored.  Gapping to new highs this morning. 
+Long AF</td><td><a href='https://twitter.com/1ChartMaster/status/2011754509866082798' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 08:10AM EST</td><td>$BMNR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BMNR 
+
+Tom Lee gonna be in Beast Games season 3 lol.'>$BMNR 
+
+Tom Lee gonna be in Beast Games season 3 lol.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011788086108438829' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 08:32AM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Is the $SPX in…
+
+1) Optimism
+
+2) Belief
+
+3) Thrill
+
+4) Euphoria
+
+Which one?'>Is the $SPX in…
+
+1) Optimism
+
+2) Belief
+
+3) Thrill
+
+4) Euphoria
+
+Which one?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011793670123794723' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 08:43AM EST</td><td>$ADBE,$CVNA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CVNA about to surpass $ADBE in market cap soon.
+
+The unexplainable.
+
+One stock just flying to the moon.
+
+The other 6 feet under…'>$CVNA about to surpass $ADBE in market cap soon.
+
+The unexplainable.
+
+One stock just flying to the moon.
+
+The other 6 feet under…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011796435596165629' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/15 08:58AM EST</td><td>$AEHR,$LRCX,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='GOOD MORNING FAM 
+$SPX opening near 6960, if we can hold above 6940 today we have a shot at moving back towards 6990 again. If we lose 6940 then 6900 test can come again
+
+$LRCX gapping up after TSM earnings, get thru 229 can see 236 next 
+
+$AEHR get thru 29 can see an explosive'>GOOD MORNING FAM 
+$SPX opening near 6960, if we can hold above 6940 today we have a shot at moving back towards 6990 again. If we lose 6940 then 6900 test can c…</td><td><a href='https://twitter.com/optionshoof/status/2011800200617009158' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/15 09:00AM EST</td><td>$META,$MU,$SPX</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='TRADE PLAN for Jan 15th  
+
+$SPX will gap up above 6945, if it defends this level today we can see 7000 by tomorrow. Calls can work above 6945
+
+$MU close to a bigger breakout towards 400. MU needs to close above 350 on a daily candle. Calls can work above 350
+
+$META earnings'>TRADE PLAN for Jan 15th  
+
+$SPX will gap up above 6945, if it defends this level today we can see 7000 by tomorrow. Calls can work above 6945
+
+$MU close to a bi…</td><td><a href='https://twitter.com/EliteOptions2/status/2011800556277268506' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 09:06AM EST</td><td>$BYND</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$BYND 
+
+Pivot.
+
+I mean, can’t fault them.
+
+America is all about given second chances.
+
+Capitalism is all about adjusting to the times.
+
+With that said, yolo the stock here with Subway Sandwiches only.'>$BYND 
+
+Pivot.
+
+I mean, can’t fault them.
+
+America is all about given second chances.
+
+Capitalism is all about adjusting to the times.
+
+With that said, yolo the…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011802167276159444' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 09:11AM EST</td><td>$KLAC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$KLAC Gapping to new highs.  Bigger the bigger higher  in space.'>$KLAC Gapping to new highs.  Bigger the bigger higher  in space.</td><td><a href='https://twitter.com/1ChartMaster/status/2011803376858661163' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 09:36AM EST</td><td>$AEIS,$APH</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$APH $AEIS twins  '>$APH $AEIS twins  </td><td><a href='https://twitter.com/1ChartMaster/status/2011809678422839319' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 09:47AM EST</td><td>$SNDK</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SNDK send it '>$SNDK send it </td><td><a href='https://twitter.com/1ChartMaster/status/2011812595297038835' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 10:02AM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Elevated positive gamma exposure above spot on $SPY. $695 is the MVC (contract with the greatest exposure). I am expecting some chop around $695 and potential rejection there. I have $693 as support, not much exposure under it.'>Elevated positive gamma exposure above spot on $SPY. $695 is the MVC (contract with the greatest exposure). I am expecting some chop around $695 and potential r…</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011816358812569743' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 10:04AM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META barely green today. Ugh.
+
+Alright chart update time….
+
+Need to redraw the lines heh.'>$META barely green today. Ugh.
+
+Alright chart update time….
+
+Need to redraw the lines heh.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011816766805057860' target='_blank'>Open</a></td></tr>
+<tr><td>TreasuryEdge</td><td>01/15 10:07AM EST</td><td>$BMNR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='BitMine $BMNR announced a $200 million equity investment into Beast Industries (MrBeast's company).
+
+Tom Lee: "MrBeast and Beast Industries, in our view, is the leading content creator of our generation, with a reach and engagement unmatched with GenZ, GenAlpha and Millennials."'>BitMine $BMNR announced a $200 million equity investment into Beast Industries (MrBeast's company).
+
+Tom Lee: "MrBeast and Beast Industries, in our view, is the…</td><td><a href='https://twitter.com/TreasuryEdge/status/2011817522962841865' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 10:10AM EST</td><td>$AMD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$AMD $237.50!!'>$AMD $237.50!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011818242004647980' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 10:11AM EST</td><td>$CRWV</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CRWV Almost $99’s!!'>$CRWV Almost $99’s!!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011818606968074582' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 10:29AM EST</td><td>$FIGR</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$FIGR new ATHs'>$FIGR new ATHs</td><td><a href='https://twitter.com/1ChartMaster/status/2011823112245895325' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/15 10:35AM EST</td><td>$CRWV,$MSFT,$SNDK,$SPX</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$SPX consolidating, lots of chop, no reason to get aggressive
+
+$MSFT can see 448 under 456 and if the market decides to dump
+
+$SNDK through 421 should pop us quick towards 430
+
+$CRWV broke over 95, we can see a 100 retest soon'>$SPX consolidating, lots of chop, no reason to get aggressive
+
+$MSFT can see 448 under 456 and if the market decides to dump
+
+$SNDK through 421 should pop us qu…</td><td><a href='https://twitter.com/optionshoof/status/2011824528318513539' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/15 10:36AM EST</td><td>$META,$QQQ,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META possible day 1 of a bounce here, earnings coming up in a couple weeks.. lets see if it can run back up to 640+ . META Jan 23 640C best above 620
+
+$SPX wants 7000, very strong here, $QQQ to 629 possible by tomorrow'>$META possible day 1 of a bounce here, earnings coming up in a couple weeks.. lets see if it can run back up to 640+ . META Jan 23 640C best above 620
+
+$SPX wan…</td><td><a href='https://twitter.com/EliteOptions2/status/2011824940274893141' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 10:42AM EST</td><td>$AEIS</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$AEIS I put in the work and the setups keep coming.   Join the team I put the setups right on your plate.'>$AEIS I put in the work and the setups keep coming.   Join the team I put the setups right on your plate.</td><td><a href='https://twitter.com/1ChartMaster/status/2011826279616582006' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 10:55AM EST</td><td>$DY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$DY trades a little thin but notice the sideways into the 8 week before pushing into new highs.   Low 28 mil float'>$DY trades a little thin but notice the sideways into the 8 week before pushing into new highs.   Low 28 mil float</td><td><a href='https://twitter.com/1ChartMaster/status/2011829636221542453' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 11:10AM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPY is now at $695 after the first rejection, could be another play here on the 2nd rejection down to $693 again.'>$SPY is now at $695 after the first rejection, could be another play here on the 2nd rejection down to $693 again.</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011833399670161700' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 11:11AM EST</td><td>$ATI</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ATI still trending higher up the 8ema.'>$ATI still trending higher up the 8ema.</td><td><a href='https://twitter.com/1ChartMaster/status/2011833584810643590' target='_blank'>Open</a></td></tr>
+<tr><td>hebbia</td><td>01/15 11:28AM EST</td><td>$C,$GS,$JPM,$MS,$WFC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Bulge bracket banks' earnings show IB fees are rebounding nicely—and there’s still room to run before reclaiming 2021's record highs.
+
+$JPM $GS $MS $C $WFC'>Bulge bracket banks' earnings show IB fees are rebounding nicely—and there’s still room to run before reclaiming 2021's record highs.
+
+$JPM $GS $MS $C $WFC</td><td><a href='https://twitter.com/hebbia/status/2011837854016508338' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 11:28AM EST</td><td>$HOOD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$HOOD Kinda not doing anything lately even as markets are rallying towards new ATH's.
+
+However, now in an interesting spot currently.
+
+Bounce now, I command you.'>$HOOD Kinda not doing anything lately even as markets are rallying towards new ATH's.
+
+However, now in an interesting spot currently.
+
+Bounce now, I command you…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011837955216982078' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 11:33AM EST</td><td>$QQQ</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$QQQ I have never seen anything so tight...'>$QQQ I have never seen anything so tight...</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011839283636883554' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 11:44AM EST</td><td>$CAT,$CMI</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$CMI &amp; $CAT just trending up the 8 week. 
+New ATHs for both. '>$CMI &amp; $CAT just trending up the 8 week. 
+New ATHs for both. </td><td><a href='https://twitter.com/1ChartMaster/status/2011842014560555352' target='_blank'>Open</a></td></tr>
+<tr><td>JesseCohenInv</td><td>01/15 11:45AM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='S&amp;P 500 $SPX Hits 7,000 For The First Time Ever
+
+Congrats everyone, we did it!'>S&amp;P 500 $SPX Hits 7,000 For The First Time Ever
+
+Congrats everyone, we did it!</td><td><a href='https://twitter.com/JesseCohenInv/status/2011842269792342368' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 11:47AM EST</td><td>$ASTS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ASTS Almost back over $100 and retesting ATH’s.
+
+Break ATH’s and who knows where next, $120’s?!'>$ASTS Almost back over $100 and retesting ATH’s.
+
+Break ATH’s and who knows where next, $120’s?!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011842620197384428' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 11:52AM EST</td><td>$SPX,$VIX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Stats:
+
+$SPX Green 13 of last 15 Fridays. (and one of those red days was barely red).
+
+$SPX Green 14 of last 17 Mondays. (all 3 of those red days were decently red).
+
+$VIX Red 10 of last Fridays.'>Stats:
+
+$SPX Green 13 of last 15 Fridays. (and one of those red days was barely red).
+
+$SPX Green 14 of last 17 Mondays. (all 3 of those red days were decently …</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011844054729048394' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:01PM EST</td><td>$NVDA</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NVDA big ish day today.
+
+A close above $190 would be constructive.'>$NVDA big ish day today.
+
+A close above $190 would be constructive.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011846323256115656' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 12:13PM EST</td><td>$WTS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$WTS I left this one off the watchlist this week because of low ADR.  Blue skies '>$WTS I left this one off the watchlist this week because of low ADR.  Blue skies </td><td><a href='https://twitter.com/1ChartMaster/status/2011849357356658935' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:17PM EST</td><td>$VIX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$VIX Red 10 of last 13 Fridays.*'>$VIX Red 10 of last 13 Fridays.*</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011850233622511736' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:38PM EST</td><td>$NBIS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NBIS Pass $108-$109 and we off to the races…'>$NBIS Pass $108-$109 and we off to the races…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011855438023631055' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 12:44PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' Keep a close eye on Dark Pool levels intraday on $SPY, with $695.21 remaining the key level to watch.'> Keep a close eye on Dark Pool levels intraday on $SPY, with $695.21 remaining the key level to watch.</td><td><a href='https://twitter.com/QuantData/status/2011856957494194468' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 12:48PM EST</td><td>$WDC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$WDC They love to ride the 8 week to new highs.'>$WDC They love to ride the 8 week to new highs.</td><td><a href='https://twitter.com/1ChartMaster/status/2011858078673633394' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 12:51PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' IV Rank on $SPY drops back below 10%, now sitting at 6.35%.'> IV Rank on $SPY drops back below 10%, now sitting at 6.35%.</td><td><a href='https://twitter.com/QuantData/status/2011858750672351675' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:53PM EST</td><td>$EOSE</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$EOSE $18.23 highs today.
+
+Whoa.'>$EOSE $18.23 highs today.
+
+Whoa.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011859356950938021' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 12:57PM EST</td><td>$GME</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$GME still?! Lol'>$GME still?! Lol</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011860365374865516' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 01:03PM EST</td><td>$AMD</td><td><span class='badge buy'>BUY</span></td><td class='clip' title=' Check this out.
+
+$AMD holds the most unusually traded options intraday as price rallies over $13 or 6% on the session.
+
+Over $20M+ in single leg calls have been bought on $AMD today alone.
+
+Follow the options flow. Follow the data.'> Check this out.
+
+$AMD holds the most unusually traded options intraday as price rallies over $13 or 6% on the session.
+
+Over $20M+ in single leg calls have bee…</td><td><a href='https://twitter.com/QuantData/status/2011861768079884468' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 01:05PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is using the $694.06 Dark Pool level as support so far.'> $SPY is using the $694.06 Dark Pool level as support so far.</td><td><a href='https://twitter.com/QuantData/status/2011862315935912293' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 01:10PM EST</td><td>$SNDK</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' This aged well.
+
+$SNDK is now $20+ above the $400 level after we called it out last Friday for traders to watch.
+
+Last Friday, we flagged the $400 strike on $SNDK as having significant positive GEX and DEX for the 1/16 expiry. Price hit $400, cleared it, and kept running.'> This aged well.
+
+$SNDK is now $20+ above the $400 level after we called it out last Friday for traders to watch.
+
+Last Friday, we flagged the $400 strike on $S…</td><td><a href='https://twitter.com/QuantData/status/2011863686927798340' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 01:29PM EST</td><td>$META</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$META making me look bad lately.
+
+Cmon bounce it here Zuck.'>$META making me look bad lately.
+
+Cmon bounce it here Zuck.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011868382354977134' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/15 01:37PM EST</td><td>$NBIS,$SNDK,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX still consolidating near the highs, super tight range today. We can see a gap up towards 7000 overnight
+
+$NBIS over yesterday's high, holding above 107 now, we can test 110 by tomorrow
+
+$SNDK holding just under 420 now, almost ready for a big pop either tomorrow or next week'>$SPX still consolidating near the highs, super tight range today. We can see a gap up towards 7000 overnight
+
+$NBIS over yesterday's high, holding above 107 now…</td><td><a href='https://twitter.com/optionshoof/status/2011870332806681044' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 01:41PM EST</td><td>$JD,$PYPL</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='There are some legitimate company's stocks that are sooooo damn frustrating that I have just given up. And this is not even a bottom signal anymore cause that excuse has been used up!
+
+$JD $PYPL
+
+Do you have any names on your watchlist or in your port that you have "given up" on?'>There are some legitimate company's stocks that are sooooo damn frustrating that I have just given up. And this is not even a bottom signal anymore cause that e…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011871487670858176' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 01:54PM EST</td><td>$MSFT</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$MSFT Nearing a bear market if just strictly using the definition of a -20% drawdown from ATH peak to current trough.'>$MSFT Nearing a bear market if just strictly using the definition of a -20% drawdown from ATH peak to current trough.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011874586019942705' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 01:57PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is still respecting the $695.21 Dark Pool level as resistance.'> $SPY is still respecting the $695.21 Dark Pool level as resistance.</td><td><a href='https://twitter.com/QuantData/status/2011875332543168894' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 01:57PM EST</td><td>$ASTS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ASTS going absolutely apeshit now.
+
+Fresh All Time Highs.
+
+$110 on deck.'>$ASTS going absolutely apeshit now.
+
+Fresh All Time Highs.
+
+$110 on deck.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011875493608620306' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 02:08PM EST</td><td>$FLS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$FLS sideways into the 8 week before breaking out to new highs. '>$FLS sideways into the 8 week before breaking out to new highs. </td><td><a href='https://twitter.com/1ChartMaster/status/2011878276650975617' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 02:12PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY trapped in a tight $1 range, bouncing between the $695.21 &amp; $694.06 Dark Pool levels. Keep an eye on these zones for potential breakouts!'> $SPY trapped in a tight $1 range, bouncing between the $695.21 &amp; $694.06 Dark Pool levels. Keep an eye on these zones for potential breakouts!</td><td><a href='https://twitter.com/QuantData/status/2011879248739660251' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 02:19PM EST</td><td>$TSM</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' This is insane!
+
+Over $116M+ in single-leg calls have been bought today on $TSM compared to just $384K in puts. Price has pulled back slightly, but the buying frenzy is still going strong.'> This is insane!
+
+Over $116M+ in single-leg calls have been bought today on $TSM compared to just $384K in puts. Price has pulled back slightly, but the buying …</td><td><a href='https://twitter.com/QuantData/status/2011880944182116435' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 02:22PM EST</td><td>$HOOD,$IBKR,$SCHW</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SCHW $183B market cap
+
+$IBKR $127B market cap
+
+$HOOD $103B market cap
+
+Last October at the ATH peak, Robinhood came pretty close to surpassing Schwab.
+
+But now seems a bit far away…'>$SCHW $183B market cap
+
+$IBKR $127B market cap
+
+$HOOD $103B market cap
+
+Last October at the ATH peak, Robinhood came pretty close to surpassing Schwab.
+
+But now…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011881673349358067' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 02:31PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is dumping, breaking down through the $694.06 Dark Pool level. Keep an eye on potential follow-through or a bounce off lower zones.'> $SPY is dumping, breaking down through the $694.06 Dark Pool level. Keep an eye on potential follow-through or a bounce off lower zones.</td><td><a href='https://twitter.com/QuantData/status/2011883958188065138' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 02:33PM EST</td><td>$SPY</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$5M Put Spike on $SPY '>$5M Put Spike on $SPY </td><td><a href='https://twitter.com/AndrewHiesinger/status/2011884426494689678' target='_blank'>Open</a></td></tr>
+<tr><td>1ChartMaster</td><td>01/15 02:37PM EST</td><td>$FIX</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='$FIX  I do the work so you don't have to. I put the setups right in your face.   Join the team if you’re struggling. Let us help get you on track. 
+Blue skies'>$FIX  I do the work so you don't have to. I put the setups right in your face.   Join the team if you’re struggling. Let us help get you on track. 
+Blue skies</td><td><a href='https://twitter.com/1ChartMaster/status/2011885358431211520' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 02:40PM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' $SPY Options Update
+
+OTM call volume is surging, nearly matching put activity as buyers step in on the dip. Puts still lead slightly by ~150k contracts.'> $SPY Options Update
+
+OTM call volume is surging, nearly matching put activity as buyers step in on the dip. Puts still lead slightly by ~150k contracts.</td><td><a href='https://twitter.com/QuantData/status/2011886337138499609' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/15 03:04PM EST</td><td>$META,$MSFT,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX selling off a bit here, rejected 6970 and down 20 pts and counting
+
+$MSFT right at 456 and trying to hold, if the market shows weakness tomorrow this might lead the drop
+
+$META held 614 and tested 623, selling off now and back towards 619. Hard trade if you're not buying'>$SPX selling off a bit here, rejected 6970 and down 20 pts and counting
+
+$MSFT right at 456 and trying to hold, if the market shows weakness tomorrow this might…</td><td><a href='https://twitter.com/optionshoof/status/2011892298376749094' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 03:17PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Next level for me on $SPY is $690. We just got that failure through $693...'>Next level for me on $SPY is $690. We just got that failure through $693...</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011895549965058085' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 03:21PM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title='Puts just crossed Calls on $SPY '>Puts just crossed Calls on $SPY </td><td><a href='https://twitter.com/AndrewHiesinger/status/2011896495264710689' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 03:26PM EST</td><td>$HOOD</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$HOOD Almost -30% from ATH’s…
+
+Buying opportunity or wait for sub $100’s?'>$HOOD Almost -30% from ATH’s…
+
+Buying opportunity or wait for sub $100’s?</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011897705380135227' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 03:27PM EST</td><td>$SPY</td><td><span class='badge mixed'>MIXED</span></td><td class='clip' title=' $SPY Options Flow Update
+
+OTM put volume now leads calls by 300k+ contracts intraday as price continues to sell off.'> $SPY Options Flow Update
+
+OTM put volume now leads calls by 300k+ contracts intraday as price continues to sell off.</td><td><a href='https://twitter.com/QuantData/status/2011897977070371185' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 03:36PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' $SPY is now testing the $691.90 Dark Pool level.'> $SPY is now testing the $691.90 Dark Pool level.</td><td><a href='https://twitter.com/QuantData/status/2011900268104073517' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 03:54PM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title=' At 2pm, the $7,000 strike on $SPX held ~67B+ in negative Delta. Just 10 minutes later, it surged to 211B+ as price began to crumble. Tracking these intraday shifts is crucial!'> At 2pm, the $7,000 strike on $SPX held ~67B+ in negative Delta. Just 10 minutes later, it surged to 211B+ as price began to crumble. Tracking these intraday sh…</td><td><a href='https://twitter.com/QuantData/status/2011904728083423429' target='_blank'>Open</a></td></tr>
+<tr><td>QuantData</td><td>01/15 04:03PM EST</td><td>$SPY</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='This chart may look messy, but it’s packed with info. Each line represents a Dark Pool level from Quant Data.
+
+$SPY continues to respect the $695.21 Dark Pool level, failing to break and hold above it so far. Watch these zones closely!'>This chart may look messy, but it’s packed with info. Each line represents a Dark Pool level from Quant Data.
+
+$SPY continues to respect the $695.21 Dark Pool l…</td><td><a href='https://twitter.com/QuantData/status/2011907209278509064' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 05:22PM EST</td><td>$QQQ</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$QQQ Resolution needed and soon between the green lid and the orange trendline.
+
+Something has to give here. Could be as soon as tomorrow, and if not, definitely early next week.'>$QQQ Resolution needed and soon between the green lid and the orange trendline.
+
+Something has to give here. Could be as soon as tomorrow, and if not, definitel…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011927030066266452' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 05:29PM EST</td><td>$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$SPX Love this chart. Great work Peter!'>$SPX Love this chart. Great work Peter!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011928830639067137' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 05:38PM EST</td><td>$AMAT,$ASML,$ASTS,$CAT,$GS,$HLT,$IBKR,$JBL,$JNJ,$LRCX,$MNST,$MS,$NOC,$RKLB,$ROSS,$RTX,$SNDK,$TSM,$WDC</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Notable names that hit fresh ATH's today:
+
+$TSM
+$JNJ
+$ASML
+$MS
+$CAT
+$GS
+$LRCX
+$RTX
+$AMAT
+$NOC
+$MNST
+$WDC
+$HLT
+$ROSS
+$SNDK
+$RKLB
+$ASTS
+$IBKR
+$JBL
+
+Plus so many more. But these are the notables.'>Notable names that hit fresh ATH's today:
+
+$TSM
+$JNJ
+$ASML
+$MS
+$CAT
+$GS
+$LRCX
+$RTX
+$AMAT
+$NOC
+$MNST
+$WDC
+$HLT
+$ROSS
+$SNDK
+$RKLB
+$ASTS
+$IBKR
+$JBL
+
+Plus so many m…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011930938360598772' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 07:42PM EST</td><td>$CRWV</td><td><span class='badge buy'>BUY</span></td><td class='clip' title='$CRWV last few days breakout. Wow.
+
+$80 to $100. Check pinned post.
+
+Can’t get more textbook than that!'>$CRWV last few days breakout. Wow.
+
+$80 to $100. Check pinned post.
+
+Can’t get more textbook than that!</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011962236923961721' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 07:49PM EST</td><td>$ASTS</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$ASTS $110 after hrs.'>$ASTS $110 after hrs.</td><td><a href='https://twitter.com/Mr_Derivatives/status/2011964021940076834' target='_blank'>Open</a></td></tr>
+<tr><td>EliteOptions2</td><td>01/15 08:00PM EST</td><td>$META,$SPX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='TRADE PLAN for LOTTO Friday 
+
+$SPX 35 pt reversal into the close today IF SPX can hold near 6945 tomorrow we should see an attempt at 7000 in the next few days. The market is still waiting on Supreme Court Tariff news as well. 
+
+$META after a 60 pt dip the past 2 weeks, META is'>TRADE PLAN for LOTTO Friday 
+
+$SPX 35 pt reversal into the close today IF SPX can hold near 6945 tomorrow we should see an attempt at 7000 in the next few days.…</td><td><a href='https://twitter.com/EliteOptions2/status/2011966654373040388' target='_blank'>Open</a></td></tr>
+<tr><td>optionshoof</td><td>01/15 08:00PM EST</td><td>$AMD,$AVGO,$BA,$LRCX,$NBIS,$PLTR,$SNDK</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='Trade Ideas for Friday January 16th
+
+$AMD 1/23 235C over 228
+$AVGO 1/23 360C over 353
+$BA 2/20 280C over 251
+$LRCX 1/30 230C at the 210 backtest
+$NBIS 1/23 110C over 104
+$PLTR 1/23 185C over 180
+$SNDK 1/16 430 over 424
+
+Like if these are helpful! '>Trade Ideas for Friday January 16th
+
+$AMD 1/23 235C over 228
+$AVGO 1/23 360C over 353
+$BA 2/20 280C over 251
+$LRCX 1/30 230C at the 210 backtest
+$NBIS 1/23 110C…</td><td><a href='https://twitter.com/optionshoof/status/2011966652389142630' target='_blank'>Open</a></td></tr>
+<tr><td>AndrewHiesinger</td><td>01/15 09:38PM EST</td><td>$SPY</td><td><span class='badge sell'>SELL</span></td><td class='clip' title='+225% on $SPY Puts today. Here's what I saw: 
+
+I posted this morning that I was expecting chop/rejection near $695, and that’s exactly how it played out.
+
+$695 was the MVC (max gamma strike) with large positive gamma overhead. In this setup, dealer hedging tends to absorb upside,'>+225% on $SPY Puts today. Here's what I saw: 
+
+I posted this morning that I was expecting chop/rejection near $695, and that’s exactly how it played out.
+
+$695 …</td><td><a href='https://twitter.com/AndrewHiesinger/status/2011991339953426629' target='_blank'>Open</a></td></tr>
+<tr><td>Mr_Derivatives</td><td>01/15 10:49PM EST</td><td>$NFLX</td><td><span class='badge neutral'>NEUTRAL</span></td><td class='clip' title='$NFLX $82.50 is my absolute major support level the name has got to hold. It's getting closer.
+
+I mean I would prefer it just starting popping now as it is completely oversold near term.'>$NFLX $82.50 is my absolute major support level the name has got to hold. It's getting closer.
+
+I mean I would prefer it just starting popping now as it is comp…</td><td><a href='https://twitter.com/Mr_Derivatives/status/2012009408067485766' target='_blank'>Open</a></td></tr>
+</table></div>
+<script>
+
+function mapSym(t){
+  t=(t||"").replace("$","").toUpperCase();
+  const idx={SPX:"^spx",SP500:"^spx",NDX:"^ndx",NDK:"^ndx",DJI:"^dji",RUT:"^rut"};
+  if(idx[t]) return idx[t];
+  const crypto={BTC:"btcusd",ETH:"ethusd",SOL:"solusd"};
+  if(crypto[t]) return crypto[t];
+  return t.replace(".","-").toLowerCase()+".us";
+}
+
+function parseCsv(csv){
+  const lines=csv.trim().split(/\r?\n/);
+  const out=[];
+  for(let i=1;i<lines.length;i++){
+    const p=lines[i].split(",");
+    const c=parseFloat(p[4]);
+    if(!isNaN(c)) out.push(c);
+  }
+  return out;
+}
+
+function cls(v){
+  if(v>0.0001) return "pos";
+  if(v<-0.0001) return "neg";
+  return "flat";
+}
+
+async function loadPrices(){
+  const els=[...document.querySelectorAll("[data-t]")];
+  const uniq=[...new Set(els.map(e=>e.dataset.t))];
+
+  for(const t of uniq){
+    try{
+      const sym=mapSym(t);
+      const raw=`https://stooq.com/q/d/l/?s=${encodeURIComponent(sym)}&i=d`;
+      const url=`https://r.jina.ai/http://`+raw.replace(/^https?:\/\//,"");
+      const res=await fetch(url,{cache:"no-store"});
+      if(!res.ok) throw new Error("fetch fail");
+      const txt=await res.text();
+      const hdr="Date,Open,High,Low,Close,Volume";
+      const i=txt.indexOf(hdr);
+      const csv=(i>=0)?txt.slice(i):txt;
+      const closes=parseCsv(csv);
+      if(closes.length<6) continue;
+
+      const d1=(closes[closes.length-1]/closes[closes.length-2]-1)*100;
+      const w1=(closes[closes.length-1]/closes[closes.length-6]-1)*100;
+
+      document.querySelectorAll(`.chg1d[data-t="${CSS.escape(t)}"]`).forEach(el=>{
+        el.textContent=d1.toFixed(2)+"%";
+        el.className="chg1d "+cls(d1);
+      });
+      document.querySelectorAll(`.chg1w[data-t="${CSS.escape(t)}"]`).forEach(el=>{
+        el.textContent=w1.toFixed(2)+"%";
+        el.className="chg1w "+cls(w1);
+      });
+    }catch(e){
+      // leave as …
+      document.querySelectorAll(`.chg1d[data-t="${CSS.escape(t)}"]`).forEach(el=>{el.textContent="—";});
+      document.querySelectorAll(`.chg1w[data-t="${CSS.escape(t)}"]`).forEach(el=>{el.textContent="—";});
+    }
+  }
+}
+
+window.addEventListener("load", loadPrices);
+
+</script>
+</body></html>
