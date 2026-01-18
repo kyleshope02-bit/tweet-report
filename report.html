@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twitter Stock Feed</title>
+
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:12px;font-size:12px}
+h2{margin:0 0 6px 0}
+h3{margin:10px 0 6px 0}
+.muted{color:#666;font-size:11px}
+.card{background:#fff;border-radius:10px;padding:10px;margin-bottom:10px;box-shadow:0 2px 4px rgba(0,0,0,.08)}
+table{width:100%;border-collapse:collapse}
+th{background:#263238;color:#fff;padding:6px;position:sticky;top:0;text-align:center}
+td{padding:5px 6px;border-bottom:1px solid #e0e0e0;vertical-align:top;text-align:center}
+tr:nth-child(even){background:#f1f5f8}
+tr:hover{background:#dde7f2}
+.pos{color:#1b5e20;font-weight:700}
+.neg{color:#b71c1c;font-weight:700}
+.flat{color:#455a64;font-weight:700}
+.badge{padding:2px 6px;border-radius:999px;font-weight:bold;font-size:11px;display:inline-block}
+.buy{background:#c8e6c9;color:#1b5e20}
+.sell{background:#ffcdd2;color:#b71c1c}
+.mixed{background:#fff3cd;color:#856404}
+.neutral{background:#eceff1;color:#263238}
+td.textcell{text-align:left}
+td.namecell{text-align:left;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+td.sectorcell{text-align:left;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:8px;margin:10px 0}
+.tabbtn{border:0;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:700}
+.tabbtn.on{background:#263238;color:#fff}
+.tabbtn.off{background:#eceff1;color:#263238}
+.hidden{display:none}
+</style>
+
+</head>
+<body>
+<h2>Twitter Stock Feed</h2>
+<div class="muted">Updated 2026-01-18 06:21 PM • Tabs: Top 20 vs Bottom 20 SCTR • Counts in grid = last 1 day</div>
+
+<div class="tabs">
+  <button id="btn-buys" class="tabbtn on" onclick="showTab('buys')">Buys (Top 20 SCTR)</button>
+  <button id="btn-sells" class="tabbtn off" onclick="showTab('sells')">Sells (Bottom 20 SCTR)</button>
+</div>
+
+<div id="tab-buys">
+
+<div class="card">
+  <h3>Buys • Top 20 SCTR</h3>
+  <div class="muted">Grid counts = last 1 day • Tweets shown = most recent 300 (filtered to this tab’s tickers)</div>
+</div>
+
+<div class="card">
+  <h3>SCTR Grid</h3>
+  <table>
+    <tr>
+      <th>Ticker</th><th>Name</th><th>Sector</th><th>SCTR</th>
+      <th>Tot</th><th>B</th><th>N</th><th>S</th>
+      <th>1D</th><th>5D</th><th>10D</th>
+      <th>Vol</th><th>Vol 1D</th><th>Vol 5D</th><th>Vol 10D</th>
+    </tr>
+<tr><td>$SNDK</td><td class='namecell'>Sandisk Corp.</td><td class='sectorcell'>Semiconductors</td><td>99.90</td><td>1</td><td>0</td><td>1</td><td>0</td><td class='pos'>1.07%</td><td class='pos'>9.59%</td><td class='pos'>50.28%</td><td>15.70M</td><td class='pos'>11.00%</td><td class='neg'>-18.86%</td><td class='pos'>41.41%</td></tr>
+<tr><td>$BE</td><td class='namecell'>Bloom Energy Corp.</td><td class='sectorcell'>Industrial Suppliers</td><td>99.70</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>7.42%</td><td class='pos'>11.51%</td><td class='pos'>51.48%</td><td>15.93M</td><td class='pos'>56.70%</td><td class='pos'>2.29%</td><td class='pos'>37.64%</td></tr>
+<tr><td>$GL</td><td class='namecell'>Hecla Mining Co.</td><td class='sectorcell'>Gold Mining</td><td>99.60</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.61%</td><td class='neg'>-2.10%</td><td class='pos'>0.40%</td><td>410.39K</td><td class='neg'>-18.34%</td><td class='pos'>22.83%</td><td class='neg'>-27.02%</td></tr>
+<tr><td>$SATS</td><td class='namecell'>EchoStar Holding Corp.</td><td class='sectorcell'>Telecom Equipment</td><td>99.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.23%</td><td class='pos'>2.72%</td><td class='pos'>9.89%</td><td>4.77M</td><td class='neg'>-41.67%</td><td class='neg'>-33.34%</td><td class='pos'>23.81%</td></tr>
+<tr><td>$RVMD</td><td class='namecell'>Revolution Medicines Inc</td><td class='sectorcell'>Biotechnology</td><td>99.40</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-2.43%</td><td class='pos'>1.38%</td><td class='pos'>52.21%</td><td>4.80M</td><td class='pos'>61.63%</td><td class='neg'>-76.92%</td><td class='pos'>247.32%</td></tr>
+<tr><td>$MU</td><td class='namecell'>Micron Technology, Inc.</td><td class='sectorcell'>Semiconductors</td><td>99.30</td><td>2</td><td>0</td><td>1</td><td>1</td><td class='pos'>7.76%</td><td class='pos'>5.12%</td><td class='pos'>15.01%</td><td>47.90M</td><td class='pos'>88.81%</td><td class='pos'>43.47%</td><td class='pos'>12.43%</td></tr>
+<tr><td>$EDC</td><td class='namecell'>Western Digital Corp.</td><td class='sectorcell'>Computer Hardware</td><td>99.20</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-1.36%</td><td class='pos'>3.60%</td><td class='pos'>8.43%</td><td>88.60K</td><td class='neg'>-18.02%</td><td class='pos'>9.36%</td><td class='neg'>-17.61%</td></tr>
+<tr><td>$IREN</td><td class='namecell'>IREN Ltd.</td><td class='sectorcell'>Computer Services</td><td>99.10</td><td>3</td><td>2</td><td>1</td><td>0</td><td class='pos'>11.43%</td><td class='pos'>25.61%</td><td class='pos'>35.41%</td><td>53.97M</td><td class='pos'>41.14%</td><td class='pos'>30.67%</td><td class='pos'>76.74%</td></tr>
+<tr><td>$KTOS</td><td class='namecell'>Kratos Defense &amp; Security Solutions, Inc.</td><td class='sectorcell'>Defense</td><td>99.00</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>4.95%</td><td class='pos'>14.97%</td><td class='pos'>64.86%</td><td>4.89M</td><td class='pos'>35.53%</td><td class='neg'>-19.47%</td><td class='pos'>125.58%</td></tr>
+<tr><td>$ASTS</td><td class='namecell'>AST SpaceMobile, Inc.</td><td class='sectorcell'>Mobile Telecommunications</td><td>98.80</td><td>4</td><td>0</td><td>3</td><td>1</td><td class='pos'>14.34%</td><td class='pos'>18.53%</td><td class='pos'>38.70%</td><td>33.68M</td><td class='pos'>91.32%</td><td class='pos'>37.86%</td><td class='pos'>76.27%</td></tr>
+<tr><td>$LITE</td><td class='namecell'>Lumentum Holdings Inc.</td><td class='sectorcell'>Telecom Equipment</td><td>98.70</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-5.54%</td><td class='neg'>-7.73%</td><td class='neg'>-16.02%</td><td>3.78M</td><td class='pos'>3.53%</td><td class='neg'>-36.08%</td><td class='pos'>34.10%</td></tr>
+<tr><td>$FTAI</td><td class='namecell'>FTAI Aviation Ltd.</td><td class='sectorcell'>Transportation Services</td><td>98.60</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>2.57%</td><td class='pos'>11.39%</td><td class='pos'>30.12%</td><td>1.61M</td><td class='neg'>-39.20%</td><td class='neg'>-17.59%</td><td class='neg'>-16.41%</td></tr>
+<tr><td>$AG</td><td class='namecell'>First Majestic Silver Corp.</td><td class='sectorcell'>Gold Mining</td><td>98.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>5.70%</td><td class='pos'>13.70%</td><td class='pos'>33.87%</td><td>33.07M</td><td class='pos'>34.62%</td><td class='pos'>50.75%</td><td class='pos'>30.24%</td></tr>
+<tr><td>$RKLB</td><td class='namecell'>Rocket Lab USA, Inc.</td><td class='sectorcell'>Aerospace</td><td>98.40</td><td>3</td><td>1</td><td>2</td><td>0</td><td class='pos'>6.10%</td><td class='pos'>13.49%</td><td class='pos'>26.73%</td><td>36.11M</td><td class='pos'>45.53%</td><td class='pos'>51.83%</td><td class='pos'>14.56%</td></tr>
+<tr><td>$CIEN</td><td class='namecell'>CIENA Corp.</td><td class='sectorcell'>Telecom Equipment</td><td>98.30</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.15%</td><td class='pos'>5.58%</td><td class='neg'>-1.07%</td><td>2.06M</td><td class='pos'>17.65%</td><td class='neg'>-25.83%</td><td class='pos'>3.59%</td></tr>
+<tr><td>$TSEM</td><td class='namecell'>Tower Semiconductor Ltd.</td><td class='sectorcell'>Semiconductors</td><td>98.20</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>4.70%</td><td class='pos'>8.16%</td><td class='pos'>6.65%</td><td>1.20M</td><td class='neg'>-36.26%</td><td class='neg'>-20.77%</td><td class='neg'>-17.22%</td></tr>
+<tr><td>$CDE</td><td class='namecell'>Coeur Mining Inc</td><td class='sectorcell'>Gold Mining</td><td>98.10</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>6.41%</td><td class='pos'>10.69%</td><td class='pos'>28.66%</td><td>29.39M</td><td class='pos'>57.79%</td><td class='pos'>14.27%</td><td class='pos'>41.34%</td></tr>
+<tr><td>$KRMN</td><td class='namecell'>Karman Holdings Inc.</td><td class='sectorcell'>Aerospace</td><td>97.90</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.90%</td><td class='pos'>2.15%</td><td class='pos'>41.18%</td><td>2.45M</td><td class='pos'>57.80%</td><td class='neg'>-1.85%</td><td class='pos'>77.18%</td></tr>
+<tr><td>$LRCX</td><td class='namecell'>Lam Research Corp.</td><td class='sectorcell'>Semiconductors</td><td>97.80</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>2.52%</td><td class='pos'>2.11%</td><td class='pos'>20.48%</td><td>14.39M</td><td class='neg'>-5.62%</td><td class='neg'>-14.12%</td><td class='pos'>20.37%</td></tr>
+<tr><td>$TER</td><td class='namecell'>Teradyne, Inc.</td><td class='sectorcell'>Semiconductors</td><td>97.70</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>0.20%</td><td class='pos'>5.01%</td><td class='pos'>9.92%</td><td>2.30M</td><td class='neg'>-33.57%</td><td class='neg'>-10.57%</td><td class='neg'>-28.72%</td></tr>
+
+  </table>
+</div>
+
+<div class="card">
+  <h3>Tweets</h3>
+  <table>
+    <tr>
+      <th>Author</th><th>Signal</th><th>Time</th><th>Ticker</th><th>Text</th><th>Link</th>
+    </tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$ASTS</td><td class='textcell'>$ASTS alerted the team yesterday as it approached resistance. Big move today</td><td><a href='https://x.com/1ChartMaster/status/2012197498505265155' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$IREN</td><td class='textcell'>$IREN weekly candle shaping up after breaking out of the rounding base.</td><td><a href='https://x.com/1ChartMaster/status/2012200474384925135' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$SNDK</td><td class='textcell'>$SNDK Now 75% higher from this post  
+A couple of solid trades can make your year stay focused.</td><td><a href='https://x.com/1ChartMaster/status/2012854755953938673' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$ASTS, $RKLB</td><td class='textcell'>$ASTS Similar looking chart to $RKLB. 
+
+Still some wiggle room to wiggle up to $125-$130 to test that upper blue line. Then see what it does there.</td><td><a href='https://x.com/Mr_Derivatives/status/2012732444601147877' target='_blank'>Open</a></td></tr>
+<tr><td>@chung55</td><td><span class='badge buy'>BUY</span></td><td>Jan 18, 2026 11:13 AM</td><td>$IREN</td><td class='textcell'>i&#x27;m long from last week, added more today.
+$IREN weekly candle shaping up after breaking out of the rounding base.</td><td><a href='https://x.com/chung55/status/2012225485720433132' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge sell'>SELL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$MU</td><td class='textcell'>$MU sliding intraday after over $30M+ in single leg puts hit the tape at 9:50am EST. Heavy bearish flow showing up early and price is reacting. Follow the data.</td><td><a href='https://x.com/QuantData/status/2012223760040886719' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$MU</td><td class='textcell'>I’m gonna tell my grandchildren that I didn’t fly to the moon, but I did invest in $MU. Close enough.</td><td><a href='https://x.com/Mr_Derivatives/status/2012252571621077395' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Jan 18, 2026 11:13 AM</td><td>$RKLB</td><td class='textcell'>$RKLB Clean lines here.
+
+Would you buy here though...?</td><td><a href='https://x.com/Mr_Derivatives/status/2012377599071473916' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Jan 18, 2026 11:13 AM</td><td>$ASTS, $RKLB</td><td class='textcell'>$RKLB When I was young and dumb.
+
+Should have just held it!!
+If you love ASTS, you have got to love RKLB here. 
+
+$ASTS went up 20x from it&#x27;s lows.
+
+$RKLB is &quot;only&quot; up 3x from it&#x27;s lows.
+
+I think we see $11-$11.25 near term off potential breakout from this bull flag. Still got a lot of momentum in this name.</td><td><a href='https://x.com/Mr_Derivatives/status/2012519697258831924' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$ASTS</td><td class='textcell'>Would I chase $ASTS right here with fresh money?
+
+Probably not.
+
+This was all you can eat in the $70-$80’s for a couple weeks. Now name touched $120’s. A bit extended.
+
+I wouldn’t short it. I would wait for a pullback to re-enter.
+
+Give me a $100-$105 re-entry price be nice.</td><td><a href='https://x.com/Mr_Derivatives/status/2012221219240571376' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Jan 18, 2026 11:13 AM</td><td>$IREN</td><td class='textcell'>$IREN $58.75 highs today.
+
+Exceeded even my expectations.
+$IREN Is that an IH&amp;S...?!</td><td><a href='https://x.com/Mr_Derivatives/status/2012301302223749357' target='_blank'>Open</a></td></tr>
+
+  </table>
+</div>
+
+</div>
+
+<div id="tab-sells" class="hidden">
+
+<div class="card">
+  <h3>Sells • Bottom 20 SCTR</h3>
+  <div class="muted">Grid counts = last 1 day • Tweets shown = most recent 300 (filtered to this tab’s tickers)</div>
+</div>
+
+<div class="card">
+  <h3>SCTR Grid</h3>
+  <table>
+    <tr>
+      <th>Ticker</th><th>Name</th><th>Sector</th><th>SCTR</th>
+      <th>Tot</th><th>B</th><th>N</th><th>S</th>
+      <th>1D</th><th>5D</th><th>10D</th>
+      <th>Vol</th><th>Vol 1D</th><th>Vol 5D</th><th>Vol 10D</th>
+    </tr>
+<tr><td>$GVH</td><td class='namecell'>Globavend Holdings Ltd.</td><td class='sectorcell'>Delivery Services</td><td>0.00</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>4.03%</td><td class='neg'>-2.64%</td><td class='neg'>-6.52%</td><td>80.69K</td><td class='neg'>-54.59%</td><td class='neg'>-29.53%</td><td class='neg'>-89.36%</td></tr>
+<tr><td>$FISV</td><td class='namecell'>Fiserv, Inc.</td><td class='sectorcell'>Financial Administration</td><td>0.10</td><td>1</td><td>1</td><td>0</td><td>0</td><td class='neg'>-0.73%</td><td class='neg'>-5.10%</td><td class='pos'>1.07%</td><td>8.29M</td><td class='neg'>-22.09%</td><td class='pos'>63.45%</td><td class='pos'>37.24%</td></tr>
+<tr><td>$CRCL</td><td class='namecell'>Circle Internet Group Inc.</td><td class='sectorcell'>Consumer Finance</td><td>0.20</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>2.62%</td><td class='neg'>-5.17%</td><td class='neg'>-5.82%</td><td>9.93M</td><td class='neg'>-41.35%</td><td class='pos'>29.21%</td><td class='pos'>18.48%</td></tr>
+<tr><td>$TTD</td><td class='namecell'>Trade Desk Inc.</td><td class='sectorcell'>Media Agencies</td><td>0.30</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-2.07%</td><td class='neg'>-4.85%</td><td class='neg'>-5.84%</td><td>12.52M</td><td class='pos'>10.47%</td><td class='pos'>22.21%</td><td class='pos'>27.99%</td></tr>
+<tr><td>$TEAM</td><td class='namecell'>Atlassian Corp.</td><td class='sectorcell'>Software</td><td>0.40</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-7.71%</td><td class='neg'>-19.03%</td><td class='neg'>-23.40%</td><td>8.30M</td><td class='pos'>79.20%</td><td class='pos'>123.96%</td><td class='pos'>210.37%</td></tr>
+<tr><td>$HUBS</td><td class='namecell'>HubSpot Inc.</td><td class='sectorcell'>Software</td><td>0.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-5.27%</td><td class='neg'>-16.06%</td><td class='neg'>-18.41%</td><td>1.97M</td><td class='pos'>38.97%</td><td class='pos'>114.00%</td><td class='pos'>183.83%</td></tr>
+<tr><td>$CHTR</td><td class='namecell'>Charter Communications Inc.</td><td class='sectorcell'>Entertainment</td><td>0.60</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-2.49%</td><td class='neg'>-9.89%</td><td class='neg'>-9.33%</td><td>2.29M</td><td class='pos'>8.32%</td><td class='pos'>56.87%</td><td class='pos'>63.66%</td></tr>
+<tr><td>$MSTR</td><td class='namecell'>Strategy Inc</td><td class='sectorcell'>Software</td><td>0.70</td><td>1</td><td>0</td><td>0</td><td>1</td><td class='pos'>1.64%</td><td class='pos'>10.41%</td><td class='pos'>10.53%</td><td>19.46M</td><td class='neg'>-9.42%</td><td class='neg'>-30.40%</td><td class='neg'>-3.58%</td></tr>
+<tr><td>$GDDY</td><td class='namecell'>GoDaddy Inc.</td><td class='sectorcell'>Computer Services</td><td>0.90</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-2.69%</td><td class='neg'>-8.00%</td><td class='neg'>-11.86%</td><td>2.06M</td><td class='pos'>17.23%</td><td class='pos'>100.10%</td><td class='pos'>40.36%</td></tr>
+<tr><td>$NTNX</td><td class='namecell'>Nutanix, Inc.</td><td class='sectorcell'>Software</td><td>1.00</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-6.02%</td><td class='neg'>-14.52%</td><td class='neg'>-9.60%</td><td>6.02M</td><td class='pos'>6.63%</td><td class='pos'>178.14%</td><td class='pos'>48.72%</td></tr>
+<tr><td>$NOW</td><td class='namecell'>ServiceNow, Inc.</td><td class='sectorcell'>Software</td><td>1.10</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-2.94%</td><td class='neg'>-10.22%</td><td class='neg'>-13.66%</td><td>20.05M</td><td class='pos'>37.51%</td><td class='pos'>69.28%</td><td class='pos'>102.62%</td></tr>
+<tr><td>$LITE</td><td class='namecell'>Li Auto Inc.</td><td class='sectorcell'>Automobiles</td><td>1.20</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-5.54%</td><td class='neg'>-7.73%</td><td class='neg'>-16.02%</td><td>3.78M</td><td class='pos'>3.53%</td><td class='neg'>-36.08%</td><td class='pos'>34.10%</td></tr>
+<tr><td>$GWRE</td><td class='namecell'>Guidewire Software, Inc.</td><td class='sectorcell'>Software</td><td>1.30</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-4.27%</td><td class='neg'>-14.15%</td><td class='neg'>-15.26%</td><td>2.50M</td><td class='pos'>20.65%</td><td class='pos'>76.39%</td><td class='pos'>210.38%</td></tr>
+<tr><td>$FLUT</td><td class='namecell'>Flutter Entertainment Plc</td><td class='sectorcell'>Gambling</td><td>1.40</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-6.28%</td><td class='neg'>-12.47%</td><td class='neg'>-13.66%</td><td>3.84M</td><td class='pos'>51.93%</td><td class='pos'>187.92%</td><td class='pos'>57.66%</td></tr>
+<tr><td>$DOCU</td><td class='namecell'>Docusign, Inc.</td><td class='sectorcell'>Software</td><td>1.50</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-4.99%</td><td class='neg'>-17.58%</td><td class='neg'>-12.55%</td><td>5.41M</td><td class='pos'>25.00%</td><td class='pos'>82.41%</td><td class='pos'>75.16%</td></tr>
+<tr><td>$ARM</td><td class='namecell'>Arm Holdings Plc</td><td class='sectorcell'>Semiconductors</td><td>1.60</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>0.64%</td><td class='neg'>-5.38%</td><td class='neg'>-7.80%</td><td>5.29M</td><td class='neg'>-8.39%</td><td class='neg'>-0.03%</td><td class='neg'>-21.17%</td></tr>
+<tr><td>$TRI</td><td class='namecell'>Thomson Reuters Corp.</td><td class='sectorcell'>Publishing</td><td>1.80</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.66%</td><td class='neg'>-4.03%</td><td class='neg'>-1.85%</td><td>2.04M</td><td class='pos'>78.00%</td><td class='pos'>151.23%</td><td class='pos'>56.43%</td></tr>
+<tr><td>$INTU</td><td class='namecell'>Intuit, Inc.</td><td class='sectorcell'>Software</td><td>1.90</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-1.68%</td><td class='neg'>-15.71%</td><td class='neg'>-13.37%</td><td>4.77M</td><td class='pos'>40.18%</td><td class='pos'>265.86%</td><td class='pos'>74.27%</td></tr>
+<tr><td>$CPNG</td><td class='namecell'>Coupang Inc.</td><td class='sectorcell'>Broadline Retailers</td><td>2.00</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='neg'>-0.56%</td><td class='neg'>-7.08%</td><td class='neg'>-9.58%</td><td>21.46M</td><td class='neg'>-42.04%</td><td class='pos'>50.68%</td><td class='pos'>25.21%</td></tr>
+<tr><td>$IT</td><td class='namecell'>Gartner Group, Inc.</td><td class='sectorcell'>Computer Services</td><td>2.10</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>0.13%</td><td class='neg'>-7.00%</td><td class='neg'>-2.68%</td><td>903.51K</td><td class='neg'>-35.70%</td><td class='pos'>48.49%</td><td class='neg'>-0.73%</td></tr>
+
+  </table>
+</div>
+
+<div class="card">
+  <h3>Tweets</h3>
+  <table>
+    <tr>
+      <th>Author</th><th>Signal</th><th>Time</th><th>Ticker</th><th>Text</th><th>Link</th>
+    </tr>
+<tr><td>@VolumeLeaders</td><td><span class='badge buy'>BUY</span></td><td>Jan 18, 2026 11:13 AM</td><td>$FISV</td><td class='textcell'>$FISV - Tons of activity here with price trading at a fraction of last year&#x27;s high.</td><td><a href='https://x.com/VolumeLeaders/status/2012199756278153529' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge sell'>SELL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$MSTR</td><td class='textcell'>$SPX whole lotta nothing, we held the lows and are now just consolidating 
+
+$NBIS broke out over 108 and tested 110 only to fail, fake outs common with this one be patient
+
+$AAPL holding 256 we look better above 261
+
+$MSTR still holding 170 we look better over 180</td><td><a href='https://x.com/optionshoof/status/2012235093197172956' target='_blank'>Open</a></td></tr>
+<tr><td>@saylor</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 13, 2026 02:31 AM</td><td>$MSTR</td><td class='textcell'>Michael Saylor
+@saylor
+·
+13h
+Strategy has acquired 13,627 BTC for ~$1.25 billion at ~$91,519 per bitcoin. As of 1/11/2026, we hodl 687,410 $BTC acquired for ~$51.80 billion at ~$75,353 per bitcoin. $MSTR $STRC
+Strategy Acquires 13,627 BTC and Now Holds 687,410 BTC
+From strategy.com
+1.5K
+2.7K
+16K</td><td><a href='https://x.com/i/web/status/176357452318498278' target='_blank'>Open</a></td></tr>
+
+  </table>
+</div>
+
+</div>
+
+
+<script>
+function showTab(which){
+  const buys = document.getElementById("tab-buys");
+  const sells = document.getElementById("tab-sells");
+  const bbtn = document.getElementById("btn-buys");
+  const sbtn = document.getElementById("btn-sells");
+
+  if(which === "sells"){
+    buys.classList.add("hidden");
+    sells.classList.remove("hidden");
+    bbtn.classList.remove("on"); bbtn.classList.add("off");
+    sbtn.classList.remove("off"); sbtn.classList.add("on");
+  } else {
+    sells.classList.add("hidden");
+    buys.classList.remove("hidden");
+    sbtn.classList.remove("on"); sbtn.classList.add("off");
+    bbtn.classList.remove("off"); bbtn.classList.add("on");
+  }
+}
+</script>
+
+<script>showTab('buys');</script>
+</body>
+</html>
