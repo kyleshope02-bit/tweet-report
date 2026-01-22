@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twitter Stock Dashboard</title>
+
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:12px;font-size:16px}
+h2{margin:0 0 10px 0;font-size:26px}
+h3{margin:10px 0;font-size:18px}
+.muted{color:#666;font-size:12px}
+.card{background:#fff;border-radius:10px;padding:12px;margin-bottom:12px;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+table{width:100%;border-collapse:collapse}
+th{background:#263238;color:#fff;padding:8px;font-size:13px;position:sticky;top:0;cursor:pointer;user-select:none}
+th.sort-asc::after{content:" ▲";font-size:11px}
+th.sort-desc::after{content:" ▼";font-size:11px}
+td{padding:7px;border-bottom:1px solid #ddd;font-size:13px;text-align:center;vertical-align:top}
+tr:nth-child(even){background:#f1f5f8}
+tr:hover{background:#dde7f2}
+.pos{color:#1b5e20;font-weight:700}
+.neg{color:#b71c1c;font-weight:700}
+.badge{padding:3px 8px;border-radius:12px;font-weight:700;font-size:12px;display:inline-block}
+.buy{background:#c8e6c9}
+.sell{background:#ffcdd2}
+.mixed{background:#fff3cd}
+.neutral{background:#eceff1}
+td.textcell{text-align:left}
+td.namecell{text-align:left;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+td.indcell{text-align:left;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+td.seccell{text-align:left;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:8px;margin:10px 0}
+.tabbtn{border:0;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:800}
+.tabbtn.on{background:#263238;color:#fff}
+.tabbtn.off{background:#eceff1;color:#263238}
+.hidden{display:none}
+.smallnote{font-size:12px;color:#666}
+.filterrow th{background:#1f2a30;color:#fff;padding:6px;cursor:default}
+.filter{width:100%;box-sizing:border-box;border:1px solid #cfd8dc;border-radius:6px;padding:6px;font-size:12px}
+select.filter{padding:5px}
+.clearbtn{border:0;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800;background:#eceff1}
+.clearbtn:hover{background:#dde7f2}
+</style>
+
+</head>
+<body>
+<h2>Twitter Stock Dashboard</h2>
+<div class="muted">Updated 2026-01-22 08:36 AM • Cache hits 0, fetched 40 (TTL 24h, cap 60/run)</div>
+<div class="tabs">
+  <button id="btn-buys" class="tabbtn on" onclick="showTab('buys')">Buys (4)</button>
+  <button id="btn-sells" class="tabbtn off" onclick="showTab('sells')">Sells (0)</button>
+</div>
+
+<div id="tab-buys">
+  
+<div class="card">
+  <h3>Buys — ALL Price &amp; Volume Windows Green</h3>
+  <div style="display:flex;gap:8px;align-items:center;margin:6px 0 10px 0;">
+    <button class="clearbtn" onclick="clearFilters('tbl-buys')">Clear filters</button>
+    <span class="smallnote">Click headers to sort. Filters accept &gt;0, &lt;0, &gt;=1.5. Sizes: &gt;1M, &gt;10B.</span>
+  </div>
+
+  <table id="tbl-buys" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="num">SCTR</th>
+        <th data-sort="num">Tot</th>
+        <th data-sort="num">B</th>
+        <th data-sort="num">N</th>
+        <th data-sort="num">S</th>
+
+        <th data-sort="num">1D</th>
+        <th data-sort="num">3D</th>
+        <th data-sort="num">5D</th>
+        <th data-sort="num">10D</th>
+
+        <th data-sort="size">Vol</th>
+        <th data-sort="num">V1D</th>
+        <th data-sort="num">V3D</th>
+        <th data-sort="num">V5D</th>
+        <th data-sort="num">V10D</th>
+
+        <th data-sort="size">Mkt Cap</th>
+        <th data-sort="text">Name</th>
+        <th data-sort="text">Industry</th>
+        <th data-sort="text">Sector</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$BE" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">70" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">=1" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">=0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-buys')"></th>
+
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+
+        <th><input class="filter" placeholder=">1M" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-buys')"></th>
+
+        <th><input class="filter" placeholder=">10B" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder="Bloom" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-buys')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-buys')"></th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>$HL</td><td>99.6</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>2.27%</td><td class='pos'>14.51%</td><td class='pos'>18.80%</td><td class='pos'>29.68%</td><td>37.77M</td><td class='pos'>7.89%</td><td class='pos'>67.49%</td><td class='pos'>66.94%</td><td class='pos'>28.42%</td><td>—</td><td class='namecell'>Hecla Mining Co.</td><td class='indcell'>Materials</td><td class='seccell'>Gold Mining</td></tr>
+<tr><td>$MU</td><td>99.4</td><td>20</td><td>7</td><td>9</td><td>4</td><td class='pos'>6.61%</td><td class='pos'>15.59%</td><td class='pos'>15.08%</td><td class='pos'>13.30%</td><td>56.71M</td><td class='pos'>14.01%</td><td class='pos'>123.54%</td><td class='pos'>137.48%</td><td class='pos'>16.38%</td><td>—</td><td class='namecell'>Micron Technology, Inc.</td><td class='indcell'>Technology</td><td class='seccell'>Semiconductors</td></tr>
+<tr><td>$TSEM</td><td>98.7</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='pos'>3.43%</td><td class='pos'>7.60%</td><td class='pos'>6.92%</td><td class='pos'>9.11%</td><td>2.16M</td><td class='pos'>52.66%</td><td class='pos'>15.20%</td><td class='pos'>73.23%</td><td class='pos'>24.26%</td><td>—</td><td class='namecell'>Tower Semiconductor Ltd.</td><td class='indcell'>Technology</td><td class='seccell'>Semiconductors</td></tr>
+<tr><td>$INTC</td><td>98.5</td><td>2</td><td>0</td><td>2</td><td>0</td><td class='pos'>11.72%</td><td class='pos'>12.27%</td><td class='pos'>14.72%</td><td class='pos'>35.49%</td><td>220.57M</td><td class='pos'>46.89%</td><td class='pos'>66.68%</td><td class='pos'>30.78%</td><td class='pos'>232.20%</td><td>—</td><td class='namecell'>Intel Corp.</td><td class='indcell'>Technology</td><td class='seccell'>Semiconductors</td></tr>
+</tbody></table></div>
+  
+<div class="card">
+  <h3>Tweets (Buy tickers only)</h3>
+  <div style="display:flex;gap:8px;align-items:center;margin:6px 0 10px 0;">
+    <button class="clearbtn" onclick="clearFilters('tbl-buy-tweets')">Clear filters</button>
+    <span class="smallnote">Click headers to sort.</span>
+  </div>
+
+  <table id="tbl-buy-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-buy-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-buy-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-buy-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-buy-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-buy-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-buy-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>@EliteOptions2</td><td><span class='badge sell'>SELL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>TRADE PLAN for Thursday  
+
+$SPX 100 pt reversal from the lows after Trump backs off on Tariff threats with Greenland Deal. SPX if it can get through 6900 we&#x27;ll see a run to 7000+ in the next 2 weeks.
+SPX Jan 23 6930C is best above 6900 tomorrow
+
+$MU setting up for 400 test next</td><td><a href='https://x.com/EliteOptions2/status/2014140984859209870' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU 30 min pivot for the win.  $3 risk $120 reward.</td><td><a href='https://x.com/1ChartMaster/status/2013999711758290946' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$SPX market is ripping after the President said he’s no longer doing retaliatory tariffs against Europe, we just broke 6900. Barring any more shenanigans this should be the last fakeout to the downside
+
+$SNDK is at 500
+
+$MU is at 390 again, we likely test 400 tomorrow 
+
+$AAPL</td><td><a href='https://x.com/optionshoof/status/2014066312163574082' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU if it holds 370 today, it&#x27;ll set up for 400+ by early February. Calls can work near 370
+
+$SPX needs to get back above 6880 and $QQQ above 614 to look more bullish this week. Wait for these levels to line up.</td><td><a href='https://x.com/EliteOptions2/status/2013642514171875478' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>When do ppl start shorting $SNDK $MU?
+
+At $500?
+
+At $600?
+
+At $700?
+
+Honest question.</td><td><a href='https://x.com/Mr_Derivatives/status/2014048233350209990' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>Trade ideas for Thursday January 1/22
+
+$BIDU 1/23 165C over 165
+$MU 1/23 420C over 405
+$SNDK 1/23 550C over 525
+$SPX 1/22 6920C over 6900
+$SPX 1/22 6800P under 6830
+
+Like if this is helpful</td><td><a href='https://x.com/optionshoof/status/2014176846741385371' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$SNDK $STX $WDC $MU All gapping to new highs so far this morning. The strength in memory stocks continues to impress.</td><td><a href='https://x.com/1ChartMaster/status/2014267592114844090' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge sell'>SELL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$SPX if it reclaims 6870 we&#x27;ll see a push back to 6900 again. $QQQ dropped from 630 to 606 since last Thursday, the past 3 times it&#x27;s dropped 20-30 points we&#x27;ve seen bigger bounces
+
+$QQQ now up 8 from premarket lows so far. If it reclaims 614 we can see 618-620
+
+$MU to 400 coming</td><td><a href='https://x.com/EliteOptions2/status/2013995072690520144' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$INTC</td><td class='textcell'>$INTC Almost $56 in overnight.
+
+Why didn’t I go all in with my grandma’s inheritance….
+
+Damn.
+$INTC Interesting Intel Chart for ya!  
+
+History doesn&#x27;t always repeat, but can often rhyme.  
+
+The stock market sometimes are more symmetrical than is given credit for.  
+
+If this &quot;symmetry&quot; in Intel is to be repeated and certainly looks like a possibility and not a make</td><td><a href='https://x.com/Mr_Derivatives/status/2014178933965832489' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU After hrs showing almost $400. My goodness.
+If you apply $SNDK forward p/e to Micron’s, $MU stock should be trading closer to $400!!!</td><td><a href='https://x.com/Mr_Derivatives/status/2014130369180602875' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU &amp; $SNDK incredible strength</td><td><a href='https://x.com/1ChartMaster/status/2013623222781014457' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$INTC</td><td class='textcell'>$AMD and $INTC very green today despite broader markets decently red.</td><td><a href='https://x.com/Mr_Derivatives/status/2013650462520779174' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>TRADE PLAN for Jan 21st
+
+$SPX gapping lower again today, SPX needs back above 6820+ to START to look more bullish this week, IF it doesn&#x27;t come, More downside incoming. Puts can work under 6800, Calls can work above 6820
+
+$MU gapping up 8 pts, MU to 400 inbound once the market is</td><td><a href='https://x.com/EliteOptions2/status/2013974914701697238' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU Hold your winners.  Blue skies</td><td><a href='https://x.com/1ChartMaster/status/2013994452780466215' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU hits new all time highs as aggressive call buying pours in. Over $31M+ in single leg calls bought intraday with price up more than $23 or 6.5%. Strong bullish flow driving momentum higher.</td><td><a href='https://x.com/QuantData/status/2014005553320579216' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU is now up over 36% YTD in 2026 and is on pace for its best January since 2009.
+$MU hits new all time highs as aggressive call buying pours in. Over $31M+ in single leg calls bought intraday with price up more than $23 or 6.5%. Strong bullish flow driving momentum higher.</td><td><a href='https://x.com/QuantData/status/2014006257233940926' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge sell'>SELL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU continues to sell off as single-leg &lt;=90DTE puts now lead calls by $23M+ intraday. Momentum is bearish as Micron prepares to exit the consumer RAM market after 29 years, effective through the end of fiscal Q2 (Feb 2026).
+$MU is pulling back sharply, now down over $16 from the HOD. The Net Drift tool flagged this move perfectly as puts overtook calls, signaling the shift in momentum.</td><td><a href='https://x.com/QuantData/status/2013678201206116854' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge buy'>BUY</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$36M+ in single-leg &lt;=90DTE calls just bought on $MU as a new high of day is hit. Bullish flow remains aggressive.
+$MU hits new all time highs as aggressive call buying pours in. Over $31M+ in single leg calls bought intraday with price up more than $23 or 6.5%. Strong bullish flow driving momentum higher.</td><td><a href='https://x.com/QuantData/status/2014013146894045352' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 22, 2026 08:33 AM</td><td>$MU</td><td class='textcell'>$MU is pulling back sharply, now down over $16 from the HOD. The Net Drift tool flagged this move perfectly as puts overtook calls, signaling the shift in momentum.</td><td><a href='https://x.com/QuantData/status/2013663391139688784' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Jan 19, 2026 03:28 PM</td><td>$MU</td><td class='textcell'>$MU Trade Idea: Jan 23 370C 
+
+Trigger: 361 
+Targets: 370, 380 
+Stop: 350  
+
+MU had another breakout this week through 350. 
+
+MU ran to 365 by Friday. 
+
+If MU can hold above 361 we should see 375, 386 next.</td><td><a href='https://x.com/EliteOptions2/status/2013042485103034653' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge sell'>SELL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$MU</td><td class='textcell'>$MU sliding intraday after over $30M+ in single leg puts hit the tape at 9:50am EST. Heavy bearish flow showing up early and price is reacting. Follow the data.</td><td><a href='https://x.com/QuantData/status/2012223760040886719' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Jan 18, 2026 11:13 AM</td><td>$MU</td><td class='textcell'>I’m gonna tell my grandchildren that I didn’t fly to the moon, but I did invest in $MU. Close enough.</td><td><a href='https://x.com/Mr_Derivatives/status/2012252571621077395' target='_blank'>Open</a></td></tr>
+</tbody></table></div>
+</div>
+
+<div id="tab-sells" class="hidden">
+  
+<div class="card">
+  <h3>Sells — ALL Price &amp; Volume Windows Red</h3>
+  <div style="display:flex;gap:8px;align-items:center;margin:6px 0 10px 0;">
+    <button class="clearbtn" onclick="clearFilters('tbl-sells')">Clear filters</button>
+    <span class="smallnote">Click headers to sort. Filters accept &gt;0, &lt;0, &gt;=1.5. Sizes: &gt;1M, &gt;10B.</span>
+  </div>
+
+  <table id="tbl-sells" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="num">SCTR</th>
+        <th data-sort="num">Tot</th>
+        <th data-sort="num">B</th>
+        <th data-sort="num">N</th>
+        <th data-sort="num">S</th>
+
+        <th data-sort="num">1D</th>
+        <th data-sort="num">3D</th>
+        <th data-sort="num">5D</th>
+        <th data-sort="num">10D</th>
+
+        <th data-sort="size">Vol</th>
+        <th data-sort="num">V1D</th>
+        <th data-sort="num">V3D</th>
+        <th data-sort="num">V5D</th>
+        <th data-sort="num">V10D</th>
+
+        <th data-sort="size">Mkt Cap</th>
+        <th data-sort="text">Name</th>
+        <th data-sort="text">Industry</th>
+        <th data-sort="text">Sector</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$BE" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">70" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">=1" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">=0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sells')"></th>
+
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+
+        <th><input class="filter" placeholder=">1M" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder=">0" oninput="applyFilters('tbl-sells')"></th>
+
+        <th><input class="filter" placeholder=">10B" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder="Bloom" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sells')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sells')"></th>
+      </tr>
+    </thead>
+    <tbody>
+</tbody></table></div>
+  
+<div class="card">
+  <h3>Tweets (Sell tickers only)</h3>
+  <div style="display:flex;gap:8px;align-items:center;margin:6px 0 10px 0;">
+    <button class="clearbtn" onclick="clearFilters('tbl-sell-tweets')">Clear filters</button>
+    <span class="smallnote">Click headers to sort.</span>
+  </div>
+
+  <table id="tbl-sell-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-sell-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-sell-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-sell-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-sell-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-sell-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-sell-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+</tbody></table></div>
+</div>
+
+
+<script>
+function parseNumberLike(s){
+  if(!s) return null;
+  s=(""+s).trim().toUpperCase();
+  if(s==="—") return null;
+  if(s.endsWith("%")) s=s.slice(0,-1);
+  let mult=1;
+  if(s.endsWith("T")){mult=1e12;s=s.slice(0,-1);}
+  else if(s.endsWith("B")){mult=1e9;s=s.slice(0,-1);}
+  else if(s.endsWith("M")){mult=1e6;s=s.slice(0,-1);}
+  else if(s.endsWith("K")){mult=1e3;s=s.slice(0,-1);}
+  s=s.replace(/,/g,"");
+  let v=parseFloat(s);
+  if(isNaN(v)) return null;
+  return v*mult;
+}
+
+function matchComparator(cellText, filterText){
+  let ft=(filterText||"").trim();
+  if(!ft) return true;
+  const m=ft.match(/^(>=|<=|>|<|=)\s*([-\d.,]+%?|[-\d.]+[KMBT]?)$/i);
+  if(!m){
+    return (cellText||"").toLowerCase().includes(ft.toLowerCase());
+  }
+  const op=m[1];
+  const right=parseNumberLike(m[2]);
+  const left=parseNumberLike(cellText);
+  if(left===null||right===null) return false;
+  if(op===">") return left>right;
+  if(op===">=") return left>=right;
+  if(op==="<") return left<right;
+  if(op==="<=") return left<=right;
+  if(op==="=") return left===right;
+  return false;
+}
+
+function applyFilters(tableId){
+  const table=document.getElementById(tableId);
+  if(!table) return;
+  const filters=table.querySelectorAll("thead .filterrow .filter");
+  const rows=table.querySelectorAll("tbody tr");
+  rows.forEach(tr=>{
+    const tds=tr.querySelectorAll("td");
+    let ok=true;
+    for(let i=0;i<filters.length;i++){
+      const f=filters[i];
+      const val=(f.value||"").trim();
+      if(!val) continue;
+      let cellText=(tds[i]?tds[i].textContent:"").trim();
+      if(f.tagName==="SELECT"){
+        if(val && cellText.toUpperCase()!==val.toUpperCase()){ok=false;break;}
+      } else {
+        if(!matchComparator(cellText,val)){ok=false;break;}
+      }
+    }
+    tr.style.display=ok?"":"none";
+  });
+}
+
+function clearFilters(tableId){
+  const table=document.getElementById(tableId);
+  if(!table) return;
+  table.querySelectorAll("thead .filterrow .filter").forEach(el=>{
+    if(el.tagName==="SELECT") el.selectedIndex=0;
+    else el.value="";
+  });
+  applyFilters(tableId);
+}
+
+function showTab(which){
+  const buys=document.getElementById("tab-buys");
+  const sells=document.getElementById("tab-sells");
+  const bbtn=document.getElementById("btn-buys");
+  const sbtn=document.getElementById("btn-sells");
+  if(which==="sells"){
+    buys.classList.add("hidden"); sells.classList.remove("hidden");
+    bbtn.classList.remove("on"); bbtn.classList.add("off");
+    sbtn.classList.remove("off"); sbtn.classList.add("on");
+  } else {
+    sells.classList.add("hidden"); buys.classList.remove("hidden");
+    sbtn.classList.remove("on"); sbtn.classList.add("off");
+    bbtn.classList.remove("off"); bbtn.classList.add("on");
+  }
+}
+
+function clearSortIndicators(table){
+  table.querySelectorAll("th.sort-asc, th.sort-desc").forEach(th=>{
+    th.classList.remove("sort-asc"); th.classList.remove("sort-desc");
+  });
+}
+
+function getCellText(row, idx){
+  const td=row.children[idx];
+  if(!td) return "";
+  return (td.textContent||"").trim();
+}
+
+function sortTable(table, colIdx, type, direction){
+  const tbody=table.tBodies[0];
+  const rows=Array.from(tbody.querySelectorAll("tr"));
+  const dir=(direction==="desc")?-1:1;
+
+  rows.sort((a,b)=>{
+    const av=getCellText(a,colIdx);
+    const bv=getCellText(b,colIdx);
+
+    if(type==="num"||type==="size"){
+      const an=parseNumberLike(av);
+      const bn=parseNumberLike(bv);
+      const a0=(an===null?-Infinity:an);
+      const b0=(bn===null?-Infinity:bn);
+      if(a0<b0) return -1*dir;
+      if(a0>b0) return  1*dir;
+      return 0;
+    }
+    const aL=av.toLowerCase();
+    const bL=bv.toLowerCase();
+    if(aL<bL) return -1*dir;
+    if(aL>bL) return  1*dir;
+    return 0;
+  });
+
+  rows.forEach(r=>tbody.appendChild(r));
+}
+
+function enableSorting(){
+  document.querySelectorAll("table[data-filter-table='1']").forEach(table=>{
+    const thead=table.tHead;
+    if(!thead) return;
+    const headerRow=thead.rows[0];
+    if(!headerRow) return;
+    Array.from(headerRow.cells).forEach((th, idx)=>{
+      const type=th.getAttribute("data-sort")||"text";
+      th.addEventListener("click", ()=>{
+        const current=th.classList.contains("sort-asc")?"asc":
+                      th.classList.contains("sort-desc")?"desc":"";
+        const next=(current==="asc")?"desc":"asc";
+        clearSortIndicators(table);
+        th.classList.add(next==="asc"?"sort-asc":"sort-desc");
+        sortTable(table, idx, type, next);
+      });
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", enableSorting);
+</script>
+
+<script>showTab('buys');</script>
+</body>
+</html>
