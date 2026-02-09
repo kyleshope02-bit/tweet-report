@@ -1,0 +1,3994 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twitter Stock Dashboard</title>
+
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:12px;font-size:16px}
+h2{margin:0 0 10px 0;font-size:26px}
+h3{margin:10px 0;font-size:18px}
+.muted{color:#666;font-size:12px}
+.card{background:#fff;border-radius:10px;padding:12px;margin-bottom:12px;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+table{width:100%;border-collapse:collapse}
+th{background:#263238;color:#fff;padding:8px;font-size:13px;position:sticky;top:0;cursor:pointer;user-select:none}
+th.sort-asc::after{content:" ▲";font-size:11px}
+th.sort-desc::after{content:" ▼";font-size:11px}
+td{padding:7px;border-bottom:1px solid #ddd;font-size:13px;text-align:center;vertical-align:top}
+tr:nth-child(even){background:#f1f5f8}
+tr:hover{background:#dde7f2}
+.pos{color:#1b5e20;font-weight:700}
+.neg{color:#b71c1c;font-weight:700}
+.badge{padding:3px 8px;border-radius:12px;font-weight:700;font-size:12px;display:inline-block}
+.buy{background:#c8e6c9}
+.sell{background:#ffcdd2}
+.mixed{background:#fff3cd}
+.neutral{background:#eceff1}
+td.textcell{text-align:left}
+td.namecell{text-align:left;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+td.indcell{text-align:left;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:8px;margin:10px 0}
+.tabbtn{border:0;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:800}
+.tabbtn.on{background:#263238;color:#fff}
+.tabbtn.off{background:#eceff1;color:#263238}
+.hidden{display:none}
+.filterrow th{background:#1f2a30;color:#fff;padding:6px;cursor:default}
+.filter{width:100%;box-sizing:border-box;border:1px solid #cfd8dc;border-radius:6px;padding:6px;font-size:12px}
+select.filter{padding:5px}
+
+/* PNL scorecard (top-right) */
+.pnlshell{position:fixed;top:14px;right:14px;z-index:9999}
+.pnlbox{
+  background:#0b1f12;
+  border:2px solid #17c964;
+  border-radius:12px;
+  padding:10px 12px;
+  min-width:190px;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+.pnllabel{
+  font-size:12px;
+  color:#b7f7cf;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:4px;
+}
+.pnlvalue{
+  font-family: "Consolas","Courier New",monospace;
+  font-size:28px;
+  font-weight:900;
+  text-align:center;
+  color:#17c964;
+  letter-spacing:1px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="pnlshell">
+  <div class="pnlbox">
+    <div class="pnllabel">2026 PNL</div>
+    <div class="pnlvalue">$9.11K</div>
+  </div>
+</div>
+
+<h2>Twitter Stock Dashboard</h2>
+<div class="muted">Updated 2026-02-09 06:04 PM • SCTR kept 2 tickers (all 1D/3D/5D/10D price+volume &gt;0) • SCTR cache 10, fetched 56 (TTL 24h) • limited 0 • Heisenberg = last 7 days • Heisenberg Stooq cache 6, fetched 58 • limited 0 • Archive: Not found in tweets.db: https://x.com/Mr_Derivatives/status/2020006739442298896?s=20</div>
+
+<div class="tabs">
+  <button id="btn-sctr" class="tabbtn on" data-tabbtn="1" onclick="showTab('sctr')">SCTR (2)</button>
+  <button id="btn-mag7" class="tabbtn off" data-tabbtn="1" onclick="showTab('mag7')">Mag 7</button>
+  <button id="btn-watch" class="tabbtn off" data-tabbtn="1" onclick="showTab('watch')">Watchlist</button>
+  <button id="btn-heis" class="tabbtn off" data-tabbtn="1" onclick="showTab('heis')">Heisenberg (7D)</button>
+  <button id="btn-heisarch" class="tabbtn off" data-tabbtn="1" onclick="showTab('heisarch')">Heisenberg Archive</button>
+</div>
+
+<div id="tab-sctr" data-tab="1">
+  
+<div class="card">
+  <h3>SCTR — Stooq (Only ALL Green on 1D/3D/5D/10D Price + Volume)</h3>
+  
+  <table id="tbl-sctr" data-filter-table="1">
+    <thead>
+      <tr>
+
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Name</th>
+        <th data-sort="text">Industry</th>
+        <th data-sort="size">Market Cap</th>
+        <th data-sort="text">Earnings Date</th>
+        <th data-sort="num">Price</th>
+        <th data-sort="num">1D</th>
+        <th data-sort="num">3D</th>
+        <th data-sort="num">5D</th>
+        <th data-sort="num">10D</th>
+        <th data-sort="size">Volume</th>
+        <th data-sort="num">V1D</th>
+        <th data-sort="num">V3D</th>
+        <th data-sort="num">V5D</th>
+        <th data-sort="num">V10D</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$RKLB" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-sctr')"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td>$GLW</td>
+<td>Corning, Inc.</td>
+<td>Technology</td>
+<td></td>
+<td></td>
+<td>131.39</td>
+<td class='pos'>7.56%</td>
+<td class='pos'>19.78%</td>
+<td class='pos'>19.06%</td>
+<td class='pos'>38.38%</td>
+<td>15.61M</td>
+<td class='pos'>28.44%</td>
+<td class='pos'>25.17%</td>
+<td class='pos'>30.86%</td>
+<td class='pos'>179.39%</td>
+</tr>
+<tr>
+<td>$AMKR</td>
+<td>Amkor Technology, Inc.</td>
+<td>Technology</td>
+<td></td>
+<td></td>
+<td>52.52</td>
+<td class='pos'>6.40%</td>
+<td class='pos'>19.72%</td>
+<td class='pos'>8.96%</td>
+<td class='pos'>4.23%</td>
+<td>8.35M</td>
+<td class='pos'>97.67%</td>
+<td class='pos'>48.04%</td>
+<td class='pos'>195.99%</td>
+<td class='pos'>258.18%</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+  
+<div class="card">
+  <h3>Tweets (SCTR filtered tickers only)</h3>
+  <table id="tbl-sctr-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-sctr-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-sctr-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-sctr-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-sctr-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-sctr-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-sctr-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$GLW</td><td class='textcell'>$GLW blue skies</td><td><a href='https://x.com/1ChartMaster/status/2020874576838676920' target='_blank'>Open</a></td></tr>
+<tr><td>@jfsrev</td><td><span class='badge sell'>SELL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$FORM, $GLW, $LITE, $MTSI</td><td class='textcell'>A simple screen to identify names showing immediate relative strength after the sell-off (link below):
+
+Strongest 1-Mth RS% (Sorted)
+$LITE — Communications &amp; Networking
+$FORM — Semiconductors &amp; Semiconductor Equipment
+$GLW — Electronic Equipment &amp; Parts
+$MTSI — Semiconductors &amp;</td><td><a href='https://x.com/jfsrev/status/2019667147321139622' target='_blank'>Open</a></td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div id="tab-mag7" class="hidden" data-tab="1">
+  
+<div class="card">
+  <h3>Mag 7 — From Excel</h3>
+  <table id="tbl-mag7" data-filter-table="1">
+    <thead>
+      <tr>
+
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Name</th>
+        <th data-sort="text">Industry</th>
+        <th data-sort="size">Market Cap</th>
+        <th data-sort="text">Earnings Date</th>
+        <th data-sort="num">Price</th>
+        <th data-sort="num">Chg 1D %</th>
+        <th data-sort="num">Chg 5D %</th>
+        <th data-sort="num">Chg 20D %</th>
+        <th data-sort="num">Chg 30D %</th>
+        <th data-sort="num">Chg 60D %</th>
+        <th data-sort="size">Volume</th>
+        <th data-sort="num">Vol Chg 1D %</th>
+        <th data-sort="num">Vol Chg 5D %</th>
+        <th data-sort="num">Vol Chg 20D %</th>
+        <th data-sort="num">Vol Chg 30D %</th>
+        <th data-sort="num">Vol Chg 60D %</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$TSM" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;10B" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td>$AAPL</td>
+<td class='namecell'>Apple Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>274.62</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.06%</td>
+<td class='pos'>0.00%</td>
+<td class='pos'>0.03%</td>
+<td>44.53M</td>
+<td class='pos'>0.05%</td>
+<td class='pos'>0.15%</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.07%</td>
+<td class='neg'>-0.01%</td>
+</tr>
+<tr>
+<td>$MSFT</td>
+<td class='namecell'>Microsoft Corp</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>413.72</td>
+<td class='pos'>0.03%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-0.18%</td>
+<td>45.21M</td>
+<td class='pos'>0.24%</td>
+<td class='neg'>-0.31%</td>
+<td class='neg'>-0.18%</td>
+<td class='neg'>-0.22%</td>
+<td class='neg'>-0.44%</td>
+</tr>
+<tr>
+<td>$NVDA</td>
+<td class='namecell'>NVIDIA Corp</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>190.04</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.02%</td>
+<td>195.90M</td>
+<td class='neg'>-0.11%</td>
+<td class='neg'>-0.19%</td>
+<td class='neg'>-0.14%</td>
+<td class='pos'>0.23%</td>
+<td class='neg'>-0.19%</td>
+</tr>
+<tr>
+<td>$AMZN</td>
+<td class='namecell'>Amazon.com Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>208.72</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.14%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-0.10%</td>
+<td class='neg'>-0.10%</td>
+<td>90.93M</td>
+<td class='neg'>-0.42%</td>
+<td class='neg'>-0.30%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.10%</td>
+<td class='neg'>-0.01%</td>
+</tr>
+<tr>
+<td>$GOOGL</td>
+<td class='namecell'>Alphabet Inc Class A</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>324.32</td>
+<td class='pos'>0.00%</td>
+<td class='neg'>-0.06%</td>
+<td class='neg'>-0.02%</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.14%</td>
+<td>39.57M</td>
+<td class='pos'>0.56%</td>
+<td class='neg'>-0.12%</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.13%</td>
+<td class='pos'>0.07%</td>
+</tr>
+<tr>
+<td>$META</td>
+<td class='namecell'>Meta Platforms Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>677.37</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.04%</td>
+<td class='pos'>0.06%</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.13%</td>
+<td>14.80M</td>
+<td class='neg'>-0.06%</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.18%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.35%</td>
+</tr>
+<tr>
+<td>$TSLA</td>
+<td class='namecell'>Tesla Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>417.32</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.09%</td>
+<td class='pos'>0.02%</td>
+<td>54.30M</td>
+<td class='pos'>0.16%</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.15%</td>
+<td class='pos'>0.12%</td>
+<td class='pos'>0.27%</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+  
+<div class="card">
+  <h3>Tweets (Mag7 tickers only)</h3>
+  <table id="tbl-mag7-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-mag7-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-mag7-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-mag7-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-mag7-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-mag7-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-mag7-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$AVGO, $NVDA, $SPX</td><td class='textcell'>$SPX very strong, dips bought up fast here. Through 6962 we can see a run towards 7000
+
+$NVDA also super strong, opened up just above 185 and ran 8 pts without stopping, now holding just above 190
+
+$AVGO another key leader popped over 10 pts at open from 330 to 343, retested 336</td><td><a href='https://x.com/optionshoof/status/2020884659207315536' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$NVDA</td><td class='textcell'>Someone opened a $1.6M Call position on $NVDA, expiring in two days.</td><td><a href='https://x.com/AndrewHiesinger/status/2020881613303820716' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$TSLA</td><td class='textcell'>$TSLA Trade Idea: Feb 13 425C
+
+Trigger: 414 
+Targets: 424, 434 
+Stop: 400 
+
+TSLA dropped to 387 last week but closed at 411.
+
+ If TSLA reclaims 414 it can test 424, 434 next. 
+
+Calls can work above 414.</td><td><a href='https://x.com/EliteOptions2/status/2020653879763853493' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MU, $SPX, $TSLA</td><td class='textcell'>Elite Options TRADE IDEAS for week of February 13th   
+
+$TSLA 2/13 415C |  424, 434 SL 400 
+$MU 2/13 415C |  412, 424 SL 390
+$SPX 2/11 7000C at 6945 |  7000, 7040 SL 6921
+$SPX 2/11 6820P at 6870 |  6824, 6800 SL 6900</td><td><a href='https://x.com/EliteOptions2/status/2020660175091233069' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$QQQ, $SPX, $TSLA</td><td class='textcell'>$TSLA 414 breakout happening..
+TRADE PLAN for Monday  
+
+$SPX lets see if it can move red to green and close above 6945 today. SPX 7000 in play this week as long as 6900 holds.
+
+$TSLA 414 important level to reclaim to set up for a move to 434-440 this month. Calls can work above 414 for this week.
+
+$QQQ all</td><td><a href='https://x.com/EliteOptions2/status/2020891262736576604' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MSFT</td><td class='textcell'>$MSFT very close to a buy entry imho.. $380-$390, good spot for an initial position…
+$MSFT On thin ice here...</td><td><a href='https://x.com/Mr_Derivatives/status/2019845778077020379' target='_blank'>Open</a></td></tr>
+<tr><td>@SpecialSitsNews</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$GOOG, $META, $MSFT, $NVDA</td><td class='textcell'>Will Smith eating spaghetti is the true test of AI $msft $goog $meta $nvda</td><td><a href='https://x.com/SpecialSitsNews/status/2020583709741883666' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$QQQ, $SPX, $TSLA</td><td class='textcell'>TRADE PLAN for Monday  
+
+$SPX lets see if it can move red to green and close above 6945 today. SPX 7000 in play this week as long as 6900 holds.
+
+$TSLA 414 important level to reclaim to set up for a move to 434-440 this month. Calls can work above 414 for this week.
+
+$QQQ all</td><td><a href='https://x.com/EliteOptions2/status/2020860253206688004' target='_blank'>Open</a></td></tr>
+<tr><td>@trade_wid_me</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MSFT</td><td class='textcell'>Have become fan of MOAT lines after reading posts from you know who ( 
+@Mr_Derivatives
+  ) . So here is $MSFT
+
+Time to bounce would be right bow now or else it goes to 200MA at 376 ..</td><td><a href='https://x.com/trade_wid_me/status/2020321968625680786' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$TSLA</td><td class='textcell'>$TSLA Just connecting some dots. Just maybe....</td><td><a href='https://x.com/Mr_Derivatives/status/2020550359857709231' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$AAPL</td><td class='textcell'>$AAPL Amazing 15% bouncer in 11 trading days.
+
+Almost back to ATH’s…
+$AAPL Chart Update!
+
+De ja vu?!
+
+Looks awfully similar. 
+
+If so, bounce needs commence like right now...</td><td><a href='https://x.com/Mr_Derivatives/status/2019934797444120972' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$COIN, $SPX, $TSLA</td><td class='textcell'>$SPX holding 6810 here, tested 6780 earlier this morning. We need to hold today’s lows otherwise we can test 6730, 6700. 
+
+$TSLA held 387 and is back at 400, we need to hold here or we can risk another selloff
+
+$COIN getting absolutely destroyed by this crypto liquidation, down</td><td><a href='https://x.com/optionshoof/status/2019483266714132555' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN $198.
+
+UNBELIEVABLE…
+
+Back to sub $200’s.</td><td><a href='https://x.com/Mr_Derivatives/status/2019517778798211378' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MSFT</td><td class='textcell'>Wow… $MSFT is getting absolutely KILLED
+
+Microsoft is now down over 18.7% YTD, trading at levels not seen since April 2025.
+
+This is officially the WORST start to a year for $MSFT in 26 YEARS. The last time the stock saw a drawdown like this? 2000, when it fell 24% in the</td><td><a href='https://x.com/QuantData/status/2019513499907682354' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$NVDA, $SPX, $TSLA</td><td class='textcell'>$SPX super weak, couldn&#x27;t break through 6930, back down towards 6900 and looking to retest the day&#x27;s lows
+
+$TSLA weak, under 412 we can see 400, we&#x27;re trying to hold there now after dumping 10 pts off of 423
+
+$NVDA super weak, looking to retest the day&#x27;s lows here after the pop</td><td><a href='https://x.com/optionshoof/status/2019076709639672276' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GOOGL, $META, $SPX</td><td class='textcell'>$SPX the past 2 days we saw 50 and 70 pt bounces intraday, and sold off eventually... Let&#x27;s see if the price action changes today, SPX up 45 from the lows so far
+
+$META 680 breakout level for a move to 700+ this month. Calls can work above 680
+
+$GOOGL through 325 can set up for a</td><td><a href='https://x.com/EliteOptions2/status/2019450671838425149' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN, $QQQ, $VIX</td><td class='textcell'>$QQQ needs to recapture $600.
+
+Then $AMZN announces a good report in after hrs.
+
+Then we get a relief rally of 1% or so tomorrow and a $VIX down 10-15% on a VIX Crush Fridays .
+
+Just guessing.</td><td><a href='https://x.com/Mr_Derivatives/status/2019445452270166227' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>The entire stock market needs $AMZN to deliver like they never delivered before.</td><td><a href='https://x.com/Mr_Derivatives/status/2019511234174022032' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$COST, $SPX, $TSLA</td><td class='textcell'>GOOD MORNING FAM 
+$SPX opening near 6850, if we lose yesterday’s lows we can see a melt down to 6770 fast. We need above 6880 to look better
+
+$COST defensive names are holding up, get thru 996 can see a move to 1020 next
+
+$TSLA under 393 can see a move to 380 fast. Needs to</td><td><a href='https://x.com/optionshoof/status/2019409882718392752' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL, $SPX</td><td class='textcell'>There&#x27;s $AAPL at the 277 target.. 280 next
+TRADE PLAN for Feb 4th  
+
+$SPX needs to print a higher low above 6900 to start a move back higher. If SPX gives up 6870 today w can see another dip to 6800 range. Calls can work as long as 6900 holds. Puts can work under 6870
+
+$AAPL gapping higher premarket, this is the best</td><td><a href='https://x.com/EliteOptions2/status/2019060003424936061' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD, $COST, $CRWD, $META, $PLTR, $SPX</td><td class='textcell'>Trade Ideas for Friday 2/6
+
+$AMD 2/6 185P under 190
+$COST 2/6 1000C over 994
+$CRWD 2/6 360P under 370
+$META 2/20 700C over 670 for a quicker trade
+$PLTR 2/6 130P under 130
+$SPX 2/66850C over 6835
+$SPX 2/6 6700P under 6772
+
+Like and RT if this is helpful!</td><td><a href='https://x.com/optionshoof/status/2019589220751274340' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MSFT</td><td class='textcell'>$MSFT double top told the story well before price.</td><td><a href='https://x.com/1ChartMaster/status/2019039839426060662' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL, $SPX</td><td class='textcell'>TRADE PLAN for Feb 4th  
+
+$SPX needs to print a higher low above 6900 to start a move back higher. If SPX gives up 6870 today w can see another dip to 6800 range. Calls can work as long as 6900 holds. Puts can work under 6870
+
+$AAPL gapping higher premarket, this is the best</td><td><a href='https://x.com/EliteOptions2/status/2019048309218840620' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN -3% so far…..</td><td><a href='https://x.com/Mr_Derivatives/status/2019516918823285008' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GEV, $LLY, $SPX, $TSLA</td><td class='textcell'>GOOD MORNING FAM 
+$SPX opening near 6930, if we can hold 6900 today we have a shot at moving back towards 7000 again. Under 6900 and we can start to fade back to 6800
+
+$TSLA under 414 cans see 400 fast 
+
+$GEV get thru 800 can see 833 next. Looks ready to explode 
+
+$LLY above</td><td><a href='https://x.com/optionshoof/status/2019046105321779370' target='_blank'>Open</a></td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div id="tab-watch" class="hidden" data-tab="1">
+  
+<div class="card">
+  <h3>Watchlist — From Excel</h3>
+  <table id="tbl-watch" data-filter-table="1">
+    <thead>
+      <tr>
+
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Name</th>
+        <th data-sort="text">Industry</th>
+        <th data-sort="size">Market Cap</th>
+        <th data-sort="text">Earnings Date</th>
+        <th data-sort="num">Price</th>
+        <th data-sort="num">Chg 1D %</th>
+        <th data-sort="num">Chg 5D %</th>
+        <th data-sort="num">Chg 20D %</th>
+        <th data-sort="num">Chg 30D %</th>
+        <th data-sort="num">Chg 60D %</th>
+        <th data-sort="size">Volume</th>
+        <th data-sort="num">Vol Chg 1D %</th>
+        <th data-sort="num">Vol Chg 5D %</th>
+        <th data-sort="num">Vol Chg 20D %</th>
+        <th data-sort="num">Vol Chg 30D %</th>
+        <th data-sort="num">Vol Chg 60D %</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$TSM" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;10B" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td>$AMD</td>
+<td class='namecell'>Advanced Micro Devices Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>216.00</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.12%</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>0.00%</td>
+<td class='neg'>-0.10%</td>
+<td>38.66M</td>
+<td class='pos'>0.14%</td>
+<td class='neg'>-0.32%</td>
+<td class='neg'>-0.52%</td>
+<td class='pos'>0.24%</td>
+<td class='neg'>-0.17%</td>
+</tr>
+<tr>
+<td>$NFLX</td>
+<td class='namecell'>Netflix Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>81.47</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.09%</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.26%</td>
+<td>42.14M</td>
+<td class='pos'>0.19%</td>
+<td class='neg'>-0.17%</td>
+<td class='neg'>-0.20%</td>
+<td class='pos'>0.05%</td>
+<td class='neg'>-0.40%</td>
+</tr>
+<tr>
+<td>$COIN</td>
+<td class='namecell'>Coinbase Global Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>167.25</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.11%</td>
+<td class='neg'>-0.31%</td>
+<td class='neg'>-0.28%</td>
+<td class='neg'>-0.37%</td>
+<td>10.55M</td>
+<td class='pos'>0.50%</td>
+<td class='neg'>-0.03%</td>
+<td class='neg'>-0.34%</td>
+<td class='pos'>0.13%</td>
+<td class='pos'>0.46%</td>
+</tr>
+<tr>
+<td>$PLTR</td>
+<td class='namecell'>Palantir Technologies Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>142.94</td>
+<td class='pos'>0.05%</td>
+<td class='neg'>-0.03%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.22%</td>
+<td class='neg'>-0.17%</td>
+<td>57.76M</td>
+<td class='pos'>0.50%</td>
+<td class='neg'>-0.36%</td>
+<td class='pos'>0.26%</td>
+<td class='pos'>0.21%</td>
+<td class='neg'>-0.06%</td>
+</tr>
+<tr>
+<td>$SOFI</td>
+<td class='namecell'>SoFi Technologies Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>21.35</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.03%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.21%</td>
+<td>63.79M</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-0.31%</td>
+<td class='pos'>0.08%</td>
+<td class='neg'>-0.08%</td>
+<td class='pos'>0.14%</td>
+</tr>
+<tr>
+<td>$RIVN</td>
+<td class='namecell'>Rivian Automotive Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>14.69</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.23%</td>
+<td class='neg'>-0.29%</td>
+<td class='neg'>-0.01%</td>
+<td>31.81M</td>
+<td class='neg'>-0.06%</td>
+<td class='neg'>-0.25%</td>
+<td class='pos'>0.18%</td>
+<td class='neg'>-0.46%</td>
+<td class='pos'>0.43%</td>
+</tr>
+<tr>
+<td>$LCID</td>
+<td class='namecell'>Lucid Group Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>11.09</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.08%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.00%</td>
+<td class='neg'>-0.14%</td>
+<td>5.28M</td>
+<td class='neg'>-0.18%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.51%</td>
+<td class='neg'>-0.07%</td>
+<td class='pos'>0.58%</td>
+</tr>
+<tr>
+<td>$HOOD</td>
+<td class='namecell'>Robinhood Markets Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>86.56</td>
+<td class='pos'>0.05%</td>
+<td class='neg'>-0.04%</td>
+<td class='neg'>-0.26%</td>
+<td class='neg'>-0.26%</td>
+<td class='neg'>-0.25%</td>
+<td>41.07M</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.63%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-0.07%</td>
+<td class='pos'>0.40%</td>
+</tr>
+<tr>
+<td>$AFRM</td>
+<td class='namecell'>Affirm Holdings Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>57.95</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.24%</td>
+<td class='neg'>-0.23%</td>
+<td class='neg'>-0.15%</td>
+<td>7.83M</td>
+<td class='neg'>-0.32%</td>
+<td class='neg'>-0.34%</td>
+<td class='pos'>0.75%</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>0.16%</td>
+</tr>
+<tr>
+<td>$UPST</td>
+<td class='namecell'>Upstart Holdings Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>38.85</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.14%</td>
+<td class='neg'>-0.17%</td>
+<td class='pos'>0.08%</td>
+<td>3.52M</td>
+<td class='pos'>0.14%</td>
+<td class='neg'>-0.11%</td>
+<td class='pos'>1.02%</td>
+<td class='pos'>0.66%</td>
+<td class='neg'>-0.30%</td>
+</tr>
+<tr>
+<td>$MARA</td>
+<td class='namecell'>MARA Holdings Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>8.06</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.12%</td>
+<td class='neg'>-0.24%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-0.30%</td>
+<td>67.53M</td>
+<td class='neg'>-0.03%</td>
+<td class='neg'>-0.10%</td>
+<td class='neg'>-0.11%</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>0.08%</td>
+</tr>
+<tr>
+<td>$RIOT</td>
+<td class='namecell'>Riot Platforms Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>14.97</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.09%</td>
+<td class='pos'>0.13%</td>
+<td class='pos'>0.08%</td>
+<td>18.15M</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-0.15%</td>
+<td class='pos'>0.06%</td>
+<td class='neg'>-0.38%</td>
+<td class='pos'>0.25%</td>
+</tr>
+<tr>
+<td>$SMCI</td>
+<td class='namecell'>Super Micro Computer Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>33.53</td>
+<td class='neg'>-0.02%</td>
+<td class='pos'>0.13%</td>
+<td class='pos'>0.11%</td>
+<td class='pos'>0.11%</td>
+<td class='neg'>-0.02%</td>
+<td>32.17M</td>
+<td class='pos'>0.22%</td>
+<td class='neg'>-0.37%</td>
+<td class='neg'>-0.53%</td>
+<td class='neg'>-0.09%</td>
+<td class='pos'>0.17%</td>
+</tr>
+<tr>
+<td>$ARM</td>
+<td class='namecell'>Arm Holdings PLC - ADR</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>124.61</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.17%</td>
+<td class='pos'>0.12%</td>
+<td class='pos'>0.13%</td>
+<td class='neg'>-0.11%</td>
+<td>6.79M</td>
+<td class='pos'>0.56%</td>
+<td class='neg'>-0.29%</td>
+<td class='neg'>-0.43%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.25%</td>
+</tr>
+<tr>
+<td>$SNOW</td>
+<td class='namecell'>Snowflake Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>175.95</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.08%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.21%</td>
+<td class='neg'>-0.30%</td>
+<td>8.81M</td>
+<td class='neg'>-0.16%</td>
+<td class='neg'>-0.66%</td>
+<td class='neg'>-0.58%</td>
+<td class='pos'>0.30%</td>
+<td class='pos'>0.19%</td>
+</tr>
+<tr>
+<td>$CRWD</td>
+<td class='namecell'>Crowdstrike Holdings Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>408.04</td>
+<td class='pos'>0.03%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.14%</td>
+<td class='neg'>-0.23%</td>
+<td>2.82M</td>
+<td class='pos'>0.22%</td>
+<td class='neg'>-0.46%</td>
+<td class='neg'>-0.28%</td>
+<td class='pos'>0.13%</td>
+<td class='neg'>-0.46%</td>
+</tr>
+<tr>
+<td>$NET</td>
+<td class='namecell'>Cloudflare Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>173.75</td>
+<td class='pos'>0.00%</td>
+<td class='neg'>-0.05%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.14%</td>
+<td>4.66M</td>
+<td class='pos'>0.10%</td>
+<td class='neg'>-0.43%</td>
+<td class='pos'>0.11%</td>
+<td class='pos'>0.87%</td>
+<td class='neg'>-0.53%</td>
+</tr>
+<tr>
+<td>$DDOG</td>
+<td class='namecell'>Datadog Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>114.01</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.12%</td>
+<td class='neg'>-0.10%</td>
+<td class='neg'>-0.17%</td>
+<td class='neg'>-0.37%</td>
+<td>10.23M</td>
+<td class='neg'>-0.08%</td>
+<td class='neg'>-0.39%</td>
+<td class='pos'>0.30%</td>
+<td class='pos'>0.30%</td>
+<td class='pos'>0.10%</td>
+</tr>
+<tr>
+<td>$TSM</td>
+<td class='namecell'>Taiwan Semicndctr Mnufctrng Co Ltd</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>355.41</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>0.07%</td>
+<td class='pos'>0.18%</td>
+<td class='pos'>0.26%</td>
+<td>14.52M</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.11%</td>
+<td class='pos'>0.00%</td>
+<td class='neg'>-0.14%</td>
+</tr>
+<tr>
+<td>$INTC</td>
+<td class='namecell'>Intel Corp</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>50.24</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.14%</td>
+<td class='pos'>0.37%</td>
+<td class='pos'>0.45%</td>
+<td>94.60M</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.17%</td>
+<td class='neg'>-0.40%</td>
+<td class='neg'>-0.39%</td>
+<td class='pos'>0.18%</td>
+</tr>
+<tr>
+<td>$MU</td>
+<td class='namecell'>Micron Technology Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>383.50</td>
+<td class='neg'>-0.03%</td>
+<td class='neg'>-0.12%</td>
+<td class='pos'>0.11%</td>
+<td class='pos'>0.30%</td>
+<td class='pos'>0.58%</td>
+<td>30.73M</td>
+<td class='pos'>0.05%</td>
+<td class='neg'>-0.12%</td>
+<td class='neg'>-0.03%</td>
+<td class='pos'>0.16%</td>
+<td class='neg'>-0.10%</td>
+</tr>
+<tr>
+<td>$AVGO</td>
+<td class='namecell'>Broadcom Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>343.94</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.02%</td>
+<td class='pos'>0.00%</td>
+<td>30.04M</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-0.53%</td>
+<td class='pos'>0.14%</td>
+<td class='pos'>0.32%</td>
+<td class='neg'>-0.32%</td>
+</tr>
+<tr>
+<td>$QCOM</td>
+<td class='namecell'>Qualcomm Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>138.93</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.09%</td>
+<td class='neg'>-0.18%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.17%</td>
+<td>11.01M</td>
+<td class='pos'>1.01%</td>
+<td class='neg'>-0.24%</td>
+<td class='pos'>0.37%</td>
+<td class='pos'>0.16%</td>
+<td class='neg'>-0.08%</td>
+</tr>
+<tr>
+<td>$BA</td>
+<td class='namecell'>Boeing Co</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>244.71</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.05%</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.13%</td>
+<td class='pos'>0.28%</td>
+<td>4.69M</td>
+<td class='pos'>0.10%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.31%</td>
+<td class='neg'>-0.06%</td>
+<td class='neg'>-0.28%</td>
+</tr>
+<tr>
+<td>$DIS</td>
+<td class='namecell'>Walt Disney Co</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>107.13</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.03%</td>
+<td class='neg'>-0.05%</td>
+<td class='neg'>-0.06%</td>
+<td class='pos'>0.01%</td>
+<td>10.51M</td>
+<td class='neg'>-0.02%</td>
+<td class='pos'>0.52%</td>
+<td class='pos'>0.21%</td>
+<td class='pos'>0.16%</td>
+<td class='pos'>0.04%</td>
+</tr>
+<tr>
+<td>$UBER</td>
+<td class='namecell'>Uber Technologies Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>73.91</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.09%</td>
+<td class='neg'>-0.13%</td>
+<td class='neg'>-0.09%</td>
+<td class='neg'>-0.20%</td>
+<td>17.94M</td>
+<td class='pos'>0.35%</td>
+<td class='neg'>-0.37%</td>
+<td class='neg'>-0.14%</td>
+<td class='pos'>0.27%</td>
+<td class='neg'>-0.03%</td>
+</tr>
+<tr>
+<td>$SHOP</td>
+<td class='namecell'>Shopify Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>118.40</td>
+<td class='pos'>0.06%</td>
+<td class='neg'>-0.10%</td>
+<td class='neg'>-0.29%</td>
+<td class='neg'>-0.29%</td>
+<td class='neg'>-0.15%</td>
+<td>14.05M</td>
+<td class='pos'>0.28%</td>
+<td class='neg'>-0.52%</td>
+<td class='pos'>0.17%</td>
+<td class='neg'>-0.37%</td>
+<td class='neg'>-0.03%</td>
+</tr>
+<tr>
+<td>$PYPL</td>
+<td class='namecell'>PayPal Holdings Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>41.15</td>
+<td class='pos'>0.02%</td>
+<td class='neg'>-0.21%</td>
+<td class='neg'>-0.28%</td>
+<td class='neg'>-0.31%</td>
+<td class='neg'>-0.34%</td>
+<td>26.00M</td>
+<td class='pos'>0.23%</td>
+<td class='neg'>-0.81%</td>
+<td class='pos'>0.25%</td>
+<td class='pos'>0.14%</td>
+<td class='pos'>0.12%</td>
+</tr>
+<tr>
+<td>$CVNA</td>
+<td class='namecell'>Carvana Co</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>411.61</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.11%</td>
+<td class='neg'>-0.05%</td>
+<td class='pos'>0.27%</td>
+<td>1.66M</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-0.20%</td>
+<td class='neg'>-0.06%</td>
+<td class='pos'>0.25%</td>
+<td class='pos'>0.07%</td>
+</tr>
+<tr>
+<td>$GME</td>
+<td class='namecell'>GameStop Corp</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>24.64</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.05%</td>
+<td class='pos'>0.17%</td>
+<td class='pos'>0.20%</td>
+<td class='pos'>0.20%</td>
+<td>5.31M</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.54%</td>
+<td class='neg'>-0.14%</td>
+<td class='pos'>0.31%</td>
+<td class='pos'>0.33%</td>
+</tr>
+<tr>
+<td>$AVGO</td>
+<td class='namecell'>Broadcom Inc</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>343.94</td>
+<td class='pos'>0.03%</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.02%</td>
+<td class='pos'>0.00%</td>
+<td>30.04M</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-0.53%</td>
+<td class='pos'>0.14%</td>
+<td class='pos'>0.32%</td>
+<td class='neg'>-0.32%</td>
+</tr>
+<tr>
+<td>$SPY</td>
+<td class='namecell'>State Street SPDR S&amp;P 500 ETF Trust</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>693.95</td>
+<td class='pos'>0.00%</td>
+<td class='neg'>-0.00%</td>
+<td class='neg'>-0.00%</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.04%</td>
+<td>13.73M</td>
+<td class='pos'>0.27%</td>
+<td class='neg'>-0.27%</td>
+<td class='neg'>-0.18%</td>
+<td class='pos'>0.33%</td>
+<td class='neg'>-0.21%</td>
+</tr>
+<tr>
+<td>$QQQ</td>
+<td class='namecell'>Invesco QQQ Trust, Series 1</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>614.32</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.02%</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>0.02%</td>
+<td>56.56M</td>
+<td class='pos'>0.15%</td>
+<td class='neg'>-0.40%</td>
+<td class='neg'>-0.16%</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.23%</td>
+</tr>
+<tr>
+<td>$IWM</td>
+<td class='namecell'>iShares Russell 2000 ETF</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>266.88</td>
+<td class='pos'>0.01%</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.02%</td>
+<td class='pos'>0.07%</td>
+<td class='pos'>0.15%</td>
+<td>5.49M</td>
+<td class='pos'>0.11%</td>
+<td class='neg'>-0.21%</td>
+<td class='neg'>-0.16%</td>
+<td class='pos'>0.14%</td>
+<td class='neg'>-0.12%</td>
+</tr>
+<tr>
+<td>$TLT</td>
+<td class='namecell'>iShares 20+ Year Treasury Bond ETF</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>87.52</td>
+<td class='neg'>-0.00%</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.00%</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.02%</td>
+<td>24.67M</td>
+<td class='pos'>0.50%</td>
+<td class='pos'>0.39%</td>
+<td class='pos'>0.19%</td>
+<td class='pos'>0.17%</td>
+<td class='neg'>-0.20%</td>
+</tr>
+<tr>
+<td>$BITO</td>
+<td class='namecell'>ProShares Bitcoin ETF</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>9.78</td>
+<td class='pos'>0.01%</td>
+<td class='neg'>-0.09%</td>
+<td class='neg'>-0.23%</td>
+<td class='neg'>-0.19%</td>
+<td class='neg'>-0.32%</td>
+<td>22.02M</td>
+<td class='pos'>0.49%</td>
+<td class='neg'>-0.23%</td>
+<td class='pos'>0.18%</td>
+<td class='neg'>-0.22%</td>
+<td class='pos'>0.52%</td>
+</tr>
+<tr>
+<td>$MSTR</td>
+<td class='namecell'>Strategy Inc Class A</td>
+<td class='indcell'></td>
+<td></td>
+<td></td>
+<td>138.44</td>
+<td class='pos'>0.03%</td>
+<td class='neg'>-0.01%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-0.11%</td>
+<td class='neg'>-0.29%</td>
+<td>34.18M</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>0.04%</td>
+<td class='neg'>-0.41%</td>
+<td class='pos'>0.10%</td>
+<td class='neg'>-0.11%</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+  
+<div class="card">
+  <h3>Tweets (Watchlist tickers only)</h3>
+  <table id="tbl-watch-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-watch-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-watch-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-watch-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-watch-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-watch-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-watch-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$AVGO, $NVDA, $SPX</td><td class='textcell'>$SPX very strong, dips bought up fast here. Through 6962 we can see a run towards 7000
+
+$NVDA also super strong, opened up just above 185 and ran 8 pts without stopping, now holding just above 190
+
+$AVGO another key leader popped over 10 pts at open from 330 to 343, retested 336</td><td><a href='https://x.com/optionshoof/status/2020884659207315536' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$AMD, $CRWV, $SPX</td><td class='textcell'>GOOD MORNING FAM 
+$SPX opening near 6920, if we can hold above 6940 early this week we can see a potential push to 7000. If we lose 6880 we can see a another fade back to 6800
+
+$CRWV get thru 92 can see a move to 100 next, this looks like it wants to move this week 
+
+$AMD watch</td><td><a href='https://x.com/optionshoof/status/2020856401317232978' target='_blank'>Open</a></td></tr>
+<tr><td>@VolumeLeaders</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$IWM, $QQQ, $SPY</td><td class='textcell'>$SPY, $QQQ, $IWM
+Let&#x27;s do some charts.  Post your requests in this thread.  One per customer, please.  I&#x27;ll do as many as I can.</td><td><a href='https://x.com/VolumeLeaders/status/2020236159083843887' target='_blank'>Open</a></td></tr>
+<tr><td>@saylor</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$BTC, $MSTR, $STRC</td><td class='textcell'>Strategy has acquired 1,142 BTC for ~$90.0 million at ~$78,815 per bitcoin. As of 2/8/2026, we hodl 714,644 $BTC acquired for ~$54.35 billion at ~$76,056 per bitcoin. $MSTR $STRC</td><td><a href='https://x.com/saylor/status/2020846107685695931' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>There&#x27;s $692 on $SPY. 
+
+$694 is the next MVC, expect some chop/rejection as we near $694-$695.</td><td><a href='https://x.com/AndrewHiesinger/status/2020879570610630661' target='_blank'>Open</a></td></tr>
+<tr><td>@VolumeLeaders</td><td><span class='badge sell'>SELL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$CRM, $IGV, $MST, $ORCL, $PLTR</td><td class='textcell'>$IGV
+$IGV (Software) - The largest print in a year appears (not coincidentally) at the April lows.  It&#x27;s a late arriving print and price is trading a bit below at the moment.
+
+Largest holdings include $MST, $PLTR, $ORCL, $CRM.
+
+For this print to be interpreted bullishly, price must</td><td><a href='https://x.com/VolumeLeaders/status/2020330073870705045' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>$3M Call Spike on $SPY</td><td><a href='https://x.com/AndrewHiesinger/status/2020903584099905672' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>$696 is the new MVC for $SPY (contract with the greatest absolute exposure).</td><td><a href='https://x.com/AndrewHiesinger/status/2020899370195898542' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MU, $SPX, $TSLA</td><td class='textcell'>Elite Options TRADE IDEAS for week of February 13th   
+
+$TSLA 2/13 415C |  424, 434 SL 400 
+$MU 2/13 415C |  412, 424 SL 390
+$SPX 2/11 7000C at 6945 |  7000, 7040 SL 6921
+$SPX 2/11 6820P at 6870 |  6824, 6800 SL 6900</td><td><a href='https://x.com/EliteOptions2/status/2020660175091233069' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>$SPY reversed aggressively the following day, and volatility compressed significantly.
+$SPY IV Rank is at 26% for the first time in ~4 months. 
+
+&lt;10% away from the November high, where $SPY reversed aggressively to ATHs.</td><td><a href='https://x.com/AndrewHiesinger/status/2020901050270531925' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$AMD</td><td class='textcell'>$AMD $216’s. Nice</td><td><a href='https://x.com/Mr_Derivatives/status/2020891129424887988' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$QQQ, $SPX, $TSLA</td><td class='textcell'>$TSLA 414 breakout happening..
+TRADE PLAN for Monday  
+
+$SPX lets see if it can move red to green and close above 6945 today. SPX 7000 in play this week as long as 6900 holds.
+
+$TSLA 414 important level to reclaim to set up for a move to 434-440 this month. Calls can work above 414 for this week.
+
+$QQQ all</td><td><a href='https://x.com/EliteOptions2/status/2020891262736576604' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MU</td><td class='textcell'>$MU Trade Idea: Feb 13 415C 
+
+Trigger: 400 
+Targets: 412, 424 
+Stop: 390  
+
+MU dropped from 442 to 363 last week. 
+
+If MU can reclaim 400 we can see a move to 412, 424 again. 
+
+Calls can work above 400 this week.</td><td><a href='https://x.com/EliteOptions2/status/2020652625230766326' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$COIN</td><td class='textcell'>$COIN
+
+…
+
+Ya……
+
+No.
+
+Call me a hater, but just didn’t think this was it.
+Singing &gt; watching.
+
+So we got millions of people watching the Big Game to sing along with us.
+
+Oh, and we put it on the world&#x27;s largest LED screen @SphereVegas.</td><td><a href='https://x.com/Mr_Derivatives/status/2020706375861764566' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>$SPY flipped green for February again.
+
+And is now up 10 straight months on a total return basis.
+
+Has not had a red month since the Aprils 2025 crash. 
+
+Just brutal for short sellers and bears on an index level…</td><td><a href='https://x.com/Mr_Derivatives/status/2020885288382533887' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HOOD</td><td class='textcell'>$HOOD Hit $88’s overnight…
+$HOOD should be up way more today than this.
+
+Give me $80. Cmon.</td><td><a href='https://x.com/Mr_Derivatives/status/2020698977344405525' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HOOD</td><td class='textcell'>$HOOD Their Credit Card app is no longer called Credit Card.
+
+It’s called Banking.
+
+I like the stock.</td><td><a href='https://x.com/Mr_Derivatives/status/2020587483071983855' target='_blank'>Open</a></td></tr>
+<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$QQQ, $SPX, $TSLA</td><td class='textcell'>TRADE PLAN for Monday  
+
+$SPX lets see if it can move red to green and close above 6945 today. SPX 7000 in play this week as long as 6900 holds.
+
+$TSLA 414 important level to reclaim to set up for a move to 434-440 this month. Calls can work above 414 for this week.
+
+$QQQ all</td><td><a href='https://x.com/EliteOptions2/status/2020860253206688004' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$QQQ</td><td class='textcell'>$QQQ De ja vu roadmap?</td><td><a href='https://x.com/Mr_Derivatives/status/2020004118845403536' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$DIA, $IWM, $QQQ, $SPY</td><td class='textcell'>YTD:
+
+$IWM +6.53%
+
+$DIA +3.60%
+
+$SPY +1.09%
+
+$QQQ -.57%
+$IWM $QQQ
+
+Could 2026 be the year of the Russell 2000 outperforming the Nasdaq-100....?
+
+It feels overdue doesn&#x27;t it?!  x.com/Mr_Derivatives…</td><td><a href='https://x.com/Mr_Derivatives/status/2020143960895688842' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PYPL</td><td class='textcell'>Guys want to know probably the saddest stat ever?
+
+Excluding penny stocks, the stock with the lowest Daily RSI in the ENTIRE stock market is….
+
+With a mf’in 11 RSI. Yes you read that right, an ELEVEN RSI… amongst 10,000 stocks.
+
+Is……
+
+$PYPL
+
+Yes Paypal is the only one of</td><td><a href='https://x.com/Mr_Derivatives/status/2019626368422834248' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$COIN, $SPX, $TSLA</td><td class='textcell'>$SPX holding 6810 here, tested 6780 earlier this morning. We need to hold today’s lows otherwise we can test 6730, 6700. 
+
+$TSLA held 387 and is back at 400, we need to hold here or we can risk another selloff
+
+$COIN getting absolutely destroyed by this crypto liquidation, down</td><td><a href='https://x.com/optionshoof/status/2019483266714132555' target='_blank'>Open</a></td></tr>
+<tr><td>@VolumeLeaders</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$CRM, $IGV, $MST, $ORCL, $PLTR</td><td class='textcell'>$IGV (Software) - The largest print in a year appears (not coincidentally) at the April lows.  It&#x27;s a late arriving print and price is trading a bit below at the moment.
+
+Largest holdings include $MST, $PLTR, $ORCL, $CRM.
+
+For this print to be interpreted bullishly, price must</td><td><a href='https://x.com/VolumeLeaders/status/2019527331627348257' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$CRWD, $SPX</td><td class='textcell'>$SPX holding 6800 for now, let&#x27;s see where we close. No reason to be a hero and try to call a bottom yet, let the market shakeout weak hands
+
+$CRWD getting rinsed this week, another big selloff today; we rejected 418 and dropped to 388, if 381 can&#x27;t hold we can see another leg</td><td><a href='https://x.com/optionshoof/status/2019503707075846230' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR after hrs $125…..
+
+literally two days ago we were celebrating the earnings almost up to $170.
+
+Uno. Reverse. Card. Much.</td><td><a href='https://x.com/Mr_Derivatives/status/2019529474459726099' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR Michael Burry was right all along….</td><td><a href='https://x.com/Mr_Derivatives/status/2019428176708198781' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Buckle up...$12M Put spike on $SPY as well</td><td><a href='https://x.com/AndrewHiesinger/status/2019104760461410607' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$HOOD, $SCHW</td><td class='textcell'>$HOOD is now trading at May 2025 levels relative to big bro $SCHW. 
+
+$HOOD is now at the most oversold RSI levels ever relative to big bro $SCHW.
+
+Food for thought.</td><td><a href='https://x.com/Mr_Derivatives/status/2019412533573218364' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN, $QQQ, $VIX</td><td class='textcell'>$QQQ needs to recapture $600.
+
+Then $AMZN announces a good report in after hrs.
+
+Then we get a relief rally of 1% or so tomorrow and a $VIX down 10-15% on a VIX Crush Fridays .
+
+Just guessing.</td><td><a href='https://x.com/Mr_Derivatives/status/2019445452270166227' target='_blank'>Open</a></td></tr>
+<tr><td>@Ivantage_x</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Data doesn’t lie
+$SPY seems to be still under selling pressure and Gamma levels for tomorrow still indicates that. Somewhere between $670 and $675 might be inevitable and it aligns very well with previous ATH resistance from October...</td><td><a href='https://x.com/Ivantage_x/status/2019538657745740102' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PYPL</td><td class='textcell'>$PYPL I’m just going to say the quiet part out loud.
+
+Sometimes the feeling of cutting a long time loser, despite how undervalued you feel it may be, despite how bottom-y it may be, and despite knowing you might close it out at the lows, feels like such a relief off your</td><td><a href='https://x.com/Mr_Derivatives/status/2019460751652802875' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>$680 is the current MVC on $SPY, the area with the greatest absolute gamma exposure. The downside move is pretty extended already today; $680 is a very significant level as we approach it.</td><td><a href='https://x.com/AndrewHiesinger/status/2019112687113015459' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BMNR, $MSTR</td><td class='textcell'>$MSTR $BMNR
+
+Guhhhhh damn.  This is sick.
+
+SICK.</td><td><a href='https://x.com/Mr_Derivatives/status/2019479819298172949' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>The MVC has been $680 on $SPY for practically all of the day, and the price has been hugging it. 
+
+I  expected some chop/a potential rejection at $680, and we&#x27;re definitely stuck in some chop.</td><td><a href='https://x.com/AndrewHiesinger/status/2019506198358421840' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD, $COST, $CRWD, $META, $PLTR, $SPX</td><td class='textcell'>Trade Ideas for Friday 2/6
+
+$AMD 2/6 185P under 190
+$COST 2/6 1000C over 994
+$CRWD 2/6 360P under 370
+$META 2/20 700C over 670 for a quicker trade
+$PLTR 2/6 130P under 130
+$SPX 2/66850C over 6835
+$SPX 2/6 6700P under 6772
+
+Like and RT if this is helpful!</td><td><a href='https://x.com/optionshoof/status/2019589220751274340' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>Here’s how I caught today’s downside in $QQQ.
+
+Early in the session, puts crossed calls on $QQQ. That mattered because it showed downside intent.
+
+At the same time, $610 stood out as a key level with elevated negative gamma exposure below it. The path toward $605 at a lower level</td><td><a href='https://x.com/AndrewHiesinger/status/2019233749427232940' target='_blank'>Open</a></td></tr>
+<tr><td>@optionshoof</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$COST, $PLTR, $SPX</td><td class='textcell'>$SPX super weak, rejected 6850 and flushed another 80 pts, if we don’t hold 6772 here we will fade another 50 pts
+
+$PLTR incredibly weak, broke under 134 and tested 129, now moving back above 130
+
+$COST super resilient, tested 1000 twice today after consolidating at 988, we’re</td><td><a href='https://x.com/optionshoof/status/2019436791334343096' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Gamma exposure update on $SPY, we have considerable overhead positive exposure and negative exposure under spot. Typically, with this setup, we see range-bound activity. But this range appears wide, with $685 at the bottom and $695-$696 at the top. We&#x27;ll see how things develop</td><td><a href='https://x.com/AndrewHiesinger/status/2019061063048712320' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Took all day, but there&#x27;s $675 on $SPY</td><td><a href='https://x.com/AndrewHiesinger/status/2019517913015730299' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>As we near $675, we might see some chop/signs of momentum slowing down on $SPY. If momentum continues, I&#x27;ll probably end up closing around $673.</td><td><a href='https://x.com/AndrewHiesinger/status/2019434143533396118' target='_blank'>Open</a></td></tr>
+<tr><td>@1ChartMaster</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ losing trend line support after the double top.</td><td><a href='https://x.com/1ChartMaster/status/2019088187587518765' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Puts just crossed Calls on $SPY</td><td><a href='https://x.com/AndrewHiesinger/status/2019429017775194135' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ back to back to back monster red days.
+
+Setting up a relief rally Friday with a VCF?
+
+Just guessing.</td><td><a href='https://x.com/Mr_Derivatives/status/2019425065046274558' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ Daily RSI nearing the April 2025 levels…</td><td><a href='https://x.com/Mr_Derivatives/status/2019473361328566782' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$ARM</td><td class='textcell'>$ARM $90 in after hrs off er yesterday.
+
+Now at $111.
+
+What a bounce on a terrible tape day nonetheless.</td><td><a href='https://x.com/Mr_Derivatives/status/2019454419054551344' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>Looks like we are getting a $680 retest on $SPY. If it rejects, could be an opportunity to pick up some shorts back to $675. But we&#x27;re also moving into lunch shortly...</td><td><a href='https://x.com/AndrewHiesinger/status/2019447753340821551' target='_blank'>Open</a></td></tr>
+<tr><td>@LeverageShares</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD, $SMCI</td><td class='textcell'>$SMCI surpassed $AMD in quarterly sales as demand for AI-optimised server infrastructure surged.
+
+      $SMCI revenue accelerated sharply as hyperscalers scaled AI data centres
+      $AMD delivered steady growth, but with a different exposure profile within the AI stack</td><td><a href='https://x.com/LeverageShares/status/2019456158986027366' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>Wow! Another $6M Put spike on $QQQ</td><td><a href='https://x.com/AndrewHiesinger/status/2019104245623189790' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>Ended up closing $QQQ for +$504 on the $610 rejection I mentioned a couple of times here. Entry on the 3rd break was pretty solid.</td><td><a href='https://x.com/AndrewHiesinger/status/2019100118813978776' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MSTR</td><td class='textcell'>$MSTR is down another 15% intraday with earnings coming after-hours.
+
+The stock is now down over 27.8% YTD, as Bitcoin exposure continues to weigh heavily on sentiment.</td><td><a href='https://x.com/QuantData/status/2019500314383073764' target='_blank'>Open</a></td></tr>
+<tr><td>@AndrewHiesinger</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>Puts crossed Calls on $QQQ</td><td><a href='https://x.com/AndrewHiesinger/status/2019063047709425926' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD</td><td class='textcell'>If $AMD closes above $215 by Friday, I will give $200 to 3 random people who like this tweet.</td><td><a href='https://x.com/Mr_Derivatives/status/2019093184304103910' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BULL, $HOOD, $IBKR, $SCHW</td><td class='textcell'>$SCHW At ATH&#x27;s
+
+$IBKR Near ATH&#x27;s
+
+$HOOD -50% off ATH&#x27;s
+
+$BULL -92% off ATH&#x27;s
+
+Robinhood was one of THE stories of the year in 2025. Going through a massive bear market now...</td><td><a href='https://x.com/Mr_Derivatives/status/2019171522020274222' target='_blank'>Open</a></td></tr>
+<tr><td>@QuantData</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$SPY</td><td class='textcell'>VOL IS BACK!!
+
+Volatility Rank on $SPY just hit 24%, the highest level since Nov 21, 2025.</td><td><a href='https://x.com/QuantData/status/2019511452940530035' target='_blank'>Open</a></td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div id="tab-heis" class="hidden" data-tab="1">
+  
+<div class="card">
+  <h3>Heisenberg — @mr_derivatives (Tickers mentioned last 7 days + Stooq pricing)</h3>
+  
+  <table id="tbl-heis" data-filter-table="1">
+    <thead>
+      <tr>
+
+        <th data-sort="text">Ticker</th>
+        <th data-sort="num">Tot</th>
+        <th data-sort="num">B</th>
+        <th data-sort="num">N</th>
+        <th data-sort="num">S</th>
+        <th data-sort="num">Price</th>
+        <th data-sort="num">1D</th>
+        <th data-sort="num">3D</th>
+        <th data-sort="num">5D</th>
+        <th data-sort="num">10D</th>
+        <th data-sort="size">Volume</th>
+        <th data-sort="num">V1D</th>
+        <th data-sort="num">V3D</th>
+        <th data-sort="num">V5D</th>
+        <th data-sort="num">V10D</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$RKLB" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heis')"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td>$BTC</td>
+<td>26</td>
+<td>0</td>
+<td>20</td>
+<td>6</td>
+<td>31.31</td>
+<td class='pos'>1.03%</td>
+<td class='neg'>-3.54%</td>
+<td class='neg'>-9.22%</td>
+<td class='neg'>-19.20%</td>
+<td>3.96M</td>
+<td class='neg'>-50.74%</td>
+<td class='neg'>-47.61%</td>
+<td class='neg'>-53.03%</td>
+<td class='pos'>103.89%</td>
+</tr>
+<tr>
+<td>$QQQ</td>
+<td>18</td>
+<td>0</td>
+<td>15</td>
+<td>3</td>
+<td>614.34</td>
+<td class='pos'>0.77%</td>
+<td class='pos'>1.42%</td>
+<td class='neg'>-1.88%</td>
+<td class='neg'>-1.78%</td>
+<td>55.87M</td>
+<td class='neg'>-28.39%</td>
+<td class='neg'>-31.74%</td>
+<td class='pos'>13.98%</td>
+<td class='pos'>55.27%</td>
+</tr>
+<tr>
+<td>$ETH</td>
+<td>15</td>
+<td>1</td>
+<td>12</td>
+<td>2</td>
+<td>20.09</td>
+<td class='pos'>3.40%</td>
+<td class='neg'>-1.90%</td>
+<td class='neg'>-8.43%</td>
+<td class='neg'>-26.68%</td>
+<td>12.99M</td>
+<td class='pos'>7.76%</td>
+<td class='neg'>-53.41%</td>
+<td class='neg'>-11.59%</td>
+<td class='pos'>72.84%</td>
+</tr>
+<tr>
+<td>$HIMS</td>
+<td>12</td>
+<td>1</td>
+<td>11</td>
+<td>0</td>
+<td>19.33</td>
+<td class='neg'>-16.03%</td>
+<td class='neg'>-20.78%</td>
+<td class='neg'>-26.89%</td>
+<td class='neg'>-36.16%</td>
+<td>143.77M</td>
+<td class='pos'>210.16%</td>
+<td class='pos'>353.86%</td>
+<td class='pos'>956.12%</td>
+<td class='pos'>1033.39%</td>
+</tr>
+<tr>
+<td>$SPX</td>
+<td>11</td>
+<td>0</td>
+<td>10</td>
+<td>1</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$SPY</td>
+<td>10</td>
+<td>1</td>
+<td>8</td>
+<td>1</td>
+<td>694.05</td>
+<td class='pos'>0.50%</td>
+<td class='pos'>1.15%</td>
+<td class='neg'>-0.20%</td>
+<td class='pos'>0.19%</td>
+<td>72.92M</td>
+<td class='neg'>-18.18%</td>
+<td class='neg'>-30.69%</td>
+<td class='neg'>-8.03%</td>
+<td class='pos'>20.58%</td>
+</tr>
+<tr>
+<td>$HOOD</td>
+<td>10</td>
+<td>0</td>
+<td>9</td>
+<td>1</td>
+<td>86.58</td>
+<td class='pos'>4.53%</td>
+<td class='pos'>7.39%</td>
+<td class='neg'>-3.71%</td>
+<td class='neg'>-19.09%</td>
+<td>41.05M</td>
+<td class='neg'>-24.82%</td>
+<td class='neg'>-34.38%</td>
+<td class='neg'>-31.30%</td>
+<td class='pos'>256.87%</td>
+</tr>
+<tr>
+<td>$PLTR</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td>142.94</td>
+<td class='pos'>5.18%</td>
+<td class='pos'>2.43%</td>
+<td class='neg'>-3.26%</td>
+<td class='neg'>-14.65%</td>
+<td>57.72M</td>
+<td class='neg'>-7.89%</td>
+<td class='neg'>-49.01%</td>
+<td class='neg'>-20.73%</td>
+<td class='pos'>153.40%</td>
+</tr>
+<tr>
+<td>$AMD</td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+<td>0</td>
+<td>216.00</td>
+<td class='pos'>3.63%</td>
+<td class='pos'>7.90%</td>
+<td class='neg'>-12.29%</td>
+<td class='neg'>-14.05%</td>
+<td>38.65M</td>
+<td class='neg'>-29.09%</td>
+<td class='neg'>-63.94%</td>
+<td class='pos'>6.44%</td>
+<td class='pos'>26.00%</td>
+</tr>
+<tr>
+<td>$AAPL</td>
+<td>9</td>
+<td>0</td>
+<td>8</td>
+<td>1</td>
+<td>274.44</td>
+<td class='neg'>-1.32%</td>
+<td class='neg'>-0.74%</td>
+<td class='pos'>1.64%</td>
+<td class='pos'>7.45%</td>
+<td>44.52M</td>
+<td class='neg'>-11.76%</td>
+<td class='neg'>-50.83%</td>
+<td class='neg'>-39.77%</td>
+<td class='neg'>-20.45%</td>
+</tr>
+<tr>
+<td>$AMZN</td>
+<td>8</td>
+<td>1</td>
+<td>7</td>
+<td>0</td>
+<td>208.72</td>
+<td class='neg'>-0.76%</td>
+<td class='neg'>-10.42%</td>
+<td class='neg'>-14.09%</td>
+<td class='neg'>-12.46%</td>
+<td>90.91M</td>
+<td class='neg'>-49.27%</td>
+<td class='pos'>77.21%</td>
+<td class='pos'>142.13%</td>
+<td class='pos'>176.95%</td>
+</tr>
+<tr>
+<td>$GOOG</td>
+<td>8</td>
+<td>2</td>
+<td>6</td>
+<td>0</td>
+<td>324.40</td>
+<td class='pos'>0.40%</td>
+<td class='neg'>-2.68%</td>
+<td class='neg'>-5.94%</td>
+<td class='neg'>-2.75%</td>
+<td>26.05M</td>
+<td class='neg'>-23.09%</td>
+<td class='neg'>-29.56%</td>
+<td class='pos'>14.40%</td>
+<td class='pos'>40.82%</td>
+</tr>
+<tr>
+<td>$MSFT</td>
+<td>7</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>413.71</td>
+<td class='pos'>3.13%</td>
+<td class='neg'>-0.11%</td>
+<td class='neg'>-2.28%</td>
+<td class='neg'>-12.03%</td>
+<td>45.18M</td>
+<td class='neg'>-15.57%</td>
+<td class='pos'>0.38%</td>
+<td class='pos'>7.02%</td>
+<td class='pos'>54.26%</td>
+</tr>
+<tr>
+<td>$PYPL</td>
+<td>7</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>41.15</td>
+<td class='pos'>1.81%</td>
+<td class='pos'>0.29%</td>
+<td class='neg'>-21.36%</td>
+<td class='neg'>-27.30%</td>
+<td>25.99M</td>
+<td class='neg'>-25.57%</td>
+<td class='neg'>-55.20%</td>
+<td class='neg'>-5.32%</td>
+<td class='pos'>160.67%</td>
+</tr>
+<tr>
+<td>$MSTR</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>138.48</td>
+<td class='pos'>2.63%</td>
+<td class='pos'>7.27%</td>
+<td class='neg'>-0.82%</td>
+<td class='neg'>-13.76%</td>
+<td>34.17M</td>
+<td class='neg'>-40.85%</td>
+<td class='pos'>32.58%</td>
+<td class='pos'>25.77%</td>
+<td class='pos'>135.41%</td>
+</tr>
+<tr>
+<td>$SLV</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>75.98</td>
+<td class='pos'>8.26%</td>
+<td class='neg'>-4.04%</td>
+<td class='pos'>4.89%</td>
+<td class='neg'>-22.73%</td>
+<td>86.01M</td>
+<td class='pos'>20.69%</td>
+<td class='neg'>-34.25%</td>
+<td class='neg'>-60.92%</td>
+<td class='neg'>-78.12%</td>
+</tr>
+<tr>
+<td>$VIX</td>
+<td>6</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$NVO</td>
+<td>5</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>49.37</td>
+<td class='pos'>3.63%</td>
+<td class='pos'>4.62%</td>
+<td class='neg'>-16.22%</td>
+<td class='neg'>-22.84%</td>
+<td>30.00M</td>
+<td class='neg'>-18.59%</td>
+<td class='neg'>-35.97%</td>
+<td class='pos'>80.23%</td>
+<td class='pos'>49.22%</td>
+</tr>
+<tr>
+<td>$BMNR</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>21.43</td>
+<td class='pos'>4.69%</td>
+<td class='pos'>5.57%</td>
+<td class='neg'>-6.01%</td>
+<td class='neg'>-22.91%</td>
+<td>48.22M</td>
+<td class='neg'>-35.24%</td>
+<td class='neg'>-12.97%</td>
+<td class='neg'>-12.07%</td>
+<td class='pos'>46.95%</td>
+</tr>
+<tr>
+<td>$GLD</td>
+<td>5</td>
+<td>0</td>
+<td>4</td>
+<td>1</td>
+<td>467.03</td>
+<td class='pos'>2.54%</td>
+<td class='pos'>2.88%</td>
+<td class='pos'>9.34%</td>
+<td class='pos'>0.50%</td>
+<td>12.05M</td>
+<td class='neg'>-4.83%</td>
+<td class='neg'>-50.66%</td>
+<td class='neg'>-71.05%</td>
+<td class='neg'>-64.71%</td>
+</tr>
+<tr>
+<td>$ADBE</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>266.86</td>
+<td class='neg'>-0.57%</td>
+<td class='neg'>-4.59%</td>
+<td class='neg'>-9.04%</td>
+<td class='neg'>-12.42%</td>
+<td>6.57M</td>
+<td class='pos'>20.53%</td>
+<td class='neg'>-23.23%</td>
+<td class='pos'>50.72%</td>
+<td class='pos'>59.58%</td>
+</tr>
+<tr>
+<td>$LLY</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>1044.67</td>
+<td class='neg'>-1.28%</td>
+<td class='neg'>-5.64%</td>
+<td class='pos'>0.05%</td>
+<td class='neg'>-1.70%</td>
+<td>3.42M</td>
+<td class='neg'>-30.02%</td>
+<td class='neg'>-51.96%</td>
+<td class='pos'>24.04%</td>
+<td class='pos'>52.34%</td>
+</tr>
+<tr>
+<td>$TSLA</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>417.17</td>
+<td class='pos'>1.47%</td>
+<td class='pos'>2.75%</td>
+<td class='neg'>-1.10%</td>
+<td class='neg'>-4.14%</td>
+<td>54.26M</td>
+<td class='neg'>-13.42%</td>
+<td class='neg'>-27.27%</td>
+<td class='neg'>-7.62%</td>
+<td class='pos'>9.85%</td>
+</tr>
+<tr>
+<td>$WMT</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>128.97</td>
+<td class='neg'>-1.68%</td>
+<td class='pos'>0.76%</td>
+<td class='pos'>3.96%</td>
+<td class='pos'>9.63%</td>
+<td>27.12M</td>
+<td class='pos'>1.98%</td>
+<td class='neg'>-1.50%</td>
+<td class='neg'>-13.11%</td>
+<td class='pos'>38.70%</td>
+</tr>
+<tr>
+<td>$TGT</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>115.52</td>
+<td class='neg'>-0.03%</td>
+<td class='pos'>1.22%</td>
+<td class='pos'>5.47%</td>
+<td class='pos'>11.12%</td>
+<td>4.40M</td>
+<td class='neg'>-43.59%</td>
+<td class='neg'>-55.15%</td>
+<td class='neg'>-58.31%</td>
+<td class='neg'>-34.39%</td>
+</tr>
+<tr>
+<td>$UPS</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>117.92</td>
+<td class='pos'>0.49%</td>
+<td class='pos'>1.01%</td>
+<td class='pos'>6.94%</td>
+<td class='pos'>10.24%</td>
+<td>5.22M</td>
+<td class='neg'>-22.55%</td>
+<td class='neg'>-54.11%</td>
+<td class='neg'>-39.75%</td>
+<td class='neg'>-36.31%</td>
+</tr>
+<tr>
+<td>$GME</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>24.64</td>
+<td class='neg'>-1.36%</td>
+<td class='neg'>-1.36%</td>
+<td class='neg'>-4.68%</td>
+<td class='pos'>2.62%</td>
+<td>5.31M</td>
+<td class='neg'>-46.98%</td>
+<td class='neg'>-45.67%</td>
+<td class='neg'>-78.32%</td>
+<td class='neg'>-85.80%</td>
+</tr>
+<tr>
+<td>$META</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>677.22</td>
+<td class='pos'>2.38%</td>
+<td class='pos'>1.23%</td>
+<td class='neg'>-4.13%</td>
+<td class='pos'>0.72%</td>
+<td>14.80M</td>
+<td class='neg'>-18.51%</td>
+<td class='neg'>-12.34%</td>
+<td class='pos'>3.02%</td>
+<td class='neg'>-9.36%</td>
+</tr>
+<tr>
+<td>$NOW</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>103.87</td>
+<td class='pos'>3.11%</td>
+<td class='neg'>-6.48%</td>
+<td class='neg'>-11.97%</td>
+<td class='neg'>-23.82%</td>
+<td>23.07M</td>
+<td class='neg'>-33.55%</td>
+<td class='neg'>-37.16%</td>
+<td class='pos'>22.16%</td>
+<td class='pos'>31.93%</td>
+</tr>
+<tr>
+<td>$GOLD</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>64.14</td>
+<td class='pos'>15.94%</td>
+<td class='pos'>24.59%</td>
+<td class='pos'>25.05%</td>
+<td class='pos'>45.44%</td>
+<td>2.01M</td>
+<td class='pos'>46.81%</td>
+<td class='pos'>185.81%</td>
+<td class='pos'>69.00%</td>
+<td class='pos'>134.50%</td>
+</tr>
+<tr>
+<td>$IGV</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>85.06</td>
+<td class='pos'>3.15%</td>
+<td class='pos'>1.46%</td>
+<td class='neg'>-4.98%</td>
+<td class='neg'>-13.92%</td>
+<td>28.86M</td>
+<td class='neg'>-25.14%</td>
+<td class='neg'>-36.26%</td>
+<td class='pos'>198.74%</td>
+<td class='pos'>240.38%</td>
+</tr>
+<tr>
+<td>$DIA</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>501.22</td>
+<td class='pos'>0.04%</td>
+<td class='pos'>1.31%</td>
+<td class='pos'>1.46%</td>
+<td class='pos'>1.45%</td>
+<td>6.39M</td>
+<td class='neg'>-39.92%</td>
+<td class='neg'>-27.36%</td>
+<td class='pos'>14.43%</td>
+<td class='pos'>71.65%</td>
+</tr>
+<tr>
+<td>$IWM</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>266.85</td>
+<td class='pos'>0.69%</td>
+<td class='pos'>2.43%</td>
+<td class='pos'>1.78%</td>
+<td class='pos'>1.09%</td>
+<td>28.97M</td>
+<td class='neg'>-33.19%</td>
+<td class='neg'>-40.67%</td>
+<td class='neg'>-32.47%</td>
+<td class='neg'>-9.82%</td>
+</tr>
+<tr>
+<td>$ORCL</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>156.59</td>
+<td class='pos'>9.64%</td>
+<td class='pos'>6.76%</td>
+<td class='neg'>-2.17%</td>
+<td class='neg'>-14.17%</td>
+<td>49.74M</td>
+<td class='pos'>66.00%</td>
+<td class='pos'>17.52%</td>
+<td class='pos'>4.89%</td>
+<td class='pos'>135.72%</td>
+</tr>
+<tr>
+<td>$SCHW</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>107.21</td>
+<td class='pos'>2.03%</td>
+<td class='pos'>3.21%</td>
+<td class='pos'>1.94%</td>
+<td class='pos'>4.15%</td>
+<td>10.18M</td>
+<td class='pos'>35.20%</td>
+<td class='neg'>-5.59%</td>
+<td class='pos'>2.83%</td>
+<td class='pos'>38.33%</td>
+</tr>
+<tr>
+<td>$ARM</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>124.62</td>
+<td class='pos'>0.74%</td>
+<td class='pos'>18.80%</td>
+<td class='pos'>16.54%</td>
+<td class='pos'>8.62%</td>
+<td>6.79M</td>
+<td class='neg'>-57.01%</td>
+<td class='neg'>-44.43%</td>
+<td class='pos'>35.71%</td>
+<td class='pos'>82.61%</td>
+</tr>
+<tr>
+<td>$JPM</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>322.10</td>
+<td class='neg'>-0.09%</td>
+<td class='pos'>1.52%</td>
+<td class='pos'>4.53%</td>
+<td class='pos'>7.00%</td>
+<td>11.47M</td>
+<td class='neg'>-35.54%</td>
+<td class='pos'>16.48%</td>
+<td class='pos'>16.59%</td>
+<td class='neg'>-2.39%</td>
+</tr>
+<tr>
+<td>$NFLX</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>81.47</td>
+<td class='neg'>-0.89%</td>
+<td class='pos'>1.63%</td>
+<td class='neg'>-1.56%</td>
+<td class='neg'>-4.94%</td>
+<td>42.13M</td>
+<td class='neg'>-8.71%</td>
+<td class='neg'>-13.95%</td>
+<td class='pos'>1.66%</td>
+<td class='pos'>2.91%</td>
+</tr>
+<tr>
+<td>$NVDA</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>190.04</td>
+<td class='pos'>2.50%</td>
+<td class='pos'>9.10%</td>
+<td class='pos'>2.39%</td>
+<td class='pos'>1.91%</td>
+<td>195.85M</td>
+<td class='neg'>-15.34%</td>
+<td class='neg'>-5.39%</td>
+<td class='pos'>18.13%</td>
+<td class='pos'>56.94%</td>
+</tr>
+<tr>
+<td>$XOM</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>151.21</td>
+<td class='pos'>1.45%</td>
+<td class='pos'>2.45%</td>
+<td class='pos'>9.26%</td>
+<td class='pos'>12.14%</td>
+<td>21.29M</td>
+<td class='pos'>23.64%</td>
+<td class='neg'>-27.66%</td>
+<td class='neg'>-23.25%</td>
+<td class='pos'>32.57%</td>
+</tr>
+<tr>
+<td>$RGTI</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>17.57</td>
+<td class='neg'>-0.79%</td>
+<td class='pos'>2.21%</td>
+<td class='neg'>-0.79%</td>
+<td class='neg'>-19.26%</td>
+<td>24.91M</td>
+<td class='neg'>-33.01%</td>
+<td class='neg'>-30.76%</td>
+<td class='neg'>-1.15%</td>
+<td class='neg'>-17.25%</td>
+</tr>
+<tr>
+<td>$NATGAS</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$RKLB</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>75.83</td>
+<td class='pos'>4.85%</td>
+<td class='pos'>3.72%</td>
+<td class='pos'>2.27%</td>
+<td class='neg'>-5.78%</td>
+<td>16.35M</td>
+<td class='neg'>-18.47%</td>
+<td class='neg'>-37.70%</td>
+<td class='neg'>-10.85%</td>
+<td class='neg'>-24.53%</td>
+</tr>
+<tr>
+<td>$COIN</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>166.07</td>
+<td class='pos'>0.58%</td>
+<td class='neg'>-1.51%</td>
+<td class='neg'>-11.60%</td>
+<td class='neg'>-22.21%</td>
+<td>3.64M</td>
+<td class='neg'>-81.62%</td>
+<td class='neg'>-78.14%</td>
+<td class='neg'>-70.42%</td>
+<td class='neg'>-48.63%</td>
+</tr>
+<tr>
+<td>$CRM</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>194.03</td>
+<td class='pos'>1.40%</td>
+<td class='neg'>-2.71%</td>
+<td class='neg'>-7.96%</td>
+<td class='neg'>-15.42%</td>
+<td>12.09M</td>
+<td class='neg'>-11.41%</td>
+<td class='neg'>-47.44%</td>
+<td class='pos'>52.12%</td>
+<td class='pos'>67.06%</td>
+</tr>
+<tr>
+<td>$SILVER</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$COST</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>997.59</td>
+<td class='neg'>-0.36%</td>
+<td class='pos'>1.97%</td>
+<td class='pos'>3.02%</td>
+<td class='pos'>2.04%</td>
+<td>1.86M</td>
+<td class='neg'>-21.11%</td>
+<td class='neg'>-29.29%</td>
+<td class='neg'>-24.09%</td>
+<td class='neg'>-24.32%</td>
+</tr>
+<tr>
+<td>$NKE</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>62.41</td>
+<td class='neg'>-2.36%</td>
+<td class='neg'>-2.82%</td>
+<td class='pos'>0.37%</td>
+<td class='neg'>-3.97%</td>
+<td>12.90M</td>
+<td class='pos'>7.87%</td>
+<td class='neg'>-38.44%</td>
+<td class='pos'>17.23%</td>
+<td class='neg'>-12.62%</td>
+</tr>
+<tr>
+<td>$MCD</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>325.60</td>
+<td class='neg'>-0.48%</td>
+<td class='pos'>0.59%</td>
+<td class='pos'>2.22%</td>
+<td class='pos'>4.04%</td>
+<td>2.67M</td>
+<td class='neg'>-5.58%</td>
+<td class='neg'>-44.37%</td>
+<td class='neg'>-19.22%</td>
+<td class='neg'>-21.02%</td>
+</tr>
+<tr>
+<td>$BULL</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>6.79</td>
+<td class='pos'>3.27%</td>
+<td class='pos'>1.72%</td>
+<td class='neg'>-0.07%</td>
+<td class='neg'>-11.75%</td>
+<td>9.72M</td>
+<td class='neg'>-45.61%</td>
+<td class='neg'>-3.33%</td>
+<td class='neg'>-21.62%</td>
+<td class='pos'>44.89%</td>
+</tr>
+<tr>
+<td>$IBKR</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>78.41</td>
+<td class='pos'>5.12%</td>
+<td class='pos'>6.77%</td>
+<td class='pos'>4.17%</td>
+<td class='pos'>4.06%</td>
+<td>3.91M</td>
+<td class='neg'>-20.16%</td>
+<td class='neg'>-51.94%</td>
+<td class='neg'>-43.38%</td>
+<td class='neg'>-37.94%</td>
+</tr>
+<tr>
+<td>$IREN</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>46.15</td>
+<td class='pos'>10.33%</td>
+<td class='pos'>2.69%</td>
+<td class='neg'>-13.06%</td>
+<td class='neg'>-11.86%</td>
+<td>48.59M</td>
+<td class='neg'>-35.41%</td>
+<td class='neg'>-26.97%</td>
+<td class='pos'>18.79%</td>
+<td class='pos'>14.47%</td>
+</tr>
+<tr>
+<td>$QCOM</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>138.86</td>
+<td class='pos'>1.11%</td>
+<td class='neg'>-6.74%</td>
+<td class='neg'>-9.02%</td>
+<td class='neg'>-10.13%</td>
+<td>11.01M</td>
+<td class='neg'>-26.77%</td>
+<td class='neg'>-42.80%</td>
+<td class='pos'>21.01%</td>
+<td class='pos'>37.56%</td>
+</tr>
+<tr>
+<td>$UNH</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>275.70</td>
+<td class='neg'>-0.34%</td>
+<td class='neg'>-0.08%</td>
+<td class='neg'>-3.46%</td>
+<td class='neg'>-21.60%</td>
+<td>10.36M</td>
+<td class='pos'>8.19%</td>
+<td class='neg'>-19.99%</td>
+<td class='pos'>19.53%</td>
+<td class='neg'>-0.41%</td>
+</tr>
+<tr>
+<td>$HOOF</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$FDX</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>364.60</td>
+<td class='neg'>-1.25%</td>
+<td class='pos'>0.57%</td>
+<td class='pos'>8.74%</td>
+<td class='pos'>19.75%</td>
+<td>1.48M</td>
+<td class='neg'>-32.49%</td>
+<td class='neg'>-41.42%</td>
+<td class='neg'>-43.06%</td>
+<td class='neg'>-2.00%</td>
+</tr>
+<tr>
+<td>$APP</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>460.39</td>
+<td class='pos'>13.20%</td>
+<td class='pos'>18.86%</td>
+<td class='neg'>-4.68%</td>
+<td class='neg'>-14.02%</td>
+<td>10.10M</td>
+<td class='pos'>56.32%</td>
+<td class='neg'>-34.53%</td>
+<td class='pos'>67.19%</td>
+<td class='pos'>78.62%</td>
+</tr>
+<tr>
+<td>$BRK</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$BRKB</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$X</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$U</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>27.53</td>
+<td class='pos'>9.64%</td>
+<td class='pos'>10.38%</td>
+<td class='neg'>-4.44%</td>
+<td class='neg'>-35.98%</td>
+<td>20.53M</td>
+<td class='pos'>3.51%</td>
+<td class='neg'>-32.37%</td>
+<td class='neg'>-22.92%</td>
+<td class='pos'>238.51%</td>
+</tr>
+<tr>
+<td>$SNAP</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>5.19</td>
+<td class='neg'>-0.57%</td>
+<td class='neg'>-12.18%</td>
+<td class='neg'>-22.07%</td>
+<td class='neg'>-31.35%</td>
+<td>95.01M</td>
+<td class='pos'>1.56%</td>
+<td class='neg'>-10.82%</td>
+<td class='pos'>74.60%</td>
+<td class='pos'>223.79%</td>
+</tr>
+<tr>
+<td>$ETC</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+<td class=''>—</td>
+</tr>
+<tr>
+<td>$CAT</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>742.12</td>
+<td class='pos'>2.19%</td>
+<td class='pos'>7.27%</td>
+<td class='pos'>7.41%</td>
+<td class='pos'>16.70%</td>
+<td>2.49M</td>
+<td class='neg'>-25.80%</td>
+<td class='neg'>-65.12%</td>
+<td class='neg'>-43.98%</td>
+<td class='neg'>-1.57%</td>
+</tr>
+<tr>
+<td>$JNJ</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>238.64</td>
+<td class='neg'>-0.56%</td>
+<td class='pos'>1.78%</td>
+<td class='pos'>3.42%</td>
+<td class='pos'>7.74%</td>
+<td>9.38M</td>
+<td class='pos'>13.33%</td>
+<td class='pos'>8.51%</td>
+<td class='pos'>14.53%</td>
+<td class='pos'>36.75%</td>
+</tr>
+<tr>
+<td>$SOFI</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>21.35</td>
+<td class='pos'>2.35%</td>
+<td class='pos'>2.89%</td>
+<td class='neg'>-3.31%</td>
+<td class='neg'>-17.25%</td>
+<td>63.74M</td>
+<td class='neg'>-4.90%</td>
+<td class='neg'>-25.82%</td>
+<td class='neg'>-0.51%</td>
+<td class='pos'>75.49%</td>
+</tr>
+<tr>
+<td>$CRCL</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>60.10</td>
+<td class='pos'>5.36%</td>
+<td class='pos'>9.17%</td>
+<td class='pos'>2.11%</td>
+<td class='neg'>-15.23%</td>
+<td>10.68M</td>
+<td class='neg'>-38.99%</td>
+<td class='neg'>-26.31%</td>
+<td class='neg'>-26.16%</td>
+<td class='pos'>47.59%</td>
+</tr>
+<tr>
+<td>$FIG</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>22.13</td>
+<td class='pos'>0.64%</td>
+<td class='neg'>-1.69%</td>
+<td class='neg'>-7.79%</td>
+<td class='neg'>-24.13%</td>
+<td>8.84M</td>
+<td class='neg'>-26.81%</td>
+<td class='neg'>-63.48%</td>
+<td class='neg'>-39.84%</td>
+<td class='pos'>30.69%</td>
+</tr>
+<tr>
+<td>$RGTX</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>6.60</td>
+<td class='neg'>-1.20%</td>
+<td class='neg'>-0.15%</td>
+<td class='neg'>-6.91%</td>
+<td class='neg'>-40.38%</td>
+<td>3.32M</td>
+<td class='neg'>-48.43%</td>
+<td class='neg'>-40.39%</td>
+<td class='neg'>-2.27%</td>
+<td class='neg'>-22.45%</td>
+</tr>
+<tr>
+<td>$RDDT</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>141.74</td>
+<td class='pos'>1.37%</td>
+<td class='neg'>-7.17%</td>
+<td class='neg'>-19.99%</td>
+<td class='neg'>-33.65%</td>
+<td>8.47M</td>
+<td class='neg'>-61.66%</td>
+<td class='neg'>-10.43%</td>
+<td class='pos'>43.78%</td>
+<td class='pos'>222.92%</td>
+</tr>
+<tr>
+<td>$ASTS</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>102.10</td>
+<td class='pos'>0.30%</td>
+<td class='neg'>-1.35%</td>
+<td class='neg'>-2.34%</td>
+<td class='neg'>-2.56%</td>
+<td>11.55M</td>
+<td class='neg'>-27.40%</td>
+<td class='neg'>-42.36%</td>
+<td class='neg'>-10.61%</td>
+<td class='neg'>-2.19%</td>
+</tr>
+<tr>
+<td>$TLT</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>87.51</td>
+<td class='neg'>-0.03%</td>
+<td class='pos'>1.12%</td>
+<td class='pos'>1.11%</td>
+<td class='neg'>-0.95%</td>
+<td>24.67M</td>
+<td class='neg'>-26.29%</td>
+<td class='neg'>-34.87%</td>
+<td class='neg'>-35.38%</td>
+<td class='neg'>-36.56%</td>
+</tr>
+<tr>
+<td>$SNDK</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>583.56</td>
+<td class='neg'>-2.41%</td>
+<td class='neg'>-0.17%</td>
+<td class='neg'>-12.28%</td>
+<td class='pos'>23.95%</td>
+<td>15.16M</td>
+<td class='neg'>-28.93%</td>
+<td class='neg'>-47.75%</td>
+<td class='neg'>-47.31%</td>
+<td class='pos'>12.82%</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+  
+<div class="card">
+  <h3>Tweets (ONLY @mr_derivatives, last 7 days)</h3>
+  <table id="tbl-heis-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-heis-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-heis-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-heis-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-heis-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-heis-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-heis-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS</td><td class='textcell'>My $HIMS position. Not as big as others but still I was caught off guard. No one to blame but myself.
+
+Am I cooked fam?</td><td><a href='https://x.com/Mr_Derivatives/status/2020849516103053728' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$BTC</td><td class='textcell'>$BTC facing some resistance in this $70k-$72k area.
+
+Bulls need to break above it and retest $75k ish area of breakdown.
+
+Bears, you have one job.
+
+Break below $60k and then Valhalla.</td><td><a href='https://x.com/Mr_Derivatives/status/2020850758288105820' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS</td><td class='textcell'>If you are down big on $HIMS, this is a safe space to scream out of the top of your lungs at the community center rooftop.
+
+Here’s a group .
+
+Grab some Sprite and a handful of goldfish at the break room in the back.
+
+We’re gonna listen to some 3 Doors Down in a moment.
+
+-Admin</td><td><a href='https://x.com/Mr_Derivatives/status/2020876279990673511' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$AMD</td><td class='textcell'>$AMD $216’s. Nice</td><td><a href='https://x.com/Mr_Derivatives/status/2020891129424887988' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$COIN</td><td class='textcell'>$COIN
+
+…
+
+Ya……
+
+No.
+
+Call me a hater, but just didn’t think this was it.
+Singing &gt; watching.
+
+So we got millions of people watching the Big Game to sing along with us.
+
+Oh, and we put it on the world&#x27;s largest LED screen @SphereVegas.</td><td><a href='https://x.com/Mr_Derivatives/status/2020706375861764566' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 09, 2026 11:59 AM</td><td>$CRM, $NOW</td><td class='textcell'>Dan Ives says time to buy $CRM and $NOW.
+
+Damage has been done. Too fast too much.
+
+Time for a bounce?
+We are adding Salesforce and ServiceNow to the IVES AI 30 list after taking them off in early December with this software Armageddon sell-off the last few weeks assuming software/tech behemoths like Salesforce and ServiceNow are structurally broken…and we strongly disagree</td><td><a href='https://x.com/Mr_Derivatives/status/2020848724834955676' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$SPY</td><td class='textcell'>$SPY flipped green for February again.
+
+And is now up 10 straight months on a total return basis.
+
+Has not had a red month since the Aprils 2025 crash. 
+
+Just brutal for short sellers and bears on an index level…</td><td><a href='https://x.com/Mr_Derivatives/status/2020885288382533887' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS, $NVO</td><td class='textcell'>$NVO suing $HIMS.
+
+$NVO +6% in pre.
+
+$HIMS -20% in pre.
+
+Thanks Antonio. I was gonna book your 1on1 $15k consultation before this happened…</td><td><a href='https://x.com/Mr_Derivatives/status/2020839463656796649' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS</td><td class='textcell'>$HIMS
+
+You know what? F*ck it. Gonna buy this today to support the company and their stock.
+
+Not like I neeeeeed it or anything. Maybe.
+
+Ok I might. 
+
+But focus.
+
+Stock needs to pump. Focus on the pump.</td><td><a href='https://x.com/Mr_Derivatives/status/2020853108041990458' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 09, 2026 11:59 AM</td><td>$MSFT</td><td class='textcell'>$MSFT very close to a buy entry imho.. $380-$390, good spot for an initial position…
+$MSFT On thin ice here...</td><td><a href='https://x.com/Mr_Derivatives/status/2019845778077020379' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HOOD</td><td class='textcell'>$HOOD Hit $88’s overnight…
+$HOOD should be up way more today than this.
+
+Give me $80. Cmon.</td><td><a href='https://x.com/Mr_Derivatives/status/2020698977344405525' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HOOD</td><td class='textcell'>$HOOD Their Credit Card app is no longer called Credit Card.
+
+It’s called Banking.
+
+I like the stock.</td><td><a href='https://x.com/Mr_Derivatives/status/2020587483071983855' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 09, 2026 11:59 AM</td><td>$GOLD, $SILVER</td><td class='textcell'>$GOLD $SILVER The ratio went as high as 71 on the Silver crash.
+
+Low 40’s to 71…
+
+Wild.
+$GOLD $SILVER 
+
+At one point today the Gold to Silver ratio traded at 42ish, the lowest levels since 2011.
+
+15 year low, Gold is relative to baby bro Silver…
+
+2026 is gonna be a wild year. And we haven’t even finished the first month yet…</td><td><a href='https://x.com/Mr_Derivatives/status/2020562355604611445' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$IGV</td><td class='textcell'>$IGV Software top 10 holdings list below.
+
+ETF is due for a bounce here?</td><td><a href='https://x.com/Mr_Derivatives/status/2020361514201592080' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS</td><td class='textcell'>$HIMS $20 ish in overnight. Basically back to Friday’s after hrs levels.
+
+Thought it was gonna hit $15 so not too bad I guess.</td><td><a href='https://x.com/Mr_Derivatives/status/2020668260337824102' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS</td><td class='textcell'>$HIMS How bad will it open tonight in overnight?</td><td><a href='https://x.com/Mr_Derivatives/status/2020631349980508452' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$ADBE</td><td class='textcell'>Short $ADBE</td><td><a href='https://x.com/Mr_Derivatives/status/2020286645376000239' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 09, 2026 11:59 AM</td><td>$HIMS, $LLY, $NVO</td><td class='textcell'>Damn my whole newsfeed currently is about GLP-1, $HIMS, $NVO, $LLY.
+
+Here’s an easier solution that can fix things right away.
+
+Delete your Doordash/Uber Eats App. Cancel your subscription. And don’t reinstall it.
+
+Am I right or am I right?!</td><td><a href='https://x.com/Mr_Derivatives/status/2020512155523576172' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$SPX</td><td class='textcell'>$SPX 
+
+Do we trust Goldman Sachs here?
+JUST IN: $3.5 trillion Goldman Sachs warns the market sell-off is not over yet.</td><td><a href='https://x.com/Mr_Derivatives/status/2020571345474490459' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$BTC, $ETH</td><td class='textcell'>Both $BTC and $ETH up 20% or so from the lows last week.</td><td><a href='https://x.com/Mr_Derivatives/status/2020577640047063111' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$SPX</td><td class='textcell'>$SPX I normally talk about the 50 and 200dma.
+
+But the 100dma holds a lot of significance too...
+
+Bears need to break below to make things interesting!</td><td><a href='https://x.com/Mr_Derivatives/status/2020329664305332368' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$QQQ</td><td class='textcell'>$QQQ De ja vu roadmap?</td><td><a href='https://x.com/Mr_Derivatives/status/2020004118845403536' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$BTC</td><td class='textcell'>$BTC A visit into that purple box and we call it a day?
+
+
+@mikealfred
+ thoughts?</td><td><a href='https://x.com/Mr_Derivatives/status/2020196833474269263' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$TSLA</td><td class='textcell'>$TSLA Just connecting some dots. Just maybe....</td><td><a href='https://x.com/Mr_Derivatives/status/2020550359857709231' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$SPX</td><td class='textcell'>$SPX February into March “seasonality”:
+
+2018: Dip
+
+2019: No Dip (came later in May tho)
+
+2020: Dip
+
+2021: Dip
+
+2022: Dip
+
+2023: Dip
+
+2024: No Dip (came later in April tho)
+
+2025: Dip
+
+2026: ???
+
+I’m just the messenger.</td><td><a href='https://x.com/Mr_Derivatives/status/2020140677145714721' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$NOW</td><td class='textcell'>$NOW
+
+Name is a falling knife. Generally stay away from falling knives.
+
+BUUUUUUTTT, if I had to chart it and you are a degen, might be worth a Subway Sandwich yolo around this $95ish level soon..</td><td><a href='https://x.com/Mr_Derivatives/status/2020302621618344167' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$WMT</td><td class='textcell'>$WMT
+
+The chart is going parabolic.
+
+And no one knows exactly why.
+
+How do you explain a Forward P/E double that of basically every Magnificent 7 ex Tesla.
+
+HOW!!!??</td><td><a href='https://x.com/Mr_Derivatives/status/2019971855994745274' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$HIMS</td><td class='textcell'>Is $HIMS gonna react positively or negatively to this news on Monday?
+*HIMS &amp; HERS TO STOP OFFERING WEIGHT LOSS PILL
+
+$HIMS</td><td><a href='https://x.com/Mr_Derivatives/status/2020233825973068015' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$IGV</td><td class='textcell'>$IGV The Grand Mother of all Mother of All Trendlines (MOAT)!!!
+
+My goodness, what a trendline! Multiple touches dating back to the 2009 lows. 
+
++ potential quad ish bottom
++ record daily volume
++ record low Daily RSI
+
+But will it get respected?!</td><td><a href='https://x.com/Mr_Derivatives/status/2020365510798692791' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$HIMS</td><td class='textcell'>$HIMS $20 in after hrs.
+
+Just a disaster of a name.
+
+And yes I do have some shares. Not happy.</td><td><a href='https://x.com/Mr_Derivatives/status/2019896807820783998' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$DIA, $IWM, $QQQ, $SPY</td><td class='textcell'>YTD:
+
+$IWM +6.53%
+
+$DIA +3.60%
+
+$SPY +1.09%
+
+$QQQ -.57%
+$IWM $QQQ
+
+Could 2026 be the year of the Russell 2000 outperforming the Nasdaq-100....?
+
+It feels overdue doesn&#x27;t it?!  x.com/Mr_Derivatives…</td><td><a href='https://x.com/Mr_Derivatives/status/2020143960895688842' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$COST, $TGT, $WMT</td><td class='textcell'>$TGT Has a chance to do something very special here..
+
+A catch up trade for the ages! It&#x27;s due.
+
+$COST Forward P/E = 45...
+$WMT Forward P/E = 44...
+$TGT Forward P/E = 15!!!
+
+It&#x27;s time.
+
+Give me $150-$160 by eoy.</td><td><a href='https://x.com/Mr_Derivatives/status/2019940529329643713' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$SPX</td><td class='textcell'>$SPX First time milestones per thousand:
+
+Oct 1997: Got close to 1,000, then led to a 13% drawdown.
+
+Sept 2014: Hit 2,000, then led to a 10% drawdown.
+
+Sept 2018: Got close to 3,000, then led to a 20% drawdown.
+
+Mar 2021: Got close to 4,000, then led to a 3.5% drawdown.
+
+Feb</td><td><a href='https://x.com/Mr_Derivatives/status/2007689195725185503' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$AAPL</td><td class='textcell'>$AAPL Amazing 15% bouncer in 11 trading days.
+
+Almost back to ATH’s…
+$AAPL Chart Update!
+
+De ja vu?!
+
+Looks awfully similar. 
+
+If so, bounce needs commence like right now...</td><td><a href='https://x.com/Mr_Derivatives/status/2019934797444120972' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 08, 2026 04:49 PM</td><td>$NKE, $TGT, $UPS</td><td class='textcell'>$NKE Similar to both $UPS and $TGT. Got the MOAT. Ready to breakout?!</td><td><a href='https://x.com/Mr_Derivatives/status/2020007467053379842' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$SPX</td><td class='textcell'>$SPX Since 2018, we have had at least 2 or more 6% drawdowns each year. Some years had more and some were obviously more severe.
+
+Of course all of these ended up being a buying opportunity at the end of the day.
+
+So in 2026, what is to say we won&#x27;t get at least 2 6%+ drawdowns</td><td><a href='https://x.com/Mr_Derivatives/status/2020344299419041812' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PYPL</td><td class='textcell'>Guys want to know probably the saddest stat ever?
+
+Excluding penny stocks, the stock with the lowest Daily RSI in the ENTIRE stock market is….
+
+With a mf’in 11 RSI. Yes you read that right, an ELEVEN RSI… amongst 10,000 stocks.
+
+Is……
+
+$PYPL
+
+Yes Paypal is the only one of</td><td><a href='https://x.com/Mr_Derivatives/status/2019626368422834248' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>$BTC $60k to almost $66k now.
+
+$70k on deck?</td><td><a href='https://x.com/Mr_Derivatives/status/2019589186668622040' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$ORCL</td><td class='textcell'>$ORCL nearing the April 2025 Covid Crash lows.
+
+And is now at one of the lowest Daily RSI’s in its 38 yr history.
+
+At some point….</td><td><a href='https://x.com/Mr_Derivatives/status/2019621980362928591' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>$BTC $60k to $67k almost now.
+
+$70k almost in reach.
+
+Huge test if it can crack above $70k and retest the $75k neckline breakdown.</td><td><a href='https://x.com/Mr_Derivatives/status/2019650479392018533' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN $198.
+
+UNBELIEVABLE…
+
+Back to sub $200’s.</td><td><a href='https://x.com/Mr_Derivatives/status/2019517778798211378' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>Who wants a new $BTC chart update?
+
+69 &#x27;s to unlock.</td><td><a href='https://x.com/Mr_Derivatives/status/2019547134773850296' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR after hrs $125…..
+
+literally two days ago we were celebrating the earnings almost up to $170.
+
+Uno. Reverse. Card. Much.</td><td><a href='https://x.com/Mr_Derivatives/status/2019529474459726099' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR Michael Burry was right all along….</td><td><a href='https://x.com/Mr_Derivatives/status/2019428176708198781' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>Be very careful right now with crypto if you want to short.
+
+Yes the extreme fear is a very real feeling. And a lot of these bear posts do make sense.
+
+But I would hate to see Tiny Tim read through the Fintwit newsfeed and thinks $BTC is going to $0 in a straight line so he</td><td><a href='https://x.com/Mr_Derivatives/status/2019451726018015660' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$HOOD, $SCHW</td><td class='textcell'>$HOOD is now trading at May 2025 levels relative to big bro $SCHW. 
+
+$HOOD is now at the most oversold RSI levels ever relative to big bro $SCHW.
+
+Food for thought.</td><td><a href='https://x.com/Mr_Derivatives/status/2019412533573218364' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN, $QQQ, $VIX</td><td class='textcell'>$QQQ needs to recapture $600.
+
+Then $AMZN announces a good report in after hrs.
+
+Then we get a relief rally of 1% or so tomorrow and a $VIX down 10-15% on a VIX Crush Fridays .
+
+Just guessing.</td><td><a href='https://x.com/Mr_Derivatives/status/2019445452270166227' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PYPL</td><td class='textcell'>$PYPL I’m just going to say the quiet part out loud.
+
+Sometimes the feeling of cutting a long time loser, despite how undervalued you feel it may be, despite how bottom-y it may be, and despite knowing you might close it out at the lows, feels like such a relief off your</td><td><a href='https://x.com/Mr_Derivatives/status/2019460751652802875' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>The entire stock market needs $AMZN to deliver like they never delivered before.</td><td><a href='https://x.com/Mr_Derivatives/status/2019511234174022032' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BMNR, $MSTR</td><td class='textcell'>$MSTR $BMNR
+
+Guhhhhh damn.  This is sick.
+
+SICK.</td><td><a href='https://x.com/Mr_Derivatives/status/2019479819298172949' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$HIMS</td><td class='textcell'>$HIMS $29 to $23.
+
+Omg.
+
+This stock literally gives you white hair.
+
+Then you end up buying their hair restoration products.
+
+I see the cycle.
+
+#thurshumor</td><td><a href='https://x.com/Mr_Derivatives/status/2019469056475013593' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>$BTC
+
+Speechless.</td><td><a href='https://x.com/Mr_Derivatives/status/2019430854859358641' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN -3% so far…..</td><td><a href='https://x.com/Mr_Derivatives/status/2019516918823285008' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>$BTC $60k support held for now.
+
+Let’s see how far this dead cat can go boing boing..</td><td><a href='https://x.com/Mr_Derivatives/status/2019571696320278597' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ back to back to back monster red days.
+
+Setting up a relief rally Friday with a VCF?
+
+Just guessing.</td><td><a href='https://x.com/Mr_Derivatives/status/2019425065046274558' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ Daily RSI nearing the April 2025 levels…</td><td><a href='https://x.com/Mr_Derivatives/status/2019473361328566782' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$ARM</td><td class='textcell'>$ARM $90 in after hrs off er yesterday.
+
+Now at $111.
+
+What a bounce on a terrible tape day nonetheless.</td><td><a href='https://x.com/Mr_Derivatives/status/2019454419054551344' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $ETH</td><td class='textcell'>$BTC $ETH 
+
+Fundstrat was right!!!!
+
+But it wasn’t Tom Lee.
+
+It was Sean Farrell.</td><td><a href='https://x.com/Mr_Derivatives/status/2019465725396623719' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD</td><td class='textcell'>If $AMD closes above $215 by Friday, I will give $200 to 3 random people who like this tweet.</td><td><a href='https://x.com/Mr_Derivatives/status/2019093184304103910' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GOOG</td><td class='textcell'>$GOOG -5% in pre.
+
+Super healthy.
+
+Great company. Obviously. But the run up has been too monstrous.
+
+Consolidate and rest. Build some support and foundational levels around here. Or slightly lower from here. Helps in the long run.
+$GOOG Went from the cheapest Maggy 7, on a forward p/e basis, last year to now the most expensive Maggy 7 currently. 
+
+It is the only Maggy 7 trading at ATH’s while the rest are all well off their ATH’s
+
+Earnings this Wednesday.
+
+Options implying about a +/- 6.5% move.
+
+Is it</td><td><a href='https://x.com/Mr_Derivatives/status/2019408001627828661' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BMNR</td><td class='textcell'>$BMNR fresh multi month lows in overnight here at $19.66.
+
+I would say about 99% of retail holders are underwater, and some way underwater.
+
+I really like Tom Lee, but this has been nothing short of a disaster. So far…</td><td><a href='https://x.com/Mr_Derivatives/status/2019254448540070293' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BMNR</td><td class='textcell'>$BMNR
+
+I haven’t done this in a while, but I’ll give my Heisenberg 99% guarantee otherwise I don’t tweet for 48 hrs (which is a long time for me I’ll be miserable).
+
+My 99% guarantee is that this name will see $25 before it sees $15.
+
+Currently at $20.
+
+Kthxbye</td><td><a href='https://x.com/Mr_Derivatives/status/2019139991650423010' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MCD</td><td class='textcell'>$MCD The CEO of McDonald’s looks like he was forced at gunpoint to eat his company’s product.
+
+Hilarious.
+MCDONALD’S CEO EATS A $12 BURGER ON CAMERA - AND PRETENDS THIS IS NORMAL
+
+This is Chris Kempczinski, the CEO of McDonald&#x27;s, calmly chewing their new $12 Big Arch and calling it “lunch.”
+
+Two quarter pound patties. 
+Special bun. New sauce.
+1,057 calories.
+Corporate tasting with</td><td><a href='https://x.com/Mr_Derivatives/status/2019409068981645344' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BULL, $HOOD, $IBKR, $SCHW</td><td class='textcell'>$SCHW At ATH&#x27;s
+
+$IBKR Near ATH&#x27;s
+
+$HOOD -50% off ATH&#x27;s
+
+$BULL -92% off ATH&#x27;s
+
+Robinhood was one of THE stories of the year in 2025. Going through a massive bear market now...</td><td><a href='https://x.com/Mr_Derivatives/status/2019171522020274222' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$IREN</td><td class='textcell'>$IREN
+
+$34 in after hrs oof.</td><td><a href='https://x.com/Mr_Derivatives/status/2019530645756866973' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GLD, $SLV</td><td class='textcell'>$GLD has retraced half the losses already from last week.
+
+$SLV has retraced almost half the losses from last week.
+
+If last week was indeed a blow off top, caution is warranted on these DCB’s. Could be right at complacency..
+
+Not saying gold and silver will follow this</td><td><a href='https://x.com/Mr_Derivatives/status/2019053388995141741' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$JPM</td><td class='textcell'>$JPM $320 almost today.
+
+Beautiful bounce.
+$JPM I don&#x27;t usually talk about this particular pattern, but is it time for a bounce within this megaphone?!</td><td><a href='https://x.com/Mr_Derivatives/status/2019210100435767750' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$ARM, $QCOM</td><td class='textcell'>Both $ARM and $QCOM down decently in after hrs…</td><td><a href='https://x.com/Mr_Derivatives/status/2019156543581876653' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GLD, $SLV</td><td class='textcell'>Overnight. Oof.
+$GLD has retraced half the losses already from last week.
+
+$SLV has retraced almost half the losses from last week.
+
+If last week was indeed a blow off top, caution is warranted on these DCB’s. Could be right at complacency..
+
+Not saying gold and silver will follow this</td><td><a href='https://x.com/Mr_Derivatives/status/2019241924117557440' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GME, $META, $NFLX, $NVDA</td><td class='textcell'>$NVDA green
+
+$META green
+
+$NFLX green
+
+$GME green (!!)
+
+Your market leaders today.</td><td><a href='https://x.com/Mr_Derivatives/status/2019465061027229993' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD</td><td class='textcell'>My newsfeed showed a lot of bullish flows into $AMD last several days. I’m not a flows guy. I’m a chartist. So naturally, my degen self said ok let’s try it, why not. Sometimes being retarded in this stock market gets rewarded. 
+
+So I decided to sell a few this weeks CSP’s,</td><td><a href='https://x.com/Mr_Derivatives/status/2019135803054854408' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$UNH</td><td class='textcell'>$UNH 1.5% away from the $270ish gapfill.
+
+This name got the entire Fintwit space, myself included, excited when it got close to $400.
+
+Now getting close to round tripping towards $230.
+
+Sad.</td><td><a href='https://x.com/Mr_Derivatives/status/2019098146769629564' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $ETH</td><td class='textcell'>At some point $BTC and $ETH has to bounce right?
+
+Even if just a DCB…?</td><td><a href='https://x.com/Mr_Derivatives/status/2019220341802033228' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MSTR</td><td class='textcell'>$MSTR
+
+If Bitcoin goes to $65k, God forbid, Strategy could see $75.</td><td><a href='https://x.com/Mr_Derivatives/status/2019087781285290480' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GOOG</td><td class='textcell'>$GOOG back to green. 
+
+Ok ok…</td><td><a href='https://x.com/Mr_Derivatives/status/2019156382508020172' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$ADBE</td><td class='textcell'>$ADBE +3% today. Lol</td><td><a href='https://x.com/Mr_Derivatives/status/2019102180599599125' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>So…..
+
+We’re all buying 1 $BTC at $69420.69 right?
+
+RIGHT?!</td><td><a href='https://x.com/Mr_Derivatives/status/2019384886482858210' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL</td><td class='textcell'>$AAPL almost back to ATH’s. Amazing
+$AAPL Chart Update!
+
+De ja vu?!
+
+Looks awfully similar. 
+
+If so, bounce needs commence like right now...</td><td><a href='https://x.com/Mr_Derivatives/status/2019065385400897669' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>The next 5% in the $QQQ is….?
+
+Let’s see how Fintwit’s sentiment is now after a 6% drawdown from ATH’s.
+
+Vote. Or else.</td><td><a href='https://x.com/Mr_Derivatives/status/2019132082040250862' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$MSTR</td><td class='textcell'>$MSTR Michael Saylor when he goes to bed:
+Micheal Saylor&#x27;s Strategy is now down $2 BILLION on their Bitcoin holdings.</td><td><a href='https://x.com/Mr_Derivatives/status/2019096183583699396' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$VIX</td><td class='textcell'>$VIX up 4 weeks in a row. Up 9 of the last 10 days…
+$VIX
+
+The VIX is up 6 straight days, best wining streak in over 4 years.
+
+And if I had to chart the darn thing, it kinda looks like it wants to make a move badly.
+
+I know, I know don&#x27;t chart the VIX. I get it. But IFFFFF I had to....</td><td><a href='https://x.com/Mr_Derivatives/status/2019416407356903427' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ I will be shocked if tech did not get a relief rally tomorrow.</td><td><a href='https://x.com/Mr_Derivatives/status/2019492252863852947' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $ETH, $SLV</td><td class='textcell'>Today:
+
+$SLV -12%
+
+$BTC -12%
+
+$ETH -12%
+
+It’s like a race to see who can go down fastest.</td><td><a href='https://x.com/Mr_Derivatives/status/2019500724351303807' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$GME</td><td class='textcell'>$GME is +21% ytd.
+
+Outperforming every major index, every Maggy 7, every crypto, and over 470 S&amp;P500 components.
+
+Just sayin’.
+
+
+@michaeljburry</td><td><a href='https://x.com/Mr_Derivatives/status/2019260038658027631' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN Earnings tomorrow.
+
+Implied move is roughly +/- 8.5%.
+
+Recall this was the worst Maggy 7 performer last year. Time to make for lost ground?
+
+If it jumps up by the implied, should take us close to a new All Time Closing High.
+
+I like this name for tomorrow.</td><td><a href='https://x.com/Mr_Derivatives/status/2019274158514008268' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$HOOD, $HOOF</td><td class='textcell'>$HOOD should change their ticker symbol to $HOOF as in OOF now it is almost -50% from ATH’s.
+
+Laugh.
+
+Joke machine warming up guys. Warming up…</td><td><a href='https://x.com/Mr_Derivatives/status/2019059222231576914' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR all that earnings pop, faded. Oof</td><td><a href='https://x.com/Mr_Derivatives/status/2019057881140924757' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$PLTR</td><td class='textcell'>$PLTR $140 to $167 to $140.
+
+Round tripped the earnings pop.</td><td><a href='https://x.com/Mr_Derivatives/status/2019079679274299485' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>$QQQ just went below $600…</td><td><a href='https://x.com/Mr_Derivatives/status/2019391766462623897' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC</td><td class='textcell'>$BTC Cannot stress how important this line is.
+
+Bulls and bears duking it out…
+$BTC Keep it simple. 
+
+Bulls, you know what you need to do here.</td><td><a href='https://x.com/Mr_Derivatives/status/2019049099111354540' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL, $MSFT</td><td class='textcell'>$AAPL $278’s….wow
+$AAPL
+
+5 reasons why I think Apple can bounce next week.
+
+Well today we saw $MSFT pull off a nice green candlestick, finally. Is it Apple&#x27;s turn? I think so. Here&#x27;s why:
+
+1) Daily RSI extreme, historically oversold. Worst since GFC. Very rare.
+
+2) Blue trendline still intact.</td><td><a href='https://x.com/Mr_Derivatives/status/2019064781999673631' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $ETH, $SLV</td><td class='textcell'>$SLV -9%
+
+$ETH -9%
+
+$BTC -9%
+
+….</td><td><a href='https://x.com/Mr_Derivatives/status/2019393327511298392' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL, $MSFT</td><td class='textcell'>$MSFT is trading near a 10yr low relative to $AAPL.
+
+Wild stat.</td><td><a href='https://x.com/Mr_Derivatives/status/2019290681207140752' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ, $SPY</td><td class='textcell'>$SPY Every gap down lower at open has been filled, and usually day of or next few day(s).
+
+$QQQ Every gap down lower at open has been filled, and usually day of or next few day(s).
+
+Today we have another gap down lower.
+
+Fwiw.</td><td><a href='https://x.com/Mr_Derivatives/status/2019048395718172831' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AAPL, $GOOG, $MSFT, $NVDA</td><td class='textcell'>$GOOG and $AAPL came pretty close to overtaking $NVDA today in market cap.
+
+$MSFT a very VERY distant 4th place now.</td><td><a href='https://x.com/Mr_Derivatives/status/2019166622301450620' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$FDX, $UPS</td><td class='textcell'>$UPS $117… 
+
+“Reports of my death have been greatly exaggerated.” -Mark Twain
+$UPS Don&#x27;t look now but the pos UPS is making moves lately.
+
+Look at $FDX too, getting closer to their ATH&#x27;s..
+
+Play the laggard here imo.
+
+$115 PT near term to hit that upper bound line.</td><td><a href='https://x.com/Mr_Derivatives/status/2019266679566700649' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMD</td><td class='textcell'>$AMD -30% from ATH’s now…</td><td><a href='https://x.com/Mr_Derivatives/status/2019499614555238651' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$APP</td><td class='textcell'>$APP $387.
+
+My goodness….
+$APP Chart Update:
+
+Bulls need to defend asap.
+
+A lot of potential bearish technicals poppin&#x27; up.</td><td><a href='https://x.com/Mr_Derivatives/status/2019119502328484065' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN</td><td class='textcell'>$AMZN ruh roh…</td><td><a href='https://x.com/Mr_Derivatives/status/2019517189020381533' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$QQQ</td><td class='textcell'>Big relief bounce in the $QQQ now.
+
+Hold $600.</td><td><a href='https://x.com/Mr_Derivatives/status/2019448543434395771' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $ETH</td><td class='textcell'>$BTC today is the 3rd most oversold Daily RSI in its history.
+
+$ETH today is near the 4th most oversold Daily RSI in its history.</td><td><a href='https://x.com/Mr_Derivatives/status/2019457946472837314' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$VIX</td><td class='textcell'>It’s not often you see the $VIX go up almost 10 straight days..
+
+#observation</td><td><a href='https://x.com/Mr_Derivatives/status/2019421473442787487' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$AMZN, $VIX</td><td class='textcell'>$VIX Crush Fridays  tomorrow?
+
+$AMZN earnings could be the catalyst?</td><td><a href='https://x.com/Mr_Derivatives/status/2019419958153998769' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$LLY</td><td class='textcell'>$LLY +10% today and almost back to ATH’s.
+
+Amazing strength. Tells me this name could see $1,300 when markets do rebound a bit later on.</td><td><a href='https://x.com/Mr_Derivatives/status/2019081271851553000' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$NVO</td><td class='textcell'>$NVO $43 handle now. Again???
+
+Wtf.
+
+Ugh.</td><td><a href='https://x.com/Mr_Derivatives/status/2019409891551813884' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$VIX</td><td class='textcell'>$VIX up 9 of last 10 days and closed at the highest levels in 2.5 months.
+
+Very interesting to see how it acts tomorrow on a Friday.</td><td><a href='https://x.com/Mr_Derivatives/status/2019521494347612405' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 06, 2026 06:02 AM</td><td>$BTC, $GLD, $GOLD</td><td class='textcell'>$BTC made fresh 2.4 year lows relative to $GOLD.
+
+The head and shoulders was too obvious in hindsight…
+$BTC to $GLD relativity chart.
+
+Notice anything?!
+
+If the measured move is only half complete then we can see even further underperformance of BTC relative to Gold...</td><td><a href='https://x.com/Mr_Derivatives/status/2019472519229763649' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$BTC</td><td class='textcell'>$BTC Chart Update:
+
+Keep it short. Yes, Bitcoin is due for a dead cat bounce and soon. I wouldn&#x27;t be surprised it went to $70k at minimum all the way up to $75k to retest the breakdown of the neckline, with a possibility of overshooting towards $80k.
+
+The next major supports</td><td><a href='https://x.com/Mr_Derivatives/status/2019552570252095562' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$BRK, $BRKB</td><td class='textcell'>$BRK.B Bollinger Bands tightest since July 2024. What happened then? Led to a nice 11.5% pop!
+
+Spot a nice MOAT that can act as major support.
+
+I think name is coiled here and ready to pop UP. See you back at ATH&#x27;s this year. Easily.
+$BRKB</td><td><a href='https://x.com/Mr_Derivatives/status/2010908226276266028' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$MSTR</td><td class='textcell'>$MSTR Great 3 min read on Strategy’s wild story for the layman like myself.
+
+Read it.
+MSTR’s unrealized BTC profit of ~$33B has swung into a ~$4B loss
+
+Per BTC pricing:
+October 6th: $126,210
+Today: $67,251 (-47%)
+
+Here’s the story of how a software company became a $54B leveraged BTC bet:</td><td><a href='https://x.com/Mr_Derivatives/status/2019485785574240335' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$BMNR</td><td class='textcell'>$BMNR $18.36.
+
+This is a safe space if you need a .</td><td><a href='https://x.com/Mr_Derivatives/status/2019437808755306778' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$SPX, $X</td><td class='textcell'>SpaceX ticker to be $X likely?
+
+Interesting.
+
+Prefer $SPX. Just to confuse everyone. Lol
+Update: There&#x27;s now a 83% chance SpaceX goes public under the ticker &quot;X&quot;.  x.com/PolymarketMone…</td><td><a href='https://x.com/Mr_Derivatives/status/2019492710382788886' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$HIMS</td><td class='textcell'>$HIMS +20% in pre off news. Bounced perfectly off the $24 major support!
+
+Ma, Heisenberg got one right finally.
+$HIMS $24 major support incoming.
+
+I think name is closer to a bottom than a top. Could nibble soon if you want to get ahead of it. Wedgy looking tighter and tighter.
+
+Just unbelievably crushed. Almost -60% since the CEO tweeted about the stock back in October only to have a</td><td><a href='https://x.com/Mr_Derivatives/status/2019410393630929085' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Feb 05, 2026 06:35 PM</td><td>$SPY</td><td class='textcell'>$SPY happened sooner than expected.
+
+My AMD is hurting so bad right now that it washes my short call.
+
+Fml.
+$SPY My prediction between now and March.
+
+5% pullback. No big deal tbh. But it will seem scarier given that so many favorite retail high beta names could drop 3-4x that of the index.</td><td><a href='https://x.com/Mr_Derivatives/status/2019519145797382341' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$U</td><td class='textcell'>The crash in $U just in the last couple weeks is astounding. Yes Google had their AI video game creation prompt, but man, these kind of 50% drops in two weeks is stuff you see in GFC, Covid Crash type settings. Oof.</td><td><a href='https://x.com/Mr_Derivatives/status/2019476663034167718' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$DIA, $IWM, $QQQ, $SPY</td><td class='textcell'>$DIA At ATH&#x27;s
+
+$SPY -1.70% off ATH&#x27;s
+
+$IWM -4.20% off ATH&#x27;s
+
+$QQQ -5.00% off ATH&#x27;s
+
+It &quot;feels&quot; like the SPY should be down 5% and the QQQ down 10% given some of the carnage in these individual names.</td><td><a href='https://x.com/Mr_Derivatives/status/2019161948362056175' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 06:35 PM</td><td>$GOOG</td><td class='textcell'>$GOOG -6% so far…
+$GOOG Went from the cheapest Maggy 7, on a forward p/e basis, last year to now the most expensive Maggy 7 currently. 
+
+It is the only Maggy 7 trading at ATH’s while the rest are all well off their ATH’s
+
+Earnings this Wednesday.
+
+Options implying about a +/- 6.5% move.
+
+Is it</td><td><a href='https://x.com/Mr_Derivatives/status/2019155070009635053' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$PLTR</td><td class='textcell'>$PLTR Michael Burry wins.
+$PLTR This chart will get Michael Burry excited. Maybe.
+
+@michaeljburry</td><td><a href='https://x.com/Mr_Derivatives/status/2019114171502326265' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$GOOG</td><td class='textcell'>$GOOG
+
+Let’s all bow our heads and pray.
+
+I promise to not use an ad blocker and will pay for Youtube Premium.
+
+I promise to use Chrome and not Safari on my iPhone.
+
+I promise my next ride share hail is with Waymo and not Uber.
+
+I promise to tell my friends Gemini is the superior</td><td><a href='https://x.com/Mr_Derivatives/status/2019117087856439352' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$AAPL</td><td class='textcell'>So impressed with $AAPL shaking off broader market weakness last couple weeks.
+
+$300 destiny.
+
+Play it to there.
+
+Name is like Walmart.
+
+Offensive on up days.
+
+Defensive on down days.</td><td><a href='https://x.com/Mr_Derivatives/status/2019139074108584420' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$SNAP</td><td class='textcell'>$SNAP near ALL TIME LOWS.
+
+Earnings after the bell today.
+
+I mean are they gonna announce a reverse split?</td><td><a href='https://x.com/Mr_Derivatives/status/2019151339784401213' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$GOOG</td><td class='textcell'>Gluck $GOOG degens!
+
+May the force be with us.</td><td><a href='https://x.com/Mr_Derivatives/status/2019154293601992959' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 05, 2026 08:38 AM</td><td>$GOOG</td><td class='textcell'>$GOOG reports after the bell tomorrow.
+
+Implied move is roughly +/- 6.2%.
+
+The only Maggy 7 still near their ATH’s.
+
+The stock can do no wrong. Just killing it. Basically up 11 straight months.
+
+Everyone is long. And has been long. And is swimming in paper profits.
+
+I can’t find</td><td><a href='https://x.com/Mr_Derivatives/status/2018896455461998679' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$BTC, $ETC</td><td class='textcell'>$BTC $ETC
+Saylor is down -$3.6 BILLION 
+
+Tom lee is down -$7.4 BILLION</td><td><a href='https://x.com/Mr_Derivatives/status/2019390845955551398' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$VIX</td><td class='textcell'>$VIX is up 8 of the last 9 days. But still cannot close over the psychological level of 20.</td><td><a href='https://x.com/Mr_Derivatives/status/2019237687006548053' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$AAPL, $AMZN, $GOOG, $SPX</td><td class='textcell'>$SPX down 5 of the last 6 days.
+
+But here’s the thing, whole number 6,900 and  the 50dma keeps stick saving the index during those 6 days.
+
+Then you have $AAPL lifting heavy duty lately.
+
+$AMZN tomorrow and especially $GOOG today can back Apple up in lifting the index.</td><td><a href='https://x.com/Mr_Derivatives/status/2019086271012810919' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$HIMS</td><td class='textcell'>$HIMS -67% from ATH’s.
+
+Sad….</td><td><a href='https://x.com/Mr_Derivatives/status/2019157865500688862' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$CAT, $JNJ, $LLY, $WMT, $XOM</td><td class='textcell'>“But boomer stocks suck!”
+
+Also said boomer stocks:
+
+$WMT ATH
+
+$JNJ ATH
+
+$LLY ATH
+
+$XOM ATH
+
+$CAT ATH</td><td><a href='https://x.com/Mr_Derivatives/status/2019283895594938380' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$NVO, $PYPL</td><td class='textcell'>$NVO Back to $47.
+
+This stock is like the $PYPL of Pharma. Lol
+
+With that said, last several times it went back to a $40’s handle it led to nice tradable bounces.</td><td><a href='https://x.com/Mr_Derivatives/status/2019054527442252231' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$QQQ</td><td class='textcell'>$QQQ -5% from ATH’s.
+
+Very normal and healthy on an index level.</td><td><a href='https://x.com/Mr_Derivatives/status/2019080434987003945' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$AMD</td><td class='textcell'>$AMD -12%. Ouch.
+
+Well my CSP’s are now ITM.
+
+But it’s a stock I don’t mind owning.
+
+But still, ouch.</td><td><a href='https://x.com/Mr_Derivatives/status/2019056397930152431' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$AMD</td><td class='textcell'>$AMD officially in a bear market. -21% from the ATH’s now.</td><td><a href='https://x.com/Mr_Derivatives/status/2019060997529714775' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 05, 2026 08:38 AM</td><td>$HOOD, $PLTR, $SOFI</td><td class='textcell'>$SOFI cracked below the 200dma
+
+$HOOD cracked below the 200dma
+
+$PLTR cracked below the 200dma
+
+3 ultra favorite retail names looking unhealthy on the the charts, but with that said, are near term oversold.</td><td><a href='https://x.com/Mr_Derivatives/status/2019050565989445677' target='_blank'>Open</a></td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div id="tab-heisarch" class="hidden" data-tab="1">
+  
+<div class="card">
+  <h3>Heisenberg Archive — Flagged tweets with frozen price snapshots</h3>
+  <div class='muted'>Add Tweet URLs to stocks.xlsx → Heisenberg Archive. Snapshots are frozen in heisenberg_archive_snapshots.json on first run.</div>
+  <table id="tbl-heisarch" data-filter-table="1">
+    <thead>
+      <tr>
+
+        <th data-sort="text">Ticker</th>
+        <th data-sort="num">Tot</th>
+        <th data-sort="num">B</th>
+        <th data-sort="num">N</th>
+        <th data-sort="num">S</th>
+        <th data-sort="num">Price</th>
+        <th data-sort="num">1D</th>
+        <th data-sort="num">3D</th>
+        <th data-sort="num">5D</th>
+        <th data-sort="num">10D</th>
+        <th data-sort="size">Volume</th>
+        <th data-sort="num">V1D</th>
+        <th data-sort="num">V3D</th>
+        <th data-sort="num">V5D</th>
+        <th data-sort="num">V10D</th>
+      </tr>
+
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="$RKLB" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;=1" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-heisarch')"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td>$TGT</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>115.55</td>
+<td class='pos'>4.24%</td>
+<td class='pos'>3.82%</td>
+<td class='pos'>9.56%</td>
+<td class='pos'>6.89%</td>
+<td>7.80M</td>
+<td class='pos'>28.33%</td>
+<td class='neg'>-6.80%</td>
+<td class='pos'>26.25%</td>
+<td class='pos'>69.88%</td>
+</tr>
+<tr>
+<td>$NOW</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>100.74</td>
+<td class='neg'>-1.84%</td>
+<td class='neg'>-8.23%</td>
+<td class='neg'>-13.90%</td>
+<td class='neg'>-24.32%</td>
+<td>34.73M</td>
+<td class='neg'>-4.01%</td>
+<td class='neg'>-0.01%</td>
+<td class='pos'>23.79%</td>
+<td class='pos'>109.13%</td>
+</tr>
+<tr>
+<td>$NKE</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>63.92</td>
+<td class='pos'>1.95%</td>
+<td class='pos'>4.91%</td>
+<td class='pos'>3.41%</td>
+<td class='neg'>-1.72%</td>
+<td>11.96M</td>
+<td class='neg'>-4.36%</td>
+<td class='neg'>-30.95%</td>
+<td class='neg'>-16.41%</td>
+<td class='pos'>6.38%</td>
+</tr>
+<tr>
+<td>$UPS</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>117.34</td>
+<td class='pos'>0.68%</td>
+<td class='pos'>4.91%</td>
+<td class='pos'>10.47%</td>
+<td class='pos'>8.67%</td>
+<td>6.74M</td>
+<td class='pos'>1.72%</td>
+<td class='neg'>-12.48%</td>
+<td class='neg'>-6.24%</td>
+<td class='pos'>66.39%</td>
+</tr>
+<tr>
+<td>$COST</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1001.16</td>
+<td class='pos'>1.20%</td>
+<td class='pos'>2.38%</td>
+<td class='pos'>6.48%</td>
+<td class='pos'>1.82%</td>
+<td>2.36M</td>
+<td class='neg'>-21.09%</td>
+<td class='neg'>-20.34%</td>
+<td class='neg'>-1.58%</td>
+<td class='pos'>40.34%</td>
+</tr>
+<tr>
+<td>$WMT</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>131.18</td>
+<td class='pos'>3.34%</td>
+<td class='pos'>2.72%</td>
+<td class='pos'>10.11%</td>
+<td class='pos'>11.42%</td>
+<td>26.59M</td>
+<td class='neg'>-12.86%</td>
+<td class='neg'>-16.94%</td>
+<td class='pos'>19.71%</td>
+<td class='pos'>27.81%</td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+  
+<div class="card">
+  <h3>Archived Tweets (frozen)</h3>
+  <table id="tbl-heisarch-tweets" data-filter-table="1">
+    <thead>
+      <tr>
+        <th data-sort="text">Author</th>
+        <th data-sort="text">Signal</th>
+        <th data-sort="text">Time</th>
+        <th data-sort="text">Ticker</th>
+        <th data-sort="text">Text</th>
+        <th data-sort="text">Link</th>
+      </tr>
+      <tr class="filterrow">
+        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-heisarch-tweets')"></th>
+        <th>
+          <select class="filter" onchange="applyFilters('tbl-heisarch-tweets')">
+            <option value="">All</option>
+            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
+          </select>
+        </th>
+        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-heisarch-tweets')"></th>
+        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-heisarch-tweets')"></th>
+        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-heisarch-tweets')"></th>
+        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-heisarch-tweets')"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$NOW</td><td class='textcell'>$NOW
+
+Name is a falling knife. Generally stay away from falling knives.
+
+BUUUUUUTTT, if I had to chart it and you are a degen, might be worth a Subway Sandwich yolo around this $95ish level soon..</td><td><a href='https://x.com/Mr_Derivatives/status/2020302621618344167' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Feb 08, 2026 04:49 PM</td><td>$NKE, $TGT, $UPS</td><td class='textcell'>$NKE Similar to both $UPS and $TGT. Got the MOAT. Ready to breakout?!</td><td><a href='https://x.com/Mr_Derivatives/status/2020007467053379842' target='_blank'>Open</a></td></tr>
+<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Feb 08, 2026 04:49 PM</td><td>$COST, $TGT, $WMT</td><td class='textcell'>$TGT Has a chance to do something very special here..
+
+A catch up trade for the ages! It&#x27;s due.
+
+$COST Forward P/E = 45...
+$WMT Forward P/E = 44...
+$TGT Forward P/E = 15!!!
+
+It&#x27;s time.
+
+Give me $150-$160 by eoy.</td><td><a href='https://x.com/Mr_Derivatives/status/2019940529329643713' target='_blank'>Open</a></td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<script>
+function parseNumberLike(s){
+  if(!s) return null;
+  s=(""+s).trim().toUpperCase();
+  if(s==="—") return null;
+  if(s.endsWith("%")) s=s.slice(0,-1);
+  let mult=1;
+  if(s.endsWith("T")){mult=1e12;s=s.slice(0,-1);}
+  else if(s.endsWith("B")){mult=1e9;s=s.slice(0,-1);}
+  else if(s.endsWith("M")){mult=1e6;s=s.slice(0,-1);}
+  else if(s.endsWith("K")){mult=1e3;s=s.slice(0,-1);}
+  s=s.replace(/,/g,"");
+  let v=parseFloat(s);
+  if(isNaN(v)) return null;
+  return v*mult;
+}
+function matchComparator(cellText, filterText){
+  let ft=(filterText||"").trim();
+  if(!ft) return true;
+  const m=ft.match(/^(>=|<=|>|<|=)\s*([-\d.,]+%?|[-\d.]+[KMBT]?)$/i);
+  if(!m){
+    return (cellText||"").toLowerCase().includes(ft.toLowerCase());
+  }
+  const op=m[1];
+  const right=parseNumberLike(m[2]);
+  const left=parseNumberLike(cellText);
+  if(left===null||right===null) return false;
+  if(op===">") return left>right;
+  if(op===">=") return left>=right;
+  if(op==="<") return left<right;
+  if(op==="<=") return left<=right;
+  if(op==="=") return left===right;
+  return false;
+}
+function applyFilters(tableId){
+  const table=document.getElementById(tableId);
+  if(!table) return;
+  const filters=table.querySelectorAll("thead .filterrow .filter");
+  const rows=table.querySelectorAll("tbody tr");
+  rows.forEach(tr=>{
+    const tds=tr.querySelectorAll("td");
+    let ok=true;
+    for(let i=0;i<filters.length;i++){
+      const f=filters[i];
+      const val=(f.value||"").trim();
+      if(!val) continue;
+      let cellText=(tds[i]?tds[i].textContent:"").trim();
+      if(f.tagName==="SELECT"){
+        if(val && cellText.toUpperCase()!==val.toUpperCase()){ok=false;break;}
+      } else {
+        if(!matchComparator(cellText,val)){ok=false;break;}
+      }
+    }
+    tr.style.display=ok?"":"none";
+  });
+}
+function showTab(which){
+  document.querySelectorAll("[data-tab]").forEach(el=>el.classList.add("hidden"));
+  document.querySelectorAll("[data-tabbtn]").forEach(btn=>{
+    btn.classList.remove("on"); btn.classList.add("off");
+  });
+  document.getElementById("tab-"+which).classList.remove("hidden");
+  const b=document.getElementById("btn-"+which);
+  b.classList.remove("off"); b.classList.add("on");
+}
+function clearSortIndicators(table){
+  table.querySelectorAll("th.sort-asc, th.sort-desc").forEach(th=>{
+    th.classList.remove("sort-asc"); th.classList.remove("sort-desc");
+  });
+}
+function getCellText(row, idx){
+  const td=row.children[idx];
+  if(!td) return "";
+  return (td.textContent||"").trim();
+}
+function sortTable(table, colIdx, type, direction){
+  const tbody=table.tBodies[0];
+  const rows=Array.from(tbody.querySelectorAll("tr"));
+  const dir=(direction==="desc")?-1:1;
+  rows.sort((a,b)=>{
+    const av=getCellText(a,colIdx);
+    const bv=getCellText(b,colIdx);
+    if(type==="num"||type==="size"){
+      const an=parseNumberLike(av);
+      const bn=parseNumberLike(bv);
+      const a0=(an===null?-Infinity:an);
+      const b0=(bn===null?-Infinity:bn);
+      if(a0<b0) return -1*dir;
+      if(a0>b0) return  1*dir;
+      return 0;
+    }
+    const aL=av.toLowerCase();
+    const bL=bv.toLowerCase();
+    if(aL<bL) return -1*dir;
+    if(aL>bL) return  1*dir;
+    return 0;
+  });
+  rows.forEach(r=>tbody.appendChild(r));
+}
+function enableSorting(){
+  document.querySelectorAll("table[data-filter-table='1']").forEach(table=>{
+    const thead=table.tHead;
+    if(!thead) return;
+    const headerRow=thead.rows[0];
+    if(!headerRow) return;
+    Array.from(headerRow.cells).forEach((th, idx)=>{
+      const type=th.getAttribute("data-sort")||"text";
+      th.addEventListener("click", ()=>{
+        const current=th.classList.contains("sort-asc")?"asc":
+                      th.classList.contains("sort-desc")?"desc":"";
+        const next=(current==="asc")?"desc":"asc";
+        clearSortIndicators(table);
+        th.classList.add(next==="asc"?"sort-asc":"sort-desc");
+        sortTable(table, idx, type, next);
+      });
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", enableSorting);
+</script>
+
+<script>showTab('sctr');</script>
+</body>
+</html>
