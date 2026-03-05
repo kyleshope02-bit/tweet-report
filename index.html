@@ -21,13 +21,14 @@ tr:hover{background:#dde7f2}
 .pos{color:#1b5e20;font-weight:700}
 .neg{color:#b71c1c;font-weight:700}
 .badge{padding:3px 8px;border-radius:12px;font-weight:700;font-size:12px;display:inline-block}
-.buy{background:#c8e6c9}
-.sell{background:#ffcdd2}
-.mixed{background:#fff3cd}
-.neutral{background:#eceff1}
+.buy{background:#c8e6c9}.sell{background:#ffcdd2}.mixed{background:#fff3cd}.neutral{background:#eceff1}
+.sig-bull{background:#e8f5e9;color:#1b5e20;font-weight:700;padding:3px 8px;border-radius:8px;font-size:12px;display:inline-block}
+.sig-bear{background:#ffebee;color:#b71c1c;font-weight:700;padding:3px 8px;border-radius:8px;font-size:12px;display:inline-block}
 td.textcell{text-align:left;max-width:400px;word-wrap:break-word}
 td.namecell{text-align:left;max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tabs{display:flex;gap:8px;margin:10px 0}
+td.desccell{text-align:left;max-width:340px;word-wrap:break-word;font-size:12px;color:#444}
+td.catcell {text-align:left;font-size:12px;color:#555}
+.tabs{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
 .tabbtn{border:0;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:800;font-size:14px}
 .tabbtn.on{background:#263238;color:#fff}
 .tabbtn.off{background:#eceff1;color:#263238}
@@ -37,8 +38,7 @@ td.namecell{text-align:left;max-width:200px;white-space:nowrap;overflow:hidden;t
 select.filter{padding:5px}
 .fresh{color:#2e7d32;font-size:11px;margin-left:6px}
 .sources{font-size:11px;color:#888;margin-bottom:6px}
-
-/* PNL scorecard */
+.sig-count{font-size:13px;color:#555;margin-bottom:8px}
 .pnlshell{position:fixed;top:14px;right:14px;z-index:9999}
 .pnlbox{background:#0b1f12;border:2px solid #17c964;border-radius:12px;padding:10px 12px;min-width:190px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
 .pnllabel{font-size:12px;color:#b7f7cf;font-weight:900;letter-spacing:.8px;text-transform:uppercase;text-align:center;margin-bottom:4px}
@@ -56,242 +56,54 @@ select.filter{padding:5px}
 </div>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-04 08:06 PM • yfinance cache 0m old (TTL 6h) • Watchlist filtered to ≥$350B market cap (22 tickers shown) • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-04 11:17 PM • yfinance cache 0m old (TTL 6h) • Watchlist filtered to ≥$350B market cap (22 tickers shown) • Signals: 27 bullish / 18 bearish across 29 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
-  <button id="btn-mag7"  class="tabbtn on"  data-tabbtn="1" onclick="showTab('mag7')">Mag 7</button>
-  <button id="btn-watch" class="tabbtn off" data-tabbtn="1" onclick="showTab('watch')">Watchlist ≥$350B</button>
+  <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">🔍 Signals (45)</button>
+  <button id="btn-mag7"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mag7')">Mag 7</button>
+  <button id="btn-watch"   class="tabbtn off" data-tabbtn="1" onclick="showTab('watch')">Watchlist ≥$350B</button>
 </div>
 
-<div id="tab-mag7" data-tab="1">
-  
-<div class="card">
-  <h3>Mag 7 — Live Prices <span class="fresh">● live</span></h3>
-  <table id="tbl-mag7" data-filter-table="1">
-    <thead>
-      <tr>
-
-        <th data-sort="text">Ticker</th>
-        <th data-sort="text">Name</th>
-        <th data-sort="num">Price</th>
-        <th data-sort="num">Chg 1D %</th>
-        <th data-sort="num">Chg 5D %</th>
-        <th data-sort="num">Chg 20D %</th>
-        <th data-sort="num">Chg 30D %</th>
-        <th data-sort="num">Chg 60D %</th>
-        <th data-sort="size">Volume</th>
-        <th data-sort="num">Vol Chg 1D %</th>
-        <th data-sort="num">Vol Chg 5D %</th>
-        <th data-sort="num">Vol Chg 20D %</th>
-        <th data-sort="num">Vol Chg 30D %</th>
-        <th data-sort="num">Vol Chg 60D %</th>
-      </tr>
-      <tr class="filterrow">
-        <th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th>
-      </tr>
-    </thead>
-    <tbody>
-<tr>
-<td>$AAPL</td>
-<td class='namecell'>Apple Inc</td>
-<td>262.52</td>
-<td class='neg'>-0.47%</td>
-<td class='neg'>-4.27%</td>
-<td class='neg'>-2.49%</td>
-<td class='pos'>6.51%</td>
-<td class='neg'>-6.39%</td>
-<td>39.26M</td>
-<td class='neg'>-1.57%</td>
-<td class='pos'>4.16%</td>
-<td class='neg'>-48.54%</td>
-<td class='neg'>-43.12%</td>
-<td class='neg'>-12.62%</td>
-</tr>
-<tr>
-<td>$MSFT</td>
-<td class='namecell'>Microsoft Corp</td>
-<td>405.20</td>
-<td class='pos'>0.31%</td>
-<td class='pos'>1.15%</td>
-<td class='neg'>-1.24%</td>
-<td class='neg'>-10.65%</td>
-<td class='neg'>-15.54%</td>
-<td>35.64M</td>
-<td class='neg'>-2.18%</td>
-<td class='neg'>-4.45%</td>
-<td class='neg'>-28.07%</td>
-<td class='pos'>8.72%</td>
-<td class='pos'>34.44%</td>
-</tr>
-<tr>
-<td>$NVDA</td>
-<td class='namecell'>NVIDIA Corp</td>
-<td>183.04</td>
-<td class='pos'>1.66%</td>
-<td class='neg'>-6.40%</td>
-<td class='pos'>1.50%</td>
-<td class='pos'>2.79%</td>
-<td class='neg'>-0.19%</td>
-<td>175.71M</td>
-<td class='neg'>-6.36%</td>
-<td class='neg'>-32.98%</td>
-<td class='neg'>-8.62%</td>
-<td class='neg'>-13.82%</td>
-<td class='pos'>10.63%</td>
-</tr>
-<tr>
-<td>$AMZN</td>
-<td class='namecell'>Amazon.com Inc</td>
-<td>216.82</td>
-<td class='pos'>3.88%</td>
-<td class='pos'>2.93%</td>
-<td class='neg'>-9.14%</td>
-<td class='neg'>-6.14%</td>
-<td class='neg'>-5.36%</td>
-<td>54.29M</td>
-<td class='pos'>13.51%</td>
-<td class='pos'>25.05%</td>
-<td class='pos'>14.15%</td>
-<td class='pos'>15.58%</td>
-<td class='pos'>42.49%</td>
-</tr>
-<tr>
-<td>$GOOGL</td>
-<td class='namecell'>Alphabet Inc Class A</td>
-<td>303.13</td>
-<td class='neg'>-0.15%</td>
-<td class='neg'>-3.12%</td>
-<td class='neg'>-10.77%</td>
-<td class='neg'>-5.86%</td>
-<td class='neg'>-4.50%</td>
-<td>29.31M</td>
-<td class='neg'>-11.71%</td>
-<td class='neg'>-4.43%</td>
-<td class='neg'>-36.80%</td>
-<td class='neg'>-20.85%</td>
-<td class='neg'>-13.73%</td>
-</tr>
-<tr>
-<td>$META</td>
-<td class='namecell'>Meta Platforms Inc</td>
-<td>667.73</td>
-<td class='pos'>1.93%</td>
-<td class='pos'>2.15%</td>
-<td class='neg'>-3.47%</td>
-<td class='pos'>10.53%</td>
-<td class='pos'>1.02%</td>
-<td>10.71M</td>
-<td class='neg'>-2.02%</td>
-<td class='pos'>0.08%</td>
-<td class='neg'>-28.62%</td>
-<td class='neg'>-31.17%</td>
-<td class='neg'>-48.36%</td>
-</tr>
-<tr>
-<td>$TSLA</td>
-<td class='namecell'>Tesla Inc</td>
-<td>405.94</td>
-<td class='pos'>3.44%</td>
-<td class='neg'>-2.75%</td>
-<td class='neg'>-3.80%</td>
-<td class='neg'>-3.17%</td>
-<td class='neg'>-10.69%</td>
-<td>67.67M</td>
-<td class='pos'>9.51%</td>
-<td class='pos'>21.57%</td>
-<td class='pos'>6.72%</td>
-<td class='pos'>5.99%</td>
-<td class='neg'>-5.93%</td>
-</tr>
-    </tbody>
-  </table>
+<div id="tab-signals" data-tab="1">
+  <div class="card"><h3>Pattern Signals <span class="fresh">● live</span></h3><div class="sig-count">45 signals detected — <span style="color:#1b5e20">27 bullish</span> / <span style="color:#b71c1c">18 bearish</span></div><table id="tbl-signals" data-filter-table="1"><thead><tr><th data-sort="text">Ticker</th><th data-sort="text">Direction</th><th data-sort="text">Category</th><th data-sort="text">Signal</th><th data-sort="text">Description</th><th data-sort="text">Chart</th></tr><tr class="filterrow"><th><input class="filter" placeholder="$NVDA" oninput="applyFilters('tbl-signals')"></th><th><select class="filter" onchange="applyFilters('tbl-signals')"><option value="">All</option><option>Bullish</option><option>Bearish</option></select></th><th><input class="filter" placeholder="Oliver Kell…" oninput="applyFilters('tbl-signals')"></th><th><input class="filter" placeholder="Pocket Pivot…" oninput="applyFilters('tbl-signals')"></th><th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-signals')"></th><th></th></tr></thead><tbody><tr><td><strong>$AAPL</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=AAPL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AMZN</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>Wedge Pop</strong></td><td class='desccell'>Price reclaimed both 10 &amp; 20 EMA in one session — sudden sentiment shift / reversal signal.</td><td><a href='https://www.tradingview.com/chart/?symbol=AMZN' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AMZN</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Gil Morales — Accumulation</td><td><strong>Pocket Pivot</strong></td><td class='desccell'>Up-day volume (54M) exceeds max down-volume of last 10 days near 50 SMA — early buy signal.</td><td><a href='https://www.tradingview.com/chart/?symbol=AMZN' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AMZN</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Bullish Stacked Cross</strong></td><td class='desccell'>10 SMA just crossed above 20 SMA — green light for setups.</td><td><a href='https://www.tradingview.com/chart/?symbol=AMZN' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$BRK-B</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=BRK-B' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$COST</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>EMA Crossback</strong></td><td class='desccell'>Price bouncing off rising 10 EMA with 10 EMA &gt; 20 EMA — low-risk institutional support entry.</td><td><a href='https://www.tradingview.com/chart/?symbol=COST' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$COST</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch + Confirmation</strong></td><td class='desccell'>10/21/50 SMAs within 4.6% of each other — volatility contraction / Launch Pad forming. Price above all MAs — confirmed breakout setup.</td><td><a href='https://www.tradingview.com/chart/?symbol=COST' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$CVX</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>EMA Crossback</strong></td><td class='desccell'>Price bouncing off rising 10 EMA with 10 EMA &gt; 20 EMA — low-risk institutional support entry.</td><td><a href='https://www.tradingview.com/chart/?symbol=CVX' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$CVX</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 4.8% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=CVX' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$GE</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>EMA Crossback</strong></td><td class='desccell'>Price bouncing off rising 10 EMA with 10 EMA &gt; 20 EMA — low-risk institutional support entry.</td><td><a href='https://www.tradingview.com/chart/?symbol=GE' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$GE</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 6.3% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=GE' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$JNJ</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>EMA Crossback</strong></td><td class='desccell'>Price bouncing off rising 10 EMA with 10 EMA &gt; 20 EMA — low-risk institutional support entry.</td><td><a href='https://www.tradingview.com/chart/?symbol=JNJ' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$JNJ</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 4.7% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=JNJ' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$JPM</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=JPM' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$LLY</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=LLY' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$MA</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=MA' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$META</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch + Confirmation</strong></td><td class='desccell'>10/21/50 SMAs within 0.9% of each other — volatility contraction / Launch Pad forming. Price above all MAs — confirmed breakout setup.</td><td><a href='https://www.tradingview.com/chart/?symbol=META' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$META</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=META' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$NFLX</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch + Confirmation</strong></td><td class='desccell'>10/21/50 SMAs within 4.4% of each other — volatility contraction / Launch Pad forming. Price above all MAs — confirmed breakout setup.</td><td><a href='https://www.tradingview.com/chart/?symbol=NFLX' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$NVDA</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=NVDA' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$PG</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 4.1% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=PG' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$PLTR</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Gil Morales — Accumulation</td><td><strong>Pocket Pivot</strong></td><td class='desccell'>Up-day volume (59M) exceeds max down-volume of last 10 days near 50 SMA — early buy signal.</td><td><a href='https://www.tradingview.com/chart/?symbol=PLTR' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$PLTR</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Bullish Stacked Cross</strong></td><td class='desccell'>10 SMA just crossed above 20 SMA — green light for setups.</td><td><a href='https://www.tradingview.com/chart/?symbol=PLTR' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$TSM</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 5.2% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=TSM' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$V</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>Tight Base (10/21/80)</strong></td><td class='desccell'>Price closing in tight range near 10, 21 &amp; 80 SMA — sideways base forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=V' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$WMT</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>EMA Crossback</strong></td><td class='desccell'>Price bouncing off rising 10 EMA with 10 EMA &gt; 20 EMA — low-risk institutional support entry.</td><td><a href='https://www.tradingview.com/chart/?symbol=WMT' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$XOM</strong></td><td><span class='sig-bull'>Bullish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Strong 20 SMA Slope</strong></td><td class='desccell'>20 SMA rose 4.8% over last 10 days — steep upward momentum (45°+ equivalent).</td><td><a href='https://www.tradingview.com/chart/?symbol=XOM' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AAPL</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Oliver Kell — EMA Rhythm</td><td><strong>Bearish EMA Cross</strong></td><td class='desccell'>10 EMA crossed below 20 EMA — caution / red light.</td><td><a href='https://www.tradingview.com/chart/?symbol=AAPL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AAPL</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 1.4% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=AAPL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AMZN</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 6.7% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=AMZN' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$AVGO</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 3.1% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=AVGO' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$BAC</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 4.9% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=BAC' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$BRK-B</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 0.8% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=BRK-B' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$GOOGL</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 4.1% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=GOOGL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$GOOGL</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 3.7% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=GOOGL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$HD</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 2.6% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=HD' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$JPM</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 3.3% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=JPM' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$LLY</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 2.2% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=LLY' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$MSFT</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 6.0% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=MSFT' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$NVDA</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 0.7% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=NVDA' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$ORCL</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 6.8% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=ORCL' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$PLTR</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 7.2% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=PLTR' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$TCEHY</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 7.2% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=TCEHY' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$TSLA</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Slope &amp; Crossover</td><td><strong>Declining 20 SMA Slope</strong></td><td class='desccell'>20 SMA fell 3.0% over last 10 days — flat/down slope, avoid.</td><td><a href='https://www.tradingview.com/chart/?symbol=TSLA' target='_blank'>📈 Chart</a></td></tr><tr><td><strong>$V</strong></td><td><span class='sig-bear'>Bearish</span></td><td class='catcell'>Launch Pad — Pinch Setup</td><td><strong>MA Pinch</strong></td><td class='desccell'>10/21/50 SMAs within 4.7% of each other — volatility contraction / Launch Pad forming.</td><td><a href='https://www.tradingview.com/chart/?symbol=V' target='_blank'>📈 Chart</a></td></tr></tbody></table></div>
 </div>
-  
-<div class="card">
-  <h3>Tweets — Mag 7 Tickers</h3>
-  <div class="sources">Showing tweets from: @eliteoptions2 + @mr_derivatives</div>
-  <table id="tbl-mag7-tweets" data-filter-table="1">
-    <thead>
-      <tr>
-        <th data-sort="text">Author</th>
-        <th data-sort="text">Signal</th>
-        <th data-sort="text">Time</th>
-        <th data-sort="text">Ticker</th>
-        <th data-sort="text">Text</th>
-        <th data-sort="text">Link</th>
-      </tr>
-      <tr class="filterrow">
-        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-mag7-tweets')"></th>
-        <th>
-          <select class="filter" onchange="applyFilters('tbl-mag7-tweets')">
-            <option value="">All</option>
-            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
-          </select>
-        </th>
-        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-mag7-tweets')"></th>
-        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-mag7-tweets')"></th>
-        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-mag7-tweets')"></th>
-        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-mag7-tweets')"></th>
-      </tr>
-    </thead>
-    <tbody>
 
-<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Mar 04, 2026 09:38 PM</td><td>$AMZN</td><td class='textcell'>$AMZN BEAUTIFUL day today.
+<div id="tab-mag7" class="hidden" data-tab="1">
+  <div class="card"><h3>Mag 7 — Live Prices <span class="fresh">● live</span></h3><table id="tbl-mag7" data-filter-table="1"><thead><tr><th data-sort="text">Ticker</th><th data-sort="text">Name</th><th data-sort="num">Price</th><th data-sort="num">Chg 1D %</th><th data-sort="num">Chg 5D %</th><th data-sort="num">Chg 20D %</th><th data-sort="num">Chg 30D %</th><th data-sort="num">Chg 60D %</th><th data-sort="size">Volume</th><th data-sort="num">Vol Chg 1D %</th><th data-sort="num">Vol Chg 5D %</th><th data-sort="num">Vol Chg 20D %</th><th data-sort="num">Vol Chg 30D %</th><th data-sort="num">Vol Chg 60D %</th></tr><tr class="filterrow"><th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th></tr></thead><tbody><tr><td>$AAPL</td><td class='namecell'>Apple Inc</td><td>262.52</td><td class='neg'>-0.47%</td><td class='neg'>-4.27%</td><td class='neg'>-2.49%</td><td class='pos'>6.51%</td><td class='neg'>-6.39%</td><td>39.75M</td><td class='neg'>-0.74%</td><td class='pos'>5.47%</td><td class='neg'>-47.89%</td><td class='neg'>-42.40%</td><td class='neg'>-11.53%</td></tr><tr><td>$MSFT</td><td class='namecell'>Microsoft Corp</td><td>405.20</td><td class='pos'>0.31%</td><td class='pos'>1.15%</td><td class='neg'>-1.24%</td><td class='neg'>-10.65%</td><td class='neg'>-15.54%</td><td>35.75M</td><td class='neg'>-1.99%</td><td class='neg'>-4.17%</td><td class='neg'>-27.85%</td><td class='pos'>9.04%</td><td class='pos'>34.84%</td></tr><tr><td>$NVDA</td><td class='namecell'>NVIDIA Corp</td><td>183.04</td><td class='pos'>1.66%</td><td class='neg'>-6.40%</td><td class='pos'>1.50%</td><td class='pos'>2.79%</td><td class='neg'>-0.19%</td><td>177.13M</td><td class='neg'>-5.83%</td><td class='neg'>-32.44%</td><td class='neg'>-7.88%</td><td class='neg'>-13.13%</td><td class='pos'>11.53%</td></tr><tr><td>$AMZN</td><td class='namecell'>Amazon.com Inc</td><td>216.82</td><td class='pos'>3.88%</td><td class='pos'>2.93%</td><td class='neg'>-9.14%</td><td class='neg'>-6.14%</td><td class='neg'>-5.36%</td><td>54.62M</td><td class='pos'>13.95%</td><td class='pos'>25.82%</td><td class='pos'>14.85%</td><td class='pos'>16.30%</td><td class='pos'>43.37%</td></tr><tr><td>$GOOGL</td><td class='namecell'>Alphabet Inc Class A</td><td>303.13</td><td class='neg'>-0.15%</td><td class='neg'>-3.12%</td><td class='neg'>-10.77%</td><td class='neg'>-5.86%</td><td class='neg'>-4.50%</td><td>29.48M</td><td class='neg'>-11.35%</td><td class='neg'>-3.87%</td><td class='neg'>-36.43%</td><td class='neg'>-20.38%</td><td class='neg'>-13.23%</td></tr><tr><td>$META</td><td class='namecell'>Meta Platforms Inc</td><td>667.73</td><td class='pos'>1.93%</td><td class='pos'>2.15%</td><td class='neg'>-3.47%</td><td class='pos'>10.53%</td><td class='pos'>1.02%</td><td>10.80M</td><td class='neg'>-1.48%</td><td class='pos'>0.88%</td><td class='neg'>-28.04%</td><td class='neg'>-30.61%</td><td class='neg'>-47.94%</td></tr><tr><td>$TSLA</td><td class='namecell'>Tesla Inc</td><td>405.94</td><td class='pos'>3.44%</td><td class='neg'>-2.75%</td><td class='neg'>-3.80%</td><td class='neg'>-3.17%</td><td class='neg'>-10.69%</td><td>68.14M</td><td class='pos'>9.99%</td><td class='pos'>22.41%</td><td class='pos'>7.46%</td><td class='pos'>6.73%</td><td class='neg'>-5.28%</td></tr></tbody></table></div>
+  <div class="card"><h3>Tweets — Mag 7 Tickers</h3><div class="sources">Showing tweets from: @eliteoptions2 + @mr_derivatives</div><table id="tbl-mag7-tweets" data-filter-table="1"><thead><tr><th data-sort="text">Author</th><th data-sort="text">Signal</th><th data-sort="text">Time</th><th data-sort="text">Ticker</th><th data-sort="text">Text</th><th data-sort="text">Link</th></tr><tr class="filterrow"><th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-mag7-tweets')"></th><th><select class="filter" onchange="applyFilters('tbl-mag7-tweets')"><option value="">All</option><option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option></select></th><th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-mag7-tweets')"></th></tr></thead><tbody><tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Mar 04, 2026 09:38 PM</td><td>$AMZN</td><td class='textcell'>$AMZN BEAUTIFUL day today.
 $AMZN For bull&#x27;s  only:
 
 Amazon&#x27;s stock is currently sitting at or very close to sitting at a 25 year grand daddy of them all MOAT trendline dating back to the 2001 dot com bust lows.
 
 Fascinating!
 
-Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</td><td><a href='https://x.com/Mr_Derivatives/status/2029310551286006176' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 02:58 PM</td><td>$COIN, $META, $SPX</td><td class='textcell'>There goes $META.. breaking out above 663.. 680 in play if it holds 663 into the close today
+Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</td><td><a href='https://x.com/Mr_Derivatives/status/2029310551286006176' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 02:58 PM</td><td>$COIN, $META, $SPX</td><td class='textcell'>There goes $META.. breaking out above 663.. 680 in play if it holds 663 into the close today
 
 $COIN up 21 pts today.. holding above 200.. 215-220 in play if BTC can get through 74k this week
 
-$SPX all about 6880 wait for it, still a hard trade under this level</td><td><a href='https://x.com/EliteOptions2/status/2029209784290034134' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 02:55 PM</td><td>$NVDA</td><td class='textcell'>$NVDA been stuck in this trading range for 9 months….
+$SPX all about 6880 wait for it, still a hard trade under this level</td><td><a href='https://x.com/EliteOptions2/status/2029209784290034134' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 02:55 PM</td><td>$NVDA</td><td class='textcell'>$NVDA been stuck in this trading range for 9 months….
 
-What will it take to breakout breakdown from this!?</td><td><a href='https://x.com/Mr_Derivatives/status/2029209141550694492' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 01:29 PM</td><td>$CRWV, $NVDA</td><td class='textcell'>Perplexity doing things…
+What will it take to breakout breakdown from this!?</td><td><a href='https://x.com/Mr_Derivatives/status/2029209141550694492' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 01:29 PM</td><td>$CRWV, $NVDA</td><td class='textcell'>Perplexity doing things…
 
 Still think Apple and them would have been a good marriage. Ah wells too late I guess.
 Perplexity signed a multi-year deal with $CRWV CoreWeave to power AI inference on dedicated $NVDA Grace Blackwell clusters.
 
-The partnership highlights CoreWeave’s push to diversify its customer base as it scales AI data center capacity.</td><td><a href='https://x.com/Mr_Derivatives/status/2029187441513644059' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 05:03 AM</td><td>$TSLA</td><td class='textcell'>$TSLA Getting tighter between the purple and green lines...</td><td><a href='https://x.com/Mr_Derivatives/status/2029060161500004384' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 01:00 AM</td><td>$META, $SPX</td><td class='textcell'>TRADE PLAN for Wednesday  
+The partnership highlights CoreWeave’s push to diversify its customer base as it scales AI data center capacity.</td><td><a href='https://x.com/Mr_Derivatives/status/2029187441513644059' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 05:03 AM</td><td>$TSLA</td><td class='textcell'>$TSLA Getting tighter between the purple and green lines...</td><td><a href='https://x.com/Mr_Derivatives/status/2029060161500004384' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 01:00 AM</td><td>$META, $SPX</td><td class='textcell'>TRADE PLAN for Wednesday  
 
 $SPX 130 pt bounce from the lows but still need to get back above 6900 to look more bullish this month. Let&#x27;s see if SPX can defend 6800 tomorrow. 
 SPX March 4 6860C can work above 6820
 
-$META very close to a bigger breakout once it gets through 663.</td><td><a href='https://x.com/EliteOptions2/status/2028998892063203759' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$META, $MU, $NFLX, $PLTR, $QQQ, $SNDK, $SPX</td><td class='textcell'>Volatile week, but a profitable one! $SPX continues this 4+ month range. Let&#x27;s see if we get the 7000 break in March.
+$META very close to a bigger breakout once it gets through 663.</td><td><a href='https://x.com/EliteOptions2/status/2028998892063203759' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$META, $MU, $NFLX, $PLTR, $QQQ, $SNDK, $SPX</td><td class='textcell'>Volatile week, but a profitable one! $SPX continues this 4+ month range. Let&#x27;s see if we get the 7000 break in March.
 
 $META $SNDK $PLTR $QQQ paid this week.
 
 We should more opportunities  with $NFLX $META $MU $SNDK again next week. 
 
-I will post my charts and plan on Sunday,</td><td><a href='https://x.com/EliteOptions2/status/2027492706482610242' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NVDA</td><td class='textcell'>$NVDA nasty close.</td><td><a href='https://x.com/Mr_Derivatives/status/2027488017280327710' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NVDA</td><td class='textcell'>If $NVDA closes green today I will give 3 random ppl who like this tweet $300 each.
+I will post my charts and plan on Sunday,</td><td><a href='https://x.com/EliteOptions2/status/2027492706482610242' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NVDA</td><td class='textcell'>$NVDA nasty close.</td><td><a href='https://x.com/Mr_Derivatives/status/2027488017280327710' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NVDA</td><td class='textcell'>If $NVDA closes green today I will give 3 random ppl who like this tweet $300 each.
 
 Pleaseeeeee. 
 
-#beggingindicatoractivated</td><td><a href='https://x.com/Mr_Derivatives/status/2027420866087370998' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 06:30 PM</td><td>$GS, $META, $MU, $SNDK</td><td class='textcell'>When the market bottoms, don&#x27;t buy everything.
+#beggingindicatoractivated</td><td><a href='https://x.com/Mr_Derivatives/status/2027420866087370998' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 06:30 PM</td><td>$GS, $META, $MU, $SNDK</td><td class='textcell'>When the market bottoms, don&#x27;t buy everything.
 
 Buy the stocks that led on the way up. 
 
@@ -304,13 +116,11 @@ These are the ones institutions load up on first.
 
 They recover fastest and run hardest.
 
-Most traders spread their money across 20 tickers during a recovery and</td><td><a href='https://x.com/EliteOptions2/status/2028900740853289318' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 03, 2026 04:28 PM</td><td>$BTC, $META, $SPX</td><td class='textcell'>$BTC showing some relative strength today, back above the 69k level, COIN almost red to green.. COIN to 200 should come this month if BTC can breakout above 69k
+Most traders spread their money across 20 tickers during a recovery and</td><td><a href='https://x.com/EliteOptions2/status/2028900740853289318' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 03, 2026 04:28 PM</td><td>$BTC, $META, $SPX</td><td class='textcell'>$BTC showing some relative strength today, back above the 69k level, COIN almost red to green.. COIN to 200 should come this month if BTC can breakout above 69k
 
 $META almost ready for a bigger bounce, needs to get through 663 first
 
-$SPX up 60+ from the lows, above 6800 will</td><td><a href='https://x.com/EliteOptions2/status/2028870026124804230' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 12:54 PM</td><td>$TSLA</td><td class='textcell'>$TSLA
+$SPX up 60+ from the lows, above 6800 will</td><td><a href='https://x.com/EliteOptions2/status/2028870026124804230' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 12:54 PM</td><td>$TSLA</td><td class='textcell'>$TSLA
 
 Ridiculously cheap for a lease on a Model 3.
 
@@ -318,8 +128,7 @@ I have surveyed about 20 peers of mine who own a Tesla and 19 of the 20 still ha
 
 Great product.
 
-Now just need the stock to reflect</td><td><a href='https://x.com/Mr_Derivatives/status/2028816165980762191' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 10:13 PM</td><td>$TSLA</td><td class='textcell'>1) Most people probably financed or leased.
+Now just need the stock to reflect</td><td><a href='https://x.com/Mr_Derivatives/status/2028816165980762191' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 10:13 PM</td><td>$TSLA</td><td class='textcell'>1) Most people probably financed or leased.
 
 2) Cherry picked the year. If I did this in 2021, I would be underwater my “investment”.
 
@@ -328,17 +137,14 @@ People who bought the Tesla Model 3 back in 2017 paid around $35,000.
 
 If they invested that $37,000 into $TSLA stock, it would be worth ~$845,000 today.
 
-Invest in assets, not liabilities.</td><td><a href='https://x.com/Mr_Derivatives/status/2028594500436939069' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 01:04 AM</td><td>$NVDA</td><td class='textcell'>$NVDA only down 1% so far overnight…
+Invest in assets, not liabilities.</td><td><a href='https://x.com/Mr_Derivatives/status/2028594500436939069' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 01:04 AM</td><td>$NVDA</td><td class='textcell'>$NVDA only down 1% so far overnight…
 
-Not bad.</td><td><a href='https://x.com/Mr_Derivatives/status/2028275269375836634' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:45 AM</td><td>$META, $NFLX, $SPX</td><td class='textcell'>Elite Options TRADE IDEAS for week of March 6th   
+Not bad.</td><td><a href='https://x.com/Mr_Derivatives/status/2028275269375836634' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:45 AM</td><td>$META, $NFLX, $SPX</td><td class='textcell'>Elite Options TRADE IDEAS for week of March 6th   
 
 $NFLX 3/6 100C |  100, 106 SL 93
 $META 3/6 655C |  652, 663 SL 637 
 $SPX 3/4 6950C at 6900 |  6945, 6962 SL 6880
-$SPX 3/4 6800P at 6850 |  6824, 6800 SL 6870</td><td><a href='https://x.com/EliteOptions2/status/2028270320134640048' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:20 AM</td><td>$META</td><td class='textcell'>$META Trade Idea: Mar 6 655C 
+$SPX 3/4 6800P at 6850 |  6824, 6800 SL 6870</td><td><a href='https://x.com/EliteOptions2/status/2028270320134640048' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:20 AM</td><td>$META</td><td class='textcell'>$META Trade Idea: Mar 6 655C 
 
 Trigger: 645 
 Targets: 652, 663 
@@ -350,8 +156,7 @@ If META can defend 636 it should retest 663 again.
 
 Calls can work above 645 as a lotto. 
 
-Once we see META through 663 it can run to 680,</td><td><a href='https://x.com/EliteOptions2/status/2028264026195493227' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$IGV, $MSFT</td><td class='textcell'>Heisenberg Observation
+Once we see META through 663 it can run to 680,</td><td><a href='https://x.com/EliteOptions2/status/2028264026195493227' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$IGV, $MSFT</td><td class='textcell'>Heisenberg Observation
 
 $MSFT is now officially down 5 months in a row.
 
@@ -361,30 +166,23 @@ And that was during the heart of the 2008-2009 GFC.
 
 Name is the top holding of the widely watched $IGV software etf.
 
-Is it</td><td><a href='https://x.com/Mr_Derivatives/status/2027542538845098085' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA lost almost half a TRILLION dollars in market cap from yesterday’s after hours high to today’s intraday low.
+Is it</td><td><a href='https://x.com/Mr_Derivatives/status/2027542538845098085' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA lost almost half a TRILLION dollars in market cap from yesterday’s after hours high to today’s intraday low.
 
-Nbd…</td><td><a href='https://x.com/Mr_Derivatives/status/2027082822494851405' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA, $SPX</td><td class='textcell'>$SPX every time it gets near 6945-7000 range it sells off, same thing happened today. SPX needs to get back above 6921 to see a red to green move
+Nbd…</td><td><a href='https://x.com/Mr_Derivatives/status/2027082822494851405' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA, $SPX</td><td class='textcell'>$SPX every time it gets near 6945-7000 range it sells off, same thing happened today. SPX needs to get back above 6921 to see a red to green move
 
-$NVDA the last time it reported earnings, the market sold off the next day, similar price action today as well</td><td><a href='https://x.com/EliteOptions2/status/2027063728316060037' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA nastay reversal.
+$NVDA the last time it reported earnings, the market sold off the next day, similar price action today as well</td><td><a href='https://x.com/EliteOptions2/status/2027063728316060037' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA nastay reversal.
 
-Back into the 9 month range it goes…</td><td><a href='https://x.com/Mr_Derivatives/status/2027043072539050080' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA $203 after hrs highs yesterday to $191 intraday lows currently.</td><td><a href='https://x.com/Mr_Derivatives/status/2027029707892707582' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $SPX</td><td class='textcell'>TRADE PLAN for Feb 26th  
+Back into the 9 month range it goes…</td><td><a href='https://x.com/Mr_Derivatives/status/2027043072539050080' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA $203 after hrs highs yesterday to $191 intraday lows currently.</td><td><a href='https://x.com/Mr_Derivatives/status/2027029707892707582' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $SPX</td><td class='textcell'>TRADE PLAN for Feb 26th  
 
 $SPX as long as 6921 holds today we should see a push towards 7000 by next week. Calls can work above 6945 today 
 
 $META to 663 in play if it holds the 645 support level. Let&#x27;s see if META can run to 700 early in March.
 
-$MU 3 pt gap up, through</td><td><a href='https://x.com/EliteOptions2/status/2027020858124915092' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$SPX, $TSLA</td><td class='textcell'>TRADE PLAN for Thursday  
+$MU 3 pt gap up, through</td><td><a href='https://x.com/EliteOptions2/status/2027020858124915092' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$SPX, $TSLA</td><td class='textcell'>TRADE PLAN for Thursday  
 
 $SPX as long as 6900 holds we should see 7000 test at some point in the next week. NVDA is moving lower after earnings but not by much yet. Let&#x27;s see if it reclaims 200.Calls can work if SPX holds 6921 tmrw
 
-$TSLA closed above 414 today. If it holds</td><td><a href='https://x.com/EliteOptions2/status/2026824562487304669' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$AAPL, $AMZN, $GOOG, $META, $MSFT, $NVDA, $TSLA</td><td class='textcell'>Maggy 7 post earnings performance:
+$TSLA closed above 414 today. If it holds</td><td><a href='https://x.com/EliteOptions2/status/2026824562487304669' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$AAPL, $AMZN, $GOOG, $META, $MSFT, $NVDA, $TSLA</td><td class='textcell'>Maggy 7 post earnings performance:
 
 $TSLA faded
 
@@ -400,19 +198,13 @@ $AAPL faded
 
 $NVDA ?
 
-PS: And what I mean by faded, is that if they had an earnings pop, it retraced everything. And if it had an earnings drop, it dropped even further at one</td><td><a href='https://x.com/Mr_Derivatives/status/2026791358812533183' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA earnings:</td><td><a href='https://x.com/Mr_Derivatives/status/2026772624316186757' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA initial reaction $201…</td><td><a href='https://x.com/Mr_Derivatives/status/2026772350444908730' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>Is anyone bearish $NVDA heading into the er print today?
+PS: And what I mean by faded, is that if they had an earnings pop, it retraced everything. And if it had an earnings drop, it dropped even further at one</td><td><a href='https://x.com/Mr_Derivatives/status/2026791358812533183' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA earnings:</td><td><a href='https://x.com/Mr_Derivatives/status/2026772624316186757' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>$NVDA initial reaction $201…</td><td><a href='https://x.com/Mr_Derivatives/status/2026772350444908730' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA</td><td class='textcell'>Is anyone bearish $NVDA heading into the er print today?
 
 I would say 90% of my newsfeed is bullish.
 
-Hello?</td><td><a href='https://x.com/Mr_Derivatives/status/2026745601095045224' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA, $QQQ</td><td class='textcell'>What a $QQQ pump these last couple days.
+Hello?</td><td><a href='https://x.com/Mr_Derivatives/status/2026745601095045224' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$NVDA, $QQQ</td><td class='textcell'>What a $QQQ pump these last couple days.
 
-Front running $NVDA today?</td><td><a href='https://x.com/Mr_Derivatives/status/2026681595424551382' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META</td><td class='textcell'>$META Lookin’ spiffy today…</td><td><a href='https://x.com/Mr_Derivatives/status/2026671837049139219' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $NVDA, $SPX</td><td class='textcell'>$META calls working above 645 so far
+Front running $NVDA today?</td><td><a href='https://x.com/Mr_Derivatives/status/2026681595424551382' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META</td><td class='textcell'>$META Lookin’ spiffy today…</td><td><a href='https://x.com/Mr_Derivatives/status/2026671837049139219' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $NVDA, $SPX</td><td class='textcell'>$META calls working above 645 so far
 
 $MU breaking above 430.. we should see 455 on this name by next week
 
@@ -421,484 +213,47 @@ TRADE PLAN for Feb 25th
 
 $SPX will gap above 6900 today if it holds this level after $NVDA earnings we can see 7000 again by Friday. Calls can work above 6900.
 
-$MU almost ready for a breakout to 455. MU needs to close above 430 on a daily candle to set up for 455 then 500.</td><td><a href='https://x.com/EliteOptions2/status/2026671145630765167' target='_blank'>Open</a></td></tr>
-    </tbody>
-  </table>
-</div>
+$MU almost ready for a breakout to 455. MU needs to close above 430 on a daily candle to set up for 455 then 500.</td><td><a href='https://x.com/EliteOptions2/status/2026671145630765167' target='_blank'>Open</a></td></tr></tbody></table></div>
 </div>
 
 <div id="tab-watch" class="hidden" data-tab="1">
-  
-<div class="card">
-  <h3>Watchlist — Market Cap ≥$350B <span class="fresh">● live</span></h3>
-  <table id="tbl-watch" data-filter-table="1">
-    <thead>
-      <tr>
+  <div class="card"><h3>Watchlist — Market Cap ≥$350B <span class="fresh">● live</span></h3><table id="tbl-watch" data-filter-table="1"><thead><tr><th data-sort="text">Ticker</th><th data-sort="text">Name</th><th data-sort="num">Price</th><th data-sort="num">Chg 1D %</th><th data-sort="num">Chg 5D %</th><th data-sort="num">Chg 20D %</th><th data-sort="num">Chg 30D %</th><th data-sort="num">Chg 60D %</th><th data-sort="size">Volume</th><th data-sort="num">Vol Chg 1D %</th><th data-sort="num">Vol Chg 5D %</th><th data-sort="num">Vol Chg 20D %</th><th data-sort="num">Vol Chg 30D %</th><th data-sort="num">Vol Chg 60D %</th></tr><tr class="filterrow"><th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th></tr></thead><tbody><tr><td>$TSM</td><td class='namecell'>TSMC</td><td>357.44</td><td class='pos'>1.22%</td><td class='neg'>-7.81%</td><td class='pos'>6.46%</td><td class='pos'>9.26%</td><td class='pos'>22.35%</td><td>12.10M</td><td class='neg'>-16.09%</td><td class='neg'>-6.36%</td><td class='neg'>-15.95%</td><td class='neg'>-37.27%</td><td class='pos'>36.28%</td></tr><tr><td>$AVGO</td><td class='namecell'>Broadcom</td><td>317.53</td><td class='pos'>1.18%</td><td class='neg'>-4.45%</td><td class='neg'>-0.87%</td><td class='neg'>-4.53%</td><td class='neg'>-16.51%</td><td>34.21M</td><td class='pos'>35.75%</td><td class='pos'>33.60%</td><td class='pos'>5.24%</td><td class='pos'>7.36%</td><td class='pos'>65.64%</td></tr><tr><td>$BRK-B</td><td class='namecell'>Berskhire Hathaway</td><td>487.48</td><td class='pos'>1.27%</td><td class='neg'>-1.32%</td><td class='neg'>-1.27%</td><td class='pos'>0.43%</td><td class='neg'>-3.13%</td><td>4.36M</td><td class='neg'>-41.64%</td><td class='pos'>16.12%</td><td class='neg'>-41.27%</td><td class='neg'>-18.46%</td><td class='pos'>20.78%</td></tr><tr><td>$WMT</td><td class='namecell'>Walmart</td><td>127.81</td><td class='neg'>-0.08%</td><td class='pos'>1.64%</td><td class='pos'>0.08%</td><td class='pos'>7.67%</td><td class='pos'>11.52%</td><td>16.42M</td><td class='neg'>-1.46%</td><td class='neg'>-12.26%</td><td class='neg'>-45.72%</td><td class='neg'>-90.05%</td><td class='neg'>-33.73%</td></tr><tr><td>$LLY</td><td class='namecell'>Eli Lilly</td><td>1003.57</td><td class='neg'>-0.41%</td><td class='neg'>-2.46%</td><td class='pos'>0.18%</td><td class='neg'>-3.46%</td><td class='neg'>-0.91%</td><td>1.96M</td><td class='neg'>-25.50%</td><td class='neg'>-25.95%</td><td class='neg'>-61.67%</td><td class='neg'>-41.12%</td><td class='neg'>-39.94%</td></tr><tr><td>$JPM</td><td class='namecell'>JPMorgan</td><td>299.39</td><td class='neg'>-0.29%</td><td class='neg'>-1.29%</td><td class='neg'>-4.91%</td><td class='neg'>-1.11%</td><td class='neg'>-4.86%</td><td>6.59M</td><td class='neg'>-22.06%</td><td class='neg'>-30.97%</td><td class='neg'>-38.90%</td><td class='neg'>-47.70%</td><td class='neg'>-19.85%</td></tr><tr><td>$XOM</td><td class='namecell'>Exxon Mobil</td><td>149.82</td><td class='neg'>-1.32%</td><td class='pos'>0.51%</td><td class='pos'>4.93%</td><td class='pos'>15.61%</td><td class='pos'>28.75%</td><td>16.74M</td><td class='neg'>-31.60%</td><td class='pos'>11.52%</td><td class='neg'>-46.98%</td><td class='neg'>-3.30%</td><td class='pos'>16.76%</td></tr><tr><td>$V</td><td class='namecell'>Visa</td><td>320.47</td><td class='neg'>-0.11%</td><td class='pos'>2.39%</td><td class='neg'>-2.37%</td><td class='neg'>-1.44%</td><td class='neg'>-1.82%</td><td>5.26M</td><td class='neg'>-9.39%</td><td class='neg'>-38.08%</td><td class='neg'>-39.47%</td><td class='neg'>-38.38%</td><td class='neg'>-11.60%</td></tr><tr><td>$JNJ</td><td class='namecell'>Johnson &amp; Johnson</td><td>245.30</td><td class='neg'>-0.59%</td><td class='pos'>0.05%</td><td class='pos'>5.79%</td><td class='pos'>13.01%</td><td class='pos'>21.79%</td><td>5.77M</td><td class='neg'>-17.56%</td><td class='neg'>-21.77%</td><td class='neg'>-33.90%</td><td class='neg'>-55.45%</td><td class='neg'>-31.34%</td></tr><tr><td>$TCEHY</td><td class='namecell'>Tencent</td><td>65.13</td><td class='pos'>1.10%</td><td class='neg'>-2.60%</td><td class='neg'>-11.66%</td><td class='neg'>-14.37%</td><td class='neg'>-16.63%</td><td>892.33K</td><td class='neg'>-63.78%</td><td class='neg'>-68.89%</td><td class='neg'>-81.61%</td><td class='neg'>-71.09%</td><td class='neg'>-40.45%</td></tr><tr><td>$ASML</td><td class='namecell'>ASML</td><td>1399.37</td><td class='pos'>2.82%</td><td class='neg'>-8.33%</td><td class='pos'>0.38%</td><td class='pos'>5.67%</td><td class='pos'>26.23%</td><td>1.49M</td><td class='neg'>-10.70%</td><td class='neg'>-11.29%</td><td class='neg'>-30.92%</td><td class='neg'>-43.06%</td><td class='neg'>-3.66%</td></tr><tr><td>$MA</td><td class='namecell'>Mastercard</td><td>522.92</td><td class='neg'>-0.27%</td><td class='pos'>2.66%</td><td class='neg'>-5.05%</td><td class='neg'>-1.66%</td><td class='neg'>-3.43%</td><td>3.15M</td><td class='neg'>-15.36%</td><td class='neg'>-33.70%</td><td class='neg'>-35.87%</td><td class='neg'>-24.48%</td><td class='pos'>23.02%</td></tr><tr><td>$COST</td><td class='namecell'>Costco</td><td>1006.74</td><td class='neg'>-0.10%</td><td class='pos'>1.20%</td><td class='pos'>2.95%</td><td class='pos'>4.41%</td><td class='pos'>12.38%</td><td>1.80M</td><td class='neg'>-5.67%</td><td class='pos'>7.62%</td><td class='neg'>-32.70%</td><td class='neg'>-51.44%</td><td class='neg'>-32.62%</td></tr><tr><td>$ORCL</td><td class='namecell'>Oracle</td><td>152.37</td><td class='pos'>2.25%</td><td class='pos'>3.03%</td><td class='neg'>-1.49%</td><td class='neg'>-15.31%</td><td class='neg'>-28.72%</td><td>17.54M</td><td class='neg'>-12.43%</td><td class='neg'>-24.08%</td><td class='neg'>-60.45%</td><td class='neg'>-39.21%</td><td class='neg'>-20.99%</td></tr><tr><td>$MU</td><td class='namecell'>Micron</td><td>400.77</td><td class='pos'>5.55%</td><td class='neg'>-6.58%</td><td class='neg'>-4.45%</td><td class='pos'>9.80%</td><td class='pos'>76.89%</td><td>32.44M</td><td class='neg'>-4.12%</td><td class='pos'>1.24%</td><td class='neg'>-29.79%</td><td class='neg'>-36.96%</td><td class='pos'>52.38%</td></tr><tr><td>$NFLX</td><td class='namecell'>Netflix</td><td>98.66</td><td class='pos'>0.98%</td><td class='pos'>19.30%</td><td class='pos'>23.42%</td><td class='pos'>13.06%</td><td class='neg'>-4.42%</td><td>52.53M</td><td class='neg'>-17.75%</td><td class='neg'>-16.19%</td><td class='pos'>12.41%</td><td class='neg'>-44.86%</td><td class='neg'>-33.99%</td></tr><tr><td>$CVX</td><td class='namecell'>Chevron</td><td>186.03</td><td class='neg'>-1.45%</td><td class='pos'>0.98%</td><td class='pos'>5.51%</td><td class='pos'>13.64%</td><td class='pos'>23.37%</td><td>11.04M</td><td class='neg'>-18.91%</td><td class='pos'>37.90%</td><td class='neg'>-32.15%</td><td class='pos'>4.17%</td><td class='pos'>18.44%</td></tr><tr><td>$PG</td><td class='namecell'>Proctor &amp; Gamble</td><td>158.30</td><td class='neg'>-0.89%</td><td class='neg'>-3.12%</td><td class='pos'>1.92%</td><td class='pos'>8.45%</td><td class='pos'>9.68%</td><td>8.75M</td><td class='neg'>-6.26%</td><td class='pos'>6.66%</td><td class='neg'>-25.32%</td><td class='neg'>-32.26%</td><td class='neg'>-18.95%</td></tr><tr><td>$HD</td><td class='namecell'>Home Depot</td><td>369.11</td><td class='pos'>0.60%</td><td class='neg'>-1.72%</td><td class='neg'>-3.15%</td><td class='neg'>-1.60%</td><td class='pos'>5.11%</td><td>4.32M</td><td class='pos'>1.13%</td><td class='neg'>-4.63%</td><td class='neg'>-19.01%</td><td class='neg'>-8.86%</td><td class='neg'>-8.32%</td></tr><tr><td>$BAC</td><td class='namecell'>Bank of America</td><td>50.30</td><td class='pos'>0.66%</td><td class='neg'>-2.69%</td><td class='neg'>-7.62%</td><td class='neg'>-3.45%</td><td class='neg'>-6.64%</td><td>34.20M</td><td class='neg'>-18.59%</td><td class='neg'>-30.13%</td><td class='neg'>-21.29%</td><td class='neg'>-25.48%</td><td class='neg'>-6.42%</td></tr><tr><td>$GE</td><td class='namecell'>General Eletric</td><td>339.81</td><td class='pos'>1.70%</td><td class='neg'>-0.90%</td><td class='pos'>9.64%</td><td class='pos'>8.79%</td><td class='pos'>16.56%</td><td>3.92M</td><td class='neg'>-14.73%</td><td class='neg'>-26.14%</td><td class='neg'>-34.32%</td><td class='neg'>-51.53%</td><td class='neg'>-12.72%</td></tr><tr><td>$PLTR</td><td class='namecell'>Palantir</td><td>153.19</td><td class='pos'>4.06%</td><td class='pos'>14.16%</td><td class='neg'>-2.97%</td><td class='neg'>-9.10%</td><td class='neg'>-13.90%</td><td>59.92M</td><td class='neg'>-10.15%</td><td class='pos'>23.71%</td><td class='neg'>-39.92%</td><td class='pos'>24.79%</td><td class='pos'>95.72%</td></tr></tbody></table></div>
+  <div class="card"><h3>Tweets — Watchlist Tickers</h3><div class="sources">Showing tweets from: @eliteoptions2 + @mr_derivatives</div><table id="tbl-watch-tweets" data-filter-table="1"><thead><tr><th data-sort="text">Author</th><th data-sort="text">Signal</th><th data-sort="text">Time</th><th data-sort="text">Ticker</th><th data-sort="text">Text</th><th data-sort="text">Link</th></tr><tr class="filterrow"><th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-watch-tweets')"></th><th><select class="filter" onchange="applyFilters('tbl-watch-tweets')"><option value="">All</option><option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option></select></th><th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-watch-tweets')"></th><th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-watch-tweets')"></th><th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-watch-tweets')"></th><th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-watch-tweets')"></th></tr></thead><tbody><tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Mar 04, 2026 10:34 PM</td><td>$AVGO</td><td class='textcell'>$AVGO $334 after hr highs earlier. Still up decently currently.
 
-        <th data-sort="text">Ticker</th>
-        <th data-sort="text">Name</th>
-        <th data-sort="num">Price</th>
-        <th data-sort="num">Chg 1D %</th>
-        <th data-sort="num">Chg 5D %</th>
-        <th data-sort="num">Chg 20D %</th>
-        <th data-sort="num">Chg 30D %</th>
-        <th data-sort="num">Chg 60D %</th>
-        <th data-sort="size">Volume</th>
-        <th data-sort="num">Vol Chg 1D %</th>
-        <th data-sort="num">Vol Chg 5D %</th>
-        <th data-sort="num">Vol Chg 20D %</th>
-        <th data-sort="num">Vol Chg 30D %</th>
-        <th data-sort="num">Vol Chg 60D %</th>
-      </tr>
-      <tr class="filterrow">
-        <th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-        <th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-watch')"></th>
-      </tr>
-    </thead>
-    <tbody>
-<tr>
-<td>$TSM</td>
-<td class='namecell'>TSMC</td>
-<td>357.44</td>
-<td class='pos'>1.22%</td>
-<td class='neg'>-7.81%</td>
-<td class='pos'>6.46%</td>
-<td class='pos'>9.26%</td>
-<td class='pos'>22.35%</td>
-<td>12.05M</td>
-<td class='neg'>-16.31%</td>
-<td class='neg'>-6.70%</td>
-<td class='neg'>-16.25%</td>
-<td class='neg'>-37.49%</td>
-<td class='pos'>35.79%</td>
-</tr>
-<tr>
-<td>$AVGO</td>
-<td class='namecell'>Broadcom</td>
-<td>317.53</td>
-<td class='pos'>1.18%</td>
-<td class='neg'>-4.45%</td>
-<td class='neg'>-0.87%</td>
-<td class='neg'>-4.53%</td>
-<td class='neg'>-16.51%</td>
-<td>27.26M</td>
-<td class='pos'>19.13%</td>
-<td class='pos'>6.46%</td>
-<td class='neg'>-16.14%</td>
-<td class='neg'>-14.44%</td>
-<td class='pos'>32.00%</td>
-</tr>
-<tr>
-<td>$BRK-B</td>
-<td class='namecell'>Berskhire Hathaway</td>
-<td>487.48</td>
-<td class='pos'>1.27%</td>
-<td class='neg'>-1.32%</td>
-<td class='neg'>-1.27%</td>
-<td class='pos'>0.43%</td>
-<td class='neg'>-3.13%</td>
-<td>3.32M</td>
-<td class='neg'>-53.48%</td>
-<td class='neg'>-11.75%</td>
-<td class='neg'>-55.37%</td>
-<td class='neg'>-38.03%</td>
-<td class='neg'>-8.21%</td>
-</tr>
-<tr>
-<td>$WMT</td>
-<td class='namecell'>Walmart</td>
-<td>127.81</td>
-<td class='neg'>-0.08%</td>
-<td class='pos'>1.64%</td>
-<td class='pos'>0.08%</td>
-<td class='pos'>7.67%</td>
-<td class='pos'>11.52%</td>
-<td>16.40M</td>
-<td class='neg'>-1.55%</td>
-<td class='neg'>-12.38%</td>
-<td class='neg'>-45.80%</td>
-<td class='neg'>-90.07%</td>
-<td class='neg'>-33.82%</td>
-</tr>
-<tr>
-<td>$LLY</td>
-<td class='namecell'>Eli Lilly</td>
-<td>1003.57</td>
-<td class='neg'>-0.41%</td>
-<td class='neg'>-2.46%</td>
-<td class='pos'>0.18%</td>
-<td class='neg'>-3.46%</td>
-<td class='neg'>-0.91%</td>
-<td>1.59M</td>
-<td class='neg'>-36.64%</td>
-<td class='neg'>-39.99%</td>
-<td class='neg'>-68.94%</td>
-<td class='neg'>-52.28%</td>
-<td class='neg'>-51.33%</td>
-</tr>
-<tr>
-<td>$JPM</td>
-<td class='namecell'>JPMorgan</td>
-<td>299.39</td>
-<td class='neg'>-0.29%</td>
-<td class='neg'>-1.29%</td>
-<td class='neg'>-4.91%</td>
-<td class='neg'>-1.11%</td>
-<td class='neg'>-4.86%</td>
-<td>6.59M</td>
-<td class='neg'>-22.06%</td>
-<td class='neg'>-30.97%</td>
-<td class='neg'>-38.90%</td>
-<td class='neg'>-47.70%</td>
-<td class='neg'>-19.85%</td>
-</tr>
-<tr>
-<td>$XOM</td>
-<td class='namecell'>Exxon Mobil</td>
-<td>149.82</td>
-<td class='neg'>-1.32%</td>
-<td class='pos'>0.51%</td>
-<td class='pos'>4.93%</td>
-<td class='pos'>15.61%</td>
-<td class='pos'>28.75%</td>
-<td>16.72M</td>
-<td class='neg'>-31.68%</td>
-<td class='pos'>11.34%</td>
-<td class='neg'>-47.06%</td>
-<td class='neg'>-3.46%</td>
-<td class='pos'>16.57%</td>
-</tr>
-<tr>
-<td>$V</td>
-<td class='namecell'>Visa</td>
-<td>320.47</td>
-<td class='neg'>-0.11%</td>
-<td class='pos'>2.39%</td>
-<td class='neg'>-2.37%</td>
-<td class='neg'>-1.44%</td>
-<td class='neg'>-1.82%</td>
-<td>4.35M</td>
-<td class='neg'>-20.96%</td>
-<td class='neg'>-48.81%</td>
-<td class='neg'>-49.96%</td>
-<td class='neg'>-49.06%</td>
-<td class='neg'>-26.92%</td>
-</tr>
-<tr>
-<td>$JNJ</td>
-<td class='namecell'>Johnson &amp; Johnson</td>
-<td>245.30</td>
-<td class='neg'>-0.59%</td>
-<td class='pos'>0.05%</td>
-<td class='pos'>5.79%</td>
-<td class='pos'>13.01%</td>
-<td class='pos'>21.79%</td>
-<td>5.46M</td>
-<td class='neg'>-20.84%</td>
-<td class='neg'>-26.00%</td>
-<td class='neg'>-37.47%</td>
-<td class='neg'>-57.86%</td>
-<td class='neg'>-35.05%</td>
-</tr>
-<tr>
-<td>$TCEHY</td>
-<td class='namecell'>Tencent</td>
-<td>65.14</td>
-<td class='pos'>1.12%</td>
-<td class='neg'>-2.59%</td>
-<td class='neg'>-11.65%</td>
-<td class='neg'>-14.36%</td>
-<td class='neg'>-16.62%</td>
-<td>892.33K</td>
-<td class='neg'>-63.78%</td>
-<td class='neg'>-68.89%</td>
-<td class='neg'>-81.61%</td>
-<td class='neg'>-71.09%</td>
-<td class='neg'>-40.45%</td>
-</tr>
-<tr>
-<td>$ASML</td>
-<td class='namecell'>ASML</td>
-<td>1399.37</td>
-<td class='pos'>2.82%</td>
-<td class='neg'>-8.33%</td>
-<td class='pos'>0.38%</td>
-<td class='pos'>5.67%</td>
-<td class='pos'>26.23%</td>
-<td>1.43M</td>
-<td class='neg'>-13.01%</td>
-<td class='neg'>-14.53%</td>
-<td class='neg'>-33.44%</td>
-<td class='neg'>-45.14%</td>
-<td class='neg'>-7.17%</td>
-</tr>
-<tr>
-<td>$MA</td>
-<td class='namecell'>Mastercard</td>
-<td>522.92</td>
-<td class='neg'>-0.27%</td>
-<td class='pos'>2.66%</td>
-<td class='neg'>-5.05%</td>
-<td class='neg'>-1.66%</td>
-<td class='neg'>-3.43%</td>
-<td>2.31M</td>
-<td class='neg'>-33.05%</td>
-<td class='neg'>-51.54%</td>
-<td class='neg'>-53.13%</td>
-<td class='neg'>-44.80%</td>
-<td class='neg'>-10.08%</td>
-</tr>
-<tr>
-<td>$COST</td>
-<td class='namecell'>Costco</td>
-<td>1006.74</td>
-<td class='neg'>-0.10%</td>
-<td class='pos'>1.20%</td>
-<td class='pos'>2.95%</td>
-<td class='pos'>4.41%</td>
-<td class='pos'>12.38%</td>
-<td>1.77M</td>
-<td class='neg'>-6.73%</td>
-<td class='pos'>5.86%</td>
-<td class='neg'>-33.80%</td>
-<td class='neg'>-52.23%</td>
-<td class='neg'>-33.72%</td>
-</tr>
-<tr>
-<td>$ORCL</td>
-<td class='namecell'>Oracle</td>
-<td>152.37</td>
-<td class='pos'>2.25%</td>
-<td class='pos'>3.03%</td>
-<td class='neg'>-1.49%</td>
-<td class='neg'>-15.31%</td>
-<td class='neg'>-28.72%</td>
-<td>17.50M</td>
-<td class='neg'>-12.57%</td>
-<td class='neg'>-24.25%</td>
-<td class='neg'>-60.54%</td>
-<td class='neg'>-39.35%</td>
-<td class='neg'>-21.18%</td>
-</tr>
-<tr>
-<td>$MU</td>
-<td class='namecell'>Micron</td>
-<td>400.77</td>
-<td class='pos'>5.55%</td>
-<td class='neg'>-6.58%</td>
-<td class='neg'>-4.45%</td>
-<td class='pos'>9.80%</td>
-<td class='pos'>76.89%</td>
-<td>32.27M</td>
-<td class='neg'>-4.47%</td>
-<td class='pos'>0.71%</td>
-<td class='neg'>-30.17%</td>
-<td class='neg'>-37.29%</td>
-<td class='pos'>51.57%</td>
-</tr>
-<tr>
-<td>$NFLX</td>
-<td class='namecell'>Netflix</td>
-<td>98.66</td>
-<td class='pos'>0.98%</td>
-<td class='pos'>19.30%</td>
-<td class='pos'>23.42%</td>
-<td class='pos'>13.06%</td>
-<td class='neg'>-4.42%</td>
-<td>52.12M</td>
-<td class='neg'>-18.22%</td>
-<td class='neg'>-16.85%</td>
-<td class='pos'>11.52%</td>
-<td class='neg'>-45.30%</td>
-<td class='neg'>-34.51%</td>
-</tr>
-<tr>
-<td>$CVX</td>
-<td class='namecell'>Chevron</td>
-<td>186.03</td>
-<td class='neg'>-1.45%</td>
-<td class='pos'>0.98%</td>
-<td class='pos'>5.51%</td>
-<td class='pos'>13.64%</td>
-<td class='pos'>23.37%</td>
-<td>9.20M</td>
-<td class='neg'>-29.23%</td>
-<td class='pos'>14.93%</td>
-<td class='neg'>-43.45%</td>
-<td class='neg'>-13.18%</td>
-<td class='neg'>-1.29%</td>
-</tr>
-<tr>
-<td>$PG</td>
-<td class='namecell'>Proctor &amp; Gamble</td>
-<td>158.30</td>
-<td class='neg'>-0.89%</td>
-<td class='neg'>-3.12%</td>
-<td class='pos'>1.92%</td>
-<td class='pos'>8.45%</td>
-<td class='pos'>9.68%</td>
-<td>8.66M</td>
-<td class='neg'>-6.93%</td>
-<td class='pos'>5.55%</td>
-<td class='neg'>-26.10%</td>
-<td class='neg'>-32.96%</td>
-<td class='neg'>-19.80%</td>
-</tr>
-<tr>
-<td>$HD</td>
-<td class='namecell'>Home Depot</td>
-<td>369.11</td>
-<td class='pos'>0.60%</td>
-<td class='neg'>-1.72%</td>
-<td class='neg'>-3.15%</td>
-<td class='neg'>-1.60%</td>
-<td class='pos'>5.11%</td>
-<td>4.29M</td>
-<td class='pos'>0.63%</td>
-<td class='neg'>-5.36%</td>
-<td class='neg'>-19.62%</td>
-<td class='neg'>-9.55%</td>
-<td class='neg'>-9.01%</td>
-</tr>
-<tr>
-<td>$BAC</td>
-<td class='namecell'>Bank of America</td>
-<td>50.30</td>
-<td class='pos'>0.66%</td>
-<td class='neg'>-2.69%</td>
-<td class='neg'>-7.62%</td>
-<td class='neg'>-3.45%</td>
-<td class='neg'>-6.64%</td>
-<td>34.17M</td>
-<td class='neg'>-18.65%</td>
-<td class='neg'>-30.20%</td>
-<td class='neg'>-21.36%</td>
-<td class='neg'>-25.55%</td>
-<td class='neg'>-6.51%</td>
-</tr>
-<tr>
-<td>$GE</td>
-<td class='namecell'>General Eletric</td>
-<td>339.81</td>
-<td class='pos'>1.70%</td>
-<td class='neg'>-0.90%</td>
-<td class='pos'>9.64%</td>
-<td class='pos'>8.79%</td>
-<td class='pos'>16.56%</td>
-<td>2.86M</td>
-<td class='neg'>-32.53%</td>
-<td class='neg'>-46.04%</td>
-<td class='neg'>-52.01%</td>
-<td class='neg'>-64.59%</td>
-<td class='neg'>-36.23%</td>
-</tr>
-<tr>
-<td>$PLTR</td>
-<td class='namecell'>Palantir</td>
-<td>153.19</td>
-<td class='pos'>4.06%</td>
-<td class='pos'>14.16%</td>
-<td class='neg'>-2.97%</td>
-<td class='neg'>-9.10%</td>
-<td class='neg'>-13.90%</td>
-<td>59.67M</td>
-<td class='neg'>-10.41%</td>
-<td class='pos'>23.21%</td>
-<td class='neg'>-40.16%</td>
-<td class='pos'>24.28%</td>
-<td class='pos'>94.93%</td>
-</tr>
-    </tbody>
-  </table>
-</div>
-  
-<div class="card">
-  <h3>Tweets — Watchlist Tickers</h3>
-  <div class="sources">Showing tweets from: @eliteoptions2 + @mr_derivatives</div>
-  <table id="tbl-watch-tweets" data-filter-table="1">
-    <thead>
-      <tr>
-        <th data-sort="text">Author</th>
-        <th data-sort="text">Signal</th>
-        <th data-sort="text">Time</th>
-        <th data-sort="text">Ticker</th>
-        <th data-sort="text">Text</th>
-        <th data-sort="text">Link</th>
-      </tr>
-      <tr class="filterrow">
-        <th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-watch-tweets')"></th>
-        <th>
-          <select class="filter" onchange="applyFilters('tbl-watch-tweets')">
-            <option value="">All</option>
-            <option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option>
-          </select>
-        </th>
-        <th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-watch-tweets')"></th>
-        <th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-watch-tweets')"></th>
-        <th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-watch-tweets')"></th>
-        <th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-watch-tweets')"></th>
-      </tr>
-    </thead>
-    <tbody>
-
-<tr><td>@Mr_Derivatives</td><td><span class='badge buy'>BUY</span></td><td>Mar 04, 2026 10:34 PM</td><td>$AVGO</td><td class='textcell'>$AVGO $334 after hr highs earlier. Still up decently currently.
-
-I’ll take it!</td><td><a href='https://x.com/Mr_Derivatives/status/2029324540741075408' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 09:25 PM</td><td>$AVGO</td><td class='textcell'>$AVGO Flat like a pancake now…</td><td><a href='https://x.com/Mr_Derivatives/status/2029307370392961082' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 09:16 PM</td><td>$AVGO</td><td class='textcell'>$AVGO -3% initial reaction so far…</td><td><a href='https://x.com/Mr_Derivatives/status/2029305005682114767' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 07:57 PM</td><td>$AVGO</td><td class='textcell'>$AVGO
+I’ll take it!</td><td><a href='https://x.com/Mr_Derivatives/status/2029324540741075408' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 09:25 PM</td><td>$AVGO</td><td class='textcell'>$AVGO Flat like a pancake now…</td><td><a href='https://x.com/Mr_Derivatives/status/2029307370392961082' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 09:16 PM</td><td>$AVGO</td><td class='textcell'>$AVGO -3% initial reaction so far…</td><td><a href='https://x.com/Mr_Derivatives/status/2029305005682114767' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 07:57 PM</td><td>$AVGO</td><td class='textcell'>$AVGO
 
 Good luck Broadcom degens.
 
-May the force be with you in 1 hr.</td><td><a href='https://x.com/Mr_Derivatives/status/2029285157384143310' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 04, 2026 03:55 PM</td><td>$BTC, $COIN, $MU, $SPX</td><td class='textcell'>$MU back above 400, more bullish above this level, we can see a bigger breakout in the next 2 weeks.. 455 in play, best to see this hold 400 into Friday
+May the force be with you in 1 hr.</td><td><a href='https://x.com/Mr_Derivatives/status/2029285157384143310' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 04, 2026 03:55 PM</td><td>$BTC, $COIN, $MU, $SPX</td><td class='textcell'>$MU back above 400, more bullish above this level, we can see a bigger breakout in the next 2 weeks.. 455 in play, best to see this hold 400 into Friday
 
 $COIN wants 215-220 next, $BTC if it reclaims 74k and holds.. 80k can come fast
 
-$SPX all about 6880 to day. if it gets</td><td><a href='https://x.com/EliteOptions2/status/2029224259713941900' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 03:20 PM</td><td>$PLTR</td><td class='textcell'>$PLTR Up 6 days in a row and now near $153 wow.
+$SPX all about 6880 to day. if it gets</td><td><a href='https://x.com/EliteOptions2/status/2029224259713941900' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 04, 2026 03:20 PM</td><td>$PLTR</td><td class='textcell'>$PLTR Up 6 days in a row and now near $153 wow.
 $PLTR Chart Update:
 
 $125 ish is a very interesting spot here using the past peaks as support along with the blue trendline. Also notice that tiny lil RSI divergence.
 
 I wouldn&#x27;t mind playing for an oversold bounce around $125 if it gets there.
 
-Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2029215322675528178' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 01:50 AM</td><td>$ORCL</td><td class='textcell'>$ORCL down ~60% Is This Finally the Bottom? 
+Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2029215322675528178' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge mixed'>MIXED</span></td><td>Mar 04, 2026 01:50 AM</td><td>$ORCL</td><td class='textcell'>$ORCL down ~60% Is This Finally the Bottom? 
 
-Oracle has retraced roughly 60% from last year’s highs, following the broader software sell-off. Price now basing around 137 support. If Oracle posts stellar earnings next week with clarity around debt repayment, it could run</td><td><a href='https://x.com/EliteOptions2/status/2029011450409148482' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$AVGO</td><td class='textcell'>$AVGO Earnings tomorrow after hrs.
+Oracle has retraced roughly 60% from last year’s highs, following the broader software sell-off. Price now basing around 137 support. If Oracle posts stellar earnings next week with clarity around debt repayment, it could run</td><td><a href='https://x.com/EliteOptions2/status/2029011450409148482' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge sell'>SELL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$AVGO</td><td class='textcell'>$AVGO Earnings tomorrow after hrs.
 
 Implied move is +/- 7.25% according to Perplexity.
 
-Sell poots?</td><td><a href='https://x.com/Mr_Derivatives/status/2029010253036351942' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$META, $MU, $NFLX, $PLTR, $QQQ, $SNDK, $SPX</td><td class='textcell'>Volatile week, but a profitable one! $SPX continues this 4+ month range. Let&#x27;s see if we get the 7000 break in March.
+Sell poots?</td><td><a href='https://x.com/Mr_Derivatives/status/2029010253036351942' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 09:45 PM</td><td>$META, $MU, $NFLX, $PLTR, $QQQ, $SNDK, $SPX</td><td class='textcell'>Volatile week, but a profitable one! $SPX continues this 4+ month range. Let&#x27;s see if we get the 7000 break in March.
 
 $META $SNDK $PLTR $QQQ paid this week.
 
 We should more opportunities  with $NFLX $META $MU $SNDK again next week. 
 
-I will post my charts and plan on Sunday,</td><td><a href='https://x.com/EliteOptions2/status/2027492706482610242' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NFLX, $SPX</td><td class='textcell'>February is officially over.  
+I will post my charts and plan on Sunday,</td><td><a href='https://x.com/EliteOptions2/status/2027492706482610242' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 09:45 PM</td><td>$NFLX, $SPX</td><td class='textcell'>February is officially over.  
  
 March should be a more bullish month.
 
 $SPX all about 7000 this year, once it gets through 7400 coming FAST. Write down this level and WAIT for it. $NFLX just broke a 7 month downtrend... 100 coming fast next week.
 
-Be patient until we see $SPX</td><td><a href='https://x.com/EliteOptions2/status/2027488930380067226' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 06:30 PM</td><td>$GS, $META, $MU, $SNDK</td><td class='textcell'>When the market bottoms, don&#x27;t buy everything.
+Be patient until we see $SPX</td><td><a href='https://x.com/EliteOptions2/status/2027488930380067226' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 06:30 PM</td><td>$GS, $META, $MU, $SNDK</td><td class='textcell'>When the market bottoms, don&#x27;t buy everything.
 
 Buy the stocks that led on the way up. 
 
@@ -911,31 +266,25 @@ These are the ones institutions load up on first.
 
 They recover fastest and run hardest.
 
-Most traders spread their money across 20 tickers during a recovery and</td><td><a href='https://x.com/EliteOptions2/status/2028900740853289318' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 03:41 PM</td><td>$MU, $QQQ, $SPX</td><td class='textcell'>$SPX down 170 from the highs , $QQQ dropped 16 points, massive dip today.
+Most traders spread their money across 20 tickers during a recovery and</td><td><a href='https://x.com/EliteOptions2/status/2028900740853289318' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 03, 2026 03:41 PM</td><td>$MU, $QQQ, $SPX</td><td class='textcell'>$SPX down 170 from the highs , $QQQ dropped 16 points, massive dip today.
 
 SPX moved red to green and touched 6900 then dropped almost 200 points, Max pain for longs.. If SPX can reclaim 6800 more bullish for today
 
-$MU not quite ready yet, still in consolidation mode, needs</td><td><a href='https://x.com/EliteOptions2/status/2028858360947462161' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 02:29 PM</td><td>$PLTR</td><td class='textcell'>$PLTR whoa.
-PETER THIEL SOLD ~$280M OF $PLTR YESTERDAY</td><td><a href='https://x.com/Mr_Derivatives/status/2028840155696795893' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 01:00 AM</td><td>$MU, $SPX</td><td class='textcell'>TRADE PLAN for Tuesday  
+$MU not quite ready yet, still in consolidation mode, needs</td><td><a href='https://x.com/EliteOptions2/status/2028858360947462161' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 02:29 PM</td><td>$PLTR</td><td class='textcell'>$PLTR whoa.
+PETER THIEL SOLD ~$280M OF $PLTR YESTERDAY</td><td><a href='https://x.com/Mr_Derivatives/status/2028840155696795893' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 03, 2026 01:00 AM</td><td>$MU, $SPX</td><td class='textcell'>TRADE PLAN for Tuesday  
 
 $SPX all about 6921 this week, if we can see SPX reclaim this level and hold above for 3 consecutive daily candles.. 7000 can come again.
 SPX March 4 6950C can work above 6900 as a lotto
 
-$MU winding up for a bigger run to 500 once it breaks this</td><td><a href='https://x.com/EliteOptions2/status/2028636501660082604' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 02, 2026 03:00 PM</td><td>$BTC, $COIN, $NFLX, $SPX</td><td class='textcell'>$BTC trying to start a bounce here if it reclaims 69k we can see $COIN breakout above 185 and move towards 200 this week. Keep an eye on $69k level for Bitcoin.
+$MU winding up for a bigger run to 500 once it breaks this</td><td><a href='https://x.com/EliteOptions2/status/2028636501660082604' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 02, 2026 03:00 PM</td><td>$BTC, $COIN, $NFLX, $SPX</td><td class='textcell'>$BTC trying to start a bounce here if it reclaims 69k we can see $COIN breakout above 185 and move towards 200 this week. Keep an eye on $69k level for Bitcoin.
 
 $SPX all about 6880 today if it reclaims this level we&#x27;ll see a push towards 6921 again.
 
-$NFLX wants 100 next.. price</td><td><a href='https://x.com/EliteOptions2/status/2028485537716457822' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 02:00 PM</td><td>$NFLX, $QQQ, $SPX</td><td class='textcell'>TRADE PLAN for Monday  
+$NFLX wants 100 next.. price</td><td><a href='https://x.com/EliteOptions2/status/2028485537716457822' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 02:00 PM</td><td>$NFLX, $QQQ, $SPX</td><td class='textcell'>TRADE PLAN for Monday  
 
 $SPX big gap down today on Iran news. If SPX fails to defend 6800 we can see another dip to 6765 today. Puts can work under 6800. I&#x27;d wait for 6880 for calls.
 
-$NFLX barely down with $SPX $QQQ lower. NFLX to 100 in play this week if the market can hold</td><td><a href='https://x.com/EliteOptions2/status/2028470399139193266' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 01:08 AM</td><td>$PLTR</td><td class='textcell'>$PLTR $144.50 overnight.
+$NFLX barely down with $SPX $QQQ lower. NFLX to 100 in play this week if the market can hold</td><td><a href='https://x.com/EliteOptions2/status/2028470399139193266' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 01:08 AM</td><td>$PLTR</td><td class='textcell'>$PLTR $144.50 overnight.
 
 Cause you know, war.
 $PLTR Chart Update:
@@ -944,14 +293,12 @@ $125 ish is a very interesting spot here using the past peaks as support along w
 
 I wouldn&#x27;t mind playing for an oversold bounce around $125 if it gets there.
 
-Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2028276275744559571' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:45 AM</td><td>$META, $NFLX, $SPX</td><td class='textcell'>Elite Options TRADE IDEAS for week of March 6th   
+Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2028276275744559571' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:45 AM</td><td>$META, $NFLX, $SPX</td><td class='textcell'>Elite Options TRADE IDEAS for week of March 6th   
 
 $NFLX 3/6 100C |  100, 106 SL 93
 $META 3/6 655C |  652, 663 SL 637 
 $SPX 3/4 6950C at 6900 |  6945, 6962 SL 6880
-$SPX 3/4 6800P at 6850 |  6824, 6800 SL 6870</td><td><a href='https://x.com/EliteOptions2/status/2028270320134640048' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:15 AM</td><td>$NFLX</td><td class='textcell'>$NFLX Trade Idea: Mar 6 100C 
+$SPX 3/4 6800P at 6850 |  6824, 6800 SL 6870</td><td><a href='https://x.com/EliteOptions2/status/2028270320134640048' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 02, 2026 12:15 AM</td><td>$NFLX</td><td class='textcell'>$NFLX Trade Idea: Mar 6 100C 
 
 Trigger: 97 
 Targets: 100, 106 
@@ -963,8 +310,7 @@ NFLX moved from 75 to 96.
 
 If NFLX gets through 100 it can test 106,109 next. 
 
-Calls can work above 97 early this week.</td><td><a href='https://x.com/EliteOptions2/status/2028262769783411054' target='_blank'>Open</a></td></tr>
-<tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$PLTR</td><td class='textcell'>$PLTR Came within $1 of my $125 target the other day.
+Calls can work above 97 early this week.</td><td><a href='https://x.com/EliteOptions2/status/2028262769783411054' target='_blank'>Open</a></td></tr><tr><td>@Mr_Derivatives</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 01, 2026 08:40 PM</td><td>$PLTR</td><td class='textcell'>$PLTR Came within $1 of my $125 target the other day.
 
 Now almost $138.
 
@@ -975,15 +321,13 @@ $125 ish is a very interesting spot here using the past peaks as support along w
 
 I wouldn&#x27;t mind playing for an oversold bounce around $125 if it gets there.
 
-Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2027035708607938983' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $SPX</td><td class='textcell'>TRADE PLAN for Feb 26th  
+Just a swing trade idea.</td><td><a href='https://x.com/Mr_Derivatives/status/2027035708607938983' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $SPX</td><td class='textcell'>TRADE PLAN for Feb 26th  
 
 $SPX as long as 6921 holds today we should see a push towards 7000 by next week. Calls can work above 6945 today 
 
 $META to 663 in play if it holds the 645 support level. Let&#x27;s see if META can run to 700 early in March.
 
-$MU 3 pt gap up, through</td><td><a href='https://x.com/EliteOptions2/status/2027020858124915092' target='_blank'>Open</a></td></tr>
-<tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $NVDA, $SPX</td><td class='textcell'>$META calls working above 645 so far
+$MU 3 pt gap up, through</td><td><a href='https://x.com/EliteOptions2/status/2027020858124915092' target='_blank'>Open</a></td></tr><tr><td>@EliteOptions2</td><td><span class='badge buy'>BUY</span></td><td>Mar 01, 2026 08:40 PM</td><td>$META, $MU, $NVDA, $SPX</td><td class='textcell'>$META calls working above 645 so far
 
 $MU breaking above 430.. we should see 455 on this name by next week
 
@@ -992,10 +336,7 @@ TRADE PLAN for Feb 25th
 
 $SPX will gap above 6900 today if it holds this level after $NVDA earnings we can see 7000 again by Friday. Calls can work above 6900.
 
-$MU almost ready for a breakout to 455. MU needs to close above 430 on a daily candle to set up for 455 then 500.</td><td><a href='https://x.com/EliteOptions2/status/2026671145630765167' target='_blank'>Open</a></td></tr>
-    </tbody>
-  </table>
-</div>
+$MU almost ready for a breakout to 455. MU needs to close above 430 on a daily candle to set up for 455 then 500.</td><td><a href='https://x.com/EliteOptions2/status/2026671145630765167' target='_blank'>Open</a></td></tr></tbody></table></div>
 </div>
 
 
@@ -1015,12 +356,12 @@ function parseNumberLike(s){
   if(isNaN(v)) return null;
   return v*mult;
 }
-function matchComparator(cellText, filterText){
+function matchComparator(cellText,filterText){
   let ft=(filterText||"").trim();
   if(!ft) return true;
   const m=ft.match(/^(>=|<=|>|<|=)\s*([-\d.,]+%?|[-\d.]+[KMBT]?)$/i);
   if(!m) return (cellText||"").toLowerCase().includes(ft.toLowerCase());
-  const op=m[1], right=parseNumberLike(m[2]), left=parseNumberLike(cellText);
+  const op=m[1],right=parseNumberLike(m[2]),left=parseNumberLike(cellText);
   if(left===null||right===null) return false;
   if(op===">") return left>right;
   if(op===">=") return left>=right;
@@ -1038,12 +379,12 @@ function applyFilters(tableId){
     const tds=tr.querySelectorAll("td");
     let ok=true;
     for(let i=0;i<filters.length;i++){
-      const f=filters[i], val=(f.value||"").trim();
+      const f=filters[i],val=(f.value||"").trim();
       if(!val) continue;
       let cellText=(tds[i]?tds[i].textContent:"").trim();
       if(f.tagName==="SELECT"){
-        if(val && cellText.toUpperCase()!==val.toUpperCase()){ok=false;break;}
-      } else {
+        if(val&&cellText.toUpperCase()!==val.toUpperCase()){ok=false;break;}
+      }else{
         if(!matchComparator(cellText,val)){ok=false;break;}
       }
     }
@@ -1058,7 +399,7 @@ function showTab(which){
   b.classList.remove("off");b.classList.add("on");
 }
 function clearSortIndicators(table){
-  table.querySelectorAll("th.sort-asc,th.sort-desc").forEach(th=>{th.classList.remove("sort-asc","sort-desc");});
+  table.querySelectorAll("th.sort-asc,th.sort-desc").forEach(th=>th.classList.remove("sort-asc","sort-desc"));
 }
 function sortTable(table,colIdx,type,direction){
   const tbody=table.tBodies[0];
@@ -1068,8 +409,8 @@ function sortTable(table,colIdx,type,direction){
     const av=(a.children[colIdx]?a.children[colIdx].textContent:"").trim();
     const bv=(b.children[colIdx]?b.children[colIdx].textContent:"").trim();
     if(type==="num"||type==="size"){
-      const a0=parseNumberLike(av)??-Infinity, b0=parseNumberLike(bv)??-Infinity;
-      return (a0<b0?-1:a0>b0?1:0)*dir;
+      const a0=parseNumberLike(av)??-Infinity,b0=parseNumberLike(bv)??-Infinity;
+      return(a0<b0?-1:a0>b0?1:0)*dir;
     }
     return av.toLowerCase()<bv.toLowerCase()?-1*dir:av.toLowerCase()>bv.toLowerCase()?1*dir:0;
   });
@@ -1096,6 +437,6 @@ function enableSorting(){
 document.addEventListener("DOMContentLoaded",enableSorting);
 </script>
 
-<script>showTab('mag7');</script>
+<script>showTab('signals');</script>
 </body>
 </html>
