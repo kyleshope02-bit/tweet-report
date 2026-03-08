@@ -49,7 +49,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-08 02:27 PM • yfinance cache 1m old (TTL 6h) • Watchlist filtered to ≥$350B market cap (21 tickers shown) • Signals: 6 bullish / 5 bearish across 28 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-08 02:47 PM • yfinance cache 0m old (TTL 6h) • Watchlist filtered to ≥$350B market cap (21 tickers shown) • Signals: 6 bullish / 5 bearish across 28 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-airec"   class="tabbtn on"  data-tabbtn="1" onclick="showTab('airec')">🤖 AI Rec</button>
@@ -58,11 +58,12 @@ select.filter{padding:5px}
   <button id="btn-watch"   class="tabbtn off" data-tabbtn="1" onclick="showTab('watch')">Watchlist ≥$350B</button>
   <button id="btn-wheel"   class="tabbtn off" data-tabbtn="1" onclick="showTab('wheel')">🎡 Wheel</button>
   <button id="btn-lessons"  class="tabbtn off" data-tabbtn="1" onclick="showTab('lessons')">📚 Lessons</button>
-  <button id="btn-ahlessons" class="tabbtn off" data-tabbtn="1" onclick="showTab('ahlessons')">🔬 AH Lessons</button>
+  <button id="btn-ahlessons"  class="tabbtn off" data-tabbtn="1" onclick="showTab('ahlessons')">🔬 AH Lessons</button>
+  <button id="btn-kylesopts" class="tabbtn off" data-tabbtn="1" onclick="showTab('kylesopts')">💼 Kyle's Trades</button>
 </div>
 
 <div id="tab-airec" data-tab="1">
-  <div class="card"><h3>🤖 AI Trade Recommendations <span class="fresh">● generated this run</span></h3><div class="muted" style="margin-bottom:16px">3 trade picks for the week based on signals, wheel scores, and price action. Sized to $100K total capital. <strong>Not financial advice — always do your own research.</strong></div><div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Directional</span><span style="font-size:22px;font-weight:900;color:#fff">PLTR</span><span style="font-size:15px;color:#26a69a;font-weight:700">Long Stock — bullish</span><span style="font-size:13px;color:#aaa">Allocation: 25% ($25,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$158.5 – $160.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$152.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$168.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$175.0</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> Pocket pivot signal indicates institutional accumulation at key support levels. Strong momentum setup with tight risk management given clear support zone.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> General market weakness or earnings disappointment could break support despite technical setup</div></div><div style="background:#0d1b2a;border-left:4px solid #26a69a;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#26a69a;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Income</span><span style="font-size:22px;font-weight:900;color:#fff">ORCL</span><span style="font-size:15px;color:#fff;font-weight:700">Cash Secured Put — neutral/bullish</span><span style="font-size:13px;color:#aaa">Allocation: 30% ($30,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$7.5 – $7.75</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$137.25</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$3.88</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$1.5</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> High premium CSP with 81% annualized return and reasonable breakeven at $137.25. Strong income generation with acceptable assignment risk given Oracle&#x27;s fundamentals.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> Significant market decline could force assignment above fair value or create unrealized losses</div></div><div style="background:#0d1b2a;border-left:4px solid #FF69B4;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#FF69B4;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Wildcard</span><span style="font-size:22px;font-weight:900;color:#fff">ASML</span><span style="font-size:15px;color:#ef5350;font-weight:700">Put Options — bearish</span><span style="font-size:13px;color:#aaa">Allocation: 15% ($15,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$850.0 – $870.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$890.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$800.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$750.0</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> Dual bearish EMA cross signals indicate momentum breakdown in this semiconductor equipment leader. Technical deterioration suggests further downside ahead.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> Semiconductor sector recovery or positive company-specific news could quickly reverse bearish momentum</div></div></div>
+  <div class="card"><h3>🤖 AI Trade Recommendations <span class="fresh">● generated this run</span></h3><div class="muted" style="margin-bottom:16px">3 trade picks for the week based on signals, wheel scores, and price action. Sized to $100K total capital. <strong>Not financial advice — always do your own research.</strong></div><div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Directional</span><span style="font-size:22px;font-weight:900;color:#fff">AVGO</span><span style="font-size:15px;color:#26a69a;font-weight:700">Long Stock — bullish</span><span style="font-size:13px;color:#aaa">Allocation: 15% ($15,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$185.0 – $188.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$175.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$200.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$215.0</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> Tight base breakout with Launch Pad setup suggests strong institutional accumulation and potential momentum acceleration. Semiconductor leader with solid fundamentals entering earnings season.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> Sector rotation out of tech or broader semiconductor weakness could invalidate the breakout pattern.</div></div><div style="background:#0d1b2a;border-left:4px solid #26a69a;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#26a69a;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Income</span><span style="font-size:22px;font-weight:900;color:#fff">ORCL</span><span style="font-size:15px;color:#fff;font-weight:700">Cash Secured Put — neutral to bullish</span><span style="font-size:13px;color:#aaa">Allocation: 25% ($25,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$7.5 – $7.95</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$130.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$3.88</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$0.5</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> High premium CSP on quality large-cap with 81% annualized return and reasonable breakeven at $137.25. Oracle&#x27;s cloud transition provides fundamental support at these levels.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> Significant market correction could push ORCL below breakeven, forcing assignment at unfavorable levels.</div></div><div style="background:#0d1b2a;border-left:4px solid #FF69B4;border-radius:10px;padding:18px 20px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px"><span style="background:#FF69B4;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px">Wildcard</span><span style="font-size:22px;font-weight:900;color:#fff">ASML</span><span style="font-size:15px;color:#ef5350;font-weight:700">Put Options — bearish</span><span style="font-size:13px;color:#aaa">Allocation: 8% ($8,000)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:14px"><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">ENTRY RANGE</div><div style="font-size:16px;font-weight:800;color:#fff">$8.5 – $10.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">STOP LOSS</div><div style="font-size:16px;font-weight:800;color:#ef5350">$5.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 1</div><div style="font-size:16px;font-weight:800;color:#26a69a">$15.0</div></div><div style="background:#13263d;border-radius:7px;padding:9px"><div style="font-size:10px;color:#888;margin-bottom:2px">TARGET 2</div><div style="font-size:16px;font-weight:800;color:#00e676">$25.0</div></div></div><div style="font-size:13px;line-height:1.8;color:#ccc;margin-bottom:8px"><strong style="color:#fff">Thesis:</strong> Double bearish EMA signals confirm technical breakdown in critical semiconductor equipment leader. European exposure and China restrictions create additional fundamental headwinds.</div><div style="font-size:12px;color:#ef9a9a">⚠️ <strong>Key risk:</strong> Semiconductor sector bounce or positive guidance could quickly reverse the bearish momentum and cause rapid put decay.</div></div></div>
 </div>
 
 <div id="tab-signals" class="hidden" data-tab="1">
@@ -763,6 +764,272 @@ $MU winding up for a bigger run to 500 once it breaks this</td><td><a href='http
 <div style="background:#13263d;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:12px;color:#777;line-height:1.8">
 💬 <strong style="color:#aaa">Add new trades to this tab</strong> by updating the <code>render_ah_lessons_tab()</code> function in export_report.py. Each post-mortem should include: setup details, what indicators were showing, what the mistake was, and the corrected approach.
 </div>
+</div>
+</div>
+
+<div id="tab-kylesopts" class="hidden" data-tab="1">
+  <div class="card">
+<h3>💼 Kyle's Options Trades <span class="fresh">● positions as of Mar 6, 2026</span></h3>
+<div class="muted" style="margin-bottom:16px">Covered call recommendations for your AMZN and MSFT holdings. Three tiers per stock: Conservative (keep upside), Balanced (best R/R), Aggressive (max income). <strong>Not financial advice — review strikes against your own cost basis and tax situation.</strong></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px">
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">AMZN POSITION</div>
+<div style="font-size:17px;font-weight:800;color:#FF9900">$105,539</div></div>
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">AMZN SHARES</div>
+<div style="font-size:17px;font-weight:800;color:#FF9900">495</div></div>
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">MSFT POSITION</div>
+<div style="font-size:17px;font-weight:800;color:#00a4ef">$117,372</div></div>
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">MSFT SHARES</div>
+<div style="font-size:17px;font-weight:800;color:#00a4ef">287</div></div>
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">COMBINED VALUE</div>
+<div style="font-size:17px;font-weight:800;color:#fff">$222,910</div></div>
+<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CONTRACTS AVAIL</div>
+<div style="font-size:17px;font-weight:800;color:#aaa">4 AMZN + 2 MSFT</div></div>
+</div>
+<div style="background:#0d1b2a;border-radius:10px;padding:16px 20px;margin-bottom:22px">
+<div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px">💰 Monthly Income Potential — Combined AMZN + MSFT</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+<div style="background:#13263d;border-radius:8px;padding:12px;border-left:3px solid #26a69a">
+<div style="font-size:11px;color:#26a69a;font-weight:800;margin-bottom:4px">Conservative</div>
+<div style="font-size:24px;font-weight:900;color:#fff">$1,820<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676;margin-bottom:4px">$21,840/year</div>
+<div style="font-size:11px;color:#777">Low assignment risk, keep most upside</div></div>
+<div style="background:#13263d;border-radius:8px;padding:12px;border-left:3px solid #FFD700">
+<div style="font-size:11px;color:#FFD700;font-weight:800;margin-bottom:4px">Balanced</div>
+<div style="font-size:24px;font-weight:900;color:#fff">$2,840<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676;margin-bottom:4px">$34,080/year</div>
+<div style="font-size:11px;color:#777">Best risk/reward balance</div></div>
+<div style="background:#13263d;border-radius:8px;padding:12px;border-left:3px solid #ef5350">
+<div style="font-size:11px;color:#ef5350;font-weight:800;margin-bottom:4px">Aggressive</div>
+<div style="font-size:24px;font-weight:900;color:#fff">$3,240<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676;margin-bottom:4px">$38,880/year</div>
+<div style="font-size:11px;color:#777">Max income, higher assignment risk</div></div>
+</div></div>
+<div style="background:#0d1b2a;border-left:4px solid #FF9900;border-radius:12px;padding:20px 22px;margin-bottom:24px">
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+<span style="font-size:26px;font-weight:900;color:#FF9900">AMZN</span>
+<span style="font-size:15px;color:#aaa">Amazon.com Inc.</span>
+<span style="background:#13263d;color:#fff;font-size:12px;padding:4px 12px;border-radius:10px">495 shares @ $213.210</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">+0.0% unrealised</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:16px">
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">MARKET VALUE</div>
+<div style="font-size:15px;font-weight:800;color:#fff">$105,538.95</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CURRENT PRICE</div>
+<div style="font-size:15px;font-weight:800;color:#FF9900">$213.21</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">COST BASIS</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">$213.210</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">% OF PORTFOLIO</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">25.5%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CONTRACTS AVAIL</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">4x</div></div>
+</div>
+<div style="background:#1a1200;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:16px;font-size:12px;color:#ffb74d">⚠️ AMZN earnings Apr 23 — if selling the Apr 17 expiry you expire BEFORE earnings (safe). Apr 24+ expiry carries earnings risk.</div>
+<div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px;">📋 COVERED CALL OPTIONS — CHOOSE YOUR TIER</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:12px">
+<thead><tr style="border-bottom:1px solid #263238">
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Tier</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Strike</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Exp</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">DTE</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Est. Premium</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Contracts</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Total Collected</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Breakeven</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Ann. Return</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Called Away @</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Max Profit</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">OTM %</th>
+</tr></thead><tbody>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #26a69a">
+<td style="padding:8px 10px"><span style="background:#26a69a;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Conservative</span></td>
+<td style="padding:8px 10px;color:#26a69a;font-weight:800">$230</td>
+<td style="padding:8px 10px;color:#ccc">Apr 17, 2026</td>
+<td style="padding:8px 10px;color:#aaa">40d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$2.80</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">4x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$1,120</td>
+<td style="padding:8px 10px;color:#ffb74d">$210.41</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">12.7%</td>
+<td style="padding:8px 10px;color:#26a69a">$230</td>
+<td style="padding:8px 10px;color:#26a69a">$8,334</td>
+<td style="padding:8px 10px;color:#aaa">7.9%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 7.9% OTM — AMZN needs a +8% rally to get called away. Keeps 495 shares in almost all downside/flat scenarios. Premium offsets cost basis by $2.80/share.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ If AMZN gaps above $230 (e.g. on earnings Apr 23), shares get called away below potential upside.</td>
+</tr>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #FFD700">
+<td style="padding:8px 10px"><span style="background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Balanced</span></td>
+<td style="padding:8px 10px;color:#FFD700;font-weight:800">$225</td>
+<td style="padding:8px 10px;color:#ccc">Apr 17, 2026</td>
+<td style="padding:8px 10px;color:#aaa">40d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$4.20</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">4x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$1,680</td>
+<td style="padding:8px 10px;color:#ffb74d">$209.01</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">19.1%</td>
+<td style="padding:8px 10px;color:#FFD700">$225</td>
+<td style="padding:8px 10px;color:#26a69a">$6,563</td>
+<td style="padding:8px 10px;color:#aaa">5.5%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 5.5% OTM — higher premium collected, more income. AMZN must rally +5.5% to get called away. Good balance of income vs upside retention.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ Less buffer than Conservative tier. More likely to lose shares if market recovers strongly.</td>
+</tr>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #ef5350">
+<td style="padding:8px 10px"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Aggressive Income</span></td>
+<td style="padding:8px 10px;color:#ef5350;font-weight:800">$220</td>
+<td style="padding:8px 10px;color:#ccc">Apr 2, 2026</td>
+<td style="padding:8px 10px;color:#aaa">25d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$4.50</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">4x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$1,800</td>
+<td style="padding:8px 10px;color:#ffb74d">$208.71</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">31.2%</td>
+<td style="padding:8px 10px;color:#ef5350">$220</td>
+<td style="padding:8px 10px;color:#26a69a">$4,841</td>
+<td style="padding:8px 10px;color:#aaa">3.2%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 Max income — shorter DTE (25 days) and closer strike. Highest annualised return but shares likely called away if AMZN holds current level.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ Only 3.2% buffer. High probability of assignment. Best if you are willing to sell AMZN at $220.</td>
+</tr>
+</tbody></table></div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00a4ef;border-radius:12px;padding:20px 22px;margin-bottom:24px">
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+<span style="font-size:26px;font-weight:900;color:#00a4ef">MSFT</span>
+<span style="font-size:15px;color:#aaa">Microsoft Corp.</span>
+<span style="background:#13263d;color:#fff;font-size:12px;padding:4px 12px;border-radius:10px">287 shares @ $408.960</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">+0.0% unrealised</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:16px">
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">MARKET VALUE</div>
+<div style="font-size:15px;font-weight:800;color:#fff">$117,371.52</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CURRENT PRICE</div>
+<div style="font-size:15px;font-weight:800;color:#00a4ef">$408.96</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">COST BASIS</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">$408.960</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">% OF PORTFOLIO</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">28.4%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CONTRACTS AVAIL</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">2x</div></div>
+</div>
+<div style="background:#1a1200;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:16px;font-size:12px;color:#ffb74d">⚠️ MSFT earnings expected late Apr 2026. Apr 17 expiry is safe. Avoid Apr 24+ expiry until earnings date is confirmed.</div>
+<div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px;">📋 COVERED CALL OPTIONS — CHOOSE YOUR TIER</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:12px">
+<thead><tr style="border-bottom:1px solid #263238">
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Tier</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Strike</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Exp</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">DTE</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Est. Premium</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Contracts</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Total Collected</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Breakeven</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Ann. Return</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Called Away @</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">Max Profit</th>
+<th style="padding:7px 10px;color:#aaa;text-align:left;white-space:nowrap">OTM %</th>
+</tr></thead><tbody>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #26a69a">
+<td style="padding:8px 10px"><span style="background:#26a69a;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Conservative</span></td>
+<td style="padding:8px 10px;color:#26a69a;font-weight:800">$445</td>
+<td style="padding:8px 10px;color:#ccc">Apr 17, 2026</td>
+<td style="padding:8px 10px;color:#aaa">40d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$3.50</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">2x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$700</td>
+<td style="padding:8px 10px;color:#ffb74d">$405.46</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">7.2%</td>
+<td style="padding:8px 10px;color:#26a69a">$445</td>
+<td style="padding:8px 10px;color:#26a69a">$11,339</td>
+<td style="padding:8px 10px;color:#aaa">8.8%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 8.8% OTM — MSFT needs to recover +8.8% before shares get called. Given MSFT is in a downtrend, this is very likely to expire worthless and you keep the premium. Premium collected reduces your cost basis from $408.96 to $405.46.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ Low income vs capital deployed. If MSFT rallies sharply you miss the upside above $445.</td>
+</tr>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #FFD700">
+<td style="padding:8px 10px"><span style="background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Balanced</span></td>
+<td style="padding:8px 10px;color:#FFD700;font-weight:800">$430</td>
+<td style="padding:8px 10px;color:#ccc">Apr 17, 2026</td>
+<td style="padding:8px 10px;color:#aaa">40d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$5.80</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">2x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$1,160</td>
+<td style="padding:8px 10px;color:#ffb74d">$403.16</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">11.9%</td>
+<td style="padding:8px 10px;color:#FFD700">$430</td>
+<td style="padding:8px 10px;color:#26a69a">$6,211</td>
+<td style="padding:8px 10px;color:#aaa">5.1%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 5.1% OTM — meaningful premium on a stock that is currently below its 50 SMA. Selling at $430 gives MSFT room to recover while collecting income. If called away at $430 you still make $21/share profit on your cost basis.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ If MSFT accelerates lower, premium provides only $5.80 downside cushion.</td>
+</tr>
+<tr style="border-bottom:1px solid #1a2a3a;border-left:3px solid #ef5350">
+<td style="padding:8px 10px"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:8px">Aggressive Income</span></td>
+<td style="padding:8px 10px;color:#ef5350;font-weight:800">$415</td>
+<td style="padding:8px 10px;color:#ccc">Apr 2, 2026</td>
+<td style="padding:8px 10px;color:#aaa">25d</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">~$7.20</td>
+<td style="padding:8px 10px;color:#fff;font-weight:700">2x</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:800">$1,440</td>
+<td style="padding:8px 10px;color:#ffb74d">$401.76</td>
+<td style="padding:8px 10px;color:#00e676;font-weight:700">25.6%</td>
+<td style="padding:8px 10px;color:#ef5350">$415</td>
+<td style="padding:8px 10px;color:#26a69a">$2,447</td>
+<td style="padding:8px 10px;color:#aaa">1.5%</td>
+</tr>
+<tr style="border-bottom:1px solid #263238;background:#0a1220">
+<td colspan="7" style="padding:5px 10px 8px 14px;font-size:11px;color:#bbb">💡 Near-the-money CC for maximum income. If MSFT holds ~$409 through Apr 2, you collect $1,440 in 25 days. High theta decay at this strike.</td>
+<td colspan="5" style="padding:5px 10px 8px;font-size:11px;color:#ef9a9a">⚠️ Very thin 1.5% buffer. Any MSFT recovery above $415 = shares called away at only a small profit above cost basis.</td>
+</tr>
+</tbody></table></div>
+</div>
+<div style="background:#0a1628;border-radius:10px;padding:16px 20px;margin-top:4px">
+<div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px">📞 How to Execute These Trades</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+<div style="background:#13263d;border-radius:8px;padding:12px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+<span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:2px 8px;border-radius:8px">Step 1</span>
+<span style="font-size:12px;font-weight:800;color:#fff">Pick your tier</span></div>
+<div style="font-size:12px;color:#bbb;line-height:1.7">Conservative if you want to hold the stock long-term. Balanced for best income/upside tradeoff. Aggressive if you&#x27;re happy being called away at the strike price.</div></div>
+<div style="background:#13263d;border-radius:8px;padding:12px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+<span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:2px 8px;border-radius:8px">Step 2</span>
+<span style="font-size:12px;font-weight:800;color:#fff">Place the order</span></div>
+<div style="font-size:12px;color:#bbb;line-height:1.7">In your broker: Sell → Call → [strike] → [expiry] → Limit order at the bid price or midpoint. Select &#x27;Covered Call&#x27; — you don&#x27;t need extra margin.</div></div>
+<div style="background:#13263d;border-radius:8px;padding:12px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+<span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:2px 8px;border-radius:8px">Step 3</span>
+<span style="font-size:12px;font-weight:800;color:#fff">Set your management rule</span></div>
+<div style="font-size:12px;color:#bbb;line-height:1.7">If the option reaches 2× what you collected (e.g. you sold for $4, close if it hits $8), buy it back to cut losses. At 50% profit (e.g. sold $4, hits $2), consider closing early and selling a new one.</div></div>
+<div style="background:#13263d;border-radius:8px;padding:12px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+<span style="background:#42a5f5;color:#000;font-size:11px;font-weight:800;padding:2px 8px;border-radius:8px">Step 4</span>
+<span style="font-size:12px;font-weight:800;color:#fff">Track it here</span></div>
+<div style="font-size:12px;color:#bbb;line-height:1.7">Add positions to wheel_positions.json in your tweet-archive folder to track live P&amp;L on the Wheel tab.</div></div>
+</div></div>
 </div>
 </div>
 
