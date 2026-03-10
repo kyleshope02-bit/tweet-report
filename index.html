@@ -49,7 +49,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-09 09:35 PM • yfinance cache 15m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (149 tickers shown) • Signals: 36 bullish / 17 bearish across 149 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-09 09:39 PM • yfinance cache 19m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (149 tickers shown) • Signals: 36 bullish / 17 bearish across 149 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-weekly"  class="tabbtn on"  data-tabbtn="1" onclick="showTab('weekly')">📅 Weekly Picks</button>
@@ -67,7 +67,7 @@ select.filter{padding:5px}
 <div class="muted" style="margin-bottom:16px">Personalised weekly trade plan based on your portfolio, open positions, live options data, and signal scanner. Prioritises income first, then transition execution, then swing ideas. <strong>Not financial advice — always do your own research.</strong></div>
 <div style="background:#0d2a1a;border-left:4px solid #00e676;border-radius:8px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:11px;color:#00e676;font-weight:800;margin-bottom:5px">📋 THIS WEEK'S MARKET CONTEXT</div>
-<div style="font-size:13px;color:#e0e0e0;line-height:1.8">Kyle needs to execute immediate portfolio restructuring by adding AMZN/MSFT shares to unlock additional covered call contracts while managing the underwater META put position. Without live options pricing data, estimated premiums will guide income generation strategy.</div>
+<div style="font-size:13px;color:#e0e0e0;line-height:1.8">With AMZN and MSFT live option pricing unavailable, Kyle should focus on executing the share top-ups to unlock full covered call capacity while selling SPY. The META 680P needs immediate attention as it&#x27;s $35 ITM, and high-premium CSPs on LRCX and MRVL offer excellent income opportunities.</div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:10px">💰 This Week's Income Potential</div>
@@ -77,97 +77,57 @@ select.filter{padding:5px}
 <div style="font-size:16px;font-weight:800;color:#aaa">$3,000</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Achievable Now</div>
-<div style="font-size:16px;font-weight:800;color:#FFD700">$2,200</div></div>
+<div style="font-size:16px;font-weight:800;color:#00e676">$2,850</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">AMZN CC</div>
-<div style="font-size:16px;font-weight:800;color:#FF9900">$500</div></div>
+<div style="font-size:16px;font-weight:800;color:#FF9900">$800</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">MSFT CC</div>
-<div style="font-size:16px;font-weight:800;color:#00a4ef">$400</div></div>
+<div style="font-size:16px;font-weight:800;color:#00a4ef">$600</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Other CSP/CC</div>
-<div style="font-size:16px;font-weight:800;color:#ab47bc">$1,300</div></div>
+<div style="font-size:16px;font-weight:800;color:#ab47bc">$1,450</div></div>
 </div>
 <div style="background:#1a2a3a;border-radius:4px;height:8px;overflow:hidden">
-<div style="background:#FFD700;width:73%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
-<div style="font-size:11px;color:#FFD700;margin-top:5px">73% of monthly target achievable this week</div>
+<div style="background:#00e676;width:95%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
+<div style="font-size:11px;color:#00e676;margin-top:5px">95% of monthly target achievable this week</div>
 </div>
 <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px">🎯 PRIORITY ACTIONS — THIS WEEK</div>
 <div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#1 SPY Transition</span>
-<span style="font-size:20px;font-weight:900;color:#fff">AMZN</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 5 shares AMZN at market to reach 500 total shares</span>
+<span style="font-size:20px;font-weight:900;color:#fff">AMZN/MSFT/SPY</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 5 AMZN shares + 13 MSFT shares, sell entire SPY position simultaneously</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market buy order for 5 AMZN shares (~$1,066 capital required)
+📌 Market orders: +5 AMZN, +13 MSFT, sell all SPY (~$100K). Execute all three simultaneously
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 5th covered call contract, increasing weekly income potential from AMZN position by 25%</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 5th AMZN contract and 3rd MSFT contract for maximum covered call income generation</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">500 shares enables 5 covered call contracts for enhanced weekly income</div></div>
+<div style="color:#bbb">Full covered call capacity unlocked, concentrated position in tech leaders</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Minor execution risk if price gaps up during purchase</div></div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#2 SPY Transition</span>
-<span style="font-size:20px;font-weight:900;color:#fff">MSFT</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 13 shares MSFT at market to reach 300 total shares</span>
-<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market buy order for 13 MSFT shares (~$5,316 capital required)
-</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 3rd covered call contract, maximizing income potential from concentrated MSFT position</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
-<div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
-<div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">300 shares enables 3 covered call contracts for maximum MSFT income generation</div></div>
-<div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
-<div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Minor execution risk, but necessary for income optimization</div></div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#3 SPY Transition</span>
-<span style="font-size:20px;font-weight:900;color:#fff">SPY</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Sell entire $100K SPY position simultaneously with stock purchases</span>
-<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market sell order for entire SPY position, expect ~$100K proceeds
-</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Frees capital for stock top-ups and provides liquidity for additional CSP opportunities</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
-<div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
-<div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Provides liquidity for enhanced options income strategy</div></div>
-<div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
-<div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Market timing risk if SPY continues climbing after sale</div></div>
+<div style="color:#bbb">Market volatility during execution could affect fill prices</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#4 Options Income</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#2 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">AMZN</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 5x AMZN covered calls after share purchase</span>
-<span style="margin-left:auto;background:#aaa;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Immediately after stock purchase</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 5x AMZN covered calls once shares are acquired</span>
+<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today after share purchase</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 5x AMZN calls 2-3 weeks out, target $5-8 delta, expect $400-600 weekly premium
+📌 Wait for live pricing - target $15-20 premium per contract, 30-45 DTE, 5% OTM
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Generate weekly income from full 500-share AMZN position using covered calls</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">With 500 shares, Kyle can sell 5 contracts for maximum income from his largest holding</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Generate $1,600-2,400 monthly income from AMZN covered calls</div></div>
+<div style="color:#bbb">$75-100 per contract weekly income contribution</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
 <div style="color:#bbb">Shares could be called away if AMZN rallies strongly</div></div>
@@ -175,57 +135,77 @@ select.filter{padding:5px}
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#5 Options Income</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#3 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">MSFT</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 3x MSFT covered calls after share purchase</span>
-<span style="margin-left:auto;background:#aaa;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Immediately after stock purchase</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 3x MSFT covered calls once shares are acquired</span>
+<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today after share purchase</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 3x MSFT calls 2-3 weeks out, target $5-8 delta, expect $300-500 weekly premium
+📌 Wait for live pricing - target $15-25 premium per contract, 30-45 DTE, 5% OTM
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Maximize income from 300-share MSFT position with full covered call capacity</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">300 shares enables 3 contracts on Kyle&#x27;s second-largest position for consistent income</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Generate $1,200-2,000 monthly income from MSFT covered calls</div></div>
+<div style="color:#bbb">$45-75 per contract weekly income stream</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Shares could be called away in strong tech rally</div></div>
+<div style="color:#bbb">Assignment risk if MSFT breaks above strike price</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#6 Options Income</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#4 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">LRCX</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell LRCX $200P CSP using freed SPY capital</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 1x LRCX $200P Apr 02</span>
 <span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 1x LRCX $200P Apr 2, collect $1,315 premium (13.15 x 100)
+📌 Sell 1x LRCX $200P Apr 02 for $13.15 credit, requires $20K buying power
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Highest scoring CSP opportunity with 104.3% annualized return and reasonable 5.3% OTM buffer</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Exceptional 104% annualized return with only 5.3% OTM cushion - highest scoring CSP opportunity</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Either collect $1,315 premium or acquire LRCX at effective $186.85 cost basis</div></div>
+<div style="color:#bbb">$1,315 immediate premium, potential $3,276 monthly at this rate</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Assignment risk if semiconductor sector weakens significantly</div></div>
+<div style="color:#bbb">Assignment if LRCX drops below $200, but quality semiconductor name</div></div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#5 Options Income</span>
+<span style="font-size:20px;font-weight:900;color:#fff">MRVL</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 2x MRVL $87P Apr 10</span>
+<span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
+📌 Sell 2x MRVL $87P Apr 10 for $7.10 credit each, requires $17.4K buying power
+</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">96% annualized return with longer 31 DTE provides good time decay, diversifies CSP exposure</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
+<div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
+<div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
+<div style="color:#bbb">$1,420 immediate premium from both contracts</div></div>
+<div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
+<div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
+<div style="color:#bbb">Semiconductor sector correlation with LRCX position</div></div>
 </div>
 </div>
 <div style="background:#1a0a00;border:1px solid #bf360c;border-radius:10px;padding:14px 17px;margin-bottom:14px">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
 <span style="font-size:16px;font-weight:900;color:#ef5350">🚑 META $680 CSP — ACTION REQUIRED</span>
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:8px">Roll Down to $620 Apr 17</span>
+<span style="background:#ffb74d;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:8px">Close Now</span>
 </div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P, sell META $620P Apr 17 — expect net debit of $30-40 per share ($3,000-4,000 total)</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7">ITM by $35 makes closing expensive. Rolling down to $620 reduces assignment risk while extending time for META recovery, given current market volatility</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P for ~$70 loss, redeploy capital to LRCX/MRVL CSPs for better risk-adjusted returns</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7">At $35 ITM, rolling down to $620 only saves $25 but extends risk. With strong income opportunities available elsewhere, better to take the loss and redeploy capital to high-return CSPs like LRCX</div>
 </div>
 <div style="background:#1a0a1a;border-left:3px solid #ef5350;border-radius:8px;padding:12px 14px;margin-bottom:4px">
 <div style="font-size:11px;color:#ef5350;font-weight:800;margin-bottom:8px">🚫 DO NOT DO THIS WEEK</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not buy any meme stocks or high-beta names that could jeopardize the income-focused strategy</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not sell covered calls too close to the money (avoid &gt;15 delta) risking early assignment</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not deploy all SPY proceeds immediately - keep some cash for rolling META position if needed</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Don&#x27;t wait for perfect covered call pricing - execute share purchases first to unlock capacity</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Don&#x27;t roll the META put further - cut losses and redeploy to better opportunities</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Don&#x27;t chase swing trades until income foundation is solidified with covered calls active</div>
 </div>
 </div>
 </div>
@@ -413,7 +393,7 @@ Invest in assets, not liabilities.</td><td><a href='https://x.com/Mr_Derivatives
     </div>
 
   </div>
-</div><h4 style='margin:0 0 8px;color:#263238'>🏆 Top Pick — Highest Confidence</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📉 Best CSP</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📈 Best CC</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$COIN <span style="color:#FFD700">CC</span> &nbsp; Strike $210.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#FFD700">$11.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#FFD700">$5,500</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">87.4%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$221.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$10,605</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$94,395</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.11x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">SHARES REQ</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">500 shares</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock called away at $210.00 — collect $10,605 total (premium + capital gain).</div><div>📉 <strong>If down:</strong> Stock falls — still own shares. Premium reduces cost basis to $221.00.</div><div>💰 <strong>Capital:</strong> 500 shares required (~$99,895 at current price).</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  87% ann return ✓  ·  23d DTE — optimal ✓  ·  5.1% OTM — ideal ✓  ·  Neutral/bullish P/C ✓</div></div></div><h4 style="margin:0 0 8px">📉 Top 10 Cash Secured Puts</h4><table id="tbl-csp" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$LRCX</strong></td><td>$211.15</td><td><strong style='color:#26a69a'>$200.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.15</td><td style='color:#00e676;font-weight:800'>104.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.3%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6575</td><td style='color:#ffb74d'>$186.85</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.63</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 104% ann return ✓ · 23d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MRVL</strong></td><td>$92.65</td><td><strong style='color:#26a69a'>$87.00</strong></td><td style='color:#26a69a;font-weight:700'>$7.10</td><td style='color:#00e676;font-weight:800'>96.1%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>6.1%</td><td><strong>11</strong>x</td><td style='color:#26a69a;font-weight:700'>$7810</td><td style='color:#ffb74d'>$79.90</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.69</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 96% ann return ✓ · 31d DTE — optimal ✓ · 6.1% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#26a69a'>$74.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.08</td><td style='color:#00e676;font-weight:800'>87.5%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.7%</td><td><strong>13</strong>x</td><td style='color:#26a69a;font-weight:700'>$5304</td><td style='color:#ffb74d'>$69.92</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 88% ann return ✓ · 23d DTE — optimal ✓ · 6.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NET</strong></td><td>$201.48</td><td><strong style='color:#26a69a'>$180.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.35</td><td style='color:#00e676;font-weight:800'>87.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>10.7%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6675</td><td style='color:#ffb74d'>$166.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.5</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 31d DTE — optimal ✓ · 10.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#26a69a'>$490.00</strong></td><td style='color:#26a69a;font-weight:700'>$43.80</td><td style='color:#00e676;font-weight:800'>85.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#26a69a;font-weight:700'>$8760</td><td style='color:#ffb74d'>$446.20</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 86% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$INTC</strong></td><td>$45.58</td><td><strong style='color:#26a69a'>$42.00</strong></td><td style='color:#26a69a;font-weight:700'>$3.73</td><td style='color:#00e676;font-weight:800'>72.0%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>7.9%</td><td><strong>23</strong>x</td><td style='color:#26a69a;font-weight:700'>$8579</td><td style='color:#ffb74d'>$38.27</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.54</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 72% ann return ✓ · 45d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PSX</strong></td><td>$163.00</td><td><strong style='color:#26a69a'>$149.00</strong></td><td style='color:#26a69a;font-weight:700'>$5.00</td><td style='color:#00e676;font-weight:800'>53.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>8.6%</td><td><strong>6</strong>x</td><td style='color:#26a69a;font-weight:700'>$3000</td><td style='color:#ffb74d'>$144.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.23</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 8.6% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$C</strong></td><td>$106.59</td><td><strong style='color:#26a69a'>$101.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.49</td><td style='color:#00e676;font-weight:800'>52.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.2%</td><td><strong>9</strong>x</td><td style='color:#26a69a;font-weight:700'>$4041</td><td style='color:#ffb74d'>$96.51</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.29</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 31d DTE — optimal ✓ · 5.2% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$6.35</td><td style='color:#00e676;font-weight:800'>51.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.9%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$3175</td><td style='color:#ffb74d'>$188.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 23d DTE — optimal ✓ · 6.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NXPI</strong></td><td>$205.25</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$9.52</td><td style='color:#00e676;font-weight:800'>46.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.0%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$4760</td><td style='color:#ffb74d'>$185.48</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.19</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 47% ann return ✓ · 38d DTE — optimal ✓ · 5.0% OTM — ideal ✓ · Bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 8px">📈 Top 10 Covered Calls</h4><table id="tbl-cc" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$COIN</strong></td><td>$199.79</td><td><strong style='color:#FFD700'>$210.00</strong></td><td style='color:#FFD700;font-weight:700'>$11.00</td><td style='color:#00e676;font-weight:800'>87.4%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>5</strong>x</td><td style='color:#FFD700;font-weight:700'>$5500</td><td style='color:#ffb74d'>$221.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.78</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ORCL</strong></td><td>$151.56</td><td><strong style='color:#FFD700'>$160.00</strong></td><td style='color:#FFD700;font-weight:700'>$7.99</td><td style='color:#00e676;font-weight:800'>83.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.6%</td><td><strong>6</strong>x</td><td style='color:#FFD700;font-weight:700'>$4794</td><td style='color:#ffb74d'>$167.99</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.68</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 84% ann return ✓ · 23d DTE — optimal ✓ · 5.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MU</strong></td><td>$389.32</td><td><strong style='color:#FFD700'>$410.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.13</td><td style='color:#00e676;font-weight:800'>74.3%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$6026</td><td style='color:#ffb74d'>$440.13</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.81</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 74% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#FFD700'>$545.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.65</td><td style='color:#00e676;font-weight:800'>69.8%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.4%</td><td><strong>1</strong>x</td><td style='color:#FFD700;font-weight:700'>$3065</td><td style='color:#ffb74d'>$575.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 70% ann return ✓ · 31d DTE — optimal ✓ · 5.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#FFD700'>$220.00</strong></td><td style='color:#FFD700;font-weight:700'>$9.00</td><td style='color:#00e676;font-weight:800'>68.2%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3600</td><td style='color:#ffb74d'>$229.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 68% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$VLO</strong></td><td>$215.95</td><td><strong style='color:#FFD700'>$230.00</strong></td><td style='color:#FFD700;font-weight:700'>$8.94</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.5%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3576</td><td style='color:#ffb74d'>$238.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.41</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.5% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$FDX</strong></td><td>$361.10</td><td><strong style='color:#FFD700'>$385.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.95</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.6%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$2990</td><td style='color:#ffb74d'>$399.95</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.05</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#FFD700'>$84.00</strong></td><td style='color:#FFD700;font-weight:700'>$5.94</td><td style='color:#00e676;font-weight:800'>60.7%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>5.9%</td><td><strong>12</strong>x</td><td style='color:#FFD700;font-weight:700'>$7128</td><td style='color:#ffb74d'>$89.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 61% ann return ✓ · 45d DTE — optimal ✓ · 5.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ADI</strong></td><td>$319.71</td><td><strong style='color:#FFD700'>$345.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.55</td><td style='color:#00e676;font-weight:800'>53.6%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>7.9%</td><td><strong>3</strong>x</td><td style='color:#FFD700;font-weight:700'>$4365</td><td style='color:#ffb74d'>$359.55</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.11</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 54% ann return ✓ · 31d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PNC</strong></td><td>$205.34</td><td><strong style='color:#FFD700'>$235.00</strong></td><td style='color:#FFD700;font-weight:700'>$6.80</td><td style='color:#00e676;font-weight:800'>52.6%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>14.4%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$2720</td><td style='color:#ffb74d'>$241.80</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.7</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 14.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 4px">🔄 Wheel Position Tracker</h4><div class="muted" style="margin-bottom:8px">Edit <code>wheel_positions.json</code> in your tweet-archive folder to track open positions.</div><div style="background:#f5f5f5;border-radius:8px;padding:16px;color:#666;font-size:13px">No positions tracked. Create <code>wheel_positions.json</code> in your tweet-archive folder:<br><br><code>{"positions": [{"ticker": "NVDA", "phase": "CSP", "strike": 130, "premium_received": 2.50, "cost_basis": null, "contracts": 3, "expiry": "2026-03-21", "notes": ""}]}</code></div></div>
+</div><h4 style='margin:0 0 8px;color:#263238'>🏆 Top Pick — Highest Confidence</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📉 Best CSP</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📈 Best CC</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$COIN <span style="color:#FFD700">CC</span> &nbsp; Strike $210.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#FFD700">$11.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#FFD700">$5,500</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">87.4%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$221.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$10,605</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$94,395</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.11x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">SHARES REQ</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">500 shares</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock called away at $210.00 — collect $10,605 total (premium + capital gain).</div><div>📉 <strong>If down:</strong> Stock falls — still own shares. Premium reduces cost basis to $221.00.</div><div>💰 <strong>Capital:</strong> 500 shares required (~$99,895 at current price).</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  87% ann return ✓  ·  23d DTE — optimal ✓  ·  5.1% OTM — ideal ✓  ·  Neutral/bullish P/C ✓</div></div></div><h4 style="margin:0 0 8px">📉 Top 10 Cash Secured Puts</h4><table id="tbl-csp" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$LRCX</strong></td><td>$211.15</td><td><strong style='color:#26a69a'>$200.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.15</td><td style='color:#00e676;font-weight:800'>104.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.3%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6575</td><td style='color:#ffb74d'>$186.85</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.63</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 104% ann return ✓ · 23d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MRVL</strong></td><td>$92.65</td><td><strong style='color:#26a69a'>$87.00</strong></td><td style='color:#26a69a;font-weight:700'>$7.10</td><td style='color:#00e676;font-weight:800'>96.1%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>6.1%</td><td><strong>11</strong>x</td><td style='color:#26a69a;font-weight:700'>$7810</td><td style='color:#ffb74d'>$79.90</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.69</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 96% ann return ✓ · 31d DTE — optimal ✓ · 6.1% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#26a69a'>$74.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.08</td><td style='color:#00e676;font-weight:800'>87.5%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.7%</td><td><strong>13</strong>x</td><td style='color:#26a69a;font-weight:700'>$5304</td><td style='color:#ffb74d'>$69.92</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 88% ann return ✓ · 23d DTE — optimal ✓ · 6.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NET</strong></td><td>$201.48</td><td><strong style='color:#26a69a'>$180.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.35</td><td style='color:#00e676;font-weight:800'>87.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>10.7%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6675</td><td style='color:#ffb74d'>$166.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.5</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 31d DTE — optimal ✓ · 10.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#26a69a'>$490.00</strong></td><td style='color:#26a69a;font-weight:700'>$43.80</td><td style='color:#00e676;font-weight:800'>85.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#26a69a;font-weight:700'>$8760</td><td style='color:#ffb74d'>$446.20</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 86% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$INTC</strong></td><td>$45.58</td><td><strong style='color:#26a69a'>$42.00</strong></td><td style='color:#26a69a;font-weight:700'>$3.73</td><td style='color:#00e676;font-weight:800'>72.0%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>7.9%</td><td><strong>23</strong>x</td><td style='color:#26a69a;font-weight:700'>$8579</td><td style='color:#ffb74d'>$38.27</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.54</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 72% ann return ✓ · 45d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PSX</strong></td><td>$163.00</td><td><strong style='color:#26a69a'>$149.00</strong></td><td style='color:#26a69a;font-weight:700'>$5.00</td><td style='color:#00e676;font-weight:800'>53.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>8.6%</td><td><strong>6</strong>x</td><td style='color:#26a69a;font-weight:700'>$3000</td><td style='color:#ffb74d'>$144.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.23</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 8.6% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$C</strong></td><td>$106.59</td><td><strong style='color:#26a69a'>$101.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.49</td><td style='color:#00e676;font-weight:800'>52.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.2%</td><td><strong>9</strong>x</td><td style='color:#26a69a;font-weight:700'>$4041</td><td style='color:#ffb74d'>$96.51</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.29</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 31d DTE — optimal ✓ · 5.2% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$6.35</td><td style='color:#00e676;font-weight:800'>51.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.9%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$3175</td><td style='color:#ffb74d'>$188.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 23d DTE — optimal ✓ · 6.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NXPI</strong></td><td>$205.25</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$9.52</td><td style='color:#00e676;font-weight:800'>46.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.0%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$4760</td><td style='color:#ffb74d'>$185.48</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.19</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 47% ann return ✓ · 38d DTE — optimal ✓ · 5.0% OTM — ideal ✓ · Bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 8px">📈 Top 10 Covered Calls</h4><table id="tbl-cc" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$COIN</strong></td><td>$199.79</td><td><strong style='color:#FFD700'>$210.00</strong></td><td style='color:#FFD700;font-weight:700'>$11.00</td><td style='color:#00e676;font-weight:800'>87.4%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>5</strong>x</td><td style='color:#FFD700;font-weight:700'>$5500</td><td style='color:#ffb74d'>$221.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.78</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ORCL</strong></td><td>$151.56</td><td><strong style='color:#FFD700'>$160.00</strong></td><td style='color:#FFD700;font-weight:700'>$7.99</td><td style='color:#00e676;font-weight:800'>83.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.6%</td><td><strong>6</strong>x</td><td style='color:#FFD700;font-weight:700'>$4794</td><td style='color:#ffb74d'>$167.99</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.68</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 84% ann return ✓ · 23d DTE — optimal ✓ · 5.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MU</strong></td><td>$389.32</td><td><strong style='color:#FFD700'>$410.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.13</td><td style='color:#00e676;font-weight:800'>74.3%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$6026</td><td style='color:#ffb74d'>$440.13</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.81</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 74% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#FFD700'>$545.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.65</td><td style='color:#00e676;font-weight:800'>69.8%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.4%</td><td><strong>1</strong>x</td><td style='color:#FFD700;font-weight:700'>$3065</td><td style='color:#ffb74d'>$575.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 70% ann return ✓ · 31d DTE — optimal ✓ · 5.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#FFD700'>$220.00</strong></td><td style='color:#FFD700;font-weight:700'>$9.00</td><td style='color:#00e676;font-weight:800'>68.2%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3600</td><td style='color:#ffb74d'>$229.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 68% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$FDX</strong></td><td>$361.10</td><td><strong style='color:#FFD700'>$385.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.95</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.6%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$2990</td><td style='color:#ffb74d'>$399.95</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.05</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$VLO</strong></td><td>$215.95</td><td><strong style='color:#FFD700'>$230.00</strong></td><td style='color:#FFD700;font-weight:700'>$8.94</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.5%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3576</td><td style='color:#ffb74d'>$238.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.41</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.5% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#FFD700'>$84.00</strong></td><td style='color:#FFD700;font-weight:700'>$5.94</td><td style='color:#00e676;font-weight:800'>60.7%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>5.9%</td><td><strong>12</strong>x</td><td style='color:#FFD700;font-weight:700'>$7128</td><td style='color:#ffb74d'>$89.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 61% ann return ✓ · 45d DTE — optimal ✓ · 5.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ADI</strong></td><td>$319.71</td><td><strong style='color:#FFD700'>$345.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.55</td><td style='color:#00e676;font-weight:800'>53.6%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>7.9%</td><td><strong>3</strong>x</td><td style='color:#FFD700;font-weight:700'>$4365</td><td style='color:#ffb74d'>$359.55</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.11</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 54% ann return ✓ · 31d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PNC</strong></td><td>$205.34</td><td><strong style='color:#FFD700'>$235.00</strong></td><td style='color:#FFD700;font-weight:700'>$6.80</td><td style='color:#00e676;font-weight:800'>52.6%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>14.4%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$2720</td><td style='color:#ffb74d'>$241.80</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.7</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 14.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 4px">🔄 Wheel Position Tracker</h4><div class="muted" style="margin-bottom:8px">Edit <code>wheel_positions.json</code> in your tweet-archive folder to track open positions.</div><div style="background:#f5f5f5;border-radius:8px;padding:16px;color:#666;font-size:13px">No positions tracked. Create <code>wheel_positions.json</code> in your tweet-archive folder:<br><br><code>{"positions": [{"ticker": "NVDA", "phase": "CSP", "strike": 130, "premium_received": 2.50, "cost_basis": null, "contracts": 3, "expiry": "2026-03-21", "notes": ""}]}</code></div></div>
 </div>
 
 <div id="tab-mycc" class="hidden" data-tab="1">
@@ -837,104 +817,129 @@ Compared against simple buy-and-hold of the same position. Not financial advice.
 <div style="font-size:10px;color:#777;margin-bottom:3px">OUTPERFORMANCE</div>
 <div style="font-size:16px;font-weight:900;color:#00e676">+16.3%</div></div>
 </div>
-<div style="background:#0d1b2a;border-radius:12px;padding:16px 18px;margin-bottom:20px">
-  <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:12px">
-    📈 PORTFOLIO VALUE OVER TIME — CC Strategy vs Buy &amp; Hold
-    <span style="font-size:10px;color:#555;margin-left:10px">Click legend to toggle lines</span>
-  </div>
-  <canvas id="ccHistChart" width="900" height="320" style="width:100%;height:320px;display:block"></canvas>
-  <div id="ccLegend" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;font-size:11px;cursor:pointer">
-    <span data-line="combCC"   style="color:#00e676">■ Combined CC Strategy</span>
-    <span data-line="combBah"  style="color:#42a5f5">■ Combined Buy &amp; Hold</span>
-    <span data-line="amznCC"   style="color:#FF9900">■ AMZN CC</span>
-    <span data-line="amznBah"  style="color:#ffcc44">■ AMZN B&amp;H</span>
-    <span data-line="msftCC"   style="color:#00b4d8">■ MSFT CC</span>
-    <span data-line="msftBah"  style="color:#7ec8e3">■ MSFT B&amp;H</span>
-  </div>
-</div>
 <script>
 (function(){
-  var canvas = document.getElementById('ccHistChart');
-  if (!canvas) { console.error('ccHistChart canvas not found'); return; }
-  var ctx = canvas.getContext('2d');
+  var dates = ['Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025', 'Jul 2025', 'Aug 2025', 'Sep 2025', 'Oct 2025', 'Nov 2025', 'Dec 2025', 'Jan 2026'];
 
-  var allSeries = {
-    combCC:  { data: [189627.88, 212544.73, 233267.26, 248529.18, 259550.26, 266816.58, 273630.04, 279844.24, 276920.66, 289018.96, 254914.96],  color: '#00e676', width: 2.5, dash: false },
-    combBah: { data: [204574.29, 185462.32, 219878.97, 242300.73, 253112.22, 259191.71, 260380.11, 261492.06, 262381.69, 252912.37, 258818.64], color: '#42a5f5', width: 2.5, dash: true  },
-    amznCC:  { data: [86591.52, 95035.39, 104843.97, 109753.01, 112381.19, 123244.47, 119750.45, 131248.18, 125830.04, 137901.0, 120246.26],  color: '#FF9900', width: 1.5, dash: false },
-    amznBah: { data: [96297.3, 84476.7, 95079.6, 107405.1, 110018.7, 110231.55, 117928.8, 111483.9, 120304.8, 112310.55, 121913.55], color: '#ffcc44', width: 1.2, dash: true  },
-    msftCC:  { data: [103036.36, 117509.34, 128423.29, 138776.17, 147169.07, 143572.11, 153879.59, 148596.06, 151090.62, 151117.96, 134668.7],  color: '#00b4d8', width: 1.5, dash: false },
-    msftBah: { data: [108276.99, 100985.62, 124799.37, 134895.63, 143093.52, 148960.16, 142451.31, 150008.16, 142076.89, 140601.82, 136905.09], color: '#7ec8e3', width: 1.2, dash: true  },
-  };
-  var hidden = {};
-  var dates  = ['Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025', 'Jul 2025', 'Aug 2025', 'Sep 2025', 'Oct 2025', 'Nov 2025', 'Dec 2025', 'Jan 2026'];
-  var yMin   = 81942.40, yMax = 297689.53;
+  function makeChart(canvasId, seriesList, yMin, yMax, fillKey) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var hidden = {};
 
-  function draw() {
-    var W = canvas.offsetWidth || 900, H = 320;
-    canvas.width = W; canvas.height = H;
-    var PAD = {top:20, right:20, bottom:50, left:90};
-    var PW = W - PAD.left - PAD.right, PH = H - PAD.top - PAD.bottom;
-    var n  = dates.length;
-    function xP(i) { return PAD.left + (i/(n-1||1))*PW; }
-    function yP(v) { return PAD.top  + (1-(v-yMin)/(yMax-yMin))*PH; }
-    function fmtK(v) { return '$'+(v>=1e6?(v/1e6).toFixed(1)+'M':Math.round(v/1000)+'K'); }
+    function draw() {
+      var W = canvas.offsetWidth || 700, H = canvas.getAttribute('data-h')*1 || 260;
+      canvas.width = W; canvas.height = H;
+      var PAD = {top:16, right:16, bottom:44, left:76};
+      var PW = W-PAD.left-PAD.right, PH = H-PAD.top-PAD.bottom;
+      var n = dates.length;
+      function xP(i){ return PAD.left+(i/(n-1||1))*PW; }
+      function yP(v){ return PAD.top+(1-(v-yMin)/(yMax-yMin))*PH; }
+      function fmtK(v){ return '$'+(v>=1e6?(v/1e6).toFixed(2)+'M':Math.round(v/1000)+'K'); }
 
-    ctx.fillStyle = '#0d1b2a'; ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle = '#1e3a4a'; ctx.lineWidth = 0.5;
-    for (var g=0; g<=5; g++) {
-      var gv = yMin+(yMax-yMin)*g/5, gy = yP(gv);
-      ctx.beginPath(); ctx.moveTo(PAD.left,gy); ctx.lineTo(W-PAD.right,gy); ctx.stroke();
-      ctx.fillStyle='#555'; ctx.font='10px sans-serif'; ctx.textAlign='right';
-      ctx.fillText(fmtK(gv), PAD.left-6, gy+3);
-    }
-    ctx.fillStyle='#555'; ctx.textAlign='center';
-    var step = Math.max(1, Math.floor(n/8));
-    for (var xi=0; xi<n; xi+=step) {
-      ctx.fillText(dates[xi], xP(xi), H-PAD.bottom+18);
-    }
+      ctx.fillStyle='#0d1b2a'; ctx.fillRect(0,0,W,H);
+      ctx.strokeStyle='#1e3a4a'; ctx.lineWidth=0.5;
+      for(var g=0;g<=6;g++){
+        var gv=yMin+(yMax-yMin)*g/6, gy=yP(gv);
+        ctx.beginPath(); ctx.moveTo(PAD.left,gy); ctx.lineTo(W-PAD.right,gy); ctx.stroke();
+        ctx.fillStyle='#667'; ctx.font='10px sans-serif'; ctx.textAlign='right';
+        ctx.fillText(fmtK(gv), PAD.left-5, gy+3);
+      }
+      var step=Math.max(1,Math.floor(n/7));
+      ctx.fillStyle='#667'; ctx.textAlign='center';
+      for(var xi=0;xi<n;xi+=step) ctx.fillText(dates[xi], xP(xi), H-PAD.bottom+15);
 
-    // fill under CC combined
-    if (!hidden['combCC'] && allSeries.combCC.data.length) {
-      ctx.beginPath();
-      allSeries.combCC.data.forEach(function(v,j){
-        var x=xP(j),y=yP(v); j===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      // fill under CC line
+      if(fillKey){
+        var fs = seriesList.find(function(s){return s.key===fillKey && !hidden[s.key];});
+        if(fs && fs.data.length){
+          ctx.beginPath();
+          fs.data.forEach(function(v,j){ j===0?ctx.moveTo(xP(j),yP(v)):ctx.lineTo(xP(j),yP(v)); });
+          ctx.lineTo(xP(fs.data.length-1),yP(yMin)); ctx.lineTo(xP(0),yP(yMin)); ctx.closePath();
+          ctx.fillStyle='rgba(0,230,118,0.07)'; ctx.fill();
+        }
+      }
+
+      seriesList.forEach(function(s){
+        if(hidden[s.key]||!s.data.length) return;
+        ctx.beginPath(); ctx.strokeStyle=s.color; ctx.lineWidth=s.width;
+        ctx.setLineDash(s.dash?[6,4]:[]);
+        s.data.forEach(function(v,j){ j===0?ctx.moveTo(xP(j),yP(v)):ctx.lineTo(xP(j),yP(v)); });
+        ctx.stroke(); ctx.setLineDash([]);
+        // end-of-line label
+        var last=s.data[s.data.length-1];
+        ctx.fillStyle=s.color; ctx.font='bold 9px sans-serif'; ctx.textAlign='left';
+        ctx.fillText(fmtK(last), xP(s.data.length-1)+4, yP(last)+3);
       });
-      ctx.lineTo(xP(allSeries.combCC.data.length-1),yP(yMin));
-      ctx.lineTo(xP(0),yP(yMin)); ctx.closePath();
-      ctx.fillStyle='rgba(0,230,118,0.06)'; ctx.fill();
     }
 
-    Object.keys(allSeries).forEach(function(key) {
-      if (hidden[key]) return;
-      var s = allSeries[key];
-      if (!s.data.length) return;
-      ctx.beginPath(); ctx.strokeStyle=s.color; ctx.lineWidth=s.width;
-      ctx.setLineDash(s.dash?[5,4]:[]);
-      s.data.forEach(function(v,j){
-        var x=xP(j),y=yP(v); j===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    // legend toggle
+    var legendEl = document.getElementById(canvasId+'-legend');
+    if(legendEl){
+      legendEl.querySelectorAll('span[data-line]').forEach(function(el){
+        el.style.cursor='pointer';
+        el.addEventListener('click',function(){
+          var k=el.getAttribute('data-line');
+          hidden[k]=!hidden[k];
+          el.style.opacity=hidden[k]?'0.3':'1';
+          draw();
+        });
       });
-      ctx.stroke(); ctx.setLineDash([]);
-    });
+    }
+    draw();
+    window.addEventListener('resize', draw);
   }
 
-  // Legend toggle
-  var legend = document.getElementById('ccLegend');
-  if (legend) {
-    legend.querySelectorAll('span').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var key = el.getAttribute('data-line');
-        hidden[key] = !hidden[key];
-        el.style.opacity = hidden[key] ? '0.3' : '1';
-        draw();
-      });
-    });
-  }
+  // Chart 1 — Combined portfolio
+  makeChart('chartCombined', [
+    {key:'cc',  data:[189627.87, 212544.74, 233267.25, 248529.17, 259550.25, 266816.57, 273630.03, 279844.23, 276920.65, 289018.95, 254914.95],  color:'#00e676', width:3,   dash:false},
+    {key:'bah', data:[204574.29, 185462.31, 219878.99, 242300.73, 253112.22, 259191.71, 260380.11, 261492.06, 262381.69, 252912.37, 258818.64], color:'#42a5f5', width:2.5, dash:true},
+  ], 177177.78, 297303.48, 'cc');
 
-  draw();
-  window.addEventListener('resize', draw);
+  // Chart 2 — AMZN
+  makeChart('chartAMZN', [
+    {key:'cc',  data:[86591.52, 95035.39, 104843.97, 109753.01, 112381.19, 123244.47, 119750.45, 131248.18, 125830.04, 137901.0, 120246.26],  color:'#FF9900', width:3,   dash:false},
+    {key:'bah', data:[96297.3, 84476.7, 95079.6, 107405.1, 110018.7, 110231.55, 117928.8, 111483.9, 120304.8, 112310.55, 121913.55], color:'#ffcc44', width:2.5, dash:true},
+  ], 80202.76, 142174.94, 'cc');
+
+  // Chart 3 — MSFT
+  makeChart('chartMSFT', [
+    {key:'cc',  data:[103036.35, 117509.35, 128423.28, 138776.16, 147169.06, 143572.1, 153879.58, 148596.05, 151090.61, 151117.95, 134668.69],  color:'#00b4d8', width:3,   dash:false},
+    {key:'bah', data:[108276.99, 100985.61, 124799.39, 134895.63, 143093.52, 148960.16, 142451.31, 150008.16, 142076.89, 140601.82, 136905.09], color:'#7ec8e3', width:2.5, dash:true},
+  ], 96754.09, 158111.10, 'cc');
+
 })();
 </script>
+
+<div style="background:#0d1b2a;border-radius:12px;padding:16px 18px;margin-bottom:14px">
+  <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px">
+    📈 COMBINED PORTFOLIO — CC Strategy vs Buy &amp; Hold
+  </div>
+  <canvas id="chartCombined" data-h="260" style="width:100%;display:block"></canvas>
+  <div id="chartCombined-legend" style="display:flex;gap:18px;margin-top:8px;font-size:11px">
+    <span data-line="cc"  style="color:#00e676">■ CC Strategy</span>
+    <span data-line="bah" style="color:#42a5f5">■ Buy &amp; Hold</span>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+  <div style="background:#0d1b2a;border-radius:12px;padding:16px 18px">
+    <div style="font-size:12px;font-weight:800;color:#FF9900;margin-bottom:10px">AMZN — 495 shares</div>
+    <canvas id="chartAMZN" data-h="220" style="width:100%;display:block"></canvas>
+    <div id="chartAMZN-legend" style="display:flex;gap:18px;margin-top:8px;font-size:11px">
+      <span data-line="cc"  style="color:#FF9900">■ CC Strategy</span>
+      <span data-line="bah" style="color:#ffcc44">■ Buy &amp; Hold</span>
+    </div>
+  </div>
+  <div style="background:#0d1b2a;border-radius:12px;padding:16px 18px">
+    <div style="font-size:12px;font-weight:800;color:#00b4d8;margin-bottom:10px">MSFT — 287 shares</div>
+    <canvas id="chartMSFT" data-h="220" style="width:100%;display:block"></canvas>
+    <div id="chartMSFT-legend" style="display:flex;gap:18px;margin-top:8px;font-size:11px">
+      <span data-line="cc"  style="color:#00b4d8">■ CC Strategy</span>
+      <span data-line="bah" style="color:#7ec8e3">■ Buy &amp; Hold</span>
+    </div>
+  </div>
+</div>
 <div style="margin-bottom:24px">
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:18px;font-weight:900;color:#FF9900">AMZN</span>
