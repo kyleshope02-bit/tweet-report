@@ -49,7 +49,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-09 08:46 PM • yfinance cache 3m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (150 tickers shown) • Signals: 36 bullish / 17 bearish across 150 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-09 09:09 PM • yfinance cache 0m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (150 tickers shown) • Signals: 36 bullish / 17 bearish across 150 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-weekly"  class="tabbtn on"  data-tabbtn="1" onclick="showTab('weekly')">📅 Weekly Picks</button>
@@ -58,7 +58,8 @@ select.filter{padding:5px}
   <button id="btn-watch"   class="tabbtn off" data-tabbtn="1" onclick="showTab('watch')">Watchlist ≥$50B</button>
   <button id="btn-wheel"   class="tabbtn off" data-tabbtn="1" onclick="showTab('wheel')">🎡 Wheel</button>
   <button id="btn-mycc"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mycc')">💼 My Covered Calls</button>
-  <button id="btn-madmoney" class="tabbtn off" data-tabbtn="1" onclick="showTab('madmoney')">🎰 Mad Money</button>
+  <button id="btn-madmoney"  class="tabbtn off" data-tabbtn="1" onclick="showTab('madmoney')">🎰 Mad Money</button>
+  <button id="btn-histcalls" class="tabbtn off" data-tabbtn="1" onclick="showTab('histcalls')">📈 Historical Calls</button>
 </div>
 
 <div id="tab-weekly" data-tab="1">
@@ -67,7 +68,7 @@ select.filter{padding:5px}
 <div class="muted" style="margin-bottom:16px">Personalised weekly trade plan based on your portfolio, open positions, live options data, and signal scanner. Prioritises income first, then transition execution, then swing ideas. <strong>Not financial advice — always do your own research.</strong></div>
 <div style="background:#0d2a1a;border-left:4px solid #00e676;border-radius:8px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:11px;color:#00e676;font-weight:800;margin-bottom:5px">📋 THIS WEEK'S MARKET CONTEXT</div>
-<div style="font-size:13px;color:#e0e0e0;line-height:1.8">Kyle needs to execute a three-part portfolio restructure: complete AMZN/MSFT position top-ups for maximum covered call income, liquidate SPY position, and address the ITM META put. Focus on securing weekly income before exploring swing opportunities.</div>
+<div style="font-size:13px;color:#e0e0e0;line-height:1.8">Markets are stabilizing after recent volatility, creating good income opportunities. Kyle&#x27;s priority is executing the planned AMZN/MSFT position sizing while establishing covered call income strategies to reach his $3k monthly target.</div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:10px">💰 This Week's Income Potential</div>
@@ -77,60 +78,60 @@ select.filter{padding:5px}
 <div style="font-size:16px;font-weight:800;color:#aaa">$3,000</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Achievable Now</div>
-<div style="font-size:16px;font-weight:800;color:#FFD700">$2,100</div></div>
+<div style="font-size:16px;font-weight:800;color:#00e676">$5,385</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">AMZN CC</div>
-<div style="font-size:16px;font-weight:800;color:#FF9900">$600</div></div>
+<div style="font-size:16px;font-weight:800;color:#FF9900">$0</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">MSFT CC</div>
-<div style="font-size:16px;font-weight:800;color:#00a4ef">$400</div></div>
+<div style="font-size:16px;font-weight:800;color:#00a4ef">$0</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Other CSP/CC</div>
-<div style="font-size:16px;font-weight:800;color:#ab47bc">$1,100</div></div>
+<div style="font-size:16px;font-weight:800;color:#ab47bc">$5,385</div></div>
 </div>
 <div style="background:#1a2a3a;border-radius:4px;height:8px;overflow:hidden">
-<div style="background:#FFD700;width:70%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
-<div style="font-size:11px;color:#FFD700;margin-top:5px">70% of monthly target achievable this week</div>
+<div style="background:#00e676;width:100%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
+<div style="font-size:11px;color:#00e676;margin-top:5px">100% of monthly target achievable this week</div>
 </div>
 <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px">🎯 PRIORITY ACTIONS — THIS WEEK</div>
-<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
+<div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#1 Options Income</span>
+<span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#1 SPY Transition</span>
 <span style="font-size:20px;font-weight:900;color:#fff">AMZN</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Buy 5 AMZN shares to reach 500 total, then sell 5x covered calls</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 5 shares AMZN at market to reach 500 shares total</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Buy 5 AMZN at market, then sell 5x AMZN calls using live options chain - target 30-45 DTE, 5-10% OTM
+📌 Market buy 5 AMZN shares (~$213 each = ~$1,065)
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 5th covered call contract for maximum income generation on existing large position</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlock 5th covered call contract for maximum income generation on Kyle&#x27;s largest position</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Additional $800-1200 monthly income from 5th covered call contract</div></div>
+<div style="color:#bbb">Enables selling 5x covered calls for weekly income</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Share price could gap down after purchase, reducing call premium</div></div>
+<div style="color:#bbb">Minor execution risk on small quantity</div></div>
 </div>
 </div>
-<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
+<div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#2 Options Income</span>
+<span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#2 SPY Transition</span>
 <span style="font-size:20px;font-weight:900;color:#fff">MSFT</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Buy 13 MSFT shares to reach 300 total, then sell 3x covered calls</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 13 shares MSFT at market to reach 300 shares total</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Buy 13 MSFT at market, then sell 3x MSFT calls using live options chain - target 30-45 DTE, 5-10% OTM
+📌 Market buy 13 MSFT shares (~$409 each = ~$5,317)
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 3rd covered call contract, maximizing income from $117K position</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlock 3rd covered call contract for enhanced income on second largest position</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Additional $500-800 monthly income from 3rd covered call contract</div></div>
+<div style="color:#bbb">Enables selling 3x covered calls for weekly income</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Large capital outlay before SPY sale settles, potential margin usage</div></div>
+<div style="color:#bbb">Minor execution risk, timing with broader market</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
@@ -141,56 +142,76 @@ select.filter{padding:5px}
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market sell order for full SPY position - execute simultaneously with stock purchases
+📌 Market sell all SPY shares simultaneously with above purchases
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Free up capital for options income strategies and reduce passive exposure</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Free up capital for focused covered call strategy on AMZN/MSFT core positions</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">~$100K cash available for high-yield CSP strategies</div></div>
+<div style="color:#bbb">~$94K cash available for income strategies after stock purchases</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Market timing risk on large liquidation, could sell at daily low</div></div>
+<div style="color:#bbb">Market timing risk, potential tax implications</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#4 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">LRCX</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 5x LRCX $200P Apr 2 CSPs</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 2x LRCX $200 Put Apr 2</span>
 <span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 5x LRCX $200P Apr 2 at $13.15 credit per contract = $6,575 total premium
+📌 Sell 2x LRCX Apr 2 $200P @ $13.15 credit each = $2,630 total premium
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Top CSP opportunity with 104% annualized return, 5.3% OTM buffer</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">High premium CSP with 104% annualized return, quality semiconductor name</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">$6,575 premium in 23 days, potential LRCX shares at $186.85 net basis</div></div>
+<div style="color:#bbb">$2,630 income over 23 days if LRCX stays above $200</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">High-beta semiconductor stock, could face assignment if tech sells off</div></div>
+<div style="color:#bbb">Assignment risk if LRCX drops below $200, requires $40K capital</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#5 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">MRVL</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 3x MRVL $87P Apr 10 CSPs</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 2x MRVL $87 Put Apr 10</span>
 <span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 3x MRVL $87P Apr 10 at $7.10 credit per contract = $2,130 total premium
+📌 Sell 2x MRVL Apr 10 $87P @ $7.10 credit each = $1,420 total premium
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Diversify CSP exposure with 96% annualized return, good OTM buffer</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Solid 96% annualized return with good OTM cushion on AI semiconductor play</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">$2,130 premium in 31 days, building monthly income base</div></div>
+<div style="color:#bbb">$1,420 income over 31 days if MRVL holds above $87</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Semiconductor sector correlation with LRCX position</div></div>
+<div style="color:#bbb">Assignment risk requires $17.4K capital, semiconductor sector volatility</div></div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#6 Options Income</span>
+<span style="font-size:20px;font-weight:900;color:#fff">NET</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 1x NET $180 Put Apr 10</span>
+<span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
+📌 Sell 1x NET Apr 10 $180P @ $13.35 credit
+</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Quality cloud infrastructure name with 87% annualized return and 10.7% OTM buffer</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
+<div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
+<div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
+<div style="color:#bbb">$1,335 income over 31 days if NET stays above $180</div></div>
+<div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
+<div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
+<div style="color:#bbb">Assignment requires $18K capital, growth stock volatility</div></div>
 </div>
 </div>
 <div style="background:#1a0a00;border:1px solid #bf360c;border-radius:10px;padding:14px 17px;margin-bottom:14px">
@@ -198,14 +219,14 @@ select.filter{padding:5px}
 <span style="font-size:16px;font-weight:900;color:#ef5350">🚑 META $680 CSP — ACTION REQUIRED</span>
 <span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:8px">Roll Down to $620 Apr 17</span>
 </div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P, sell META $620P Apr 17 — expect net debit of $25-30 per contract</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7">ITM by $35 but April expiry gives time for potential recovery. Rolling down reduces risk and salvages some value rather than taking full loss now</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P, sell META $620P Apr 17 — expect net debit of $25-30, reducing overall loss</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7">With META ITM by $35, rolling down to $620 reduces assignment risk while extending time. Better than taking full loss now given META&#x27;s volatility.</div>
 </div>
 <div style="background:#1a0a1a;border-left:3px solid #ef5350;border-radius:8px;padding:12px 14px;margin-bottom:4px">
 <div style="font-size:11px;color:#ef5350;font-weight:800;margin-bottom:8px">🚫 DO NOT DO THIS WEEK</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not chase swing trades before securing covered call income from AMZN/MSFT positions</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not hold SPY past this week - missing income opportunities on that $100K</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not close META position completely - rolling down preserves capital better than taking full loss</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not sell covered calls on AMZN/MSFT until after position sizing is complete</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not chase high-premium options without checking liquidity and bid-ask spreads</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not exceed 70% of available capital on CSP strategies - keep powder dry</div>
 </div>
 </div>
 </div>
@@ -215,7 +236,7 @@ select.filter{padding:5px}
 </div>
 
 <div id="tab-mag7" class="hidden" data-tab="1">
-  <div class="card"><h3>Mag 7 — Live Prices <span class="fresh">● live</span></h3><table id="tbl-mag7" data-filter-table="1"><thead><tr><th data-sort="text">Ticker</th><th data-sort="text">Name</th><th data-sort="num">Price</th><th data-sort="num">Chg 1D %</th><th data-sort="num">Chg 5D %</th><th data-sort="num">Chg 20D %</th><th data-sort="num">Chg 30D %</th><th data-sort="num">Chg 60D %</th><th data-sort="size">Volume</th><th data-sort="num">Vol Chg 1D %</th><th data-sort="num">Vol Chg 5D %</th><th data-sort="num">Vol Chg 20D %</th><th data-sort="num">Vol Chg 30D %</th><th data-sort="num">Vol Chg 60D %</th></tr><tr class="filterrow"><th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th></tr></thead><tbody><tr><td>$AAPL</td><td class='namecell'>Apple Inc.</td><td>259.88</td><td class='pos'>0.94%</td><td class='neg'>-1.83%</td><td class='neg'>-6.47%</td><td class='pos'>4.87%</td><td class='neg'>-6.15%</td><td>37.96M</td><td class='neg'>-11.53%</td><td class='neg'>-25.46%</td><td class='neg'>-23.09%</td><td class='neg'>-17.10%</td><td class='pos'>10.08%</td></tr><tr><td>$MSFT</td><td class='namecell'>Microsoft Corp.</td><td>409.41</td><td class='pos'>0.11%</td><td class='pos'>2.72%</td><td class='pos'>2.29%</td><td class='neg'>-11.93%</td><td class='neg'>-16.60%</td><td>30.03M</td><td class='neg'>-10.02%</td><td class='neg'>-27.95%</td><td class='neg'>-45.50%</td><td class='neg'>-2.76%</td><td class='pos'>24.40%</td></tr><tr><td>$NVDA</td><td class='namecell'>NVIDIA Corp.</td><td>182.65</td><td class='pos'>2.72%</td><td class='pos'>0.09%</td><td class='neg'>-1.49%</td><td class='neg'>-2.67%</td><td class='neg'>-1.25%</td><td>176.07M</td><td class='neg'>-6.23%</td><td class='neg'>-24.42%</td><td class='neg'>-16.69%</td><td class='pos'>29.72%</td><td class='pos'>3.19%</td></tr><tr><td>$AMZN</td><td class='namecell'>Amazon.com Inc.</td><td>213.49</td><td class='pos'>0.13%</td><td class='pos'>2.45%</td><td class='pos'>1.51%</td><td class='neg'>-10.73%</td><td class='neg'>-6.33%</td><td>53.49M</td><td class='neg'>-3.06%</td><td class='pos'>9.45%</td><td class='neg'>-57.08%</td><td class='pos'>62.88%</td><td class='pos'>61.03%</td></tr><tr><td>$GOOGL</td><td class='namecell'>Alphabet Inc.</td><td>306.36</td><td class='pos'>2.63%</td><td class='neg'>-0.05%</td><td class='neg'>-5.11%</td><td class='neg'>-6.58%</td><td class='neg'>-3.38%</td><td>29.04M</td><td class='neg'>-3.57%</td><td class='neg'>-24.20%</td><td class='neg'>-52.71%</td><td class='pos'>9.47%</td><td class='neg'>-10.68%</td></tr><tr><td>$META</td><td class='namecell'>Meta Platforms Inc.</td><td>647.39</td><td class='pos'>0.39%</td><td class='neg'>-0.94%</td><td class='neg'>-2.13%</td><td class='neg'>-1.73%</td><td class='neg'>-1.38%</td><td>13.39M</td><td class='pos'>0.78%</td><td class='pos'>6.33%</td><td class='neg'>-19.86%</td><td class='neg'>-33.62%</td><td class='neg'>-6.72%</td></tr><tr><td>$TSLA</td><td class='namecell'>Tesla Inc.</td><td>398.68</td><td class='pos'>0.49%</td><td class='neg'>-1.15%</td><td class='neg'>-3.02%</td><td class='neg'>-11.22%</td><td class='neg'>-10.44%</td><td>66.41M</td><td class='pos'>9.34%</td><td class='pos'>14.11%</td><td class='pos'>4.87%</td><td class='pos'>12.11%</td><td class='pos'>2.28%</td></tr></tbody></table></div>
+  <div class="card"><h3>Mag 7 — Live Prices <span class="fresh">● live</span></h3><table id="tbl-mag7" data-filter-table="1"><thead><tr><th data-sort="text">Ticker</th><th data-sort="text">Name</th><th data-sort="num">Price</th><th data-sort="num">Chg 1D %</th><th data-sort="num">Chg 5D %</th><th data-sort="num">Chg 20D %</th><th data-sort="num">Chg 30D %</th><th data-sort="num">Chg 60D %</th><th data-sort="size">Volume</th><th data-sort="num">Vol Chg 1D %</th><th data-sort="num">Vol Chg 5D %</th><th data-sort="num">Vol Chg 20D %</th><th data-sort="num">Vol Chg 30D %</th><th data-sort="num">Vol Chg 60D %</th></tr><tr class="filterrow"><th><input class="filter" placeholder="$AAPL" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="Apple" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;100" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;1M" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th><th><input class="filter" placeholder="&gt;0" oninput="applyFilters('tbl-mag7')"></th></tr></thead><tbody><tr><td>$AAPL</td><td class='namecell'>Apple Inc.</td><td>259.88</td><td class='pos'>0.94%</td><td class='neg'>-1.83%</td><td class='neg'>-6.47%</td><td class='pos'>4.87%</td><td class='neg'>-6.15%</td><td>38.15M</td><td class='neg'>-11.21%</td><td class='neg'>-25.07%</td><td class='neg'>-22.69%</td><td class='neg'>-16.67%</td><td class='pos'>10.65%</td></tr><tr><td>$MSFT</td><td class='namecell'>Microsoft Corp.</td><td>409.41</td><td class='pos'>0.11%</td><td class='pos'>2.72%</td><td class='pos'>2.29%</td><td class='neg'>-11.93%</td><td class='neg'>-16.60%</td><td>30.07M</td><td class='neg'>-9.92%</td><td class='neg'>-27.85%</td><td class='neg'>-45.41%</td><td class='neg'>-2.61%</td><td class='pos'>24.58%</td></tr><tr><td>$NVDA</td><td class='namecell'>NVIDIA Corp.</td><td>182.65</td><td class='pos'>2.72%</td><td class='pos'>0.09%</td><td class='neg'>-1.49%</td><td class='neg'>-2.67%</td><td class='neg'>-1.25%</td><td>176.55M</td><td class='neg'>-6.06%</td><td class='neg'>-24.21%</td><td class='neg'>-16.46%</td><td class='pos'>30.08%</td><td class='pos'>3.47%</td></tr><tr><td>$AMZN</td><td class='namecell'>Amazon.com Inc.</td><td>213.49</td><td class='pos'>0.13%</td><td class='pos'>2.45%</td><td class='pos'>1.51%</td><td class='neg'>-10.73%</td><td class='neg'>-6.33%</td><td>54.49M</td><td class='neg'>-1.84%</td><td class='pos'>11.49%</td><td class='neg'>-56.28%</td><td class='pos'>65.92%</td><td class='pos'>64.03%</td></tr><tr><td>$GOOGL</td><td class='namecell'>Alphabet Inc.</td><td>306.36</td><td class='pos'>2.63%</td><td class='neg'>-0.05%</td><td class='neg'>-5.11%</td><td class='neg'>-6.58%</td><td class='neg'>-3.38%</td><td>29.26M</td><td class='neg'>-3.06%</td><td class='neg'>-23.61%</td><td class='neg'>-52.35%</td><td class='pos'>10.32%</td><td class='neg'>-9.99%</td></tr><tr><td>$META</td><td class='namecell'>Meta Platforms Inc.</td><td>647.39</td><td class='pos'>0.39%</td><td class='neg'>-0.94%</td><td class='neg'>-2.13%</td><td class='neg'>-1.73%</td><td class='neg'>-1.38%</td><td>13.46M</td><td class='pos'>1.14%</td><td class='pos'>6.90%</td><td class='neg'>-19.43%</td><td class='neg'>-33.26%</td><td class='neg'>-6.22%</td></tr><tr><td>$TSLA</td><td class='namecell'>Tesla Inc.</td><td>398.68</td><td class='pos'>0.49%</td><td class='neg'>-1.15%</td><td class='neg'>-3.02%</td><td class='neg'>-11.22%</td><td class='neg'>-10.44%</td><td>66.82M</td><td class='pos'>9.77%</td><td class='pos'>14.82%</td><td class='pos'>5.52%</td><td class='pos'>12.80%</td><td class='pos'>2.91%</td></tr></tbody></table></div>
   <div class="card"><h3>Tweets — Mag 7 Tickers</h3><div class="sources">Showing tweets from: @eliteoptions2 + @mr_derivatives</div><table id="tbl-mag7-tweets" data-filter-table="1"><thead><tr><th data-sort="text">Author</th><th data-sort="text">Signal</th><th data-sort="text">Time</th><th data-sort="text">Ticker</th><th data-sort="text">Text</th><th data-sort="text">Link</th></tr><tr class="filterrow"><th><input class="filter" placeholder="@handle" oninput="applyFilters('tbl-mag7-tweets')"></th><th><select class="filter" onchange="applyFilters('tbl-mag7-tweets')"><option value="">All</option><option>BUY</option><option>SELL</option><option>NEUTRAL</option><option>MIXED</option></select></th><th><input class="filter" placeholder="Jan 15" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="$TSLA" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="contains…" oninput="applyFilters('tbl-mag7-tweets')"></th><th><input class="filter" placeholder="Open" oninput="applyFilters('tbl-mag7-tweets')"></th></tr></thead><tbody><tr><td>@EliteOptions2</td><td><span class='badge neutral'>NEUTRAL</span></td><td>Mar 06, 2026 09:15 PM</td><td>$AMZN, $COIN, $META, $MSFT, $QQQ, $SPX</td><td class='textcell'>Even in the extreme volatility we saw this week, We still managed to find some great trades with $COIN $META $QQQ $MSFT $AMZN.
 
 It&#x27;s risk off into the weekend though. $SPX couldnt hold above 6800, $QQQ rejected at 610 multiple times and closed near 600.
@@ -1199,74 +1220,35 @@ function filterTimeframe(tableId, label) {
 </div>
 <div style="background:#0a1628;border-left:4px solid #42a5f5;border-radius:10px;padding:16px 18px;margin-bottom:6px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">📡 THE SEMI THESIS</div>
-<div style="font-size:14px;color:#fff;line-height:1.9;font-weight:500">AI data center buildout is entering phase 2 with hyperscalers expanding beyond NVIDIA to custom silicon and advanced packaging, driving demand across the entire semiconductor stack. Memory suppliers are seeing pricing power return as AI workloads demand high-bandwidth solutions, while equipment makers benefit from leading-edge node transitions at TSMC and Intel. China trade tensions are creating supply chain premiums for non-Chinese exposed names. Q1 earnings season will likely show the broadening of AI benefits beyond pure-play GPU stocks.</div>
+<div style="font-size:14px;color:#fff;line-height:1.9;font-weight:500">Semis are entering a new upcycle driven by AI infrastructure buildout accelerating through 2025, with cloud capex ramping and edge AI deployment creating sustained demand. Memory and equipment stocks are breaking out technically while valuations remain reasonable after the 2022-2023 washout. Taiwan geopolitical tensions create supply constraints that benefit pricing power across the value chain.</div>
 </div>
 <div style="background:#0d1b2a;border-left:3px solid #FFD700;border-radius:8px;padding:12px 16px;margin-top:10px;margin-bottom:6px">
 <div style="font-size:10px;color:#FFD700;font-weight:800;margin-bottom:4px">🔄 CYCLE POSITION</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7">Early-to-mid upcycle with AI as the primary driver, but we&#x27;re past the initial NVIDIA-only phase. Memory and equipment are catching up while automotive and industrial remain weak, creating stock-picking opportunities within the sector.</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7">Early-to-mid upcycle with memory leading, equipment following, and AI demand sustaining longer than typical cycles. This favors aggressive positioning in laggards and LEAPS on leaders rather than defensive plays.</div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#ab47bc;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">⚖️ FSELX vs SMH — WHICH TO HOLD</div>
 <div style="background:#1a0d2a;border:1px solid #ab47bc;border-radius:10px;padding:14px 18px;margin-bottom:12px">
-<div style="font-size:13px;color:#fff;font-weight:700;margin-bottom:6px">SMH is superior right now due to options availability and lower fees during a volatile environment where tactical trading matters</div>
-<div style="background:#ab47bc22;border-radius:6px;padding:8px 12px;font-size:12px;color:#ce93d8"><strong style="color:#ab47bc">Recommendation:</strong> Gradually shift 60% of FSELX to SMH for options strategies, keep 40% FSELX for active management upside</div>
+<div style="font-size:13px;color:#fff;font-weight:700;margin-bottom:6px">SMH is better right now due to options liquidity and lower fees</div>
+<div style="background:#ab47bc22;border-radius:6px;padding:8px 12px;font-size:12px;color:#ce93d8"><strong style="color:#ab47bc">Recommendation:</strong> 70% SMH for options plays, 30% FSELX for active management alpha</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:6px">
 <div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
 <div style="font-size:12px;font-weight:800;color:#42a5f5;margin-bottom:8px">FSELX</div>
-<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Active management can overweight best performers</div>
-<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Higher NVDA allocation historically</div>
-<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ No intraday liquidity or options</div>
+<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Active management can overweight winners</div>
+<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Higher concentration in top performers</div>
+<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ No options for leverage/income</div>
 <div style="font-size:11px;color:#ef5350;padding:2px 0">✗ Higher 0.70% expense ratio</div>
 </div>
 <div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
 <div style="font-size:12px;font-weight:800;color:#00e676;margin-bottom:8px">SMH</div>
-<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Liquid options for income and leverage strategies</div>
-<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Lower 0.35% expense ratio</div>
-<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ Passive allocation may underweight best opportunities</div>
-<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ Slightly broader exposure dilutes pure semi plays</div>
+<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Liquid options for income and leverage</div>
+<div style="font-size:11px;color:#00e676;padding:2px 0">✓ Lower 0.35% fees</div>
+<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ Passive allocation misses best opportunities</div>
+<div style="font-size:11px;color:#ef5350;padding:2px 0">✗ More diversified = less upside</div>
 </div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#FFD700;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">🎯 INDIVIDUAL SEMI STOCKS TO OWN</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
-<div style="background:#0d1b2a;border-radius:10px;padding:14px 16px;border-left:3px solid #FFD700">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px">
-<div>
-<span style="font-size:20px;font-weight:900;color:#FFD700">AMAT</span> 
-<span style="font-size:12px;color:#aaa">Applied Materials</span>
-</div>
-<div style="text-align:right">
-<div style="font-size:16px;font-weight:800;color:#fff">$338.94</div>
-<div style="font-size:11px;color:#00e676">▲4.4% today</div>
-</div>
-</div>
-<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Equipment leader benefiting from advanced packaging boom and TSMC N3 ramp</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
-<div style="font-size:11px;color:#ccc">Q1 earnings showing accelerating AI-driven equipment orders</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
-<div style="font-size:11px;color:#ccc">Scale in on any pullback below $320</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
-<div style="font-size:11px;color:#ccc">$400+ by Q2 2025</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
-<div style="font-size:11px;color:#ccc">$290</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
-<div style="font-size:11px;color:#ccc">8-12%</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="font-size:11px;color:#ccc">China exposure and cyclical equipment demand</div>
-</div>
-</div>
-</div>
 <div style="background:#0d1b2a;border-radius:10px;padding:14px 16px;border-left:3px solid #FFD700">
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px">
 <div>
@@ -1278,19 +1260,19 @@ function filterTimeframe(tableId, label) {
 <div style="font-size:11px;color:#00e676">▲5.1% today</div>
 </div>
 </div>
-<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">HBM memory oligopoly with Samsung struggling and AI demand exceeding supply</div>
+<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Memory supercycle beginning with HBM shortage and AI memory demand</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
-<div style="font-size:11px;color:#ccc">March quarter guidance showing continued HBM pricing power</div>
+<div style="font-size:11px;color:#ccc">Q2 earnings in March showing accelerating HBM revenue</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
-<div style="font-size:11px;color:#ccc">Buy now, add more above $400 on momentum</div>
+<div style="font-size:11px;color:#ccc">Scale in on any dip below $380</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
-<div style="font-size:11px;color:#ccc">$480+ by mid-2025</div>
+<div style="font-size:11px;color:#ccc">$500 by Q3 2025</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
@@ -1298,11 +1280,89 @@ function filterTimeframe(tableId, label) {
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
-<div style="font-size:11px;color:#ccc">10-15%</div>
+<div style="font-size:11px;color:#ccc">15%</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="font-size:11px;color:#ccc">China ban expansion and memory cycle volatility</div>
+<div style="font-size:11px;color:#ccc">Memory oversupply if AI demand stalls</div>
+</div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-radius:10px;padding:14px 16px;border-left:3px solid #FFD700">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px">
+<div>
+<span style="font-size:20px;font-weight:900;color:#FFD700">AMAT</span> 
+<span style="font-size:12px;color:#aaa">Applied Materials</span>
+</div>
+<div style="text-align:right">
+<div style="font-size:16px;font-weight:800;color:#fff">$338.94</div>
+<div style="font-size:11px;color:#00e676">▲4.4% today</div>
+</div>
+</div>
+<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Equipment leader benefiting from foundry capacity expansion and advanced node transitions</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
+<div style="font-size:11px;color:#ccc">China tool shipments accelerating despite restrictions</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
+<div style="font-size:11px;color:#ccc">Buy current levels, add on any pullback to $320</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
+<div style="font-size:11px;color:#ccc">$420 by end 2025</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
+<div style="font-size:11px;color:#ccc">$300</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
+<div style="font-size:11px;color:#ccc">12%</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
+<div style="font-size:11px;color:#ccc">Further China export restrictions</div>
+</div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-radius:10px;padding:14px 16px;border-left:3px solid #FFD700">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px">
+<div>
+<span style="font-size:20px;font-weight:900;color:#FFD700">AMD</span> 
+<span style="font-size:12px;color:#aaa">Advanced Micro Devices</span>
+</div>
+<div style="text-align:right">
+<div style="font-size:16px;font-weight:800;color:#fff">$202.68</div>
+<div style="font-size:11px;color:#00e676">▲5.3% today</div>
+</div>
+</div>
+<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Most undervalued AI play with MI300 ramping and data center share gains</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
+<div style="font-size:11px;color:#ccc">Q1 guidance showing MI300 momentum accelerating</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
+<div style="font-size:11px;color:#ccc">Accumulate current levels and below $200</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
+<div style="font-size:11px;color:#ccc">$280 by year-end</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
+<div style="font-size:11px;color:#ccc">$170</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
+<div style="font-size:11px;color:#ccc">10%</div>
+</div>
+<div style="background:#13263d;border-radius:5px;padding:6px 8px">
+<div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
+<div style="font-size:11px;color:#ccc">NVDA maintaining AI moat longer than expected</div>
 </div>
 </div>
 </div>
@@ -1317,19 +1377,19 @@ function filterTimeframe(tableId, label) {
 <div style="font-size:11px;color:#00e676">▲2.9% today</div>
 </div>
 </div>
-<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Pure monopoly on leading-edge AI chips with expanding margins and capacity</div>
+<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">AI foundry leader with advanced node monopoly and Apple recovery</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
-<div style="font-size:11px;color:#ccc">Q1 earnings showing 3nm yield improvements and 2nm customer wins</div>
+<div style="font-size:11px;color:#ccc">Apple iPhone refresh cycle starting Q2</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
-<div style="font-size:11px;color:#ccc">Scale in on any geopolitical weakness below $340</div>
+<div style="font-size:11px;color:#ccc">Buy any dip below $340</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
-<div style="font-size:11px;color:#ccc">$420+ by year-end</div>
+<div style="font-size:11px;color:#ccc">$420 by Q4 2025</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
@@ -1337,50 +1397,11 @@ function filterTimeframe(tableId, label) {
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
-<div style="font-size:11px;color:#ccc">12-18%</div>
+<div style="font-size:11px;color:#ccc">8%</div>
 </div>
 <div style="background:#13263d;border-radius:5px;padding:6px 8px">
 <div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="font-size:11px;color:#ccc">Taiwan geopolitical tensions and China exposure</div>
-</div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-radius:10px;padding:14px 16px;border-left:3px solid #FFD700">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px">
-<div>
-<span style="font-size:20px;font-weight:900;color:#FFD700">KLAC</span> 
-<span style="font-size:12px;color:#aaa">KLA Corporation</span>
-</div>
-<div style="text-align:right">
-<div style="font-size:16px;font-weight:800;color:#fff">$1429.1</div>
-<div style="font-size:11px;color:#00e676">▲6.3% today</div>
-</div>
-</div>
-<div style="font-size:12px;color:#ccc;margin-bottom:8px;line-height:1.6">Process control monopoly with highest margins benefiting from yield-critical advanced nodes</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">🚀 Catalyst</div>
-<div style="font-size:11px;color:#ccc">Expanding TAM from gate-all-around transistors requiring more inspection</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">📌 Entry</div>
-<div style="font-size:11px;color:#ccc">Buy on any pullback below $1400</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">🎯 Target</div>
-<div style="font-size:11px;color:#ccc">$1650+ by Q3 2025</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">✂️ Stop</div>
-<div style="font-size:11px;color:#ccc">$1250</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">📦 Size</div>
-<div style="font-size:11px;color:#ccc">6-10%</div>
-</div>
-<div style="background:#13263d;border-radius:5px;padding:6px 8px">
-<div style="font-size:9px;color:#ffb74d;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="font-size:11px;color:#ccc">Cyclical equipment spending and China restrictions</div>
+<div style="font-size:11px;color:#ccc">Taiwan geopolitical escalation</div>
 </div>
 </div>
 </div>
@@ -1389,24 +1410,24 @@ function filterTimeframe(tableId, label) {
 <div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #ef5350">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:20px">🏹</span>
-<span style="font-size:15px;font-weight:800;color:#fff">SMH LEAPS Accumulation</span>
+<span style="font-size:15px;font-weight:800;color:#fff">SMH LEAPS</span>
 <span style="background:#ef535022;color:#ef5350;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Leverage</span>
 <span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">LEAPS</span>
 <span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">SMH $394.37</span>
 </div>
 <div style="background:#13263d;border:1px solid #ef5350;border-radius:8px;padding:10px 14px;margin-bottom:12px">
 <div style="font-size:10px;color:#ef5350;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
-<div style="font-size:14px;color:#FFD700;font-weight:800">Buy SMH $350C exp Jan 2026 for ~$70-80</div>
+<div style="font-size:14px;color:#FFD700;font-weight:800">Buy SMH $350C exp Jan 2026 at ~$50</div>
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">High delta exposure to sector upside with limited time decay in upcycle</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">High delta gives stock-like exposure with less capital while time decay is minimal</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
-<div style="font-size:11px;color:#ccc">Unlimited upside with 3-4x leverage potential</div>
+<div style="font-size:11px;color:#ccc">Unlimited upside if SMH hits $500+</div>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
-<div style="font-size:11px;color:#ccc">Premium paid if SMH stays flat</div>
+<div style="font-size:11px;color:#ccc">Premium paid if SMH below $350 at expiry</div>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
@@ -1414,207 +1435,530 @@ function filterTimeframe(tableId, label) {
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
-<div style="font-size:11px;color:#ccc">Take profits at 100%+ gain or cut at 40% loss</div>
-</div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #FFD700">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:20px">📈</span>
-<span style="font-size:15px;font-weight:800;color:#fff">NVDA Momentum Play</span>
-<span style="background:#FFD70022;color:#FFD700;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Directional bet</span>
-<span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">Long Call</span>
-<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">NVDA $182.65</span>
-</div>
-<div style="background:#13263d;border:1px solid #FFD700;border-radius:8px;padding:10px 14px;margin-bottom:12px">
-<div style="font-size:10px;color:#FFD700;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
-<div style="font-size:14px;color:#FFD700;font-weight:800">Buy NVDA $190C exp 2-3 months out on dips below $180</div>
-</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">NVDA still drives sector sentiment and has binary catalyst events</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
-<div style="font-size:11px;color:#ccc">3-5x on earnings beats or AI announcements</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
-<div style="font-size:11px;color:#ccc">100% of premium on disappointment</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
-<div style="font-size:11px;color:#ccc">2-6 weeks</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
-<div style="font-size:11px;color:#ccc">Take profits before earnings or on 2x gain</div>
-</div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #00e676">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:20px">💰</span>
-<span style="font-size:15px;font-weight:800;color:#fff">MU Income Generation</span>
-<span style="background:#00e67622;color:#00e676;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Income</span>
-<span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">Covered Call</span>
-<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">MU $389.32</span>
-</div>
-<div style="background:#13263d;border:1px solid #00e676;border-radius:8px;padding:10px 14px;margin-bottom:12px">
-<div style="font-size:10px;color:#00e676;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
-<div style="font-size:14px;color:#FFD700;font-weight:800">Own MU at $389, sell $420C exp 45 days for $8-12</div>
-</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">High IV in memory stocks provides premium while allowing upside participation</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
-<div style="font-size:11px;color:#ccc">Premium collected plus stock appreciation to strike</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
-<div style="font-size:11px;color:#ccc">Opportunity cost if stock runs past strike</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
-<div style="font-size:11px;color:#ccc">Hold to 50% profit or 21 DTE</div>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 10px">
-<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
-<div style="font-size:11px;color:#ccc">Roll up and out if challenged early</div>
+<div style="font-size:11px;color:#ccc">Take profit at 100% gain or cut at 50% loss</div>
 </div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #FFD700">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:20px">📊</span>
-<span style="font-size:15px;font-weight:800;color:#fff">SMH Bull Spread</span>
+<span style="font-size:15px;font-weight:800;color:#fff">MU Bull Call Spread</span>
 <span style="background:#FFD70022;color:#FFD700;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Directional bet</span>
 <span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">Bull Call Spread</span>
-<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">SMH $394.37</span>
+<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">MU $389.32</span>
 </div>
 <div style="background:#13263d;border:1px solid #FFD700;border-radius:8px;padding:10px 14px;margin-bottom:12px">
 <div style="font-size:10px;color:#FFD700;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
-<div style="font-size:14px;color:#FFD700;font-weight:800">Buy SMH $400C, sell $420C exp 60 days for $8-10 debit</div>
+<div style="font-size:14px;color:#FFD700;font-weight:800">Buy MU $390C/Sell $420C exp May 2025</div>
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">Defined risk play for moderate upside in expensive options environment</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">Defined risk way to play memory upcycle with specific price target</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
-<div style="font-size:11px;color:#ccc">Strike difference minus premium paid</div>
+<div style="font-size:11px;color:#ccc">$30 per spread if MU above $420</div>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
-<div style="font-size:11px;color:#ccc">Premium paid</div>
+<div style="font-size:11px;color:#ccc">Net premium paid</div>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
-<div style="font-size:11px;color:#ccc">Hold until 70% of max profit</div>
+<div style="font-size:11px;color:#ccc">2-3 months</div>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 10px">
 <div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
-<div style="font-size:11px;color:#ccc">Close at 70% profit or 2 weeks before expiry</div>
+<div style="font-size:11px;color:#ccc">Close at 75% max profit or 30 days to expiry</div>
+</div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #00e676">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px">💰</span>
+<span style="font-size:15px;font-weight:800;color:#fff">NVDA Covered Calls</span>
+<span style="background:#00e67622;color:#00e676;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Income</span>
+<span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">Covered Call</span>
+<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">NVDA $182.65</span>
+</div>
+<div style="background:#13263d;border:1px solid #00e676;border-radius:8px;padding:10px 14px;margin-bottom:12px">
+<div style="font-size:10px;color:#00e676;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
+<div style="font-size:14px;color:#FFD700;font-weight:800">Sell NVDA $200C exp Feb monthly for $3-5 premium</div>
+</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">Generate income while holding core position, strikes above current resistance</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
+<div style="font-size:11px;color:#ccc">Premium + stock appreciation to strike</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
+<div style="font-size:11px;color:#ccc">Full stock position minus premiums collected</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
+<div style="font-size:11px;color:#ccc">Monthly rolls</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
+<div style="font-size:11px;color:#ccc">Roll up and out if challenged, let expire if not</div>
+</div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #00e676">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px">🛡️</span>
+<span style="font-size:15px;font-weight:800;color:#fff">SMH Cash Secured Puts</span>
+<span style="background:#00e67622;color:#00e676;font-size:11px;font-weight:700;padding:2px 10px;border-radius:8px">Income</span>
+<span style="background:#1a2a3a;color:#aaa;font-size:11px;padding:2px 8px;border-radius:6px">CSP</span>
+<span style="background:#FF990022;color:#FF9900;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px">SMH $394.37</span>
+</div>
+<div style="background:#13263d;border:1px solid #00e676;border-radius:8px;padding:10px 14px;margin-bottom:12px">
+<div style="font-size:10px;color:#00e676;font-weight:800;margin-bottom:3px">📌 THE TRADE</div>
+<div style="font-size:14px;color:#FFD700;font-weight:800">Sell SMH $360P exp March for $8-12 premium</div>
+</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:10px">Get paid to potentially buy dips at predetermined levels during cycle volatility</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#00e676;font-weight:800;margin-bottom:2px">Max Gain</div>
+<div style="font-size:11px;color:#ccc">Premium collected if SMH stays above strike</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#ef5350;font-weight:800;margin-bottom:2px">Max Loss</div>
+<div style="font-size:11px;color:#ccc">Assigned shares minus premium if SMH drops significantly</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#FFD700;font-weight:800;margin-bottom:2px">Hold Period</div>
+<div style="font-size:11px;color:#ccc">30-45 days</div>
+</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 10px">
+<div style="font-size:9px;color:#42a5f5;font-weight:800;margin-bottom:2px">Exit Rules</div>
+<div style="font-size:11px;color:#ccc">Close at 50% profit or roll down and out if threatened</div>
 </div>
 </div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#00e676;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">💰 GENERATING INCOME FROM THE SEMI POSITION</div>
 <div style="background:#0a1a0a;border:1px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:6px">
-<div style="font-size:13px;color:#ccc;line-height:1.8;margin-bottom:10px">Sell covered calls on individual semi holdings and cash-secured puts on SMH during pullbacks</div>
-<div style="margin-bottom:8px"><span style="font-size:11px;color:#777">Best ticker for income: </span><span style="font-size:14px;font-weight:800;color:#00e676">NVDA and AMD have highest option premiums due to volatility</span></div>
+<div style="font-size:13px;color:#ccc;line-height:1.8;margin-bottom:10px">Sell covered calls on NVDA and SMH positions monthly, targeting 3-5% OTM strikes</div>
+<div style="margin-bottom:8px"><span style="font-size:11px;color:#777">Best ticker for income: </span><span style="font-size:14px;font-weight:800;color:#00e676">NVDA has highest option premiums due to volatility</span></div>
 <div style="background:#13263d;border-radius:6px;padding:10px 14px;margin-bottom:8px">
 <div style="font-size:10px;color:#00e676;font-weight:800;margin-bottom:3px">EXAMPLE TRADE</div>
-<div style="font-size:13px;color:#FFD700;font-weight:700">Sell NVDA $200C 30 DTE for $6-8 premium against 100 shares</div>
+<div style="font-size:13px;color:#FFD700;font-weight:700">Own 100 NVDA shares, sell $200C monthly for $4-6 premium</div>
 </div>
-<div style="font-size:12px;color:#aaa"><span style="color:#00e676;font-weight:700">Est. monthly income: </span>$600-1000 per contract depending on volatility</div>
+<div style="font-size:12px;color:#aaa"><span style="color:#00e676;font-weight:700">Est. monthly income: </span>$400-600 per 100 shares depending on volatility</div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#42a5f5;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">📉 ADD ON DIPS — BUY LEVELS</div>
-<div style="font-size:12px;color:#aaa;margin-bottom:10px;line-height:1.6">These levels represent key technical support zones and psychological levels where institutional buying typically emerges.</div>
+<div style="font-size:12px;color:#aaa;margin-bottom:10px;line-height:1.6">These levels represent key technical support from previous consolidation zones and psychological round numbers where institutions have bought before.</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
 <div style="background:#0d1b2a;border-left:3px solid #42a5f5;border-radius:8px;padding:10px 14px">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
-<span style="font-size:16px;font-weight:800;color:#42a5f5">$375</span>
+<span style="font-size:16px;font-weight:800;color:#42a5f5">$370</span>
 <span style="font-size:12px;font-weight:700;color:#aaa">SMH</span>
-<span style="color:#ef5350;font-size:10px;margin-left:6px">(-19.4 from now)</span>
+<span style="color:#ef5350;font-size:10px;margin-left:6px">(-24.4 from now)</span>
 </div>
-<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Add 25% to position</div>
-<div style="font-size:11px;color:#777">Large allocation</div>
-</div>
-<div style="background:#0d1b2a;border-left:3px solid #42a5f5;border-radius:8px;padding:10px 14px">
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
-<span style="font-size:16px;font-weight:800;color:#42a5f5">$170</span>
-<span style="font-size:12px;font-weight:700;color:#aaa">NVDA</span>
-<span style="color:#ef5350;font-size:10px;margin-left:6px">(-12.7 from now)</span>
-</div>
-<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Buy aggressive call position</div>
-<div style="font-size:11px;color:#777">5-8% position</div>
+<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Add 25% more SMH position</div>
+<div style="font-size:11px;color:#777">Normal position size</div>
 </div>
 <div style="background:#0d1b2a;border-left:3px solid #42a5f5;border-radius:8px;padding:10px 14px">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
-<span style="font-size:16px;font-weight:800;color:#42a5f5">$340</span>
+<span style="font-size:16px;font-weight:800;color:#42a5f5">$350</span>
 <span style="font-size:12px;font-weight:700;color:#aaa">MU</span>
-<span style="color:#ef5350;font-size:10px;margin-left:6px">(-49.3 from now)</span>
+<span style="color:#ef5350;font-size:10px;margin-left:6px">(-39.3 from now)</span>
 </div>
-<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Scale into stock position</div>
-<div style="font-size:11px;color:#777">Additional 5% allocation</div>
+<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Double down on MU shares</div>
+<div style="font-size:11px;color:#777">50% current position</div>
+</div>
+<div style="background:#0d1b2a;border-left:3px solid #42a5f5;border-radius:8px;padding:10px 14px">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+<span style="font-size:16px;font-weight:800;color:#42a5f5">$42</span>
+<span style="font-size:12px;font-weight:700;color:#aaa">FSELX</span>
+<span style="color:#ef5350;font-size:10px;margin-left:6px">(-4.0 from now)</span>
+</div>
+<div style="font-size:11px;color:#FFD700;font-weight:700;margin-bottom:3px">Add to core FSELX holding</div>
+<div style="font-size:11px;color:#777">25% current position</div>
 </div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#FFD700;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">📅 NEAR-TERM CATALYSTS</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px">
 <div style="background:#0d1b2a;border-top:3px solid #00e676;border-radius:8px;padding:12px 14px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-<span style="font-size:11px;color:#00e676;font-weight:800">February 2025</span>
-<span style="background:#00e67622;color:#00e676;font-size:10px;font-weight:700;padding:1px 7px;border-radius:5px">BULLISH</span>
-</div>
-<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">Q4 earnings season</div>
-<div style="font-size:11px;color:#aaa;line-height:1.5">Expect beats from equipment and memory names as AI spending accelerates</div>
-</div>
-<div style="background:#0d1b2a;border-top:3px solid #00e676;border-radius:8px;padding:12px 14px">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
 <span style="font-size:11px;color:#00e676;font-weight:800">March 2025</span>
 <span style="background:#00e67622;color:#00e676;font-size:10px;font-weight:700;padding:1px 7px;border-radius:5px">BULLISH</span>
 </div>
-<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">GTC Conference</div>
-<div style="font-size:11px;color:#aaa;line-height:1.5">NVIDIA&#x27;s annual event typically drives sector momentum with new product announcements</div>
+<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">Memory earnings season</div>
+<div style="font-size:11px;color:#aaa;line-height:1.5">MU and other memory companies should show accelerating HBM revenue and margin expansion</div>
+</div>
+<div style="background:#0d1b2a;border-top:3px solid #ffb74d;border-radius:8px;padding:12px 14px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+<span style="font-size:11px;color:#ffb74d;font-weight:800">February 2025</span>
+<span style="background:#ffb74d22;color:#ffb74d;font-size:10px;font-weight:700;padding:1px 7px;border-radius:5px">MIXED</span>
+</div>
+<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">NVDA earnings</div>
+<div style="font-size:11px;color:#aaa;line-height:1.5">Will set tone for AI capex sustainability and competition from AMD/others</div>
 </div>
 <div style="background:#0d1b2a;border-top:3px solid #00e676;border-radius:8px;padding:12px 14px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-<span style="font-size:11px;color:#00e676;font-weight:800">Q2 2025</span>
+<span style="font-size:11px;color:#00e676;font-weight:800">April 2025</span>
 <span style="background:#00e67622;color:#00e676;font-size:10px;font-weight:700;padding:1px 7px;border-radius:5px">BULLISH</span>
 </div>
-<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">Memory pricing reports</div>
-<div style="font-size:11px;color:#aaa;line-height:1.5">HBM pricing power and DRAM recovery should drive memory stock outperformance</div>
+<div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">Taiwan elections aftermath</div>
+<div style="font-size:11px;color:#aaa;line-height:1.5">Geopolitical clarity should reduce Taiwan discount on TSM and sector</div>
 </div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#aaa;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">👀 WATCHLIST — NOT YET, BUT WATCHING</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
 <div style="background:#0d1b2a;border-radius:8px;padding:10px 14px;min-width:200px">
 <div style="font-size:14px;font-weight:800;color:#aaa;margin-bottom:4px">MRVL</div>
-<div style="font-size:11px;color:#777;line-height:1.5">Waiting for data center custom silicon revenue inflection and margin expansion</div>
+<div style="font-size:11px;color:#777;line-height:1.5">Waiting for custom silicon cycle to accelerate and break above $90 resistance</div>
 </div>
 <div style="background:#0d1b2a;border-radius:8px;padding:10px 14px;min-width:200px">
-<div style="font-size:14px;font-weight:800;color:#aaa;margin-bottom:4px">LRCX $211.15</div>
-<div style="font-size:11px;color:#777;line-height:1.5">Watching for memory capex recovery and gate-all-around transistor adoption</div>
+<div style="font-size:14px;font-weight:800;color:#aaa;margin-bottom:4px">QCOM</div>
+<div style="font-size:11px;color:#777;line-height:1.5">Monitoring for China smartphone recovery and AI PC chip traction before entry</div>
 </div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#ef5350;letter-spacing:1px;margin:22px 0 10px;border-bottom:1px solid #1e3a4a;padding-bottom:6px">🛡️ RISK MANAGEMENT</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
 <div style="background:#0d1b2a;border-left:3px solid #FFD700;border-radius:8px;padding:10px 14px">
 <div style="font-size:10px;color:#FFD700;font-weight:800;margin-bottom:4px">Position Limit</div>
-<div style="font-size:12px;color:#ccc;line-height:1.6">40% maximum in semis due to sector concentration risk and cyclical nature</div>
+<div style="font-size:12px;color:#ccc;line-height:1.6">Maximum 40% of total portfolio in semis given sector volatility</div>
 </div>
 <div style="background:#0d1b2a;border-left:3px solid #42a5f5;border-radius:8px;padding:10px 14px">
 <div style="font-size:10px;color:#42a5f5;font-weight:800;margin-bottom:4px">Hedge</div>
-<div style="font-size:12px;color:#ccc;line-height:1.6">Buy SMH puts or VIX calls, or sell covered calls systematically</div>
+<div style="font-size:12px;color:#ccc;line-height:1.6">Buy SMH puts 15% OTM with 3-month expiry as portfolio insurance</div>
 </div>
 <div style="background:#0d1b2a;border-left:3px solid #ef5350;border-radius:8px;padding:10px 14px">
 <div style="font-size:10px;color:#ef5350;font-weight:800;margin-bottom:4px">Cut Signal</div>
-<div style="font-size:12px;color:#ccc;line-height:1.6">SMH breaking below 200-day MA with volume or China trade war escalation</div>
+<div style="font-size:12px;color:#ccc;line-height:1.6">SMH breaking below 200-day MA with declining semiconductor billings data</div>
 </div>
 <div style="background:#0d1b2a;border-left:3px solid #ffb74d;border-radius:8px;padding:10px 14px">
 <div style="font-size:10px;color:#ffb74d;font-weight:800;margin-bottom:4px">Max Drawdown Tolerance</div>
-<div style="font-size:12px;color:#ccc;line-height:1.6">25% sector drawdown acceptable given growth potential</div>
+<div style="font-size:12px;color:#ccc;line-height:1.6">25% drawdown before reducing position size by half</div>
 </div>
 </div>
 <div style="background:linear-gradient(135deg,#0d1b2a,#1a0a2a);border:1px solid #ab47bc;border-radius:12px;padding:18px 22px;margin-top:20px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:8px">⚡ BOTTOM LINE — WHAT TO DO WITH FSELX RIGHT NOW</div>
-<div style="font-size:14px;color:#fff;line-height:1.9;font-weight:500">Immediately begin rotating 60% of FSELX to SMH for options capabilities while adding individual positions in AMAT, MU, TSM, and KLAC. Use SMH LEAPS for leverage and sell covered calls on individual holdings for income. Scale into weakness at key technical levels and prepare for Q1 earnings acceleration across equipment and memory names.</div>
+<div style="font-size:14px;color:#fff;line-height:1.9;font-weight:500">Convert 70% of FSELX to SMH for options liquidity, keep 30% FSELX for alpha. Add individual positions in MU (15%), AMAT (12%), AMD (10%), TSM (8%). Use SMH LEAPS for leverage, sell covered calls on NVDA for income, and sell cash-secured puts on dips. Target 40% total portfolio in semis with defined stop levels.</div>
+</div>
+</div>
+</div>
+
+<div id="tab-histcalls" class="hidden" data-tab="1">
+  <div class="card">
+<h3>📈 Historical Covered Calls <span class="fresh">● 2-year backtest</span></h3>
+<div class="muted" style="margin-bottom:16px">2-year backtest: Monthly covered calls (7% OTM, ~30 DTE) on AMZN and MSFT. All premium reinvested into shares. Compared against buy-and-hold of the same starting position. IV estimated at 30% using Black-Scholes. <strong>Backtest uses simplified assumptions — actual results vary.</strong></div>
+<div style="background:#0d1b2a;border-radius:12px;padding:16px 20px;margin-bottom:20px">
+<div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px">💼 Combined AMZN + MSFT — 2-Year Summary</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">STARTING VALUE</div>
+<div style="font-size:16px;font-weight:900;color:#aaa">$199,462</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">BUY & HOLD END</div>
+<div style="font-size:16px;font-weight:900;color:#42a5f5">$222,910</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CC STRATEGY END</div>
+<div style="font-size:16px;font-weight:900;color:#00e676">$343,552</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">TOTAL PREMIUM EARNED</div>
+<div style="font-size:16px;font-weight:900;color:#FFD700">$158,713</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">EXTRA vs BUY & HOLD</div>
+<div style="font-size:16px;font-weight:900;color:#00e676">$+120,642</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">BUY & HOLD RETURN</div>
+<div style="font-size:16px;font-weight:900;color:#42a5f5">11.8%</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">CC STRATEGY RETURN</div>
+<div style="font-size:16px;font-weight:900;color:#00e676">72.2%</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 13px">
+<div style="font-size:10px;color:#777;margin-bottom:3px">OUTPERFORMANCE</div>
+<div style="font-size:16px;font-weight:900;color:#00e676">+60.5%</div></div>
+</div></div>
+
+<div style="background:#0d1b2a;border-radius:12px;padding:16px 18px;margin-bottom:20px">
+  <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:12px">
+    📊 PORTFOLIO VALUE OVER TIME — CC Strategy vs Buy &amp; Hold
+    <span style="font-size:10px;color:#555;margin-left:10px">Click legend to toggle lines</span>
+  </div>
+  <canvas id="ccHistChart" style="width:100%;height:320px"></canvas>
+  <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;font-size:11px">
+    <span><span style="color:#00e676">■</span> Combined CC Strategy</span>
+    <span><span style="color:#42a5f5">■</span> Combined Buy &amp; Hold</span>
+    <span><span style="color:#FF9900">■</span> AMZN CC</span>
+    <span><span style="color:#ffcc44">■</span> AMZN B&amp;H</span>
+    <span><span style="color:#00b4d8">■</span> MSFT CC</span>
+    <span><span style="color:#7ec8e3">■</span> MSFT B&amp;H</span>
+  </div>
+</div>
+<script>
+(function(){
+  var canvas = document.getElementById('ccHistChart');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var DPR = window.devicePixelRatio || 1;
+  canvas.width  = canvas.offsetWidth  * DPR;
+  canvas.height = 320 * DPR;
+  ctx.scale(DPR, DPR);
+  var W = canvas.offsetWidth, H = 320;
+
+  var dates    = ['Mar 2024', 'Apr 2024', 'May 2024', 'Jun 2024', 'Jul 2024', 'Aug 2024', 'Sep 2024', 'Oct 2024', 'Nov 2024', 'Dec 2024', 'Jan 2025', 'Feb 2025', 'Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025', 'Jul 2025', 'Aug 2025', 'Sep 2025', 'Oct 2025', 'Nov 2025', 'Dec 2025', 'Jan 2026'];
+  var combBah  = [199462.42, 211684.56, 210349.5, 213755.23, 225307.75, 197608.53, 206378.24, 210084.92, 224661.47, 238695.55, 227461.65, 232167.85, 203856.64, 202148.8, 232552.0, 242195.72, 256375.15, 259700.76, 258669.54, 255856.04, 268691.09, 252428.51, 254861.68];
+  var combCC   = [214939.54, 218361.04, 226663.47, 244853.17, 221092.92, 235988.23, 246000.81, 262991.02, 284918.08, 278084.49, 289877.33, 262043.19, 266308.33, 294398.16, 313862.68, 339556.3, 351845.11, 358251.03, 363687.16, 382577.74, 369223.73, 381205.96, 329923.08];
+  var amznBah  = [85120.2, 92045.25, 93802.5, 92594.7, 96549.75, 82635.3, 88877.25, 91659.15, 103974.75, 111914.55, 108375.3, 115216.2, 95975.55, 91510.65, 104628.15, 105553.8, 112043.25, 111157.2, 112934.25, 108934.65, 123304.5, 113988.6, 120087.0];
+  var amznCC   = [93134.57, 97436.29, 98757.02, 105509.96, 92981.3, 101800.82, 107421.59, 118408.39, 129623.5, 128598.73, 139686.06, 120159.88, 117738.4, 129471.13, 134062.13, 145772.31, 148310.91, 154342.16, 152600.56, 168129.33, 159506.53, 171787.12, 145958.69];
+  var msftBah  = [114342.22, 119639.31, 116547.0, 121160.53, 128758.0, 114973.23, 117500.99, 118425.77, 120686.72, 126781.0, 119086.35, 116951.65, 107881.09, 110638.15, 127923.85, 136641.92, 144331.9, 148543.56, 145735.29, 146921.39, 145386.59, 138439.91, 134774.68];
+  var msftCC   = [121804.97, 120924.75, 127906.45, 139343.21, 128111.62, 134187.41, 138579.22, 144582.63, 155294.58, 149485.76, 150191.27, 141883.31, 148569.93, 164927.03, 179800.55, 193783.99, 203534.2, 203908.87, 211086.6, 214448.41, 209717.2, 209418.84, 183964.39];
+
+  var PAD = {top:20, right:20, bottom:50, left:90};
+  var PW  = W - PAD.left - PAD.right;
+  var PH  = H - PAD.top  - PAD.bottom;
+  var yMin = 191680.27, yMax = 394055.07;
+  var n = dates.length;
+
+  function xPos(i) { return PAD.left + (i / (n-1)) * PW; }
+  function yPos(v) { return PAD.top  + (1 - (v - yMin)/(yMax - yMin)) * PH; }
+  function fmtK(v) { return '$' + (v >= 1000000 ? (v/1000000).toFixed(1)+'M' : Math.round(v/1000)+'K'); }
+
+  // Background
+  ctx.fillStyle = '#0d1b2a';
+  ctx.fillRect(0, 0, W, H);
+
+  // Grid lines
+  ctx.strokeStyle = '#1e3a4a';
+  ctx.lineWidth = 0.5;
+  for (var g = 0; g <= 5; g++) {
+    var gv = yMin + (yMax - yMin) * g/5;
+    var gy = yPos(gv);
+    ctx.beginPath(); ctx.moveTo(PAD.left, gy); ctx.lineTo(W - PAD.right, gy); ctx.stroke();
+    ctx.fillStyle = '#555'; ctx.font = '10px sans-serif'; ctx.textAlign = 'right';
+    ctx.fillText(fmtK(gv), PAD.left - 6, gy + 3);
+  }
+
+  // X-axis labels (every 3 months)
+  ctx.fillStyle = '#555'; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
+  for (var xi = 0; xi < n; xi += 3) {
+    ctx.fillText(dates[xi], xPos(xi), H - PAD.bottom + 18);
+  }
+
+  // Draw a line series
+  function drawLine(series, color, lineWidth, dashed) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth   = lineWidth || 2;
+    if (dashed) ctx.setLineDash([5, 4]);
+    else        ctx.setLineDash([]);
+    for (var j = 0; j < series.length; j++) {
+      var x = xPos(j), y = yPos(series[j]);
+      if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Fill under combined CC
+  ctx.beginPath();
+  for (var fi = 0; fi < combCC.length; fi++) {
+    var x = xPos(fi), y = yPos(combCC[fi]);
+    if (fi === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.lineTo(xPos(combCC.length-1), yPos(yMin));
+  ctx.lineTo(xPos(0), yPos(yMin));
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(0,230,118,0.06)';
+  ctx.fill();
+
+  // Individual thin lines first
+  drawLine(msftBah, '#7ec8e3', 1.2, true);
+  drawLine(msftCC,  '#00b4d8', 1.5, false);
+  drawLine(amznBah, '#ffcc44', 1.2, true);
+  drawLine(amznCC,  '#FF9900', 1.5, false);
+  // Combined bold on top
+  drawLine(combBah, '#42a5f5', 2.5, false);
+  drawLine(combCC,  '#00e676', 3,   false);
+
+  // End-point dots + labels
+  function dotLabel(series, color, label) {
+    var lx = xPos(series.length-1), ly = yPos(series[series.length-1]);
+    ctx.beginPath(); ctx.arc(lx, ly, 4, 0, Math.PI*2);
+    ctx.fillStyle = color; ctx.fill();
+    ctx.fillStyle = color; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText(label + ' ' + fmtK(series[series.length-1]), lx+6, ly+3);
+  }
+  dotLabel(combCC,  '#00e676', 'CC');
+  dotLabel(combBah, '#42a5f5', 'B&H');
+})();
+</script>
+<div style="background:#0d1b2a;border-left:4px solid #FF9900;border-radius:12px;padding:18px 20px;margin-bottom:18px">
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+<span style="font-size:24px;font-weight:900;color:#FF9900">AMZN</span>
+<span style="font-size:13px;color:#aaa">Mar 11, 2024 → Mar 06, 2026</span>
+<span style="background:#00e67622;color:#00e676;font-size:12px;font-weight:800;padding:3px 12px;border-radius:8px">CC +59.2% vs B&H</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px">
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Start Price</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">$171.96</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">End Price</div>
+<div style="font-size:15px;font-weight:800;color:#fff">$213.21</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Starting Shares</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">495</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Final Shares (CC)</div>
+<div style="font-size:15px;font-weight:800;color:#FF9900">731.0</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Buy & Hold Value</div>
+<div style="font-size:15px;font-weight:800;color:#42a5f5">$105,539</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">CC Strategy Value</div>
+<div style="font-size:15px;font-weight:800;color:#00e676">$155,908</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Buy & Hold Return</div>
+<div style="font-size:15px;font-weight:800;color:#42a5f5">+24.0%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">CC Strategy Return</div>
+<div style="font-size:15px;font-weight:800;color:#00e676">+83.2%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Total Premium Collected</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">$72,282</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Avg Monthly Premium</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">$3,143</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Times Assigned</div>
+<div style="font-size:15px;font-weight:800;color:#ef5350">6</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Months Traded</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">23</div></div>
+</div>
+<div style="margin-bottom:14px">
+<div style="font-size:11px;color:#777;margin-bottom:6px">Monthly Premium Collected (bar) + Assignment months (🔴)</div>
+<div style="display:flex;align-items:flex-end;gap:3px;height:60px;overflow-x:auto">
+<div title="Mar 2024: $1,869 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:22px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Apr 2024: $2,527 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:30px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="May 2024: $2,575 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:31px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jun 2024: $2,542 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:30px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jul 2024: $2,651 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:32px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Aug 2024: $2,268 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:27px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Sep 2024: $2,440 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:29px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Oct 2024: $2,516 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:30px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Nov 2024: $2,855 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:34px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Dec 2024: $3,072 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:37px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jan 2025: $2,975 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:36px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Feb 2025: $3,796 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:46px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Mar 2025: $3,162 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:38px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Apr 2025: $3,015 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:36px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="May 2025: $3,447 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:41px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jun 2025: $3,477 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:42px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jul 2025: $3,691 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:44px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Aug 2025: $3,662 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:44px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Sep 2025: $3,720 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:45px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Oct 2025: $3,589 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:43px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Nov 2025: $4,062 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:49px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Dec 2025: $3,755 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:45px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jan 2026: $4,616 prem" style="flex:0 0 auto;width:12px;background:#FF9900;height:56px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+</div></div>
+<div style="background:#1a0a0a;border-left:3px solid #ef5350;border-radius:7px;padding:10px 14px;margin-bottom:10px">
+<div style="font-size:11px;font-weight:800;color:#ef5350;margin-bottom:6px">🔴 Assignment Events (6 times in 2 years)</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Mar 2024 @ $184</span>
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Aug 2024 @ $179</span>
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Oct 2024 @ $198</span>
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Nov 2024 @ $225</span>
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Apr 2025 @ $198</span>
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Oct 2025 @ $235</span>
+</div>
+<div style="font-size:11px;color:#aaa;margin-top:6px">Shares repurchased at market price with proceeds + cash reinvested immediately.</div>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00a4ef;border-radius:12px;padding:18px 20px;margin-bottom:18px">
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+<span style="font-size:24px;font-weight:900;color:#00a4ef">MSFT</span>
+<span style="font-size:13px;color:#aaa">Mar 11, 2024 → Mar 06, 2026</span>
+<span style="background:#00e67622;color:#00e676;font-size:12px;font-weight:800;padding:3px 12px;border-radius:8px">CC +61.5% vs B&H</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px">
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Start Price</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">$398.40</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">End Price</div>
+<div style="font-size:15px;font-weight:800;color:#fff">$408.96</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Starting Shares</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">287</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Final Shares (CC)</div>
+<div style="font-size:15px;font-weight:800;color:#00a4ef">458.0</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Buy & Hold Value</div>
+<div style="font-size:15px;font-weight:800;color:#42a5f5">$117,372</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">CC Strategy Value</div>
+<div style="font-size:15px;font-weight:800;color:#00e676">$187,644</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Buy & Hold Return</div>
+<div style="font-size:15px;font-weight:800;color:#42a5f5">+2.6%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">CC Strategy Return</div>
+<div style="font-size:15px;font-weight:800;color:#00e676">+64.1%</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Total Premium Collected</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">$86,431</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Avg Monthly Premium</div>
+<div style="font-size:15px;font-weight:800;color:#FFD700">$3,758</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Times Assigned</div>
+<div style="font-size:15px;font-weight:800;color:#ffb74d">1</div></div>
+<div style="background:#13263d;border-radius:7px;padding:9px 11px">
+<div style="font-size:10px;color:#777;margin-bottom:2px">Months Traded</div>
+<div style="font-size:15px;font-weight:800;color:#aaa">23</div></div>
+</div>
+<div style="margin-bottom:14px">
+<div style="font-size:11px;color:#777;margin-bottom:6px">Monthly Premium Collected (bar) + Assignment months (🔴)</div>
+<div style="display:flex;align-items:flex-end;gap:3px;height:60px;overflow-x:auto">
+<div title="Mar 2024: $2,166 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:21px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Apr 2024: $2,266 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:22px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="May 2024: $2,207 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:22px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jun 2024: $3,442 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:34px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jul 2024: $3,658 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:36px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Aug 2024: $3,266 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:32px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Sep 2024: $3,338 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:33px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Oct 2024: $3,364 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:33px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Nov 2024: $3,429 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:34px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Dec 2024: $3,602 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:36px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jan 2025: $3,383 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:34px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Feb 2025: $3,323 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:33px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Mar 2025: $3,065 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:30px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Apr 2025: $3,143 prem  ASSIGNED" style="flex:0 0 auto;width:12px;background:#ef5350;height:31px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="May 2025: $3,634 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:36px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jun 2025: $3,882 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:39px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jul 2025: $4,100 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:41px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Aug 2025: $4,220 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:42px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Sep 2025: $5,520 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:55px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Oct 2025: $5,565 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:56px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Nov 2025: $5,507 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:55px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Dec 2025: $5,244 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:52px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+<div title="Jan 2026: $5,105 prem" style="flex:0 0 auto;width:12px;background:#00a4ef;height:51px;border-radius:2px 2px 0 0;cursor:pointer"></div>
+</div></div>
+<div style="background:#1a0a0a;border-left:3px solid #ef5350;border-radius:7px;padding:10px 14px;margin-bottom:10px">
+<div style="font-size:11px;font-weight:800;color:#ef5350;margin-bottom:6px">🔴 Assignment Events (1 times in 2 years)</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<span style="background:#2a1a1a;color:#ef9a9a;font-size:11px;padding:2px 8px;border-radius:5px">Apr 2025 @ $412</span>
+</div>
+<div style="font-size:11px;color:#aaa;margin-top:6px">Shares repurchased at market price with proceeds + cash reinvested immediately.</div>
+</div>
+</div>
+<div style="background:#0a1628;border-radius:12px;padding:18px 22px">
+<div style="font-size:14px;font-weight:900;color:#fff;margin-bottom:14px">📝 What the Backtest Tells Us</div>
+<p style="font-size:13px;color:#ccc;line-height:1.9;margin:0 0 12px">Over the 2-year backtest period, the covered call strategy collected approximately <strong style="color:#FFD700">$158,713</strong> in total premium across both AMZN and MSFT. That premium was immediately reinvested into additional shares at market price, compounding the position size over time. The result: <strong style="color:#00e676">CC Strategy came out ahead on a combined basis.</strong></p>
+<p style="font-size:13px;color:#ccc;line-height:1.9;margin:0 0 12px">AMZN covered calls outperformed buy-and-hold by <strong style="color:#FF9900">+59.2%</strong>, with shares assigned 6 times over 24 months. MSFT covered calls outperformed by <strong style="color:#00a4ef">+61.5%</strong>, with 1 assignment event. Assignment happens when the stock closes above your strike at expiry — your shares get sold at the strike, but you immediately buy back in with the proceeds, keeping the reinvestment cycle going.</p>
+<p style="font-size:13px;color:#ccc;line-height:1.9;margin:0 0 12px">The key insight: covered calls tend to <strong style="color:#fff">outperform buy-and-hold in sideways and moderately rising markets</strong>, and underperform in explosive up-moves. When a stock rallies 15%+ in a month, the CC strategy caps your gain at the strike — you still profit, but less than an uncapped holder. The premium collected has to make up for those capped months over time. With 7% OTM strikes, you kept most of the upside while adding a steady income stream on top.</p>
+<p style="font-size:13px;color:#ccc;line-height:1.9;margin:0 0 12px">Reinvesting the premium accelerated share accumulation. Every month you collected cash, bought fractional shares, and those shares then generated their own CC premium the next cycle. This compounding effect is where the real edge is — not the premium itself, but the premium <em>buying more of an asset you already believe in</em>.</p>
+<div style="background:#13263d;border-left:3px solid #FFD700;border-radius:8px;padding:12px 16px;margin-top:4px">
+<div style="font-size:11px;font-weight:800;color:#FFD700;margin-bottom:5px">⚠️ Backtest Assumptions</div>
+<div style="font-size:12px;color:#aaa;line-height:1.8">IV fixed at 30% (real IV fluctuates 20-60%). Fills assumed at mid-price. No slippage or commissions. Monthly rolls on fixed 21-trading-day intervals — real traders pick optimal expirations. Assignment triggers if stock closes above strike (simplified — real assignment is complex). Black-Scholes pricing used for premium estimation. Results would differ with real historical IV data.</div>
+</div>
 </div>
 </div>
 </div>
