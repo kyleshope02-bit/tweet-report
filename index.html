@@ -49,7 +49,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-09 09:30 PM • yfinance cache 10m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (149 tickers shown) • Signals: 36 bullish / 17 bearish across 149 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-09 09:35 PM • yfinance cache 15m old (TTL 6h) • Watchlist filtered to ≥$50B market cap (149 tickers shown) • Signals: 36 bullish / 17 bearish across 149 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-weekly"  class="tabbtn on"  data-tabbtn="1" onclick="showTab('weekly')">📅 Weekly Picks</button>
@@ -67,7 +67,7 @@ select.filter{padding:5px}
 <div class="muted" style="margin-bottom:16px">Personalised weekly trade plan based on your portfolio, open positions, live options data, and signal scanner. Prioritises income first, then transition execution, then swing ideas. <strong>Not financial advice — always do your own research.</strong></div>
 <div style="background:#0d2a1a;border-left:4px solid #00e676;border-radius:8px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:11px;color:#00e676;font-weight:800;margin-bottom:5px">📋 THIS WEEK'S MARKET CONTEXT</div>
-<div style="font-size:13px;color:#e0e0e0;line-height:1.8">With AMZN and MSFT live pricing unavailable, Kyle&#x27;s immediate focus is executing the portfolio restructure: completing share top-ups, liquidating SPY, and establishing covered call positions once pricing data becomes available. The META put requires urgent attention as it&#x27;s $35 ITM.</div>
+<div style="font-size:13px;color:#e0e0e0;line-height:1.8">Kyle needs to execute immediate portfolio restructuring by adding AMZN/MSFT shares to unlock additional covered call contracts while managing the underwater META put position. Without live options pricing data, estimated premiums will guide income generation strategy.</div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px">
 <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:10px">💰 This Week's Income Potential</div>
@@ -77,160 +77,140 @@ select.filter{padding:5px}
 <div style="font-size:16px;font-weight:800;color:#aaa">$3,000</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Achievable Now</div>
-<div style="font-size:16px;font-weight:800;color:#FFD700">$2,025</div></div>
+<div style="font-size:16px;font-weight:800;color:#FFD700">$2,200</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">AMZN CC</div>
-<div style="font-size:16px;font-weight:800;color:#FF9900">$0</div></div>
+<div style="font-size:16px;font-weight:800;color:#FF9900">$500</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">MSFT CC</div>
-<div style="font-size:16px;font-weight:800;color:#00a4ef">$0</div></div>
+<div style="font-size:16px;font-weight:800;color:#00a4ef">$400</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 11px">
 <div style="font-size:10px;color:#555;margin-bottom:2px">Other CSP/CC</div>
-<div style="font-size:16px;font-weight:800;color:#ab47bc">$2,025</div></div>
+<div style="font-size:16px;font-weight:800;color:#ab47bc">$1,300</div></div>
 </div>
 <div style="background:#1a2a3a;border-radius:4px;height:8px;overflow:hidden">
-<div style="background:#FFD700;width:68%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
-<div style="font-size:11px;color:#FFD700;margin-top:5px">68% of monthly target achievable this week</div>
+<div style="background:#FFD700;width:73%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
+<div style="font-size:11px;color:#FFD700;margin-top:5px">73% of monthly target achievable this week</div>
 </div>
 <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:10px">🎯 PRIORITY ACTIONS — THIS WEEK</div>
 <div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#1 SPY Transition</span>
 <span style="font-size:20px;font-weight:900;color:#fff">AMZN</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 5 shares AMZN to reach 500 shares total</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 5 shares AMZN at market to reach 500 total shares</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market order for 5 shares AMZN (~$1,066 based on current cost basis)
+📌 Market buy order for 5 AMZN shares (~$1,066 capital required)
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 5th covered call contract for maximum income generation from existing AMZN position</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 5th covered call contract, increasing weekly income potential from AMZN position by 25%</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Portfolio ready for 5-contract AMZN covered call strategy</div></div>
+<div style="color:#bbb">500 shares enables 5 covered call contracts for enhanced weekly income</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Minor execution risk on small order size</div></div>
+<div style="color:#bbb">Minor execution risk if price gaps up during purchase</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#2 SPY Transition</span>
 <span style="font-size:20px;font-weight:900;color:#fff">MSFT</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 13 shares MSFT to reach 300 shares total</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Buy 13 shares MSFT at market to reach 300 total shares</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market order for 13 shares MSFT (~$5,316 based on current cost basis)
+📌 Market buy order for 13 MSFT shares (~$5,316 capital required)
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 3rd covered call contract, completing the core income-generating position structure</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Unlocks 3rd covered call contract, maximizing income potential from concentrated MSFT position</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Portfolio ready for 3-contract MSFT covered call strategy</div></div>
+<div style="color:#bbb">300 shares enables 3 covered call contracts for maximum MSFT income generation</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Minor execution risk on small order size</div></div>
+<div style="color:#bbb">Minor execution risk, but necessary for income optimization</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #42a5f5;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#42a5f5;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#3 SPY Transition</span>
 <span style="font-size:20px;font-weight:900;color:#fff">SPY</span>
-<span style="font-size:13px;color:#42a5f5;font-weight:700">Sell entire $100K SPY position</span>
+<span style="font-size:13px;color:#42a5f5;font-weight:700">Sell entire $100K SPY position simultaneously with stock purchases</span>
 <span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Do today</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Market order to sell entire SPY position (~$100K)
+📌 Market sell order for entire SPY position, expect ~$100K proceeds
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Free up capital for options income strategy and complete portfolio restructure as planned</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Frees capital for stock top-ups and provides liquidity for additional CSP opportunities</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">$100K cash available for CSP deployment and portfolio optimization</div></div>
+<div style="color:#bbb">Provides liquidity for enhanced options income strategy</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Missing any immediate SPY upside, execution timing</div></div>
+<div style="color:#bbb">Market timing risk if SPY continues climbing after sale</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#4 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">AMZN</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Wait for live pricing then sell 5x AMZN covered calls</span>
-<span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 5x AMZN covered calls after share purchase</span>
+<span style="margin-left:auto;background:#aaa;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Immediately after stock purchase</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 5 contracts at appropriate strike/expiry based on live pricing
+📌 Sell 5x AMZN calls 2-3 weeks out, target $5-8 delta, expect $400-600 weekly premium
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Core income generation from largest position once live data available</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Generate weekly income from full 500-share AMZN position using covered calls</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Weekly premium income toward $3K monthly target</div></div>
+<div style="color:#bbb">Generate $1,600-2,400 monthly income from AMZN covered calls</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Shares called away if underlying rallies significantly</div></div>
+<div style="color:#bbb">Shares could be called away if AMZN rallies strongly</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#5 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">MSFT</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Wait for live pricing then sell 3x MSFT covered calls</span>
-<span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell 3x MSFT covered calls after share purchase</span>
+<span style="margin-left:auto;background:#aaa;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">Immediately after stock purchase</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 3 contracts at appropriate strike/expiry based on live pricing
+📌 Sell 3x MSFT calls 2-3 weeks out, target $5-8 delta, expect $300-500 weekly premium
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Core income generation from second largest position once live data available</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Maximize income from 300-share MSFT position with full covered call capacity</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">Weekly premium income toward $3K monthly target</div></div>
+<div style="color:#bbb">Generate $1,200-2,000 monthly income from MSFT covered calls</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">Shares called away if underlying rallies significantly</div></div>
+<div style="color:#bbb">Shares could be called away in strong tech rally</div></div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#6 Options Income</span>
 <span style="font-size:20px;font-weight:900;color:#fff">LRCX</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 1x LRCX $200P Apr 2 CSP</span>
+<span style="font-size:13px;color:#00e676;font-weight:700">Sell LRCX $200P CSP using freed SPY capital</span>
 <span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
 </div>
 <div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 1 contract LRCX $200P Apr 2 for $13.15 credit
+📌 Sell 1x LRCX $200P Apr 2, collect $1,315 premium (13.15 x 100)
 </div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Highest annualized return at 104.3% with strong 5.3% OTM cushion, fits quality tech profile</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Highest scoring CSP opportunity with 104.3% annualized return and reasonable 5.3% OTM buffer</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
 <div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
 <div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">$1,315 premium income (23 DTE), potential LRCX acquisition at discount</div></div>
+<div style="color:#bbb">Either collect $1,315 premium or acquire LRCX at effective $186.85 cost basis</div></div>
 <div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
 <div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">$20,000 capital requirement if assigned, LRCX downside exposure</div></div>
-</div>
-</div>
-<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:15px 17px;margin-bottom:12px">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">#7 Options Income</span>
-<span style="font-size:20px;font-weight:900;color:#fff">MRVL</span>
-<span style="font-size:13px;color:#00e676;font-weight:700">Sell 1x MRVL $87P Apr 10 CSP</span>
-<span style="margin-left:auto;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:2px 9px;border-radius:8px">This week</span>
-</div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">
-📌 Sell 1 contract MRVL $87P Apr 10 for $7.10 credit
-</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7;margin-bottom:8px">Second-highest return at 96.1% with 6.1% OTM buffer, diversifies tech exposure</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
-<div style="background:#0d2a1a;border-radius:6px;padding:8px 10px">
-<div style="color:#00e676;font-weight:800;margin-bottom:2px">✅ Expected outcome</div>
-<div style="color:#bbb">$710 premium income (31 DTE), potential MRVL acquisition opportunity</div></div>
-<div style="background:#2a0d0d;border-radius:6px;padding:8px 10px">
-<div style="color:#ef5350;font-weight:800;margin-bottom:2px">⚠️ Risk</div>
-<div style="color:#bbb">$8,700 capital requirement if assigned, semiconductor sector risk</div></div>
+<div style="color:#bbb">Assignment risk if semiconductor sector weakens significantly</div></div>
 </div>
 </div>
 <div style="background:#1a0a00;border:1px solid #bf360c;border-radius:10px;padding:14px 17px;margin-bottom:14px">
@@ -238,14 +218,14 @@ select.filter{padding:5px}
 <span style="font-size:16px;font-weight:900;color:#ef5350">🚑 META $680 CSP — ACTION REQUIRED</span>
 <span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:3px 10px;border-radius:8px">Roll Down to $620 Apr 17</span>
 </div>
-<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P, sell META $620P Apr 17 — expect net debit of $25-35 per contract</div>
-<div style="font-size:12px;color:#ccc;line-height:1.7">With META $35 ITM on the $680P, rolling down to $620 salvages some value while extending time. A $60 strike reduction helps offset the current loss and gives more room for potential recovery.</div>
+<div style="background:#13263d;border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:12px;color:#FFD700;font-weight:700">📌 Buy back META $680P, sell META $620P Apr 17 — expect net debit of $30-40 per share ($3,000-4,000 total)</div>
+<div style="font-size:12px;color:#ccc;line-height:1.7">ITM by $35 makes closing expensive. Rolling down to $620 reduces assignment risk while extending time for META recovery, given current market volatility</div>
 </div>
 <div style="background:#1a0a1a;border-left:3px solid #ef5350;border-radius:8px;padding:12px 14px;margin-bottom:4px">
 <div style="font-size:11px;color:#ef5350;font-weight:800;margin-bottom:8px">🚫 DO NOT DO THIS WEEK</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not sell covered calls on AMZN/MSFT without completing share purchases first</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not chase high-risk CSPs like APP or volatile names when quality tech options available</div>
-<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not let META put go to assignment without attempting the $620 roll first</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not buy any meme stocks or high-beta names that could jeopardize the income-focused strategy</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not sell covered calls too close to the money (avoid &gt;15 delta) risking early assignment</div>
+<div style="display:flex;gap:8px;margin-bottom:5px;font-size:12px;color:#ccc">❌ Do not deploy all SPY proceeds immediately - keep some cash for rolling META position if needed</div>
 </div>
 </div>
 </div>
@@ -433,7 +413,7 @@ Invest in assets, not liabilities.</td><td><a href='https://x.com/Mr_Derivatives
     </div>
 
   </div>
-</div><h4 style='margin:0 0 8px;color:#263238'>🏆 Top Pick — Highest Confidence</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📉 Best CSP</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📈 Best CC</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$COIN <span style="color:#FFD700">CC</span> &nbsp; Strike $210.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#FFD700">$11.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#FFD700">$5,500</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">87.4%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$221.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$10,605</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$94,395</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.11x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">SHARES REQ</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">500 shares</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock called away at $210.00 — collect $10,605 total (premium + capital gain).</div><div>📉 <strong>If down:</strong> Stock falls — still own shares. Premium reduces cost basis to $221.00.</div><div>💰 <strong>Capital:</strong> 500 shares required (~$99,895 at current price).</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  87% ann return ✓  ·  23d DTE — optimal ✓  ·  5.1% OTM — ideal ✓  ·  Neutral/bullish P/C ✓</div></div></div><h4 style="margin:0 0 8px">📉 Top 10 Cash Secured Puts</h4><table id="tbl-csp" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$LRCX</strong></td><td>$211.15</td><td><strong style='color:#26a69a'>$200.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.15</td><td style='color:#00e676;font-weight:800'>104.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.3%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6575</td><td style='color:#ffb74d'>$186.85</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.63</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 104% ann return ✓ · 23d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MRVL</strong></td><td>$92.65</td><td><strong style='color:#26a69a'>$87.00</strong></td><td style='color:#26a69a;font-weight:700'>$7.10</td><td style='color:#00e676;font-weight:800'>96.1%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>6.1%</td><td><strong>11</strong>x</td><td style='color:#26a69a;font-weight:700'>$7810</td><td style='color:#ffb74d'>$79.90</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.69</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 96% ann return ✓ · 31d DTE — optimal ✓ · 6.1% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#26a69a'>$74.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.08</td><td style='color:#00e676;font-weight:800'>87.5%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.7%</td><td><strong>13</strong>x</td><td style='color:#26a69a;font-weight:700'>$5304</td><td style='color:#ffb74d'>$69.92</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 88% ann return ✓ · 23d DTE — optimal ✓ · 6.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NET</strong></td><td>$201.48</td><td><strong style='color:#26a69a'>$180.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.35</td><td style='color:#00e676;font-weight:800'>87.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>10.7%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6675</td><td style='color:#ffb74d'>$166.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.5</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 31d DTE — optimal ✓ · 10.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#26a69a'>$490.00</strong></td><td style='color:#26a69a;font-weight:700'>$43.80</td><td style='color:#00e676;font-weight:800'>85.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#26a69a;font-weight:700'>$8760</td><td style='color:#ffb74d'>$446.20</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 86% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$INTC</strong></td><td>$45.58</td><td><strong style='color:#26a69a'>$42.00</strong></td><td style='color:#26a69a;font-weight:700'>$3.73</td><td style='color:#00e676;font-weight:800'>72.0%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>7.9%</td><td><strong>23</strong>x</td><td style='color:#26a69a;font-weight:700'>$8579</td><td style='color:#ffb74d'>$38.27</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.54</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 72% ann return ✓ · 45d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PSX</strong></td><td>$163.00</td><td><strong style='color:#26a69a'>$149.00</strong></td><td style='color:#26a69a;font-weight:700'>$5.00</td><td style='color:#00e676;font-weight:800'>53.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>8.6%</td><td><strong>6</strong>x</td><td style='color:#26a69a;font-weight:700'>$3000</td><td style='color:#ffb74d'>$144.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.23</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 8.6% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$C</strong></td><td>$106.59</td><td><strong style='color:#26a69a'>$101.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.49</td><td style='color:#00e676;font-weight:800'>52.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.2%</td><td><strong>9</strong>x</td><td style='color:#26a69a;font-weight:700'>$4041</td><td style='color:#ffb74d'>$96.51</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.29</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 31d DTE — optimal ✓ · 5.2% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$6.35</td><td style='color:#00e676;font-weight:800'>51.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.9%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$3175</td><td style='color:#ffb74d'>$188.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 23d DTE — optimal ✓ · 6.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NXPI</strong></td><td>$205.25</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$9.52</td><td style='color:#00e676;font-weight:800'>46.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.0%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$4760</td><td style='color:#ffb74d'>$185.48</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.19</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 47% ann return ✓ · 38d DTE — optimal ✓ · 5.0% OTM — ideal ✓ · Bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 8px">📈 Top 10 Covered Calls</h4><table id="tbl-cc" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$COIN</strong></td><td>$199.79</td><td><strong style='color:#FFD700'>$210.00</strong></td><td style='color:#FFD700;font-weight:700'>$11.00</td><td style='color:#00e676;font-weight:800'>87.4%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>5</strong>x</td><td style='color:#FFD700;font-weight:700'>$5500</td><td style='color:#ffb74d'>$221.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.78</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ORCL</strong></td><td>$151.56</td><td><strong style='color:#FFD700'>$160.00</strong></td><td style='color:#FFD700;font-weight:700'>$7.99</td><td style='color:#00e676;font-weight:800'>83.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.6%</td><td><strong>6</strong>x</td><td style='color:#FFD700;font-weight:700'>$4794</td><td style='color:#ffb74d'>$167.99</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.68</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 84% ann return ✓ · 23d DTE — optimal ✓ · 5.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MU</strong></td><td>$389.32</td><td><strong style='color:#FFD700'>$410.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.13</td><td style='color:#00e676;font-weight:800'>74.3%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$6026</td><td style='color:#ffb74d'>$440.13</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.81</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 74% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#FFD700'>$545.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.65</td><td style='color:#00e676;font-weight:800'>69.8%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.4%</td><td><strong>1</strong>x</td><td style='color:#FFD700;font-weight:700'>$3065</td><td style='color:#ffb74d'>$575.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 70% ann return ✓ · 31d DTE — optimal ✓ · 5.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#FFD700'>$220.00</strong></td><td style='color:#FFD700;font-weight:700'>$9.00</td><td style='color:#00e676;font-weight:800'>68.2%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3600</td><td style='color:#ffb74d'>$229.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 68% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$FDX</strong></td><td>$361.10</td><td><strong style='color:#FFD700'>$385.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.95</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.6%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$2990</td><td style='color:#ffb74d'>$399.95</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.05</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$VLO</strong></td><td>$215.95</td><td><strong style='color:#FFD700'>$230.00</strong></td><td style='color:#FFD700;font-weight:700'>$8.94</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.5%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3576</td><td style='color:#ffb74d'>$238.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.41</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.5% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#FFD700'>$84.00</strong></td><td style='color:#FFD700;font-weight:700'>$5.94</td><td style='color:#00e676;font-weight:800'>60.7%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>5.9%</td><td><strong>12</strong>x</td><td style='color:#FFD700;font-weight:700'>$7128</td><td style='color:#ffb74d'>$89.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 61% ann return ✓ · 45d DTE — optimal ✓ · 5.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ADI</strong></td><td>$319.71</td><td><strong style='color:#FFD700'>$345.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.55</td><td style='color:#00e676;font-weight:800'>53.6%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>7.9%</td><td><strong>3</strong>x</td><td style='color:#FFD700;font-weight:700'>$4365</td><td style='color:#ffb74d'>$359.55</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.11</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 54% ann return ✓ · 31d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PNC</strong></td><td>$205.34</td><td><strong style='color:#FFD700'>$235.00</strong></td><td style='color:#FFD700;font-weight:700'>$6.80</td><td style='color:#00e676;font-weight:800'>52.6%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>14.4%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$2720</td><td style='color:#ffb74d'>$241.80</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.7</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 14.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 4px">🔄 Wheel Position Tracker</h4><div class="muted" style="margin-bottom:8px">Edit <code>wheel_positions.json</code> in your tweet-archive folder to track open positions.</div><div style="background:#f5f5f5;border-radius:8px;padding:16px;color:#666;font-size:13px">No positions tracked. Create <code>wheel_positions.json</code> in your tweet-archive folder:<br><br><code>{"positions": [{"ticker": "NVDA", "phase": "CSP", "strike": 130, "premium_received": 2.50, "cost_basis": null, "contracts": 3, "expiry": "2026-03-21", "notes": ""}]}</code></div></div>
+</div><h4 style='margin:0 0 8px;color:#263238'>🏆 Top Pick — Highest Confidence</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📉 Best CSP</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$LRCX <span style="color:#26a69a">CSP</span> &nbsp; Strike $200.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#26a69a">$13.15</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#26a69a">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">104.3%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$186.85</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$6,575</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$93,425</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.07x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">COLLATERAL</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">$100,000</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock stays above $200.00 — keep full $6,575 premium (max profit).</div><div>📉 <strong>If down:</strong> Stock falls to $186.85 — breakeven. Below that, max loss $93,425 (stock to 0).</div><div>💰 <strong>Capital:</strong> $100,000 cash collateral required.</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  104% ann return ✓  ·  23d DTE — optimal ✓  ·  5.3% OTM — ideal ✓  ·  Bullish P/C ✓</div></div></div><h4 style="margin:14px 0 6px;color:#263238">📈 Best CC</h4><div style="background:#0d1b2a;border:2px solid #26a69a;border-radius:12px;padding:18px 22px;margin-bottom:18px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px"><span style="font-size:22px;font-weight:900;color:#26a69a">✅ Good 70/100</span><span style="font-size:20px;font-weight:800;color:#fff">$COIN <span style="color:#FFD700">CC</span> &nbsp; Strike $210.00 &nbsp; Exp 2026-04-02 (23d)</span><span style="font-size:13px;color:#aaa">Monthly (sweet)</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px"><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">PREMIUM / CONTRACT</div><div style="font-size:18px;font-weight:800;color:#FFD700">$11.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">TOTAL (5 contracts)</div><div style="font-size:18px;font-weight:800;color:#FFD700">$5,500</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">ANN. RETURN</div><div style="font-size:18px;font-weight:800;color:#00e676">87.4%</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">BREAKEVEN</div><div style="font-size:18px;font-weight:800;color:#ffb74d">$221.00</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX PROFIT</div><div style="font-size:18px;font-weight:800;color:#00e676">$10,605</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">MAX RISK</div><div style="font-size:18px;font-weight:800;color:#ef5350">$94,395</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">RISK / REWARD</div><div style="font-size:18px;font-weight:800;color:#ffffff">0.11x</div></div><div style="background:#13263d;border-radius:8px;padding:10px"><div style="font-size:11px;color:#aaa;margin-bottom:3px">SHARES REQ</div><div style="font-size:18px;font-weight:800;color:#aaaaaa">500 shares</div></div></div><div style="font-size:13px;line-height:2;color:#ccc"><div>📈 <strong>If up:</strong> Stock called away at $210.00 — collect $10,605 total (premium + capital gain).</div><div>📉 <strong>If down:</strong> Stock falls — still own shares. Premium reduces cost basis to $221.00.</div><div>💰 <strong>Capital:</strong> 500 shares required (~$99,895 at current price).</div><div style="margin-top:6px;font-size:11px;color:#777">IV low — thin premium  ·  87% ann return ✓  ·  23d DTE — optimal ✓  ·  5.1% OTM — ideal ✓  ·  Neutral/bullish P/C ✓</div></div></div><h4 style="margin:0 0 8px">📉 Top 10 Cash Secured Puts</h4><table id="tbl-csp" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$LRCX</strong></td><td>$211.15</td><td><strong style='color:#26a69a'>$200.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.15</td><td style='color:#00e676;font-weight:800'>104.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.3%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6575</td><td style='color:#ffb74d'>$186.85</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.63</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 104% ann return ✓ · 23d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MRVL</strong></td><td>$92.65</td><td><strong style='color:#26a69a'>$87.00</strong></td><td style='color:#26a69a;font-weight:700'>$7.10</td><td style='color:#00e676;font-weight:800'>96.1%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>6.1%</td><td><strong>11</strong>x</td><td style='color:#26a69a;font-weight:700'>$7810</td><td style='color:#ffb74d'>$79.90</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.69</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 96% ann return ✓ · 31d DTE — optimal ✓ · 6.1% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#26a69a'>$74.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.08</td><td style='color:#00e676;font-weight:800'>87.5%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.7%</td><td><strong>13</strong>x</td><td style='color:#26a69a;font-weight:700'>$5304</td><td style='color:#ffb74d'>$69.92</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 88% ann return ✓ · 23d DTE — optimal ✓ · 6.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NET</strong></td><td>$201.48</td><td><strong style='color:#26a69a'>$180.00</strong></td><td style='color:#26a69a;font-weight:700'>$13.35</td><td style='color:#00e676;font-weight:800'>87.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>10.7%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$6675</td><td style='color:#ffb74d'>$166.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.5</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 31d DTE — optimal ✓ · 10.7% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#26a69a'>$490.00</strong></td><td style='color:#26a69a;font-weight:700'>$43.80</td><td style='color:#00e676;font-weight:800'>85.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#26a69a;font-weight:700'>$8760</td><td style='color:#ffb74d'>$446.20</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 86% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$INTC</strong></td><td>$45.58</td><td><strong style='color:#26a69a'>$42.00</strong></td><td style='color:#26a69a;font-weight:700'>$3.73</td><td style='color:#00e676;font-weight:800'>72.0%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>7.9%</td><td><strong>23</strong>x</td><td style='color:#26a69a;font-weight:700'>$8579</td><td style='color:#ffb74d'>$38.27</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.54</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 72% ann return ✓ · 45d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PSX</strong></td><td>$163.00</td><td><strong style='color:#26a69a'>$149.00</strong></td><td style='color:#26a69a;font-weight:700'>$5.00</td><td style='color:#00e676;font-weight:800'>53.3%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>8.6%</td><td><strong>6</strong>x</td><td style='color:#26a69a;font-weight:700'>$3000</td><td style='color:#ffb74d'>$144.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.23</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 8.6% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$C</strong></td><td>$106.59</td><td><strong style='color:#26a69a'>$101.00</strong></td><td style='color:#26a69a;font-weight:700'>$4.49</td><td style='color:#00e676;font-weight:800'>52.3%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.2%</td><td><strong>9</strong>x</td><td style='color:#26a69a;font-weight:700'>$4041</td><td style='color:#ffb74d'>$96.51</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.29</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 31d DTE — optimal ✓ · 5.2% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$6.35</td><td style='color:#00e676;font-weight:800'>51.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.9%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$3175</td><td style='color:#ffb74d'>$188.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 52% ann return ✓ · 23d DTE — optimal ✓ · 6.9% OTM — ideal ✓ · Bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$NXPI</strong></td><td>$205.25</td><td><strong style='color:#26a69a'>$195.00</strong></td><td style='color:#26a69a;font-weight:700'>$9.52</td><td style='color:#00e676;font-weight:800'>46.9%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.0%</td><td><strong>5</strong>x</td><td style='color:#26a69a;font-weight:700'>$4760</td><td style='color:#ffb74d'>$185.48</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.19</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 47% ann return ✓ · 38d DTE — optimal ✓ · 5.0% OTM — ideal ✓ · Bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 8px">📈 Top 10 Covered Calls</h4><table id="tbl-cc" data-filter-table="1"><thead><tr><th>#</th><th>Grade</th><th>Ticker</th><th>Price</th><th>Strike</th><th>Premium</th><th>Ann Ret %</th><th>DTE</th><th>Expiry</th><th>OTM %</th><th>Contracts</th><th>Total Premium</th><th>Breakeven</th><th>IV/HV</th><th>P/C</th><th>Why</th></tr></thead><tbody><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>1</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$COIN</strong></td><td>$199.79</td><td><strong style='color:#FFD700'>$210.00</strong></td><td style='color:#FFD700;font-weight:700'>$11.00</td><td style='color:#00e676;font-weight:800'>87.4%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>5</strong>x</td><td style='color:#FFD700;font-weight:700'>$5500</td><td style='color:#ffb74d'>$221.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.78</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 87% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>2</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ORCL</strong></td><td>$151.56</td><td><strong style='color:#FFD700'>$160.00</strong></td><td style='color:#FFD700;font-weight:700'>$7.99</td><td style='color:#00e676;font-weight:800'>83.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.6%</td><td><strong>6</strong>x</td><td style='color:#FFD700;font-weight:700'>$4794</td><td style='color:#ffb74d'>$167.99</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.68</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 84% ann return ✓ · 23d DTE — optimal ✓ · 5.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>3</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$MU</strong></td><td>$389.32</td><td><strong style='color:#FFD700'>$410.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.13</td><td style='color:#00e676;font-weight:800'>74.3%</td><td>38d</td><td style='font-size:11px;color:#aaa'>2026-04-17</td><td>5.3%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$6026</td><td style='color:#ffb74d'>$440.13</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.81</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 74% ann return ✓ · 38d DTE — optimal ✓ · 5.3% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>4</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$APP</strong></td><td>$517.23</td><td><strong style='color:#FFD700'>$545.00</strong></td><td style='color:#FFD700;font-weight:700'>$30.65</td><td style='color:#00e676;font-weight:800'>69.8%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>5.4%</td><td><strong>1</strong>x</td><td style='color:#FFD700;font-weight:700'>$3065</td><td style='color:#ffb74d'>$575.65</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.75</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 70% ann return ✓ · 31d DTE — optimal ✓ · 5.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>5</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ACN</strong></td><td>$209.36</td><td><strong style='color:#FFD700'>$220.00</strong></td><td style='color:#FFD700;font-weight:700'>$9.00</td><td style='color:#00e676;font-weight:800'>68.2%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>5.1%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3600</td><td style='color:#ffb74d'>$229.00</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.57</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 68% ann return ✓ · 23d DTE — optimal ✓ · 5.1% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>6</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$VLO</strong></td><td>$215.95</td><td><strong style='color:#FFD700'>$230.00</strong></td><td style='color:#FFD700;font-weight:700'>$8.94</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.5%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$3576</td><td style='color:#ffb74d'>$238.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.41</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.5% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>7</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$FDX</strong></td><td>$361.10</td><td><strong style='color:#FFD700'>$385.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.95</td><td style='color:#00e676;font-weight:800'>65.7%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>6.6%</td><td><strong>2</strong>x</td><td style='color:#FFD700;font-weight:700'>$2990</td><td style='color:#ffb74d'>$399.95</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.05</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 66% ann return ✓ · 23d DTE — optimal ✓ · 6.6% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>8</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$HOOD</strong></td><td>$79.35</td><td><strong style='color:#FFD700'>$84.00</strong></td><td style='color:#FFD700;font-weight:700'>$5.94</td><td style='color:#00e676;font-weight:800'>60.7%</td><td>45d</td><td style='font-size:11px;color:#aaa'>2026-04-24</td><td>5.9%</td><td><strong>12</strong>x</td><td style='color:#FFD700;font-weight:700'>$7128</td><td style='color:#ffb74d'>$89.94</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.44</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 61% ann return ✓ · 45d DTE — optimal ✓ · 5.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>9</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$ADI</strong></td><td>$319.71</td><td><strong style='color:#FFD700'>$345.00</strong></td><td style='color:#FFD700;font-weight:700'>$14.55</td><td style='color:#00e676;font-weight:800'>53.6%</td><td>31d</td><td style='font-size:11px;color:#aaa'>2026-04-10</td><td>7.9%</td><td><strong>3</strong>x</td><td style='color:#FFD700;font-weight:700'>$4365</td><td style='color:#ffb74d'>$359.55</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.11</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 54% ann return ✓ · 31d DTE — optimal ✓ · 7.9% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr><tr style='border-left:3px solid #26a69a'><td><strong style='color:#26a69a'>10</strong></td><td><span style='color:#26a69a;font-weight:700'>✅ Good</span></td><td><strong style='font-size:14px'>$PNC</strong></td><td>$205.34</td><td><strong style='color:#FFD700'>$235.00</strong></td><td style='color:#FFD700;font-weight:700'>$6.80</td><td style='color:#00e676;font-weight:800'>52.6%</td><td>23d</td><td style='font-size:11px;color:#aaa'>2026-04-02</td><td>14.4%</td><td><strong>4</strong>x</td><td style='color:#FFD700;font-weight:700'>$2720</td><td style='color:#ffb74d'>$241.80</td><td>—</td><td><span style='color:#00e676;font-weight:700'>0.7</span></td><td style='font-size:11px;color:#aaa'>IV low — thin premium · 53% ann return ✓ · 23d DTE — optimal ✓ · 14.4% OTM — ideal ✓ · Neutral/bullish P/C ✓</td></tr></tbody></table><h4 style="margin:22px 0 4px">🔄 Wheel Position Tracker</h4><div class="muted" style="margin-bottom:8px">Edit <code>wheel_positions.json</code> in your tweet-archive folder to track open positions.</div><div style="background:#f5f5f5;border-radius:8px;padding:16px;color:#666;font-size:13px">No positions tracked. Create <code>wheel_positions.json</code> in your tweet-archive folder:<br><br><code>{"positions": [{"ticker": "NVDA", "phase": "CSP", "strike": 130, "premium_received": 2.50, "cost_basis": null, "contracts": 3, "expiry": "2026-03-21", "notes": ""}]}</code></div></div>
 </div>
 
 <div id="tab-mycc" class="hidden" data-tab="1">
@@ -879,16 +859,16 @@ Compared against simple buy-and-hold of the same position. Not financial advice.
   var ctx = canvas.getContext('2d');
 
   var allSeries = {
-    combCC:  { data: [189627.87, 212544.74, 233267.25, 248529.17, 259550.25, 266816.57, 273630.03, 279844.23, 276920.65, 289018.95, 254914.95],  color: '#00e676', width: 2.5, dash: false },
-    combBah: { data: [204574.29, 185462.31, 219878.99, 242300.73, 253112.22, 259191.71, 260380.11, 261492.06, 262381.69, 252912.37, 258818.64], color: '#42a5f5', width: 2.5, dash: true  },
+    combCC:  { data: [189627.88, 212544.73, 233267.26, 248529.18, 259550.26, 266816.58, 273630.04, 279844.24, 276920.66, 289018.96, 254914.96],  color: '#00e676', width: 2.5, dash: false },
+    combBah: { data: [204574.29, 185462.32, 219878.97, 242300.73, 253112.22, 259191.71, 260380.11, 261492.06, 262381.69, 252912.37, 258818.64], color: '#42a5f5', width: 2.5, dash: true  },
     amznCC:  { data: [86591.52, 95035.39, 104843.97, 109753.01, 112381.19, 123244.47, 119750.45, 131248.18, 125830.04, 137901.0, 120246.26],  color: '#FF9900', width: 1.5, dash: false },
     amznBah: { data: [96297.3, 84476.7, 95079.6, 107405.1, 110018.7, 110231.55, 117928.8, 111483.9, 120304.8, 112310.55, 121913.55], color: '#ffcc44', width: 1.2, dash: true  },
-    msftCC:  { data: [103036.35, 117509.35, 128423.28, 138776.16, 147169.06, 143572.1, 153879.58, 148596.05, 151090.61, 151117.95, 134668.69],  color: '#00b4d8', width: 1.5, dash: false },
-    msftBah: { data: [108276.99, 100985.61, 124799.39, 134895.63, 143093.52, 148960.16, 142451.31, 150008.16, 142076.89, 140601.82, 136905.09], color: '#7ec8e3', width: 1.2, dash: true  },
+    msftCC:  { data: [103036.36, 117509.34, 128423.29, 138776.17, 147169.07, 143572.11, 153879.59, 148596.06, 151090.62, 151117.96, 134668.7],  color: '#00b4d8', width: 1.5, dash: false },
+    msftBah: { data: [108276.99, 100985.62, 124799.37, 134895.63, 143093.52, 148960.16, 142451.31, 150008.16, 142076.89, 140601.82, 136905.09], color: '#7ec8e3', width: 1.2, dash: true  },
   };
   var hidden = {};
   var dates  = ['Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025', 'Jul 2025', 'Aug 2025', 'Sep 2025', 'Oct 2025', 'Nov 2025', 'Dec 2025', 'Jan 2026'];
-  var yMin   = 81942.40, yMax = 297689.52;
+  var yMin   = 81942.40, yMax = 297689.53;
 
   function draw() {
     var W = canvas.offsetWidth || 900, H = 320;
@@ -983,150 +963,150 @@ Compared against simple buy-and-hold of the same position. Not financial advice.
 <div style="font-size:9px;color:#777">Assignments</div>
 <div style="font-size:13px;font-weight:800;color:#ffb74d">4</div></div>
 </div>
-<div style="overflow-x:auto"><table style="width:100%;font-size:11px;border-collapse:collapse">
-<thead><tr style="border-bottom:1px solid #263238">
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Month</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Price</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Strike</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Premium/sh</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Roll Premium</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Assigned</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Shares</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">CC Value</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">B&H Value</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Delta</th>
+<div style="overflow-x:auto"><table style="width:100%;font-size:12px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden">
+<thead><tr style="border-bottom:2px solid #b0b8c4;background:#d0d8e4">
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Month</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Price</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Strike</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Premium/sh</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Roll Premium</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Assigned</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Shares</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">CC Value</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">B&H Value</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Delta</th>
 </tr></thead><tbody>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Mar 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$194.54</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$208.16</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$5.29</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,115</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">507.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$86,592</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$96,297</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-9,706</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Mar 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$194.54</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$208.16</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$5.29</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,115</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">507.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$86,592</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$96,297</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-9,706</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Apr 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$170.66</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$182.61</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$4.64</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,319</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">494.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$95,035</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$84,477</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+10,559</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Apr 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$170.66</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$182.61</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$4.64</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,319</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">494.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$95,035</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$84,477</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+10,559</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">May 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$192.08</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$205.53</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$5.22</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,088</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">483.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$104,844</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$95,080</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+9,764</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">May 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$192.08</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$205.53</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$5.22</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,088</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">483.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$104,844</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$95,080</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+9,764</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jun 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$216.98</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$232.17</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$5.90</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,359</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">493.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$109,753</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$107,405</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+2,348</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jun 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$216.98</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$232.17</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$5.90</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,359</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">493.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$109,753</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$107,405</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+2,348</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jul 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$222.26</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$237.82</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.04</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,416</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">504.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$112,381</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$110,019</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+2,362</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jul 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$222.26</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$237.82</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.04</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,416</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">504.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$112,381</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$110,019</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+2,362</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Aug 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$222.69</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$238.28</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.05</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,026</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">517.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$123,244</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$110,232</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+13,013</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Aug 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$222.69</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$238.28</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.05</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,026</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">517.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$123,244</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$110,232</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+13,013</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Sep 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$238.24</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$254.92</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.47</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,237</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">531.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$119,750</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$117,929</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+1,822</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Sep 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$238.24</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$254.92</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.47</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,237</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">531.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$119,750</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$117,929</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+1,822</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Oct 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$225.22</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$240.99</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.12</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,060</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">540.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$131,248</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$111,484</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+19,764</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Oct 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$225.22</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$240.99</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.12</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,060</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">540.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$131,248</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$111,484</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+19,764</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Nov 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$243.04</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$260.05</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.61</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,303</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">554.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$125,830</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$120,305</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+5,525</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Nov 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$243.04</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$260.05</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.61</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,303</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">554.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$125,830</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$120,305</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+5,525</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Dec 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$226.89</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$242.77</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.17</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,083</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">559.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$137,901</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$112,311</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+25,590</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Dec 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$226.89</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$242.77</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.17</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,083</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">559.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$137,901</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$112,311</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+25,590</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jan 2026</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$246.29</td>
-<td style="padding:5px 8px;color:#FF9900;font-weight:700;text-align:right">$263.53</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$6.69</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,347</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">576.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$120,246</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$121,914</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-1,667</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jan 2026</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$246.29</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$263.53</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$6.69</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,347</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">576.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$120,246</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$121,914</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-1,667</td>
 </tr>
 </tbody></table></div></div>
 <div style="margin-bottom:24px">
@@ -1157,150 +1137,150 @@ Compared against simple buy-and-hold of the same position. Not financial advice.
 <div style="font-size:9px;color:#777">Assignments</div>
 <div style="font-size:13px;font-weight:800;color:#ffb74d">2</div></div>
 </div>
-<div style="overflow-x:auto"><table style="width:100%;font-size:11px;border-collapse:collapse">
-<thead><tr style="border-bottom:1px solid #263238">
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Month</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Price</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Strike</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Premium/sh</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Roll Premium</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Assigned</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Shares</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">CC Value</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">B&H Value</th>
-<th style="padding:5px 8px;color:#aaa;text-align:right;white-space:nowrap">Delta</th>
+<div style="overflow-x:auto"><table style="width:100%;font-size:12px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden">
+<thead><tr style="border-bottom:2px solid #b0b8c4;background:#d0d8e4">
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Month</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Price</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Strike</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Premium/sh</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Roll Premium</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Assigned</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Shares</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">CC Value</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">B&H Value</th>
+<th style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap;background:#d0d8e4">Delta</th>
 </tr></thead><tbody>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Mar 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$377.27</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$403.68</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$10.25</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,051</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">292.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$103,036</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$108,277</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-5,241</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Mar 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$377.27</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$403.68</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$10.25</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,051</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">292.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$103,036</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$108,277</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-5,241</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Apr 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$351.87</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$376.50</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$9.56</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$1,913</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">270.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$117,509</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$100,986</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+16,524</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Apr 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$351.87</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$376.50</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$9.56</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$1,913</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">270.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$117,509</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$100,986</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+16,524</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">May 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$434.84</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$465.28</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$11.82</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,364</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#ffb74d;font-weight:700">✓ Yes</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">273.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$128,423</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$124,799</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+3,624</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">May 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$434.84</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$465.28</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$11.82</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,364</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#b05000;font-weight:800">✓ Yes</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">273.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$128,423</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$124,799</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+3,624</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jun 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$470.02</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$502.92</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$12.77</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,555</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">278.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$138,776</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$134,896</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+3,881</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jun 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$470.02</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$502.92</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$12.77</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,555</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">278.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$138,776</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$134,896</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+3,881</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jul 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$498.58</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$533.48</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$13.55</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,710</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">283.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$147,169</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$143,094</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+4,076</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jul 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$498.58</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$533.48</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$13.55</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,710</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">283.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$147,169</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$143,094</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+4,076</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Aug 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$519.02</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$555.36</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$14.11</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,821</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">289.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$143,572</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$148,960</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-5,388</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Aug 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$519.02</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$555.36</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$14.11</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,821</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">289.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$143,572</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$148,960</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-5,388</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Sep 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$496.35</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$531.09</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$13.49</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,698</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">294.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$153,880</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$142,451</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+11,428</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Sep 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$496.35</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$531.09</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$13.49</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,698</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">294.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$153,880</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$142,451</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+11,428</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Oct 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$522.68</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$559.26</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$14.21</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$2,841</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">300.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$148,596</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$150,008</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-1,412</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Oct 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$522.68</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$559.26</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$14.21</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$2,841</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">300.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$148,596</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$150,008</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-1,412</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Nov 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$495.04</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$529.69</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$13.45</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$4,036</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">308.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$151,091</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$142,077</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+9,014</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Nov 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$495.04</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$529.69</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$13.45</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$4,036</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">308.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$151,091</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$142,077</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+9,014</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Dec 2025</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$489.90</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$524.19</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$13.32</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,995</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">316.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$151,118</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$140,602</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$+10,516</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Dec 2025</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$489.90</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$524.19</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$13.32</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,995</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">316.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$151,118</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$140,602</td>
+<td style="padding:5px 8px;color:#1a7a3a;font-weight:800;text-align:right">$+10,516</td>
 </tr>
-<tr style="border-bottom:1px solid #1a2a3a">
-<td style="padding:5px 8px;color:#ccc;text-align:right;white-space:nowrap">Jan 2026</td>
-<td style="padding:5px 8px;color:#fff;text-align:right">$477.02</td>
-<td style="padding:5px 8px;color:#00b4d8;font-weight:700;text-align:right">$510.41</td>
-<td style="padding:5px 8px;color:#FFD700;text-align:right">$12.96</td>
-<td style="padding:5px 8px;color:#FFD700;font-weight:700;text-align:right">$3,889</td>
-<td style="padding:5px 8px;text-align:right"><span style="color:#555">No</span></td>
-<td style="padding:5px 8px;color:#aaa;text-align:right">326.0</td>
-<td style="padding:5px 8px;color:#00e676;font-weight:700;text-align:right">$134,669</td>
-<td style="padding:5px 8px;color:#42a5f5;text-align:right">$136,905</td>
-<td style="padding:5px 8px;color:#ef5350;font-weight:700;text-align:right">$-2,236</td>
+<tr style="border-bottom:1px solid #ccc;background:#fff">
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right;white-space:nowrap">Jan 2026</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$477.02</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$510.41</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$12.96</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$3,889</td>
+<td style="padding:5px 8px;text-align:right"><span style="color:#555;font-weight:700">No</span></td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">326.0</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$134,669</td>
+<td style="padding:5px 8px;color:#000;font-weight:800;text-align:right">$136,905</td>
+<td style="padding:5px 8px;color:#c0392b;font-weight:800;text-align:right">$-2,236</td>
 </tr>
 </tbody></table></div></div>
 </div>
