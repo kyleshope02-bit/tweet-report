@@ -43,11 +43,12 @@ select.filter{padding:5px}
 .pnlvalue{font-family:"Consolas","Courier New",monospace;font-size:28px;font-weight:900;text-align:center;color:#17c964;letter-spacing:1px}
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-14 08:44 PM • yfinance cache 13m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-14 09:31 PM • yfinance cache 60m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">🔍 Signals (0)</button>
@@ -217,129 +218,190 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
 <div id="tab-mycc" class="hidden" data-tab="1">
   <div class="card">
 <h3>Kyle's Covered Calls <span class="fresh">Mar 14, 2026</span></h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:22px">
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin-bottom:20px">
+<div style="background:#13263d;border-radius:8px;padding:10px 12px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">AMZN PRICE<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
-<div style="font-size:17px;font-weight:900;color:#FF9900">$207.67</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
-<div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">AMZN SHARES</div>
-<div style="font-size:17px;font-weight:900;color:#FF9900">514
- <span style="font-size:10px;color:#00e676;font-weight:700">(+14 from CC income)</span>
-</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:16px;font-weight:900;color:#FF9900">$207.67</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 12px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">AMZN POSITION<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
-<div style="font-size:17px;font-weight:900;color:#fff">$106,742</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:16px;font-weight:900;color:#fff">$106,742</div>
+<div style="font-size:10px;color:#8ab4d4">514 sh @ $213.21 cb</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 12px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">MSFT PRICE<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
-<div style="font-size:17px;font-weight:900;color:#00a4ef">$395.55</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
-<div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">MSFT SHARES</div>
-<div style="font-size:17px;font-weight:900;color:#00a4ef">300
-</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
+<div style="font-size:16px;font-weight:900;color:#00a4ef">$395.55</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 12px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">MSFT POSITION<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
-<div style="font-size:17px;font-weight:900;color:#fff">$118,665</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
-<div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">CONTRACTS AVAIL</div>
-<div style="font-size:17px;font-weight:900;color:#FFD700">5 AMZN + 3 MSFT</div></div>
-<div style="background:#13263d;border-radius:8px;padding:11px 13px">
-<div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">COMBINED VALUE<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
-<div style="font-size:17px;font-weight:900;color:#fff">$225,407</div></div>
+<div style="font-size:16px;font-weight:900;color:#fff">$118,665</div>
+<div style="font-size:10px;color:#8ab4d4">300 sh @ $408.96 cb</div></div>
+<div style="background:#13263d;border-radius:8px;padding:10px 12px">
+<div style="font-size:10px;color:#8ab4d4;margin-bottom:2px">COMBINED<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></div>
+<div style="font-size:16px;font-weight:900;color:#fff">$225,407</div>
+<div style="font-size:10px;color:#8ab4d4">+$3,713 premium in acct</div></div>
 </div>
-<div style="background:#0a1628;border-radius:12px;padding:18px 22px">
-<div style="font-size:15px;font-weight:900;color:#42a5f5;margin-bottom:4px">Open CC Position Tracker</div>
-<div style="font-size:11px;color:#8ab4d4;margin-bottom:16px">Sold 03/10/2026. P&amp;L recalculated live each run. Current prices: 
-<span style="color:#FF9900;font-weight:700">AMZN $207.67</span> 
-<span style="color:#00a4ef;font-weight:700">MSFT $395.55</span> 
-</div>
-<div style="overflow-x:auto">
-<table style="width:100%;border-collapse:collapse;font-size:13px">
+<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
+<div style="font-size:14px;font-weight:900;color:#42a5f5;margin-bottom:12px">CC Trade Log</div>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Ticker</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Strike</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Expiry</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Premium</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Contracts</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Total Rcvd</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Stock Price</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Option $ Now</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Gain %</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Status</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">P&L</th>
-<th style="padding:10px 12px;color:#7eb8f7;font-weight:800;text-align:right;white-space:nowrap">Notes</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Date</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ticker</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Action</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Strike</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Expiry</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Contracts</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Premium/sh</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Collected</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Option Now</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Gain %</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Notes</th>
 </tr></thead><tbody>
 <tr style="border-bottom:1px solid #0d2040">
-<td style="padding:10px 12px;font-weight:900;color:#00a4ef;text-align:right">MSFT</td>
-<td style="padding:10px 12px;color:#FFD700;font-weight:800;text-align:right">$417</td>
-<td style="padding:10px 12px;color:#d0e4f7;text-align:right;white-space:nowrap">Apr 17, 2026</td>
-<td style="padding:10px 12px;color:#00e676;text-align:right">$9.41</td>
-<td style="padding:10px 12px;color:#fff;font-weight:700;text-align:right">2x</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">$1,883</td>
-<td style="padding:10px 12px;color:#00a4ef;font-weight:700;text-align:right">$395.55 <span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></td>
-<td style="padding:10px 12px;color:#e8edf5;text-align:right">—</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:13px;text-align:right">—</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">OTM +5.4%</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:14px;text-align:right">$+1,883</td>
-<td style="padding:10px 12px;color:#8ab4d4;font-size:11px;text-align:right">Sold 03/10 @ $9.49 mid</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right">2026-03-10</td>
+<td style="padding:9px 12px;color:#00a4ef;font-weight:800;text-align:right">MSFT</td>
+<td style="padding:9px 12px;color:#ef9a9a;text-align:right">SELL CALL</td>
+<td style="padding:9px 12px;color:#FFD700;font-weight:700;text-align:right">$417</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-17</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">2x</td>
+<td style="padding:9px 12px;color:#00e676;text-align:right">$9.41</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:800;text-align:right">$1,883</td>
+<td style="padding:9px 12px;color:#555;text-align:right">—</td>
+<td style="padding:9px 12px;color:#555;text-align:right">—</td>
+<td style="padding:9px 12px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040">
-<td style="padding:10px 12px;font-weight:900;color:#FF9900;text-align:right">AMZN</td>
-<td style="padding:10px 12px;color:#FFD700;font-weight:800;text-align:right">$220</td>
-<td style="padding:10px 12px;color:#d0e4f7;text-align:right;white-space:nowrap">Apr 02, 2026</td>
-<td style="padding:10px 12px;color:#00e676;text-align:right">$4.60</td>
-<td style="padding:10px 12px;color:#fff;font-weight:700;text-align:right">3x</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">$1,380</td>
-<td style="padding:10px 12px;color:#FF9900;font-weight:700;text-align:right">$207.67 <span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></td>
-<td style="padding:10px 12px;color:#e8edf5;text-align:right">$2.13</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:13px;text-align:right">+53.7%</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">OTM +5.9%</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:14px;text-align:right">$+1,380</td>
-<td style="padding:10px 12px;color:#8ab4d4;font-size:11px;text-align:right">Sold 03/10 @ $4.65 mid (WE 91563)</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right">2026-03-10</td>
+<td style="padding:9px 12px;color:#FF9900;font-weight:800;text-align:right">AMZN</td>
+<td style="padding:9px 12px;color:#ef9a9a;text-align:right">SELL CALL</td>
+<td style="padding:9px 12px;color:#FFD700;font-weight:700;text-align:right">$220</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-02</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">3x</td>
+<td style="padding:9px 12px;color:#00e676;text-align:right">$4.60</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:800;text-align:right">$1,380</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">$2.13</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:800;text-align:right">+53.7%</td>
+<td style="padding:9px 12px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040">
-<td style="padding:10px 12px;font-weight:900;color:#FF9900;text-align:right">AMZN</td>
-<td style="padding:10px 12px;color:#FFD700;font-weight:800;text-align:right">$220</td>
-<td style="padding:10px 12px;color:#d0e4f7;text-align:right;white-space:nowrap">Apr 02, 2026</td>
-<td style="padding:10px 12px;color:#00e676;text-align:right">$4.50</td>
-<td style="padding:10px 12px;color:#fff;font-weight:700;text-align:right">1x</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">$450</td>
-<td style="padding:10px 12px;color:#FF9900;font-weight:700;text-align:right">$207.67 <span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></td>
-<td style="padding:10px 12px;color:#e8edf5;text-align:right">$2.13</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:13px;text-align:right">+52.7%</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:800;text-align:right">OTM +5.9%</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:14px;text-align:right">$+450</td>
-<td style="padding:10px 12px;color:#8ab4d4;font-size:11px;text-align:right">Sold 03/10 @ $4.65 mid (WE 91583)</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right">2026-03-10</td>
+<td style="padding:9px 12px;color:#FF9900;font-weight:800;text-align:right">AMZN</td>
+<td style="padding:9px 12px;color:#ef9a9a;text-align:right">SELL CALL</td>
+<td style="padding:9px 12px;color:#FFD700;font-weight:700;text-align:right">$220</td>
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-02</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">1x</td>
+<td style="padding:9px 12px;color:#00e676;text-align:right">$4.50</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:800;text-align:right">$450</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">$2.13</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:800;text-align:right">+52.7%</td>
+<td style="padding:9px 12px;color:#8ab4d4;font-size:11px;text-align:right">WE 91583</td>
 </tr>
 <tr style="background:#0d2040;border-top:2px solid #1e3a5f">
-<td colspan="5" style="padding:10px 12px;color:#7eb8f7;font-weight:900;text-align:right">TOTALS</td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:14px;text-align:right">$3,713</td>
-<td></td><td></td>
-<td style="padding:10px 12px;color:#00e676;font-weight:900;font-size:15px;text-align:right">$+3,713</td>
-<td></td></tr>
-</tbody></table></div>
-<div style="margin-top:14px;background:#0a2010;border-left:3px solid #00e676;border-radius:8px;padding:12px 16px">
-<div style="font-size:12px;font-weight:800;color:#00e676;margin-bottom:4px">Premium Reinvested</div>
-<div style="font-size:12px;color:#d0e4f7;line-height:1.7">Purchased <strong style="color:#FF9900">14 shares of AMZN</strong> with CC premium received 03/10/2026. 
-Current value of those 14 shares: <strong style="color:#00e676">$2,907.38</strong> (@ $207.67 live). 
-AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 original + 14 reinvested). 
-5 contracts still available (floor of 514/100).</div>
+<td colspan="7" style="padding:9px 12px;color:#7eb8f7;font-weight:900;text-align:right">TOTAL COLLECTED</td>
+<td style="padding:9px 12px;color:#00e676;font-weight:900;font-size:15px;text-align:right">$3,713</td>
+<td colspan="3"></td>
+</tr>
+</tbody></table></div></div>
+<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
+<div style="font-size:14px;font-weight:900;color:#00e676;margin-bottom:12px">Shares Purchased with CC Income</div>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">
+<thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Date</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ticker</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Shares</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Price Paid</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Cost</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Current Price</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Current Value</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Gain $</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Gain %</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Funded By</th>
+<th style="padding:9px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Notes</th>
+</tr></thead><tbody>
+<tr style="border-bottom:1px solid #0d2040">
+<td style="padding:9px 12px;color:#8ab4d4;text-align:right">2026-03-10</td>
+<td style="padding:9px 12px;color:#FF9900;font-weight:800;text-align:right">AMZN</td>
+<td style="padding:9px 12px;color:#e8edf5;font-weight:700;text-align:right">14</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">$214.33</td>
+<td style="padding:9px 12px;color:#e8edf5;text-align:right">$3,000.62</td>
+<td style="padding:9px 12px;color:#FF9900;font-weight:700;text-align:right">$207.67<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></td>
+<td style="padding:9px 12px;color:#ef5350;font-weight:800;text-align:right">$2,907.38</td>
+<td style="padding:9px 12px;color:#ef5350;font-weight:800;text-align:right">$-93.24</td>
+<td style="padding:9px 12px;color:#ef5350;font-weight:900;text-align:right">-3.1%</td>
+<td style="padding:9px 12px;color:#00e676;text-align:right">CC premium income</td>
+<td style="padding:9px 12px;color:#8ab4d4;font-size:11px;text-align:right">14 shares purchased with $1,830 AMZN CC premium</td>
+</tr>
+</tbody></table></div></div>
+<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
+<div style="font-size:14px;font-weight:900;color:#fff;margin-bottom:4px">CC Strategy vs Buy &amp; Hold</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:14px">Weekly portfolio value since Jan 2025. CC strategy includes premium income + extra shares acquired. B&amp;H = original 500 AMZN + 287 MSFT.</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">
+<div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
+<div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">CC Strategy (now)</div>
+<div style="font-size:20px;font-weight:900;color:#00e676">$229,120</div></div>
+<div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
+<div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">Buy & Hold (now)</div>
+<div style="font-size:20px;font-weight:900;color:#42a5f5">$217,358</div></div>
+<div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
+<div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">CC vs B&H Advantage</div>
+<div style="font-size:20px;font-weight:900;color:#00e676">$+11,762</div></div>
 </div>
-<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-top:16px">
-<div style="font-size:15px;font-weight:900;color:#42a5f5;margin-bottom:4px">Roll Targets</div>
-<div style="font-size:11px;color:#5a7fa0;margin-bottom:18px">Signals: AMZN: Bearish (Wedge Drop risk — price $207.67 below 8 EMA $211.2 below 21 EMA $212.88). MSFT: Bearish (Wedge Drop risk — price $395.55 below 8 EMA $402.45 below 21 EMA $403.91). </div>
-<div style="margin-bottom:24px;border-left:3px solid #00a4ef;padding-left:14px">
+<canvas id="cc_bah_chart" height="280"></canvas>
+<script>
+(function(){
+  var ctx = document.getElementById("cc_bah_chart").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["2025-01-01", "2025-01-08", "2025-01-15", "2025-01-22", "2025-01-29", "2025-02-05", "2025-02-12", "2025-02-19", "2025-02-26", "2025-03-05", "2025-03-12", "2025-03-19", "2025-03-26", "2025-04-02", "2025-04-09", "2025-04-16", "2025-04-23", "2025-04-30", "2025-05-07", "2025-05-14", "2025-05-21", "2025-05-28", "2025-06-04", "2025-06-11", "2025-06-18", "2025-06-25", "2025-07-02", "2025-07-09", "2025-07-16", "2025-07-23", "2025-07-30", "2025-08-06", "2025-08-13", "2025-08-20", "2025-08-27", "2025-09-03", "2025-09-10", "2025-09-17", "2025-09-24", "2025-10-01", "2025-10-08", "2025-10-15", "2025-10-22", "2025-10-29", "2025-11-05", "2025-11-12", "2025-11-19", "2025-11-26", "2025-12-03", "2025-12-10", "2025-12-17", "2025-12-24", "2025-12-31", "2026-01-07", "2026-01-14", "2026-01-21", "2026-01-28", "2026-02-04", "2026-02-11", "2026-02-18", "2026-02-25", "2026-03-04", "2026-03-11", "2026-03-14"],
+      datasets: [
+        {
+          label: "CC Strategy",
+          data: [231113.0, 227035.0, 237155.0, 246190.0, 238247.0, 233332.0, 229764.0, 219504.0, 212584.0, 206655.0, 205645.0, 215405.0, 204941.0, 186317.0, 199659.0, 191067.0, 205926.0, 215921.0, 233610.0, 232531.0, 234465.0, 234961.0, 243178.0, 243815.0, 246234.0, 250633.0, 251386.0, 257507.0, 257909.0, 261763.0, 257464.0, 261749.0, 259465.0, 257608.0, 257040.0, 261572.0, 262514.0, 255898.0, 257822.0, 260649.0, 254978.0, 258969.0, 269556.0, 271661.0, 269936.0, 252407.0, 251163.0, 257519.0, 254848.0, 247694.0, 255477.0, 255853.0, 257485.0, 256075.0, 245649.0, 259954.0, 237057.0, 221819.0, 214216.0, 215668.0, 220293.0, 223618.0, 229120.0, 229120.0],
+          borderColor: "#00e676",
+          backgroundColor: "rgba(0,230,118,0.08)",
+          borderWidth: 2.5,
+          pointRadius: 2,
+          tension: 0.3,
+          fill: false,
+        },
+        {
+          label: "Buy & Hold",
+          data: [231113.0, 227035.0, 237155.0, 246190.0, 238247.0, 233332.0, 229764.0, 219504.0, 212584.0, 206655.0, 205645.0, 215405.0, 204941.0, 186317.0, 199659.0, 191067.0, 205926.0, 215921.0, 233610.0, 232531.0, 234465.0, 234961.0, 243178.0, 243815.0, 246234.0, 250633.0, 251386.0, 257507.0, 257909.0, 261763.0, 257464.0, 261749.0, 259465.0, 257608.0, 257040.0, 261572.0, 262514.0, 255898.0, 257822.0, 260649.0, 254978.0, 258969.0, 269556.0, 271661.0, 269936.0, 252407.0, 251163.0, 257519.0, 254848.0, 247694.0, 255477.0, 255853.0, 257485.0, 256075.0, 245649.0, 259954.0, 237057.0, 221819.0, 214216.0, 215668.0, 220293.0, 223618.0, 217358.0, 217358.0],
+          borderColor: "#42a5f5",
+          backgroundColor: "rgba(66,165,245,0.06)",
+          borderWidth: 2,
+          pointRadius: 2,
+          borderDash: [5,4],
+          tension: 0.3,
+          fill: false,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { labels: { color: "#e8edf5", font: { size: 12 } } },
+        tooltip: {
+          callbacks: {
+            label: function(c) { return c.dataset.label + ": $" + c.parsed.y.toLocaleString(); }
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color: "#7eb8f7", maxTicksLimit: 12, maxRotation: 0 }, grid: { color: "#1e3a5f" } },
+        y: { ticks: { color: "#7eb8f7", callback: function(v){ return "$"+v.toLocaleString(); } }, grid: { color: "#1e3a5f" } }
+      }
+    }
+  });
+})();
+</script>
+</div>
+<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
+<div style="font-size:14px;font-weight:900;color:#42a5f5;margin-bottom:4px">Roll Targets</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:16px">Signals: AMZN: Bearish — Wedge Drop (price $207.67 below both EMAs). MSFT: Bearish — Wedge Drop (price $395.55 below both EMAs). </div>
+<div style="margin-bottom:22px;border-left:3px solid #00a4ef;padding-left:14px">
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:16px;font-weight:900;color:#00a4ef">SOLD: MSFT $417 call · Apr 17, 2026</span>
+<span style="font-size:15px;font-weight:900;color:#00a4ef">SOLD: MSFT $417 call · Apr 17, 2026</span>
 <span style="font-size:12px;color:#00e676">Stock $395.55 → +5.4% to strike</span>
-</div>
-<div style="background:#0d1b2a;border-radius:10px;padding:13px 16px;margin-bottom:12px;border:1px solid #00e676">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">CLOSE AND ROLL</span>
-<span style="font-size:14px;font-weight:900;color:#00e676">$405.0 · Apr 17, 2026 · 34 DTE · ?% OTM</span>
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:6px">+$2,000 net</span>
-<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:5px">Now</span>
-</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">MSFT shows similar bearish wedge risk with price below both EMAs, indicating potential further downside from current $395.55 level. Rolling down from $417 to $405 strike provides much better downside protection while the stock faces technical headwinds. The same expiration date maintains our timeline while collecting $2000 in net credit for the defensive adjustment. The 27.1% annualized return on the $405 strike remains attractive while reducing assignment risk significantly. Watch for any breakdown below $390 level which could accelerate the wedge drop pattern.</div>
 </div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
@@ -354,6 +416,18 @@ AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 origina
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Prem</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit</th>
 </tr></thead><tbody>
+<tr style="border-bottom:1px solid #0d2040">
+<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-02</td>
+<td style="padding:7px 10px;color:#d0e4f7;text-align:right">19d</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$405</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">2.4%</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.45</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.60</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$6.53</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">31.7%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$653</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,306</td>
+</tr>
 <tr style="border-bottom:1px solid #0d2040">
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
@@ -378,34 +452,13 @@ AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 origina
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$1,000</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$2,000</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$405</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">2.4%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$11.15</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$12.20</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$11.68</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">26.3%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$1,168</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$2,336</td>
-</tr>
 </tbody></table></div>
 </div>
-<div style="margin-bottom:24px;border-left:3px solid #FF9900;padding-left:14px">
+<div style="margin-bottom:22px;border-left:3px solid #FF9900;padding-left:14px">
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:16px;font-weight:900;color:#FF9900">SOLD: AMZN $220 call · Apr 02, 2026</span>
-<span style="background:#13263d;border-radius:6px;padding:4px 11px;font-size:12px">Option now: <span style="color:#e8edf5">$2.13</span> <span style="color:#00e676;font-weight:800">+52.7% gain</span></span>
+<span style="font-size:15px;font-weight:900;color:#FF9900">SOLD: AMZN $220 call · Apr 02, 2026</span>
+<span style="background:#13263d;border-radius:6px;padding:4px 10px;font-size:12px">Option now: <span style="color:#e8edf5">$2.13</span> <span style="color:#00e676;font-weight:800">+52.7% gain</span></span>
 <span style="font-size:12px;color:#00e676">Stock $207.67 → +5.9% to strike</span>
-</div>
-<div style="background:#0d1b2a;border-radius:10px;padding:13px 16px;margin-bottom:12px;border:1px solid #00e676">
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">CLOSE AND ROLL</span>
-<span style="font-size:14px;font-weight:900;color:#00e676">$215.0 · Apr 17, 2026 · 34 DTE · 3.5% OTM</span>
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:6px">+$362 net</span>
-<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:5px">Now</span>
-</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">With a 52.7% gain, this position meets the strong threshold for rolling now to capture profits before potential reversal. The bearish wedge drop signal suggests AMZN could fall further, making a lower $215 strike more prudent than keeping the aggressive $220 level. The $215 strike provides reasonable downside protection while still maintaining 3.5% OTM cushion, balancing safety with income generation. The $362 net credit is solid and pays us to make this defensive adjustment, with a healthy 29.7% annualized return. Monitor for any break below the 21 EMA support at $212.88, which would signal deeper weakness ahead.</div>
 </div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
@@ -420,6 +473,18 @@ AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 origina
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Prem</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit</th>
 </tr></thead><tbody>
+<tr style="border-bottom:1px solid #0d2040">
+<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-02</td>
+<td style="padding:7px 10px;color:#d0e4f7;text-align:right">19d</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">3.5%</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.35</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.80</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$3.58</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">33.1%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$358</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$145</td>
+</tr>
 <tr style="border-bottom:1px solid #0d2040">
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
@@ -444,55 +509,33 @@ AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 origina
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$575</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$362</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">3.5%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.55</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.90</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$6.72</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">28.8%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$672</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$459</td>
-</tr>
 </tbody></table></div>
 </div>
 </div>
-<div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-top:16px">
-<div style="font-size:15px;font-weight:900;color:#FFD700;margin-bottom:12px">When To Close & Roll Your CCs</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:14px">
-<div style="background:#0d1b2a;border-radius:10px;padding:14px;border-left:4px solid #00e676">
-<div style="font-size:12px;font-weight:900;color:#00e676;margin-bottom:4px">50% Profit Rule</div>
-<div style="font-size:10px;background:#00e676;color:#000;font-weight:800;padding:1px 8px;border-radius:5px;display:inline-block;margin-bottom:7px">TRIGGER: Option loses 50% of value</div>
-<div style="font-size:11px;color:#dde8f8;line-height:1.7">When the option is worth ~half what you sold it for, buy it back and sell a new one. You keep half the income, reset your clock, and free up margin risk. This is the most important rule in CC management — do not skip it.</div>
+<div style="background:#0a1628;border-radius:12px;padding:16px 22px">
+<div style="font-size:13px;font-weight:900;color:#FFD700;margin-bottom:10px">CC Management Rules</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px">
+<div style="background:#0d1b2a;border-radius:8px;padding:12px;border-left:3px solid #00e676">
+<div style="font-size:11px;font-weight:900;color:#00e676;margin-bottom:3px">50% Profit — Close Now</div>
+<div style="font-size:10px;background:#00e676;color:#000;font-weight:700;padding:1px 7px;border-radius:4px;display:inline-block;margin-bottom:6px">Option worth 50% of what you sold it for</div>
+<div style="font-size:11px;color:#dde8f8;line-height:1.6">Buy back and sell fresh. You keep half the income and reset theta. You're near this level on AMZN right now.</div>
 </div>
-<div style="background:#0d1b2a;border-radius:10px;padding:14px;border-left:4px solid #ef5350">
-<div style="font-size:12px;font-weight:900;color:#ef5350;margin-bottom:4px">2x Loss Rule</div>
-<div style="font-size:10px;background:#ef5350;color:#000;font-weight:800;padding:1px 8px;border-radius:5px;display:inline-block;margin-bottom:7px">TRIGGER: Option doubles against you</div>
-<div style="font-size:11px;color:#dde8f8;line-height:1.7">If the option you sold for $4.65 is now worth $9.30+, close it. The underlying is rallying hard. Take the loss, protect your shares, reassess. Never let a manageable loss become forced assignment at a bad price.</div>
+<div style="background:#0d1b2a;border-radius:8px;padding:12px;border-left:3px solid #ef5350">
+<div style="font-size:11px;font-weight:900;color:#ef5350;margin-bottom:3px">2× Loss — Stop Out</div>
+<div style="font-size:10px;background:#ef5350;color:#000;font-weight:700;padding:1px 7px;border-radius:4px;display:inline-block;margin-bottom:6px">Option doubles against you</div>
+<div style="font-size:11px;color:#dde8f8;line-height:1.6">Stock rallying hard through your strike. Close, take the loss, don't let it become forced assignment at a bad price.</div>
 </div>
-<div style="background:#0d1b2a;border-radius:10px;padding:14px;border-left:4px solid #42a5f5">
-<div style="font-size:12px;font-weight:900;color:#42a5f5;margin-bottom:4px">21 DTE Rule</div>
-<div style="font-size:10px;background:#42a5f5;color:#000;font-weight:800;padding:1px 8px;border-radius:5px;display:inline-block;margin-bottom:7px">TRIGGER: 21 days left to expiry</div>
-<div style="font-size:11px;color:#dde8f8;line-height:1.7">Gamma spikes inside 21 DTE — tiny stock moves create large option P&L swings. Standard practice: close the position at 21 DTE and reopen a fresh 30-45 DTE contract. Locks in theta decay profits before the danger zone.</div>
+<div style="background:#0d1b2a;border-radius:8px;padding:12px;border-left:3px solid #42a5f5">
+<div style="font-size:11px;font-weight:900;color:#42a5f5;margin-bottom:3px">21 DTE — Roll Forward</div>
+<div style="font-size:10px;background:#42a5f5;color:#000;font-weight:700;padding:1px 7px;border-radius:4px;display:inline-block;margin-bottom:6px">21 days left to expiry</div>
+<div style="font-size:11px;color:#dde8f8;line-height:1.6">Gamma spikes here. Close and reopen a new 30-45 DTE contract to stay in the theta-sweet-spot.</div>
 </div>
-<div style="background:#0d1b2a;border-radius:10px;padding:14px;border-left:4px solid #ffb74d">
-<div style="font-size:12px;font-weight:900;color:#ffb74d;margin-bottom:4px">Roll Don't Close (Assignment Risk)</div>
-<div style="font-size:10px;background:#ffb74d;color:#000;font-weight:800;padding:1px 8px;border-radius:5px;display:inline-block;margin-bottom:7px">TRIGGER: Stock threatens to close above your strike</div>
-<div style="font-size:11px;color:#dde8f8;line-height:1.7">If assignment looks likely, roll the call UP in strike and OUT in expiry for a net credit. Only roll for a credit — never pay to roll. If you cannot get a credit, let it assign or close the call and sell shares at the strike price (which may be fine).</div>
+<div style="background:#0d1b2a;border-radius:8px;padding:12px;border-left:3px solid #ffb74d">
+<div style="font-size:11px;font-weight:900;color:#ffb74d;margin-bottom:3px">Roll Only for Credit</div>
+<div style="font-size:10px;background:#ffb74d;color:#000;font-weight:700;padding:1px 7px;border-radius:4px;display:inline-block;margin-bottom:6px">Stock threatens assignment</div>
+<div style="font-size:11px;color:#dde8f8;line-height:1.6">Roll up and out only if you can collect net credit. Never pay to roll — if no credit available, let it assign.</div>
 </div>
-</div>
-<div style="background:#0d2a18;border-left:3px solid #00e676;border-radius:7px;padding:10px 14px">
-<div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:4px">YOUR CURRENT SITUATION</div>
-<div style="font-size:12px;color:#d0e4f7;line-height:1.7">Up ~50% on AMZN Apr 2 calls in 3 days — you are at the 
-<strong style="color:#00e676">50% Profit Rule threshold</strong> right now. 
-Textbook move: buy back the $220 Apr 2 calls, bank half the premium, 
-then sell a new AMZN call at a higher strike or further expiry for fresh income. 
-23 DTE remaining — closing now avoids gamma risk while keeping your 514 shares intact.</div>
-</div>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 
@@ -633,13 +676,13 @@ and writing your own covered calls on 100 SPY shares. Prices and CC chain fetche
 
 </div>
 </div>
-<div style="background:#0a2010;border:2px solid #00e676;border-radius:12px;padding:18px 22px;margin-bottom:20px">
+<div style="background:#0a2010;border:2px solid #ab47bc;border-radius:12px;padding:18px 22px;margin-bottom:20px">
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:13px;font-weight:900;color:#00e676">AI RECOMMENDATION</span>
-<span style="background:#00e676;color:#000;font-size:13px;font-weight:900;padding:4px 16px;border-radius:10px">SELL SPYI → BUY SPY + WRITE COVERED CALLS</span>
+<span style="font-size:13px;font-weight:900;color:#ab47bc">AI RECOMMENDATION</span>
+<span style="background:#ab47bc;color:#000;font-size:13px;font-weight:900;padding:4px 16px;border-radius:10px">KEEP SPYI</span>
 <span style="background:#aaa;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Low Conviction</span>
 </div>
-<div style="font-size:13px;color:#dde8f8;line-height:1.7">Without current pricing data, I cannot perform accurate analysis of income generation or option premiums. However, DIY covered calls typically offer better tax efficiency and flexibility compared to high-expense income ETFs like SPYI.</div>
+<div style="font-size:13px;color:#dde8f8;line-height:1.7">Cannot provide meaningful analysis due to missing critical data - all positions show $0.00 values and options chain is unavailable. Based on general principles, SPYI offers simplicity and professional management for income generation.</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc">
@@ -651,35 +694,35 @@ and writing your own covered calls on 100 SPY shares. Prices and CC chain fetche
 <div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
 <div style="font-size:13px;color:#00e676">$0/yr</div></div>
 </div>
-<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">Cannot calculate without current SPYI price ($0.00 shown) and SPY options chain data (unavailable). SPYI typically generates $0.40-0.55/share monthly but at higher tax cost.</div>
+<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">Cannot compare income streams - SPYI position shows $0 value and SPY options chain unavailable. Estimated SPYI would generate $476-655/month based on stated distribution range.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">CASE FOR KEEPING SPYI</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides hands-off monthly income of ~10-13% annually without requiring options knowledge or active management. Professional overlay management handles timing and strike selection.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional covered call management, monthly distributions of 10-13% annually, no need to manage option assignments or rolling, and diversification across 500 stocks with single transaction</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">CASE FOR SELLING → SPY CCs</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">DIY covered calls offer better tax efficiency (long-term capital gains vs ordinary income), lower expense ratios, full control over strike selection and timing, and ability to adjust strategy based on market conditions.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">DIY covered calls on SPY could potentially generate higher income with better tax control (long-term vs short-term gains), lower expense ratios, and full control over strike selection and timing</div></div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px;border:1px solid #42a5f5">
 <div style="font-size:12px;font-weight:800;color:#42a5f5;margin-bottom:8px">⭐ BEST SPY CC STRIKE (AI PICK)</div>
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px">
-<span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · N/A · 0 DTE · 0% OTM</span>
+<span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · unavailable · 0 DTE · 0% OTM</span>
 </div>
-<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Cannot recommend specific strikes without live options chain data.</div>
-<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> Analysis requires current SPY price and option premiums to compare risk-adjusted returns.</div>
+<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Cannot recommend specific option due to unavailable chain data</div>
+<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> No comparison possible without options data</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">SPYI Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• High expense ratio reduces net returns compared to DIY approach</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Monthly distributions taxed as ordinary income rather than qualified dividends</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• No control over covered call strategy timing or strike selection</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Higher expense ratios reduce net returns compared to DIY approach</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• No control over covered call strikes - may cap gains during strong rallies</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Distribution rate may fluctuate based on volatility and market conditions</div>
 </div>
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">SPY CC Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Upside capped if SPY rallies strongly above strike prices</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Requires active management and options knowledge for optimal execution</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk forces sale of shares at inopportune times</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk requires active management and potential forced selling</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Time-intensive strategy requiring monthly option selection and rolling decisions</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Potential tax inefficiency from short-term option gains vs long-term stock appreciation</div>
 </div>
 </div>
 <div style="background:#1a1200;border-radius:7px;padding:12px 14px;color:#ffb74d;font-size:12px">
