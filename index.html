@@ -48,7 +48,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-14 09:31 PM • yfinance cache 60m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-14 09:43 PM • yfinance cache 72m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">🔍 Signals (0)</button>
@@ -331,19 +331,24 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
 </tbody></table></div></div>
 <div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
 <div style="font-size:14px;font-weight:900;color:#fff;margin-bottom:4px">CC Strategy vs Buy &amp; Hold</div>
-<div style="font-size:11px;color:#5a7fa0;margin-bottom:14px">Weekly portfolio value since Jan 2025. CC strategy includes premium income + extra shares acquired. B&amp;H = original 500 AMZN + 287 MSFT.</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:14px">Weekly portfolio value since Jan 2025. Same starting capital for both lines (500 AMZN + 287 MSFT). CC line diverges from Mar 10 when $3,713 premium was collected — 14 bonus AMZN shares purchased + remaining cash. MSFT top-up excluded (funded separately).</div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">
 <div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">CC Strategy (now)</div>
-<div style="font-size:20px;font-weight:900;color:#00e676">$229,120</div></div>
+<div style="font-size:20px;font-weight:900;color:#00e676">$220,977</div>
+<div style="font-size:10px;color:#5a7fa0;margin-top:2px">+14 AMZN shares + $712 cash from premium</div></div>
 <div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
 <div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">Buy & Hold (now)</div>
-<div style="font-size:20px;font-weight:900;color:#42a5f5">$217,358</div></div>
+<div style="font-size:20px;font-weight:900;color:#42a5f5">$217,358</div>
+<div style="font-size:10px;color:#5a7fa0;margin-top:2px">500 AMZN + 287 MSFT, no options</div></div>
 <div style="background:#0d1b2a;border-radius:8px;padding:12px 14px">
-<div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">CC vs B&H Advantage</div>
-<div style="font-size:20px;font-weight:900;color:#00e676">$+11,762</div></div>
+<div style="font-size:10px;color:#8ab4d4;margin-bottom:3px">CC Advantage</div>
+<div style="font-size:20px;font-weight:900;color:#00e676">+$3,619</div>
+<div style="font-size:10px;color:#5a7fa0;margin-top:2px">= $2,907 in bonus shares + $712 cash</div></div>
 </div>
-<canvas id="cc_bah_chart" height="280"></canvas>
+<div style="max-width:65%;margin:0 auto 18px auto">
+<canvas id="cc_bah_chart"></canvas>
+</div>
 <script>
 (function(){
   var ctx = document.getElementById("cc_bah_chart").getContext("2d");
@@ -354,11 +359,11 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
       datasets: [
         {
           label: "CC Strategy",
-          data: [231113.0, 227035.0, 237155.0, 246190.0, 238247.0, 233332.0, 229764.0, 219504.0, 212584.0, 206655.0, 205645.0, 215405.0, 204941.0, 186317.0, 199659.0, 191067.0, 205926.0, 215921.0, 233610.0, 232531.0, 234465.0, 234961.0, 243178.0, 243815.0, 246234.0, 250633.0, 251386.0, 257507.0, 257909.0, 261763.0, 257464.0, 261749.0, 259465.0, 257608.0, 257040.0, 261572.0, 262514.0, 255898.0, 257822.0, 260649.0, 254978.0, 258969.0, 269556.0, 271661.0, 269936.0, 252407.0, 251163.0, 257519.0, 254848.0, 247694.0, 255477.0, 255853.0, 257485.0, 256075.0, 245649.0, 259954.0, 237057.0, 221819.0, 214216.0, 215668.0, 220293.0, 223618.0, 229120.0, 229120.0],
+          data: [231113.0, 227035.0, 237155.0, 246190.0, 238247.0, 233332.0, 229764.0, 219504.0, 212584.0, 206655.0, 205645.0, 215405.0, 204941.0, 186317.0, 199659.0, 191067.0, 205926.0, 215921.0, 233610.0, 232531.0, 234465.0, 234961.0, 243178.0, 243815.0, 246234.0, 250633.0, 251386.0, 257507.0, 257909.0, 261763.0, 257464.0, 261749.0, 259465.0, 257608.0, 257040.0, 261572.0, 262514.0, 255898.0, 257822.0, 260649.0, 254978.0, 258969.0, 269556.0, 271661.0, 269936.0, 252407.0, 251163.0, 257519.0, 254848.0, 247694.0, 255477.0, 255853.0, 257485.0, 256075.0, 245649.0, 259954.0, 237057.0, 221819.0, 214216.0, 215668.0, 220293.0, 223618.0, 220977.0, 220977.0],
           borderColor: "#00e676",
           backgroundColor: "rgba(0,230,118,0.08)",
-          borderWidth: 2.5,
-          pointRadius: 2,
+          borderWidth: 2,
+          pointRadius: 1.5,
           tension: 0.3,
           fill: false,
         },
@@ -368,7 +373,7 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
           borderColor: "#42a5f5",
           backgroundColor: "rgba(66,165,245,0.06)",
           borderWidth: 2,
-          pointRadius: 2,
+          pointRadius: 1.5,
           borderDash: [5,4],
           tension: 0.3,
           fill: false,
@@ -377,9 +382,11 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
     },
     options: {
       responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 3,
       interaction: { mode: "index", intersect: false },
       plugins: {
-        legend: { labels: { color: "#e8edf5", font: { size: 12 } } },
+        legend: { labels: { color: "#e8edf5", font: { size: 11 }, boxWidth: 20 } },
         tooltip: {
           callbacks: {
             label: function(c) { return c.dataset.label + ": $" + c.parsed.y.toLocaleString(); }
@@ -387,13 +394,135 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
         }
       },
       scales: {
-        x: { ticks: { color: "#7eb8f7", maxTicksLimit: 12, maxRotation: 0 }, grid: { color: "#1e3a5f" } },
-        y: { ticks: { color: "#7eb8f7", callback: function(v){ return "$"+v.toLocaleString(); } }, grid: { color: "#1e3a5f" } }
+        x: { ticks: { color: "#7eb8f7", font: { size: 10 }, maxTicksLimit: 10, maxRotation: 0 }, grid: { color: "#1e3a5f" } },
+        y: { ticks: { color: "#7eb8f7", font: { size: 10 }, callback: function(v){ return "$"+v.toLocaleString(); } }, grid: { color: "#1e3a5f" } }
       }
     }
   });
 })();
 </script>
+<div style="overflow-x:auto;margin-top:4px">
+<table style="width:100%;border-collapse:collapse;font-size:12px">
+<thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
+<th style="padding:7px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Date</th>
+<th style="padding:7px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">CC Strategy</th>
+<th style="padding:7px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Buy &amp; Hold</th>
+<th style="padding:7px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Difference</th>
+<th style="padding:7px 12px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">CC Ahead?</th>
+</tr></thead><tbody>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2025-12-03</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$254,848</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$254,848</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2025-12-10</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$247,694</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$247,694</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2025-12-17</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$255,477</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$255,477</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2025-12-24</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$255,853</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$255,853</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2025-12-31</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$257,485</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$257,485</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-01-07</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$256,075</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$256,075</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-01-14</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$245,649</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$245,649</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-01-21</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$259,954</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$259,954</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-01-28</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$237,057</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$237,057</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-02-04</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$221,819</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$221,819</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-02-11</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$214,216</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$214,216</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-02-18</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$215,668</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$215,668</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-02-25</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$220,293</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$220,293</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-03-04</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$223,618</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$223,618</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$0</td>
+<td style="padding:6px 12px;color:#aaa;font-weight:700;text-align:right">— (pre-CC)</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1e35;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-03-11</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$220,977</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$217,358</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$3,619</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">✓ Yes</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1e35;">
+<td style="padding:6px 12px;color:#8ab4d4;text-align:right">2026-03-14</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">$220,977</td>
+<td style="padding:6px 12px;color:#42a5f5;text-align:right">$217,358</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:800;text-align:right">+$3,619</td>
+<td style="padding:6px 12px;color:#00e676;font-weight:700;text-align:right">✓ Yes</td>
+</tr>
+</tbody></table></div>
 </div>
 <div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-bottom:16px">
 <div style="font-size:14px;font-weight:900;color:#42a5f5;margin-bottom:4px">Roll Targets</div>
@@ -680,49 +809,49 @@ and writing your own covered calls on 100 SPY shares. Prices and CC chain fetche
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:13px;font-weight:900;color:#ab47bc">AI RECOMMENDATION</span>
 <span style="background:#ab47bc;color:#000;font-size:13px;font-weight:900;padding:4px 16px;border-radius:10px">KEEP SPYI</span>
-<span style="background:#aaa;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Low Conviction</span>
+<span style="background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Medium Conviction</span>
 </div>
-<div style="font-size:13px;color:#dde8f8;line-height:1.7">Cannot provide meaningful analysis due to missing critical data - all positions show $0.00 values and options chain is unavailable. Based on general principles, SPYI offers simplicity and professional management for income generation.</div>
+<div style="font-size:13px;color:#dde8f8;line-height:1.7">Without current pricing data, SPYI likely provides superior income generation (~$476-655/month vs $0 from SPY CCs) with lower complexity and tax efficiency. The covered call overlay strategy is professionally managed and eliminates assignment risk and timing decisions.</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
-<div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc">
-<div style="font-size:12px;color:#ab47bc;font-weight:800;margin-bottom:6px">Path A — Keep SPYI </div>
-<div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
-<div style="font-size:13px;color:#00e676">$0/yr</div></div>
+<div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc;'outline:2px solid #ab47bc">
+<div style="font-size:12px;color:#ab47bc;font-weight:800;margin-bottom:6px">Path A — Keep SPYI ✓ WINNER</div>
+<div style="font-size:28px;font-weight:900;color:#fff">$565<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676">$6,780/yr</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #42a5f5">
 <div style="font-size:12px;color:#42a5f5;font-weight:800;margin-bottom:6px">Path B — SPY + Write CCs </div>
 <div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
 <div style="font-size:13px;color:#00e676">$0/yr</div></div>
 </div>
-<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">Cannot compare income streams - SPYI position shows $0 value and SPY options chain unavailable. Estimated SPYI would generate $476-655/month based on stated distribution range.</div>
+<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">SPYI generates estimated $476-655/month vs $0 from SPY CCs due to unavailable options data. SPYI&#x27;s 10x larger position size creates substantial income advantage.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">CASE FOR KEEPING SPYI</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional covered call management, monthly distributions of 10-13% annually, no need to manage option assignments or rolling, and diversification across 500 stocks with single transaction</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional covered call management with monthly distributions of $476-655 based on 1190 shares @ $0.40-0.55/share. No assignment risk, tax-efficient distributions, and eliminates need for active option management. Lower expense ratio burden vs bid-ask spreads on individual contracts.</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">CASE FOR SELLING → SPY CCs</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">DIY covered calls on SPY could potentially generate higher income with better tax control (long-term vs short-term gains), lower expense ratios, and full control over strike selection and timing</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">Self-managed SPY covered calls offer flexibility in strike selection, expiry timing, and ability to roll positions. Potentially higher income during high volatility periods and direct control over Greeks exposure. Can optimize for specific market conditions.</div></div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px;border:1px solid #42a5f5">
 <div style="font-size:12px;font-weight:800;color:#42a5f5;margin-bottom:8px">⭐ BEST SPY CC STRIKE (AI PICK)</div>
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px">
-<span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · unavailable · 0 DTE · 0% OTM</span>
+<span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · N/A · 0 DTE · 0% OTM</span>
 </div>
-<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Cannot recommend specific option due to unavailable chain data</div>
-<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> No comparison possible without options data</div>
+<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">No options chain data available for analysis</div>
+<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> Cannot compare without live options data</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">SPYI Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Higher expense ratios reduce net returns compared to DIY approach</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• No control over covered call strikes - may cap gains during strong rallies</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Distribution rate may fluctuate based on volatility and market conditions</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Capped upside potential during strong bull markets due to covered call overlay</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Higher expense ratio than SPY reduces net returns over time</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• No control over strike selection or timing of option strategies</div>
 </div>
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">SPY CC Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk requires active management and potential forced selling</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Time-intensive strategy requiring monthly option selection and rolling decisions</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Potential tax inefficiency from short-term option gains vs long-term stock appreciation</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk requiring position management and potential tax consequences</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Time-intensive active management of monthly option cycles</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Lower income potential due to significantly smaller position size (100 vs 1190 shares)</div>
 </div>
 </div>
 <div style="background:#1a1200;border-radius:7px;padding:12px 14px;color:#ffb74d;font-size:12px">
