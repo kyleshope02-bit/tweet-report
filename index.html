@@ -49,7 +49,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-14 04:52 PM • yfinance cache 206m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-14 08:33 PM • yfinance cache 2m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">🔍 Signals (0)</button>
@@ -327,14 +327,25 @@ AMZN position now <strong style="color:#FF9900">514 shares</strong> (500 origina
 5 contracts still available (floor of 514/100).</div>
 </div>
 <div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-top:16px">
-<div style="font-size:15px;font-weight:900;color:#42a5f5;margin-bottom:14px">Roll Targets — Where To Move Your Positions</div>
-<div style="margin-bottom:18px">
-<div style="font-size:13px;font-weight:800;color:#00a4ef;margin-bottom:8px">
-MSFT $417 Apr 17, 2026 — Roll Options
+<div style="font-size:15px;font-weight:900;color:#42a5f5;margin-bottom:4px">Roll Targets</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:18px">Signals: AMZN: Bearish (Wedge Drop risk — price $207.67 below 8 EMA $211.2 below 21 EMA $212.88). MSFT: Bearish (Wedge Drop risk — price $395.55 below 8 EMA $402.45 below 21 EMA $403.91). </div>
+<div style="margin-bottom:24px;border-left:3px solid #00a4ef;padding-left:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:16px;font-weight:900;color:#00a4ef">MSFT $417 Apr 17, 2026</span>
+<span style="font-size:12px;color:#00e676">Stock $395.55 → +5.4% to strike</span>
+</div>
+<div style="background:#0d1b2a;border-radius:10px;padding:13px 16px;margin-bottom:12px;border:1px solid #00e676">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+<span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">CLOSE AND ROLL</span>
+<span style="font-size:14px;font-weight:900;color:#00e676">$405.0 · Apr 24, 2026 · 41 DTE · 2.4% OTM</span>
+<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:6px">+$2,336 net</span>
+<span style="margin-left:auto;background:#aaa;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:5px">Soon</span>
+</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">Despite bearish wedge signals with price below both EMAs, the $405 strike provides adequate cushion while the $2336 net credit is substantial. Rolling to 41 DTE positions us well defensively given the current technical weakness.</div>
 </div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Roll To Expiry</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Expiry</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">DTE</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Strike</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM%</th>
@@ -343,9 +354,9 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Mid</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ann Ret%</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Prem</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit if Rolling</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit</th>
 </tr></thead><tbody>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$405</td>
@@ -357,7 +368,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$835</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,670</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$410</td>
@@ -369,7 +380,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$638</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,276</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$415</td>
@@ -381,7 +392,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$478</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$956</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$420</td>
@@ -393,7 +404,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$347</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$694</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$425</td>
@@ -405,7 +416,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$250</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$500</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$430</td>
@@ -417,7 +428,19 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$179</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$358</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
+<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
+<td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
+<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$435</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">10.0%</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$1.22</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$1.30</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$1.26</td>
+<td style="padding:7px 10px;color:#c8d4e8;font-weight:700;text-align:right">4.3%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$126</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$252</td>
+</tr>
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$405</td>
@@ -429,7 +452,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$1,000</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$2,000</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$410</td>
@@ -441,7 +464,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$792</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,584</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$415</td>
@@ -453,7 +476,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$620</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,240</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$420</td>
@@ -465,7 +488,7 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$478</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$956</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$425</td>
@@ -477,99 +500,26 @@ MSFT $417 Apr 17, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$360</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$720</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$430</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">8.7%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.67</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.75</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$2.71</td>
-<td style="padding:7px 10px;color:#c8d4e8;font-weight:700;text-align:right">7.4%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$271</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$542</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$405</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">2.4%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$11.15</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$12.20</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$11.68</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">26.3%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$1,168</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$2,336</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$410</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">3.7%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$9.45</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$9.75</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$9.60</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">21.6%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$960</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,920</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$415</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">4.9%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$7.35</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$8.15</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$7.75</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">17.4%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$775</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,550</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$420</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">6.2%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.00</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.45</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$6.22</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">14.0%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$622</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,244</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$425</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">7.4%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.75</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$5.30</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$5.03</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">11.3%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$503</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,006</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$430</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">8.7%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.60</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.15</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$3.88</td>
-<td style="padding:7px 10px;color:#c8d4e8;font-weight:700;text-align:right">8.7%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$388</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$776</td>
-</tr>
-</tbody></table></div></div>
-<div style="margin-bottom:18px">
-<div style="font-size:13px;font-weight:800;color:#FF9900;margin-bottom:8px">
-AMZN $220 Apr 02, 2026 — Roll Options
- · Current option: $2.13 (+53.7% gain)
+</tbody></table></div>
+</div>
+<div style="margin-bottom:24px;border-left:3px solid #FF9900;padding-left:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:16px;font-weight:900;color:#FF9900">AMZN $220 Apr 02, 2026</span>
+<span style="background:#13263d;border-radius:6px;padding:4px 11px;font-size:12px">Option now: <span style="color:#e8edf5">$2.13</span> <span style="color:#00e676;font-weight:800">+52.7% gain</span></span>
+<span style="font-size:12px;color:#00e676">Stock $207.67 → +5.9% to strike</span>
+</div>
+<div style="background:#0d1b2a;border-radius:10px;padding:13px 16px;margin-bottom:12px;border:1px solid #00e676">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+<span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">CLOSE AND ROLL</span>
+<span style="font-size:14px;font-weight:900;color:#00e676">$215.0 · Apr 17, 2026 · 34 DTE · 3.5% OTM</span>
+<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:6px">+$362 net</span>
+<span style="margin-left:auto;background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:5px">Now</span>
+</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">With 52.7% gain already captured and bearish wedge drop risk signals, rolling now locks in profits while the $215 strike provides reasonable protection. The 34 DTE timing is optimal and $362 net credit makes this roll financially attractive.</div>
 </div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Roll To Expiry</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Expiry</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">DTE</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Strike</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM%</th>
@@ -578,136 +528,9 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Mid</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ann Ret%</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Prem</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit if Rolling</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit</th>
 </tr></thead><tbody>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">3.5%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.75</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.90</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$4.83</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">31.4%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$483</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$810</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">5.9%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.00</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.10</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$3.05</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">19.9%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$305</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$276</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">8.3%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$1.81</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$1.87</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$1.84</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">12.0%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$184</td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:800;text-align:right">$-87</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">3.5%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$5.70</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$5.80</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$5.75</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">29.7%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$575</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,086</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">5.9%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.85</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.95</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$3.90</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">20.2%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$390</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$531</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">8.3%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.49</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.53</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$2.51</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">13.0%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$251</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$114</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">3.5%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.55</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$6.90</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$6.72</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">28.8%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$672</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$1,377</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">5.9%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.70</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$4.90</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$4.80</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">20.6%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$480</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$801</td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
-<td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
-<td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
-<td style="padding:7px 10px;color:#d0daea;text-align:right">8.3%</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.05</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.45</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$3.25</td>
-<td style="padding:7px 10px;color:#ffb74d;font-weight:700;text-align:right">13.9%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$325</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$336</td>
-</tr>
-</tbody></table></div></div>
-<div style="margin-bottom:18px">
-<div style="font-size:13px;font-weight:800;color:#FF9900;margin-bottom:8px">
-AMZN $220 Apr 02, 2026 — Roll Options
- · Current option: $2.13 (+52.7% gain)
-</div>
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">
-<thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Roll To Expiry</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">DTE</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Strike</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM%</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Bid</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ask</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Mid</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ann Ret%</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Total Prem</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Net Credit if Rolling</th>
-</tr></thead><tbody>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
@@ -719,7 +542,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$483</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$270</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
@@ -731,7 +554,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$305</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$92</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">27d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
@@ -743,7 +566,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$184</td>
 <td style="padding:7px 10px;color:#ef5350;font-weight:800;text-align:right">$-29</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
@@ -755,7 +578,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$575</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$362</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
@@ -767,7 +590,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$390</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$177</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-17</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">34d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
@@ -779,7 +602,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$251</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$38</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right;border-left:3px solid #FFD700">$215</td>
@@ -791,7 +614,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$672</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$459</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$220</td>
@@ -803,7 +626,7 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$480</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$267</td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040">
+<tr>
 <td style="padding:7px 10px;color:#42a5f5;text-align:right;white-space:nowrap">2026-04-24</td>
 <td style="padding:7px 10px;color:#d0e4f7;text-align:right">41d</td>
 <td style="padding:7px 10px;color:#26a69a;font-weight:800;text-align:right;border-left:3px solid #26a69a">$225</td>
@@ -815,7 +638,8 @@ AMZN $220 Apr 02, 2026 — Roll Options
 <td style="padding:7px 10px;color:#FFD700;font-weight:800;text-align:right">$325</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+$112</td>
 </tr>
-</tbody></table></div></div>
+</tbody></table></div>
+</div>
 </div>
 <div style="background:#0a1628;border-radius:12px;padding:18px 22px;margin-top:16px">
 <div style="font-size:15px;font-weight:900;color:#FFD700;margin-bottom:12px">When To Close & Roll Your CCs</div>
@@ -995,49 +819,49 @@ and writing your own covered calls on 100 SPY shares. Prices and CC chain fetche
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:13px;font-weight:900;color:#ab47bc">AI RECOMMENDATION</span>
 <span style="background:#ab47bc;color:#000;font-size:13px;font-weight:900;padding:4px 16px;border-radius:10px">KEEP SPYI</span>
-<span style="background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Medium Conviction</span>
+<span style="background:#aaa;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Low Conviction</span>
 </div>
-<div style="font-size:13px;color:#dde8f8;line-height:1.7">Without current pricing data, SPYI&#x27;s professional covered call management and consistent ~10-13% yield likely outperforms DIY covered calls on just 100 SPY shares. The diversification and scale advantages of SPYI&#x27;s institutional approach typically generate superior risk-adjusted income.</div>
+<div style="font-size:13px;color:#dde8f8;line-height:1.7">Cannot provide reliable analysis due to missing critical price and options chain data. SPYI likely preferable for simplicity and consistent income, but recommendation confidence is low without current market data.</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc;'outline:2px solid #ab47bc">
 <div style="font-size:12px;color:#ab47bc;font-weight:800;margin-bottom:6px">Path A — Keep SPYI ✓ WINNER</div>
-<div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
-<div style="font-size:13px;color:#00e676">$0/yr</div></div>
+<div style="font-size:28px;font-weight:900;color:#fff">$595<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676">$7,140/yr</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #42a5f5">
 <div style="font-size:12px;color:#42a5f5;font-weight:800;margin-bottom:6px">Path B — SPY + Write CCs </div>
 <div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
 <div style="font-size:13px;color:#00e676">$0/yr</div></div>
 </div>
-<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">Cannot calculate precise income without current prices, but SPYI&#x27;s 10-13% yield on 1190 shares likely significantly exceeds income from covered calls on just 100 SPY shares</div>
+<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">SPYI estimated at $0.50/share/month average ($595 total). SPY covered call income cannot be calculated without options chain data and current SPY price.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">CASE FOR KEEPING SPYI</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional options management across 500 stocks vs single SPY exposure, eliminates assignment hassles, offers consistent monthly distributions, and leverages institutional scale for better option pricing. 1190 shares provide meaningful diversification.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional covered call management, consistent monthly distributions of 10-13% annually, eliminates assignment risk and options complexity, and offers diversification across entire S&amp;P 500. No need to actively manage positions or worry about early assignment.</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">CASE FOR SELLING → SPY CCs</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">Self-managed SPY covered calls offer complete control over strike selection and timing, no management fees, potential for better tax treatment of option premiums, and ability to roll/adjust positions based on market conditions.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">Self-managed SPY covered calls could potentially generate higher income during volatile periods, provide complete control over strike selection and timing, offer better tax efficiency with long-term capital gains treatment, and eliminate SPYI&#x27;s expense ratio drag.</div></div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px;border:1px solid #42a5f5">
 <div style="font-size:12px;font-weight:800;color:#42a5f5;margin-bottom:8px">⭐ BEST SPY CC STRIKE (AI PICK)</div>
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px">
 <span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · N/A · 0 DTE · 0% OTM</span>
 </div>
-<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">No options chain data available to analyze specific strikes</div>
-<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> Cannot compare without chain data</div>
+<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Cannot analyze options without live chain data</div>
+<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> Analysis impossible without options pricing data</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">SPYI Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Management fee drag reduces net returns vs self-managed approach</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• No control over strike selection - may miss optimization opportunities in volatile markets</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Fund closure or strategy changes could force unwanted position changes</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Fund closure risk if AUM drops significantly or strategy becomes unviable</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Distribution cuts during low volatility periods when call premiums decline</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Expense ratio drag and potential tracking error vs underlying S&amp;P 500</div>
 </div>
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">SPY CC Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk caps upside during strong bull markets</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Time-intensive management requires consistent monitoring and rolling decisions</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Single underlying concentration risk vs SPYI&#x27;s 500-stock diversification</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk during strong rallies, missing upside gains above strike price</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Active management burden requiring constant monitoring and rolling positions</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Potential for lower income during low volatility periods compared to SPYI&#x27;s diversified approach</div>
 </div>
 </div>
 <div style="background:#1a1200;border-radius:7px;padding:12px 14px;color:#ffb74d;font-size:12px">
