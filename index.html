@@ -48,7 +48,7 @@ select.filter{padding:5px}
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-18 09:19 AM • yfinance cache 0m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
+<div class="muted">Updated 2026-03-18 09:24 AM • yfinance cache 5m old (TTL 6h) • Signals: 0 bullish / 0 bearish across 7 tickers • Tweets: @eliteoptions2 + @mr_derivatives</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">🔍 Signals (0)</button>
@@ -251,7 +251,7 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
 </div>
 <div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ef5350;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">No current position data available for AMZN to assess gain% or decay levels. Mixed signal with price at $215.2 between the 8EMA ($212.18) and 21EMA ($212.94) suggests neutral momentum that doesn&#x27;t warrant immediate action. Without position details, cannot determine if calls have decayed sufficiently for profitable rolling. Hold until position data becomes available to make informed income maximization decision.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows a -59.3% loss as the option value increased from $4.46 to $7.10, which is terrible for a covered call seller. At $7.10, we&#x27;re dangerously close to the $8.92 stop-loss level (2x sold price), requiring immediate action to prevent further losses. The mixed signal with AMZN above its 8EMA suggests continued upward pressure that could push the option even higher. Close now to limit damage before hitting the hard stop-loss.</div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00a4ef;border-radius:10px;padding:16px 18px;margin-bottom:14px">
@@ -285,7 +285,7 @@ Also keep in mind stock is down 9 days in a row and the Daily RSI is at one of</
 </div>
 <div style="background:#0a1628;border-left:3px solid #42a5f5;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">No current position data available for MSFT to calculate gain% or evaluate premium decay. Bearish signal with price at $399.41 below both EMAs is favorable for call sellers as it reduces assignment risk. Without knowing strike, expiry, or current option value, cannot assess whether calls have decayed enough to justify rolling for additional income. Hold until position details are provided to optimize income strategy.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows a small +0.6% gain as the option decayed from $8.01 to $7.96, which is favorable for a covered call seller. At 23 DTE, we&#x27;re still in the optimal time decay zone and far from both the 50% profit target and the $16.02 stop-loss level. The bearish signal with MSFT below both EMAs supports continued option decay. Hold and let time decay continue working in our favor.</div>
 </div>
 </div>
 </div>
@@ -601,49 +601,49 @@ and writing your own covered calls on 100 SPY shares. Prices and CC chain fetche
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:13px;font-weight:900;color:#ab47bc">AI RECOMMENDATION</span>
 <span style="background:#ab47bc;color:#000;font-size:13px;font-weight:900;padding:4px 16px;border-radius:10px">KEEP SPYI</span>
-<span style="background:#00e676;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">High Conviction</span>
+<span style="background:#aaa;color:#000;font-size:11px;font-weight:800;padding:2px 10px;border-radius:8px">Low Conviction</span>
 </div>
-<div style="font-size:13px;color:#dde8f8;line-height:1.7">Without live market data, SPYI appears superior due to professional overlay management and consistent 10-13% yield distribution. The covered call chain is unavailable, making direct comparison impossible, but SPYI&#x27;s institutional efficiency likely outweighs DIY benefits.</div>
+<div style="font-size:13px;color:#dde8f8;line-height:1.7">Cannot provide meaningful analysis due to missing critical data (all prices show $0.00 and options chain unavailable). Under normal market conditions, SPYI typically offers simplicity and consistent income distribution while DIY covered calls provide more control but require active management.</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
-<div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc;'outline:2px solid #ab47bc">
-<div style="font-size:12px;color:#ab47bc;font-weight:800;margin-bottom:6px">Path A — Keep SPYI ✓ WINNER</div>
-<div style="font-size:28px;font-weight:900;color:#fff">$565<span style="font-size:13px;color:#aaa">/mo</span></div>
-<div style="font-size:13px;color:#00e676">$6,780/yr</div></div>
+<div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #ab47bc">
+<div style="font-size:12px;color:#ab47bc;font-weight:800;margin-bottom:6px">Path A — Keep SPYI </div>
+<div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
+<div style="font-size:13px;color:#00e676">$0/yr</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:16px;border-left:4px solid #42a5f5">
 <div style="font-size:12px;color:#42a5f5;font-weight:800;margin-bottom:6px">Path B — SPY + Write CCs </div>
 <div style="font-size:28px;font-weight:900;color:#fff">$0<span style="font-size:13px;color:#aaa">/mo</span></div>
 <div style="font-size:13px;color:#00e676">$0/yr</div></div>
 </div>
-<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">SPYI generates estimated $476-655/month ($565 midpoint) from 1190 shares. SPY CC income cannot be calculated without live options chain data, but 100 shares would generate significantly less premium than SPYI&#x27;s institutional overlay on equivalent position size.</div>
+<div style="font-size:12px;color:#c0d4ea;margin-bottom:16px;padding:10px;background:#0a1628;border-radius:7px">Cannot calculate meaningful comparison with $0.00 prices and unavailable options data. Typically SPYI generates $0.40-0.55/share monthly while SPY CC income varies with volatility and strike selection.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">CASE FOR KEEPING SPYI</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides professional covered call overlay management with consistent 10-13% annual yield, lower transaction costs, and eliminates assignment risk management burden. Monthly distributions of $476-655 from 1190 shares provide steady income without active management.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">SPYI provides hassle-free monthly distributions (~10-13% annually) with professional option overlay management, eliminating assignment risk and time commitment for Kyle. Lower transaction costs and automatic reinvestment options.</div></div>
 <div style="background:#0d1b2a;border-radius:10px;padding:14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">CASE FOR SELLING → SPY CCs</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.7">Writing own covered calls on 100 SPY shares could provide more flexibility in strike selection and timing, potentially better tax treatment of premiums as short-term gains vs distributions, and lower expense ratios on the underlying SPY position.</div></div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.7">DIY covered calls offer greater flexibility in strike selection, expiry timing, and ability to capture full upside during strong rallies. Can potentially generate higher income during high volatility periods and provides better tax control.</div></div>
 </div>
 <div style="background:#0a1628;border-radius:10px;padding:14px 18px;margin-bottom:18px;border:1px solid #42a5f5">
 <div style="font-size:12px;font-weight:800;color:#42a5f5;margin-bottom:8px">⭐ BEST SPY CC STRIKE (AI PICK)</div>
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px">
 <span style="font-size:20px;font-weight:900;color:#FFD700">Strike $0 · N/A · 0 DTE · 0% OTM</span>
 </div>
-<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Cannot determine optimal strike without live options chain data</div>
-<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> Analysis impossible without market data</div>
+<div style="font-size:12px;color:#dde8f8;margin-bottom:5px">Options chain unavailable - cannot recommend specific strikes</div>
+<div style="font-size:11px;color:#FFD700;margin-top:6px"><strong>⚖️ vs highest ann-ret:</strong> No comparison possible without live options data</div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#ab47bc;margin-bottom:6px">SPYI Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Distribution cuts if volatility decreases or market conditions reduce call premium income</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Higher expense ratios compared to plain SPY, reducing net returns</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Limited upside capture due to systematic call writing overlay strategy</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Management fees reduce net returns compared to DIY approach</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Limited control over option strategy timing and strike selection</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Potential tracking error vs underlying S&amp;P 500 performance</div>
 </div>
 <div style="background:#0d1b2a;border-radius:10px;padding:12px 14px">
 <div style="font-size:11px;font-weight:800;color:#42a5f5;margin-bottom:6px">SPY CC Risks</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk forcing early exit of positions during favorable market moves</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Time intensive active management of rolling positions and strike selection</div>
-<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Transaction costs from frequent options trading reducing net income compared to institutional scale</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Assignment risk caps upside during strong market rallies</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Requires active management and market timing decisions</div>
+<div style="font-size:11px;color:#ef9a9a;margin-bottom:4px">• Higher transaction costs from frequent option trading</div>
 </div>
 </div>
 <div style="background:#1a1200;border-radius:7px;padding:12px 14px;color:#ffb74d;font-size:12px">
