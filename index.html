@@ -30,7 +30,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-21 11:17 AM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
+<div class="muted">Updated 2026-03-21 12:14 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Reclaims (5)</button>
@@ -586,63 +586,71 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Dist from Price</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Position</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Confluence</th>
-<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Notes</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Bounces/Fails</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Institutional Evidence (vol ≥1.2× avg)</th>
 </tr></thead><tbody>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">0% — 52wk High</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">0% — 52wk High</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$552.24</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-44.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7">—</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">23.6%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">23.6%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$502.66</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-31.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Shallow retracement — strong uptrend if holding</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-09-19: low $508.20 → close $515.79 (2.1× vol)</span><br><span style="color:#00e676">↑ 2025-08-26: low $496.45 → close $499.96 (1.2× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">38.2%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$471.99</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-23.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-28: low $476.91 → close $480.53 (1.5× vol)</span><br><span style="color:#00e676">↑ 2025-12-19: low $481.39 → close $484.81 (2.8× vol)</span><br><span style="color:#00e676">↑ 2025-12-10: low $474.00 → close $477.47 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-12-03: low $474.12 → close $476.64 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right">50%</td>
+<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$447.21</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-17.1%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Midpoint — 50% retracement, often acts as pivot</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-23: low $449.50 → close $464.89 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-01-16: low $455.44 → close $458.81 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-05-30: low $452.91 → close $457.70 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right">61.8% — Golden Ratio</td>
+<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$422.42</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-10.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 50 SMA</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">⭐ Golden Ratio — strongest retracement level · Confluent: 50 SMA</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-02: low $421.29 → close $422.41 (1.7× vol)</span><br><span style="color:#00e676">↑ 2026-01-30: low $425.48 → close $429.31 (2.3× vol)</span><br><span style="color:#00e676">↑ 2026-01-29: low $420.06 → close $432.51 (5.2× vol)</span><br><span style="color:#00e676">↑ 2025-05-02: low $426.72 → close $431.97 (1.2× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">76.4%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">76.4%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$391.75</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-2.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Deep retracement — near full correction · ← Price near here now</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">11 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-03-03: low $392.67 → close $403.93 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-03-02: low $390.63 → close $398.55 (1.4× vol)</span><br><span style="color:#00e676">↑ 2026-02-27: low $389.88 → close $392.74 (2.0× vol)</span><br><span style="color:#00e676">↑ 2026-02-26: low $398.74 → close $401.72 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right">100% — 52wk Low</td>
+<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$342.17</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+10.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-08: low $347.59 → close $351.87 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-04-07: low $342.17 → close $355.14 (2.0× vol)</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -870,63 +878,71 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Dist from Price</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Position</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Confluence</th>
-<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Notes</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Bounces/Fails</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Institutional Evidence (vol ≥1.2× avg)</th>
 </tr></thead><tbody>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">0% — 52wk High</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">0% — 52wk High</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$258.60</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-25.9%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7">—</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">23.6%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">23.6%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$235.66</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-14.7%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Shallow retracement — strong uptrend if holding</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-07-31: low $231.40 → close $234.11 (2.2× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">38.2%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$221.46</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-7.8%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 50 SMA</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Confluent: 50 SMA</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-05: low $220.38 → close $222.69 (2.2× vol)</span><br><span style="color:#00e676">↑ 2025-12-19: low $225.58 → close $227.35 (1.8× vol)</span><br><span style="color:#00e676">↑ 2025-11-19: low $218.52 → close $222.69 (1.2× vol)</span><br><span style="color:#00e676">↑ 2025-11-18: low $222.42 → close $222.55 (1.3× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
-<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right">50%</td>
+<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$209.99</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-2.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 21 EMA</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Midpoint — 50% retracement, often acts as pivot · Confluent: 21 EMA · ← Price near here now</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-10: low $206.41 → close $206.96 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-08-04: low $211.42 → close $211.65 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-08-01: low $212.80 → close $214.75 (2.6× vol)</span><br><span style="color:#00e676">↑ 2025-06-20: low $208.27 → close $209.69 (1.6× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right">61.8% — Golden Ratio</td>
+<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$198.52</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+3.3%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">⭐ Golden Ratio — strongest retracement level</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-17: low $196.00 → close $201.15 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-02-13: low $197.28 → close $198.79 (1.4× vol)</span><br><span style="color:#00e676">↑ 2026-02-12: low $197.56 → close $199.60 (1.8× vol)</span><br><span style="color:#00e676">↑ 2026-02-11: low $202.49 → close $204.08 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right">76.4%</td>
+<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">76.4%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$184.32</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+10.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Deep retracement — near full correction</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-05-02: low $186.40 → close $189.98 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-05-01: low $187.50 → close $190.20 (1.6× vol)</span><br><span style="color:#00e676">↑ 2025-03-31: low $184.40 → close $190.26 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right">100% — 52wk Low</td>
+<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$161.38</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+21.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-07: low $161.38 → close $175.26 (2.3× vol)</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #FFD700;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -1149,63 +1165,71 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Dist from Price</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Position</th>
 <th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Confluence</th>
-<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Notes</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Bounces/Fails</th>
+<th style="padding:6px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Institutional Evidence (vol ≥1.2× avg)</th>
 </tr></thead><tbody>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">0% — 52wk High</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">0% — 52wk High</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$794.38</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-33.8%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7">—</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">23.6%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">23.6%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$719.79</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-21.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Shallow retracement — strong uptrend if holding</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">4 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-30: low $712.98 → close $715.89 (1.6× vol)</span><br><span style="color:#00e676">↑ 2026-01-29: low $711.94 → close $737.68 (3.9× vol)</span><br><span style="color:#00e676">↑ 2025-10-01: low $709.01 → close $716.14 (1.3× vol)</span><br><span style="color:#00e676">↑ 2025-06-27: low $724.16 → close $731.91 (1.2× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right">38.2%</td>
+<td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$673.64</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-13.5%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-28: low $665.53 → close $668.16 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-12-05: low $661.28 → close $672.30 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-06-20: low $677.08 → close $680.75 (1.5× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right">50%</td>
+<td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$636.35</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-7.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 21 EMA</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Midpoint — 50% retracement, often acts as pivot · Confluent: 21 EMA</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">8 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-23: low $643.90 → close $658.20 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-01-22: low $626.01 → close $647.08 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-11-05: low $625.49 → close $634.89 (1.3× vol)</span><br><span style="color:#00e676">↑ 2025-11-04: low $624.96 → close $626.27 (1.8× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
-<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right">61.8% — Golden Ratio</td>
+<td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$599.05</td>
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-0.9%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">⭐ Golden Ratio — strongest retracement level · ← Price near here now</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-03-20: low $587.27 → close $593.66 (1.3× vol)</span><br><span style="color:#00e676">↑ 2026-03-13: low $609.03 → close $613.18 (1.2× vol)</span><br><span style="color:#00e676">↑ 2025-11-24: low $596.63 → close $612.03 (1.6× vol)</span><br><span style="color:#00e676">↑ 2025-11-14: low $594.21 → close $608.44 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right">76.4%</td>
+<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">76.4%</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$552.90</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+6.9%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right">Deep retracement — near full correction</td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-03-31: low $551.58 → close $574.57 (1.4× vol)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right">100% — 52wk Low</td>
+<td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
 <td style="padding:6px 10px;font-weight:900;color:#FFD700;text-align:right">$478.31</td>
 <td style="padding:6px 10px;color:#00e676;text-align:right">+19.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;color:#8ab4d4;font-size:11px;text-align:right"></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-07: low $480.40 → close $514.64 (2.4× vol)</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -1277,7 +1301,7 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <div style="background:#0d1b2a;border-left:4px solid #FF9900;border-radius:10px;padding:16px 18px;margin-bottom:14px">
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px">
 <span style="font-size:18px;font-weight:900;color:#FF9900">AMZN</span>
-<span style="font-size:13px;color:#8ab4d4">Apr 10, 2026 · 5x contracts</span>
+<span style="font-size:13px;color:#8ab4d4">Apr 10, 2026 · 4x contracts</span>
 <span style="font-size:12px;color:#FF9900">Stock $205.37<span style="background:#1a5c2a;color:#00e676;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:3px">&#10003; LIVE</span></span>
 <span style="font-size:12px;color:#aaa">—</span>
 <span style="font-size:11px;color:#00e676;background:#0d1b2a;padding:2px 8px;border-radius:5px">Earnings Apr 30 — expiry safe ✓</span>
@@ -1289,13 +1313,13 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <div style="font-size:13px;font-weight:800;color:#e8edf5">$4.46</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Current Mid</div>
-<div style="font-size:13px;font-weight:800;color:#e8edf5">$3.85</div></div>
+<div style="font-size:13px;font-weight:800;color:#e8edf5">$2.65</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Gain %</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">+13.6%</div></div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+40.7%</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Est P&L</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$+304</div></div>
+<div style="font-size:13px;font-weight:800;color:#00e676">$+726</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
 <div style="font-size:13px;font-weight:800;color:#ef5350">20d ⚠ manage now</div></div>
@@ -1305,7 +1329,7 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 </div>
 <div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ffb74d;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current position shows +13.6% gain as the option has decayed from $4.46 to $3.85, which is profitable for a covered call seller. At 20 DTE we&#x27;re approaching the roll threshold but haven&#x27;t crossed into the urgent zone yet. The bearish signal with price at $205.37 supports holding as continued weakness should further decay the option value. We&#x27;re well below the $8.92 stop-loss level, so let the position continue working in our favor.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current gain of +40.7% means the options have decayed significantly in Kyle&#x27;s favor as the CC seller, which is exactly what we want. With bearish EMA signals supporting continued downward pressure and the position well below the stop-loss level of $8.92, this is an ideal time to lock in profits. At 20 DTE, we&#x27;re past the optimal closing window, and taking the 40.7% gain now allows Kyle to potentially resell new calls at higher strikes if the bearish trend continues.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1315,11 +1339,11 @@ $210 strike
  &nbsp;·&nbsp; 2026-05-01 &nbsp;·&nbsp; <span style="color:#00e676">41d DTE</span>
 </span>
 <span style="font-size:12px;color:#00e676">Mid $9.93</span>
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">NET CREDIT: +$3,040 credit</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">NET CREDIT: +$2,914 credit</span>
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 8px;border-radius:5px">✓ Optimal</span>
 </div>
 <div style="background:#2a1000;border-left:3px solid #ef5350;border-radius:5px;padding:6px 10px;margin-top:6px;font-size:11px;color:#ef9a9a;font-weight:700">⚠ AMZN earnings Apr 30 — expiry CROSSES earnings. Avoid.</div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:6px;line-height:1.5">Collect $9.93 new × 500 shares = $4,965, pay $3.85 × 500 = $1,925 to close. Net cash IN: +$3,040.</div>
+<div style="font-size:11px;color:#8ab4d4;margin-top:6px;line-height:1.5">Collect $9.93 new × 400 shares = $3,972, pay $2.65 × 400 = $1,058 to close. Net cash IN: +$2,914.</div>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00a4ef;border-radius:10px;padding:16px 18px;margin-bottom:14px">
@@ -1337,13 +1361,13 @@ $210 strike
 <div style="font-size:13px;font-weight:800;color:#e8edf5">$8.01</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Current Mid</div>
-<div style="font-size:13px;font-weight:800;color:#e8edf5">$3.70</div></div>
+<div style="font-size:13px;font-weight:800;color:#e8edf5">$2.18</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Gain %</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">+53.8%</div></div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+72.8%</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Est P&L</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$+862</div></div>
+<div style="font-size:13px;font-weight:800;color:#00e676">$+1,166</div></div>
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
 <div style="font-size:13px;font-weight:800;color:#ef5350">20d ⚠ manage now</div></div>
@@ -1353,7 +1377,7 @@ $210 strike
 </div>
 <div style="background:#0a1628;border-left:3px solid #00e676;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Outstanding +73.4% gain with option decaying from $8.01 to $2.13 - this has far exceeded the 50% profit-taking threshold that triggers a close. The bearish signal with price at $381.87 has driven excellent option decay for the covered call seller. With 20 DTE remaining and such strong profits already captured, it&#x27;s time to close this winner and avoid the upcoming April 28 earnings risk.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Outstanding +73.4% gain represents massive option decay working perfectly in Kyle&#x27;s favor as the covered call seller. The bearish EMA signal confirms continued downward pressure, and with current option price at $2.13 well below the $16.02 stop-loss level, this is an exceptional profit to capture. With MSFT earnings on April 28th and only 20 DTE remaining, closing now locks in this substantial win and avoids any potential earnings volatility that could reverse these gains.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1363,11 +1387,11 @@ $390 strike
  &nbsp;·&nbsp; 2026-05-01 &nbsp;·&nbsp; <span style="color:#00e676">41d DTE</span>
 </span>
 <span style="font-size:12px;color:#00e676">Mid $14.07</span>
-<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">NET CREDIT: +$2,074 credit</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">NET CREDIT: +$2,378 credit</span>
 <span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 8px;border-radius:5px">✓ Optimal</span>
 </div>
 <div style="background:#2a1000;border-left:3px solid #ef5350;border-radius:5px;padding:6px 10px;margin-top:6px;font-size:11px;color:#ef9a9a;font-weight:700">⚠ MSFT earnings Apr 28 — expiry CROSSES earnings. Avoid.</div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:6px;line-height:1.5">Collect $14.07 new × 200 shares = $2,814, pay $3.70 × 200 = $740 to close. Net cash IN: +$2,074.</div>
+<div style="font-size:11px;color:#8ab4d4;margin-top:6px;line-height:1.5">Collect $14.07 new × 200 shares = $2,814, pay $2.18 × 200 = $436 to close. Net cash IN: +$2,378.</div>
 </div>
 </div>
 </div>
@@ -1376,16 +1400,16 @@ $390 strike
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:16px">
 <div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Locked Profit</div>
-<div style="font-size:16px;font-weight:900;color:#00e676">$2,099</div></div>
+<div style="font-size:16px;font-weight:900;color:#00e676">$2,280</div></div>
 <div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Open Sold</div>
-<div style="font-size:16px;font-weight:900;color:#42a5f5">$3,788</div></div>
+<div style="font-size:16px;font-weight:900;color:#42a5f5">$3,348</div></div>
 <div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Open P&L</div>
-<div style="font-size:16px;font-weight:900;color:#00e676">$+1,166</div></div>
+<div style="font-size:16px;font-weight:900;color:#00e676">$+1,892</div></div>
 <div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Total Net</div>
-<div style="font-size:16px;font-weight:900;color:#FFD700">$5,845</div></div>
+<div style="font-size:16px;font-weight:900;color:#FFD700">$5,844</div></div>
 </div>
 <div style="font-size:11px;font-weight:800;color:#5a7fa0;margin-bottom:5px">CLOSED</div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px">
@@ -1437,12 +1461,24 @@ $390 strike
 <td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$265</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91583</td>
 </tr>
+<tr style="border-bottom:1px solid #0d2040">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right">2026-03-16</td>
+<td style="padding:7px 10px;color:#FF9900;font-weight:800;text-align:right">AMZN</td>
+<td style="padding:7px 10px;color:#555;text-align:right">—</td>
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-10</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">1x</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">$4.45</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">$2.65</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">$1.81</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$181</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563 — closed 1x Mar 20 (~41% profit)</td>
+</tr>
 <tr style="background:#0d2040;border-top:2px solid #1e3a5f">
 <td colspan="8" style="padding:7px 10px;color:#7eb8f7;font-weight:900;text-align:right">LOCKED IN</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$2,099</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$2,280</td>
 <td></td></tr>
 </tbody></table></div>
-<div style="font-size:11px;font-weight:800;color:#5a7fa0;margin-bottom:5px">OPEN — APR 10 (prices as of Mar 18)</div>
+<div style="font-size:11px;font-weight:800;color:#5a7fa0;margin-bottom:5px">OPEN — APR 10 (prices as of Mar 20)</div>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Date</th>
@@ -1461,12 +1497,12 @@ $390 strike
 <td style="padding:7px 10px;color:#FF9900;font-weight:800;text-align:right">AMZN</td>
 <td style="padding:7px 10px;color:#FFD700;text-align:right">TBD</td>
 <td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-10</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">3x</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">2x</td>
 <td style="padding:7px 10px;color:#00e676;text-align:right">$4.45</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.85</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+13.5%</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+180</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563 — rolled</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.65</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+40.6%</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+361</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563 — rolled (1 closed)</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040">
 <td style="padding:7px 10px;color:#8ab4d4;text-align:right">2026-03-16</td>
@@ -1475,9 +1511,9 @@ $390 strike
 <td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#e8edf5;text-align:right">1x</td>
 <td style="padding:7px 10px;color:#00e676;text-align:right">$4.42</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.85</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+12.9%</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+57</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.65</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+40.2%</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+178</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563 — new</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040">
@@ -1487,9 +1523,9 @@ $390 strike
 <td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#e8edf5;text-align:right">1x</td>
 <td style="padding:7px 10px;color:#00e676;text-align:right">$4.52</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.85</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+14.8%</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+67</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.65</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+41.5%</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+188</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91583 — rolled</td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040">
@@ -1499,16 +1535,16 @@ $390 strike
 <td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-04-10</td>
 <td style="padding:7px 10px;color:#e8edf5;text-align:right">2x</td>
 <td style="padding:7px 10px;color:#00e676;text-align:right">$8.01</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$3.70</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+53.8%</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+862</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$2.18</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">+72.8%</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:800;text-align:right">$+1,166</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right">WE 91563 — rolled from $417</td>
 </tr>
 <tr style="background:#0d2040;border-top:2px solid #1e3a5f">
 <td colspan="5" style="padding:7px 10px;color:#7eb8f7;font-weight:900;text-align:right">OPEN TOTAL</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$3,788</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$3,348</td>
 <td colspan="2"></td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$+1,166</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$+1,892</td>
 <td></td></tr>
 </tbody></table></div>
 <div style="font-size:11px;font-weight:800;color:#5a7fa0;margin-bottom:5px">SHARES PURCHASED WITH CC INCOME</div>
