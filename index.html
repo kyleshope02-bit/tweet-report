@@ -30,18 +30,23 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-21 12:14 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
+<div class="muted">Updated 2026-03-21 01:29 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 9 across 147 tickers</div>
 
 <div class="tabs">
-  <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Reclaims (5)</button>
+  <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Signals (9)</button>
   <button id="btn-mag7"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mag7')">Mag 7</button>
   <button id="btn-mycc"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mycc')">💼 Kyle's Covered Calls</button>
 </div>
 
 <div id="tab-signals" data-tab="1">
 <div class="card">
-<h3>Undercut &amp; Reclaim Signals <span class="fresh">● live</span></h3>
-<div style="font-size:12px;color:#8ab4d4;margin-bottom:16px">5 signals across 5 tickers — <span style="color:#00e676;font-weight:700">5 reclaims</span> / <span style="color:#ef5350;font-weight:700">0 undercuts</span></div>
+<h3>Reclaim &amp; SMC Signals <span class="fresh">● live</span></h3>
+<div style="font-size:12px;color:#8ab4d4;margin-bottom:12px">9 signals across 9 tickers — <span style="color:#00e676;font-weight:700">5 U&amp;R reclaims</span> &nbsp;+&nbsp; <span style="color:#7e57c2;font-weight:700">4 SMC signals</span></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;font-size:11px">
+<span style="background:#00e676;color:#000;padding:2px 9px;border-radius:5px;font-weight:800">U&R Reclaim</span><span style="color:#8ab4d4;margin-right:8px"> MA undercut then reclaimed on volume</span>
+<span style="background:#7e57c2;color:#fff;padding:2px 9px;border-radius:5px;font-weight:800">SMC Sweep</span><span style="color:#8ab4d4;margin-right:8px"> Liquidity grab then reversal</span>
+<span style="background:#42a5f5;color:#000;padding:2px 9px;border-radius:5px;font-weight:800">SMC BOS</span><span style="color:#8ab4d4"> Break of structure — trend shift</span>
+</div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
 <span style="font-size:20px;font-weight:900;color:#00e676">$WFC</span>
@@ -93,6 +98,124 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $74.09</span>
 <span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $81.11</span>
 <span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $84.63</span>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px;font-weight:900;color:#00e676">$ARM</span>
+<span style="font-size:13px;font-weight:800;color:#00e676"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px;margin-right:4px">SMC</span>↑ Bullish BOS</span>
+<span style="font-size:11px;color:#8ab4d4">2026-03-20</span>
+<span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">Momentum 50/10 — B</span>
+<a href="https://www.tradingview.com/chart/?symbol=ARM&amp;interval=D&amp;studies=MASimple@tv-basicstudies&amp;from=1766206800&amp;to=1775188800" target="_blank" style="margin-left:auto;font-size:11px;color:#42a5f5;text-decoration:none">📈 Chart</a>
+</div>
+<div style="font-size:12px;color:#d0e4f7;line-height:1.7;margin-bottom:10px">Price broke above the prior swing high ($130.40) closing at $132.35 — structural shift to bullish bias. Prior resistance becomes support. Vol 3.2× avg confirms institutional participation. Watch for a retest of $130.40 as new support before next leg up.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Combined volume + body quality score">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Score</div>
+<div style="font-size:13px;font-weight:800;color:#FFD700">50/100</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">1.5× = institutional participation confirmed">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Vol Ratio</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">3.2× avg</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">60% = conviction reversal bar">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Bar Body</div>
+<div style="font-size:13px;font-weight:800;color:#FFD700">55%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Where close finished relative to the swept level">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Above Level</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+1.50%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Structural shift — trend direction change confirmed">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Signal Type</div>
+<div style="font-size:13px;font-weight:800;color:#42a5f5">Break of Structure</div>
+</div>
+</div>
+<div style="background:#0a1628;border-radius:7px;padding:10px 12px">
+<div style="font-size:10px;font-weight:800;color:#5a7fa0;margin-bottom:8px">RECENT HISTORY — LAST 60 DAYS (same ticker)</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
+<div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#00e676">↑ Reclaim Reclaim 100-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-18</span>
+<span style="background:#ef9a9a;color:#000;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px">1/10 Weak</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-18: Reclaimed 100-Day SMA at $128.13. Closed $128.36 (+0.18% above MA). Vol 1.1× avg | Bar 31% | Score 1/10 (Weak).</div>
+</div>
+<div style="background:#0d1b2a;border-left:3px solid #ef5350;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#ef5350">↓ Undercut Undercut 5-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-12</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-12: Undercut 5-Day SMA at $117.56. Closed $115.12 (-2.07% below MA). Vol 0.9× avg | Bar 14%.</div>
+</div>
+</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+<span style="font-size:11px;color:#FFD700;background:#13263d;padding:2px 8px;border-radius:5px">Entry: $132.35</span>
+<span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $123.01</span>
+<span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $141.69</span>
+<span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $151.03</span>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px;font-weight:900;color:#00e676">$CSCO</span>
+<span style="font-size:13px;font-weight:800;color:#00e676"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px;margin-right:4px">SMC</span>↑ Sweep + Demand Bounce</span>
+<span style="font-size:11px;color:#8ab4d4">2026-03-20</span>
+<span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">Momentum 40/10 — C</span>
+<a href="https://www.tradingview.com/chart/?symbol=CSCO&amp;interval=D&amp;studies=MASimple@tv-basicstudies&amp;from=1766206800&amp;to=1775188800" target="_blank" style="margin-left:auto;font-size:11px;color:#42a5f5;text-decoration:none">📈 Chart</a>
+</div>
+<div style="font-size:12px;color:#d0e4f7;line-height:1.7;margin-bottom:10px">Today&#x27;s low ($76.72) swept below the prior swing low ($77.07), grabbing stop-loss liquidity, then reversed to close at $77.65 — 0.45% below swept level. Vol 4.2× avg | Body 34%. Watch for follow-through above the sweep level.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Combined volume + body quality score">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Score</div>
+<div style="font-size:13px;font-weight:800;color:#ffb74d">40/100</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">1.5× = institutional participation confirmed">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Vol Ratio</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">4.2× avg</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">60% = conviction reversal bar">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Bar Body</div>
+<div style="font-size:13px;font-weight:800;color:#ef9a9a">34%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="How far price overshot the level before reversing">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sweep Depth</div>
+<div style="font-size:13px;font-weight:800;color:#FFD700">0.45%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Where close finished relative to the swept level">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Above Level</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+0.75%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Stop-hunt — institutions grab stops then reverse price">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Signal Type</div>
+<div style="font-size:13px;font-weight:800;color:#7e57c2">Liquidity Sweep</div>
+</div>
+</div>
+<div style="background:#0a1628;border-radius:7px;padding:10px 12px">
+<div style="font-size:10px;font-weight:800;color:#5a7fa0;margin-bottom:8px">RECENT HISTORY — LAST 60 DAYS (same ticker)</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
+<div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#00e676">↑ Reclaim Reclaim 10-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-19</span>
+<span style="background:#ef9a9a;color:#000;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px">4/10 Weak</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-19: Reclaimed 10-Day SMA at $78.10. Closed $78.51 (+0.52% above MA). Vol 0.8× avg | Bar 81% | Score 4/10 (Weak).</div>
+</div>
+<div style="background:#0d1b2a;border-left:3px solid #ef5350;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#ef5350">↓ Undercut Undercut 5-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-18</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-18: Undercut 5-Day SMA at $78.37. Closed $77.60 (-0.98% below MA). Vol 0.9× avg | Bar 3%.</div>
+</div>
+</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+<span style="font-size:11px;color:#FFD700;background:#13263d;padding:2px 8px;border-radius:5px">Entry: $77.65</span>
+<span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $75.19</span>
+<span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $80.58</span>
+<span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $83.52</span>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
@@ -199,6 +322,128 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $98.38</span>
 <span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $102.52</span>
 <span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $105.53</span>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px;font-weight:900;color:#00e676">$ADI</span>
+<span style="font-size:13px;font-weight:800;color:#00e676"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px;margin-right:4px">SMC</span>↑ Sweep + Demand Bounce</span>
+<span style="font-size:11px;color:#8ab4d4">2026-03-20</span>
+<span style="background:#ef5350;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">Momentum 20/10 — F</span>
+<a href="https://www.tradingview.com/chart/?symbol=ADI&amp;interval=D&amp;studies=MASimple@tv-basicstudies&amp;from=1766206800&amp;to=1775188800" target="_blank" style="margin-left:auto;font-size:11px;color:#42a5f5;text-decoration:none">📈 Chart</a>
+</div>
+<div style="font-size:12px;color:#d0e4f7;line-height:1.7;margin-bottom:10px">Today&#x27;s low ($305.95) swept below the prior swing low ($305.96), grabbing stop-loss liquidity, then reversed to close at $309.43 — 0.00% below swept level. Vol 1.6× avg | Body 28%. Watch for follow-through above the sweep level.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Combined volume + body quality score">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Score</div>
+<div style="font-size:13px;font-weight:800;color:#ef5350">20/100</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">1.5× = institutional participation confirmed">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Vol Ratio</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">1.6× avg</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">60% = conviction reversal bar">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Bar Body</div>
+<div style="font-size:13px;font-weight:800;color:#ef9a9a">28%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="How far price overshot the level before reversing">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sweep Depth</div>
+<div style="font-size:13px;font-weight:800;color:#FFD700">0.00%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Where close finished relative to the swept level">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Above Level</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+1.13%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Stop-hunt — institutions grab stops then reverse price">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Signal Type</div>
+<div style="font-size:13px;font-weight:800;color:#7e57c2">Liquidity Sweep</div>
+</div>
+</div>
+<div style="background:#0a1628;border-radius:7px;padding:10px 12px">
+<div style="font-size:10px;font-weight:800;color:#5a7fa0;margin-bottom:8px">RECENT HISTORY — LAST 60 DAYS (same ticker)</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
+<div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#00e676">↑ Reclaim Reclaim 5-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-19</span>
+<span style="background:#ef9a9a;color:#000;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px">2/10 Weak</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-19: Reclaimed 5-Day SMA at $309.94. Closed $310.44 (+0.16% above MA). Vol 0.8× avg | Bar 75% | Score 2/10 (Weak).</div>
+</div>
+<div style="background:#0d1b2a;border-left:3px solid #ef5350;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#ef5350">↓ Undercut Undercut 5-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-18</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-18: Undercut 5-Day SMA at $309.30. Closed $308.59 (-0.23% below MA). Vol 0.9× avg | Bar 8%.</div>
+</div>
+</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+<span style="font-size:11px;color:#FFD700;background:#13263d;padding:2px 8px;border-radius:5px">Entry: $309.43</span>
+<span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $300.90</span>
+<span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $324.75</span>
+<span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $340.06</span>
+</div>
+</div>
+<div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:20px;font-weight:900;color:#00e676">$BAC</span>
+<span style="font-size:13px;font-weight:800;color:#00e676"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px;margin-right:4px">SMC</span>↑ Sweep + Demand Bounce</span>
+<span style="font-size:11px;color:#8ab4d4">2026-03-20</span>
+<span style="background:#ef5350;color:#000;font-size:11px;font-weight:900;padding:2px 10px;border-radius:6px">Momentum 20/10 — F</span>
+<a href="https://www.tradingview.com/chart/?symbol=BAC&amp;interval=D&amp;studies=MASimple@tv-basicstudies&amp;from=1766206800&amp;to=1775188800" target="_blank" style="margin-left:auto;font-size:11px;color:#42a5f5;text-decoration:none">📈 Chart</a>
+</div>
+<div style="font-size:12px;color:#d0e4f7;line-height:1.7;margin-bottom:10px">Today&#x27;s low ($46.69) swept below the prior swing low ($46.77), grabbing stop-loss liquidity, then reversed to close at $47.16 — 0.18% below swept level. Vol 1.7× avg | Body 4%. Strong reversal — institutions absorbed the sell orders.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px">
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Combined volume + body quality score">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Score</div>
+<div style="font-size:13px;font-weight:800;color:#ef5350">20/100</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">1.5× = institutional participation confirmed">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Vol Ratio</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">1.7× avg</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title=">60% = conviction reversal bar">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Bar Body</div>
+<div style="font-size:13px;font-weight:800;color:#ef9a9a">4%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="How far price overshot the level before reversing">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sweep Depth</div>
+<div style="font-size:13px;font-weight:800;color:#FFD700">0.18%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Where close finished relative to the swept level">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Above Level</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">+0.83%</div>
+</div>
+<div style="background:#13263d;border-radius:7px;padding:8px 10px" title="Stop-hunt — institutions grab stops then reverse price">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Signal Type</div>
+<div style="font-size:13px;font-weight:800;color:#7e57c2">Liquidity Sweep</div>
+</div>
+</div>
+<div style="background:#0a1628;border-radius:7px;padding:10px 12px">
+<div style="font-size:10px;font-weight:800;color:#5a7fa0;margin-bottom:8px">RECENT HISTORY — LAST 60 DAYS (same ticker)</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
+<div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#00e676">↑ Reclaim Reclaim 5-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-19</span>
+<span style="background:#ef9a9a;color:#000;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px">3/10 Weak</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-19: Reclaimed 5-Day SMA at $46.98. Closed $47.01 (+0.06% above MA). Vol 0.8× avg | Bar 83% | Score 3/10 (Weak).</div>
+</div>
+<div style="background:#0d1b2a;border-left:3px solid #ef5350;border-radius:6px;padding:8px 10px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+<span style="font-size:11px;font-weight:800;color:#ef5350">↓ Undercut Undercut 200-Day SMA</span>
+<span style="font-size:10px;color:#8ab4d4">2026-03-05</span>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.5">2026-03-05: Undercut 200-Day SMA at $49.91. Closed $49.53 (-0.77% below MA). Vol 0.8× avg | Bar 44%.</div>
+</div>
+</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+<span style="font-size:11px;color:#FFD700;background:#13263d;padding:2px 8px;border-radius:5px">Entry: $47.16</span>
+<span style="font-size:11px;color:#ef5350;background:#13263d;padding:2px 8px;border-radius:5px">Stop: $46.11</span>
+<span style="font-size:11px;color:#42a5f5;background:#13263d;padding:2px 8px;border-radius:5px">PT1: $49.13</span>
+<span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $51.10</span>
 </div>
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #00e676;border-radius:10px;padding:16px 18px;margin-bottom:14px">
@@ -604,8 +849,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-31.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-09-19: low $508.20 → close $515.79 (2.1× vol)</span><br><span style="color:#00e676">↑ 2025-08-26: low $496.45 → close $499.96 (1.2× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">2 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2025-09-19: low $508.20 → close $515.79 (2.1× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-08-26: low $496.45 → close $499.96 (1.2× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
@@ -613,8 +858,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-23.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-28: low $476.91 → close $480.53 (1.5× vol)</span><br><span style="color:#00e676">↑ 2025-12-19: low $481.39 → close $484.81 (2.8× vol)</span><br><span style="color:#00e676">↑ 2025-12-10: low $474.00 → close $477.47 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-12-03: low $474.12 → close $476.64 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">7 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-01-28: low $476.91 → close $480.53 (1.5× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-12-19: low $481.39 → close $484.81 (2.8× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-12-10: low $474.00 → close $477.47 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-12-03: low $474.12 → close $476.64 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
@@ -622,8 +867,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-17.1%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-23: low $449.50 → close $464.89 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-01-16: low $455.44 → close $458.81 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-05-30: low $452.91 → close $457.70 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">3 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-01-23: low $449.50 → close $464.89 (1.5× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-01-16: low $455.44 → close $458.81 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-05-30: low $452.91 → close $457.70 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
@@ -631,8 +876,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-10.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 50 SMA</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-02: low $421.29 → close $422.41 (1.7× vol)</span><br><span style="color:#00e676">↑ 2026-01-30: low $425.48 → close $429.31 (2.3× vol)</span><br><span style="color:#00e676">↑ 2026-01-29: low $420.06 → close $432.51 (5.2× vol)</span><br><span style="color:#00e676">↑ 2025-05-02: low $426.72 → close $431.97 (1.2× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">5 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-02-02: low $421.29 → close $422.41 (1.7× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-01-30: low $425.48 → close $429.31 (2.3× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-01-29: low $420.06 → close $432.51 (5.2× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-05-02: low $426.72 → close $431.97 (1.2× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
 <td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">76.4%</td>
@@ -640,8 +885,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-2.6%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">11 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-03-03: low $392.67 → close $403.93 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-03-02: low $390.63 → close $398.55 (1.4× vol)</span><br><span style="color:#00e676">↑ 2026-02-27: low $389.88 → close $392.74 (2.0× vol)</span><br><span style="color:#00e676">↑ 2026-02-26: low $398.74 → close $401.72 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">11 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-03-03: low $392.67 → close $403.93 (1.5× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-03-02: low $390.63 → close $398.55 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-02-27: low $389.88 → close $392.74 (2.0× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-02-26: low $398.74 → close $401.72 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
@@ -649,8 +894,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+10.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-08: low $347.59 → close $351.87 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-04-07: low $342.17 → close $355.14 (2.0× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 held</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">✓ 2025-04-08: low $347.59 → close $351.87 (1.4× vol) — Bounce ✓</span><br><span style="color:#00e676">✓ 2025-04-07: low $342.17 → close $355.14 (2.0× vol) — Bounce ✓</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -896,8 +1141,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-14.7%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-07-31: low $231.40 → close $234.11 (2.2× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">1 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2025-07-31: low $231.40 → close $234.11 (2.2× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
@@ -905,8 +1150,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-7.8%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 50 SMA</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-05: low $220.38 → close $222.69 (2.2× vol)</span><br><span style="color:#00e676">↑ 2025-12-19: low $225.58 → close $227.35 (1.8× vol)</span><br><span style="color:#00e676">↑ 2025-11-19: low $218.52 → close $222.69 (1.2× vol)</span><br><span style="color:#00e676">↑ 2025-11-18: low $222.42 → close $222.55 (1.3× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">7 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-02-05: low $220.38 → close $222.69 (2.2× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-12-19: low $225.58 → close $227.35 (1.8× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-19: low $218.52 → close $222.69 (1.2× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-18: low $222.42 → close $222.55 (1.3× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
 <td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
@@ -914,8 +1159,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-2.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 21 EMA</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-10: low $206.41 → close $206.96 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-08-04: low $211.42 → close $211.65 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-08-01: low $212.80 → close $214.75 (2.6× vol)</span><br><span style="color:#00e676">↑ 2025-06-20: low $208.27 → close $209.69 (1.6× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">5 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-02-10: low $206.41 → close $206.96 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-08-04: low $211.42 → close $211.65 (1.7× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-08-01: low $212.80 → close $214.75 (2.6× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-06-20: low $208.27 → close $209.69 (1.6× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
@@ -923,8 +1168,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+3.3%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-02-17: low $196.00 → close $201.15 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-02-13: low $197.28 → close $198.79 (1.4× vol)</span><br><span style="color:#00e676">↑ 2026-02-12: low $197.56 → close $199.60 (1.8× vol)</span><br><span style="color:#00e676">↑ 2026-02-11: low $202.49 → close $204.08 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">5 held</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">✓ 2026-02-17: low $196.00 → close $201.15 (1.5× vol) — Bounce ✓</span><br><span style="color:#00e676">✓ 2026-02-13: low $197.28 → close $198.79 (1.4× vol) — Bounce ✓</span><br><span style="color:#00e676">✓ 2026-02-12: low $197.56 → close $199.60 (1.8× vol) — Bounce ✓</span><br><span style="color:#00e676">✓ 2026-02-11: low $202.49 → close $204.08 (1.4× vol) — Bounce ✓</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">76.4%</td>
@@ -932,8 +1177,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+10.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-05-02: low $186.40 → close $189.98 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-05-01: low $187.50 → close $190.20 (1.6× vol)</span><br><span style="color:#00e676">↑ 2025-03-31: low $184.40 → close $190.26 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">2 held</span><span style="color:#5a7fa0"> / </span><span style="color:#ffb74d;font-weight:700">1 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">✓ 2025-05-02: low $186.40 → close $189.98 (1.7× vol) — Bounce ✓</span><br><span style="color:#00e676">✓ 2025-05-01: low $187.50 → close $190.20 (1.6× vol) — Bounce ✓</span><br><span style="color:#ffb74d">⚠ 2025-03-31: low $184.40 → close $190.26 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
@@ -941,8 +1186,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+21.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-07: low $161.38 → close $175.26 (2.3× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 held</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">✓ 2025-04-07: low $161.38 → close $175.26 (2.3× vol) — Bounce ✓</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #FFD700;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -1183,8 +1428,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-21.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">4 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-30: low $712.98 → close $715.89 (1.6× vol)</span><br><span style="color:#00e676">↑ 2026-01-29: low $711.94 → close $737.68 (3.9× vol)</span><br><span style="color:#00e676">↑ 2025-10-01: low $709.01 → close $716.14 (1.3× vol)</span><br><span style="color:#00e676">↑ 2025-06-27: low $724.16 → close $731.91 (1.2× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">4 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-01-30: low $712.98 → close $715.89 (1.6× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-01-29: low $711.94 → close $737.68 (3.9× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-10-01: low $709.01 → close $716.14 (1.3× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-06-27: low $724.16 → close $731.91 (1.2× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#ef9a9a;text-align:right;white-space:nowrap">38.2%</td>
@@ -1192,8 +1437,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-13.5%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">3 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-28: low $665.53 → close $668.16 (1.7× vol)</span><br><span style="color:#00e676">↑ 2025-12-05: low $661.28 → close $672.30 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-06-20: low $677.08 → close $680.75 (1.5× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">3 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-01-28: low $665.53 → close $668.16 (1.7× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-12-05: low $661.28 → close $672.30 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-06-20: low $677.08 → close $680.75 (1.5× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#42a5f5;text-align:right;white-space:nowrap">50%</td>
@@ -1201,8 +1446,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-7.2%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">★ 21 EMA</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">8 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-01-23: low $643.90 → close $658.20 (1.5× vol)</span><br><span style="color:#00e676">↑ 2026-01-22: low $626.01 → close $647.08 (1.4× vol)</span><br><span style="color:#00e676">↑ 2025-11-05: low $625.49 → close $634.89 (1.3× vol)</span><br><span style="color:#00e676">↑ 2025-11-04: low $624.96 → close $626.27 (1.8× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">8 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-01-23: low $643.90 → close $658.20 (1.5× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-01-22: low $626.01 → close $647.08 (1.4× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-05: low $625.49 → close $634.89 (1.3× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-04: low $624.96 → close $626.27 (1.8× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;background:#1a0a0a;">
 <td style="padding:6px 10px;font-weight:800;color:#FFD700;text-align:right;white-space:nowrap">61.8% — Golden Ratio</td>
@@ -1210,8 +1455,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#ef5350;text-align:right">-0.9%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#ef9a9a;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">RESISTANCE ▼</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">7 bounces</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2026-03-20: low $587.27 → close $593.66 (1.3× vol)</span><br><span style="color:#00e676">↑ 2026-03-13: low $609.03 → close $613.18 (1.2× vol)</span><br><span style="color:#00e676">↑ 2025-11-24: low $596.63 → close $612.03 (1.6× vol)</span><br><span style="color:#00e676">↑ 2025-11-14: low $594.21 → close $608.44 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">7 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2026-03-20: low $587.27 → close $593.66 (1.3× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2026-03-13: low $609.03 → close $613.18 (1.2× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-24: low $596.63 → close $612.03 (1.6× vol) — Bounce (later broken)</span><br><span style="color:#ffb74d">⚠ 2025-11-14: low $594.21 → close $608.44 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">76.4%</td>
@@ -1219,8 +1464,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+6.9%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-03-31: low $551.58 → close $574.57 (1.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#ffb74d;font-weight:700">1 broken</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#ffb74d">⚠ 2025-03-31: low $551.58 → close $574.57 (1.4× vol) — Bounce (later broken)</span></td>
 </tr>
 <tr style="border-bottom:1px solid #0d2040;">
 <td style="padding:6px 10px;font-weight:800;color:#00e676;text-align:right;white-space:nowrap">100% — 52wk Low</td>
@@ -1228,8 +1473,8 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 <td style="padding:6px 10px;color:#00e676;text-align:right">+19.4%</td>
 <td style="padding:6px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SUPPORT ▲</span></td>
 <td style="padding:6px 10px;color:#FFD700;font-size:11px;text-align:right">—</td>
-<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 bounce</span><span style="color:#5a7fa0"> / </span><span style="color:#ef5350">0 fails</span></td>
-<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">↑ 2025-04-07: low $480.40 → close $514.64 (2.4× vol)</span></td>
+<td style="padding:6px 10px;text-align:right;font-size:11px"><span style="color:#00e676;font-weight:700">1 held</span></td>
+<td style="padding:6px 10px;font-size:11px;min-width:220px;line-height:1.7"><span style="color:#00e676">✓ 2025-04-07: low $480.40 → close $514.64 (2.4× vol) — Bounce ✓</span></td>
 </tr>
 </tbody></table></div>
 <div style="background:#0d1b2a;border-left:3px solid #00e676;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11px;color:#d0e4f7">
@@ -1329,7 +1574,7 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 </div>
 <div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ffb74d;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current gain of +40.7% means the options have decayed significantly in Kyle&#x27;s favor as the CC seller, which is exactly what we want. With bearish EMA signals supporting continued downward pressure and the position well below the stop-loss level of $8.92, this is an ideal time to lock in profits. At 20 DTE, we&#x27;re past the optimal closing window, and taking the 40.7% gain now allows Kyle to potentially resell new calls at higher strikes if the bearish trend continues.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows a +40.7% gain as the option decayed from $4.46 to $2.65, which is excellent for a covered call seller since we profit from time decay. This exceeds the 50% profit-taking rule and should be closed immediately to lock in gains. The bearish signal supports closing now rather than risking a reversal, and with 20 DTE remaining, there&#x27;s still time value that could work against us if momentum shifts.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1377,7 +1622,7 @@ $210 strike
 </div>
 <div style="background:#0a1628;border-left:3px solid #00e676;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Outstanding +73.4% gain represents massive option decay working perfectly in Kyle&#x27;s favor as the covered call seller. The bearish EMA signal confirms continued downward pressure, and with current option price at $2.13 well below the $16.02 stop-loss level, this is an exceptional profit to capture. With MSFT earnings on April 28th and only 20 DTE remaining, closing now locks in this substantial win and avoids any potential earnings volatility that could reverse these gains.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows an outstanding +73.4% gain as the option decayed from $8.01 to $2.13, far exceeding the 50% profit-taking threshold for covered call sellers. This massive time decay represents excellent income generation and should be closed immediately to secure profits. The bearish signal confirms the favorable environment, and with earnings on April 28th approaching, closing now avoids potential volatility expansion that could erode these exceptional gains.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
