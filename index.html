@@ -30,7 +30,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-20 11:28 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
+<div class="muted">Updated 2026-03-20 11:43 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Reclaims (5)</button>
@@ -568,46 +568,55 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 </div>
 </div>
 <div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: May 1 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#FFD700;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">75% floor — moderate cushion</span>
+<span style="font-size:11px;color:#00e676">Earnings May 01 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#555">Sell AAPL Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#555">Sell AAPL Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$205.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$205.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">16.5% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">75% level · 16.5% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$0.62/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$6.08/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$62</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$608</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$198.92</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~7.0%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy AAPL @ $205.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own AAPL @ $205.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $204.38 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~3.9% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — AAPL held above $205.00 on 75% of trading days over the past year. 
-Assignment at $205.00 means buying AAPL at a 16.5% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#FFD700">Why this trade:</strong> AAPL is 16.5% above its 75% statistical floor. Consider waiting for price to approach the 95% floor ($194.48) for maximum conviction before selling a long-dated put.
 </div>
 </div>
 </div>
@@ -767,48 +776,56 @@ Assignment at $205.00 means buying AAPL at a 16.5% discount to today.
  <span style="color:#8ab4d4">on 2026-03-16 at $399.95 (MA: $398.77)</span>
 </div>
 </div>
-<div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="background:#0d2a18;border:1px solid #00e676;border-radius:10px;padding:14px 16px;margin-top:4px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: Apr 28 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">⚡ NEAR 95% FLOOR — HIGH CONVICTION</span>
+<span style="font-size:11px;color:#00e676">Earnings Apr 28 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#00a4ef">Sell MSFT Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#00a4ef">Sell MSFT Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$420.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$370.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">-10.3% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">95% level · 3.0% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$38.55/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$24.85/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$3855</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$2485</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$345.15</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~15.9%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy MSFT @ $420.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own MSFT @ $370.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $381.45 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~119.6% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — MSFT held above $420.00 on 75% of trading days over the past year. 
-Confluent with 50 SMA. 
-Assignment at $420.00 means buying MSFT at a -10.3% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#00e676">Why this trade:</strong> MSFT is currently 3.0% above its 95% statistical floor ($370.00). Price has only closed below this level on ~5% of trading days over the past year. Selling a put here gives maximum statistical backing — the stock would need an unusually severe move to put you in assignment territory.
 </div>
 </div>
 </div>
@@ -969,46 +986,55 @@ Assignment at $420.00 means buying MSFT at a -10.3% discount to today.
 </div>
 </div>
 <div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: May 28 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#FFD700;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">75% floor — moderate cushion</span>
+<span style="font-size:11px;color:#00e676">Earnings May 28 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#76b900">Sell NVDA Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#76b900">Sell NVDA Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$145.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$145.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">17.1% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">75% level · 17.1% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$1.04/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$7.70/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$104</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$770</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$137.30</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~12.6%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy NVDA @ $145.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own NVDA @ $145.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $143.96 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~9.3% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — NVDA held above $145.00 on 75% of trading days over the past year. 
-Assignment at $145.00 means buying NVDA at a 17.1% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#FFD700">Why this trade:</strong> NVDA is 17.1% above its 75% statistical floor. Consider waiting for price to approach the 95% floor ($103.63) for maximum conviction before selling a long-dated put.
 </div>
 </div>
 </div>
@@ -1169,47 +1195,56 @@ Assignment at $145.00 means buying NVDA at a 17.1% discount to today.
  <span style="color:#8ab4d4">on 2026-03-16 at $211.74 (MA: $210.85)</span>
 </div>
 </div>
-<div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="background:#0d2a18;border:1px solid #00e676;border-radius:10px;padding:14px 16px;margin-top:4px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: Apr 30 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">⚡ NEAR 95% FLOOR — HIGH CONVICTION</span>
+<span style="font-size:11px;color:#00e676">Earnings Apr 30 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#FF9900">Sell AMZN Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#FF9900">Sell AMZN Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$205.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$180.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">0.1% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">95% level · 12.9% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$7.25/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$9.68/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$725</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$968</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$170.32</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~12.7%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy AMZN @ $205.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own AMZN @ $180.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $197.75 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~46.1% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — AMZN held above $205.00 on 75% of trading days over the past year. 
-Assignment at $205.00 means buying AMZN at a 0.1% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#00e676">Why this trade:</strong> AMZN is currently 12.9% above its 95% statistical floor ($180.00). Price has only closed below this level on ~5% of trading days over the past year. Selling a put here gives maximum statistical backing — the stock would need an unusually severe move to put you in assignment territory.
 </div>
 </div>
 </div>
@@ -1371,39 +1406,55 @@ Assignment at $205.00 means buying AMZN at a 0.1% discount to today.
 </div>
 </div>
 <div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: Apr 29 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#FFD700;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">75% floor — moderate cushion</span>
+<span style="font-size:11px;color:#00e676">Earnings Apr 29 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#4285F4">Sell GOOGL Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#4285F4">Sell GOOGL Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$172.42</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$170.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">42.7% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">75% level · 42.7% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#555">fetch live</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$1.14/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#555">—</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$114</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$168.86</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~1.6%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy GOOGL @ $172.42</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own GOOGL @ $170.00</div>
 </div>
+</div>
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#FFD700">Why this trade:</strong> GOOGL is 42.7% above its 75% statistical floor. Consider waiting for price to approach the 95% floor ($151.67) for maximum conviction before selling a long-dated put.
 </div>
 </div>
 </div>
@@ -1559,47 +1610,56 @@ Assignment at $205.00 means buying AMZN at a 0.1% discount to today.
  <span style="color:#8ab4d4">on 2026-03-16 at $627.45 (MA: $627.16)</span>
 </div>
 </div>
-<div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="background:#0d2a18;border:1px solid #00e676;border-radius:10px;padding:14px 16px;margin-top:4px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: Apr 23 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">⚡ NEAR 95% FLOOR — HIGH CONVICTION</span>
+<span style="font-size:11px;color:#00e676">Earnings Apr 23 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#1877F2">Sell META Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#1877F2">Sell META Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$625.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$530.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">-5.0% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">95% level · 11.2% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$38.97/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$30.93/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$3897</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$3093</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$499.07</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~13.8%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy META @ $625.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own META @ $530.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $586.03 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~81.3% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — META held above $625.00 on 75% of trading days over the past year. 
-Assignment at $625.00 means buying META at a -5.0% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#00e676">Why this trade:</strong> META is currently 11.2% above its 95% statistical floor ($530.00). Price has only closed below this level on ~5% of trading days over the past year. Selling a put here gives maximum statistical backing — the stock would need an unusually severe move to put you in assignment territory.
 </div>
 </div>
 </div>
@@ -1760,46 +1820,55 @@ Assignment at $625.00 means buying META at a -5.0% discount to today.
 </div>
 </div>
 <div style="background:#0d2a18;border:1px solid #1a5c2a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
 <span style="font-size:12px;font-weight:900;color:#00e676">💰 SUGGESTED PUT TO SELL</span>
-<span style="font-size:11px;color:#8ab4d4">Earnings: Apr 22 — expiry Apr 17, 2026 is safe</span>
+<span style="background:#FFD700;color:#000;font-size:10px;font-weight:900;padding:2px 9px;border-radius:5px">75% floor — moderate cushion</span>
+<span style="font-size:11px;color:#00e676">Earnings Apr 22 — expiry safe ✓</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ticker</div>
-<div style="font-size:13px;font-weight:800;color:#cc0000">Sell TSLA Put</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#cc0000">Sell TSLA Put</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strike</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">$315.00</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$320.00</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Apr 17, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Aug 21, 2026</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">DTE</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">154d</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">OTM %</div>
-<div style="font-size:13px;font-weight:800;color:#FFD700">14.3% OTM</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">75% level · 14.3% OTM</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Premium</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$4.00/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$22.77/sh</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:13px;font-weight:800;color:#00e676">$400</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$2277</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$297.23</div>
+</div>
+<div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~16.9%</div>
 </div>
 <div style="background:#0a1e10;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">If assigned</div>
-<div style="font-size:13px;font-weight:800;color:#8ab4d4">Buy TSLA @ $315.00</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">Own TSLA @ $320.00</div>
 </div>
 </div>
-<div style="font-size:11px;color:#8ab4d4;margin-top:10px;line-height:1.6">
-<strong style="color:#00e676">Breakeven:</strong> $311.00 &nbsp;|&nbsp; 
-<strong style="color:#FFD700">Ann. return:</strong> ~16.6% &nbsp;|&nbsp; 
-<strong style="color:#8ab4d4">Why this strike:</strong> 
-75% confidence interval — TSLA held above $315.00 on 75% of trading days over the past year. 
-Assignment at $315.00 means buying TSLA at a 14.3% discount to today.
+<div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #1a3a2a;padding-top:8px">
+<strong style="color:#FFD700">Why this trade:</strong> TSLA is 14.3% above its 75% statistical floor. Consider waiting for price to approach the 95% floor ($244.43) for maximum conviction before selling a long-dated put.
 </div>
 </div>
 </div>
@@ -1842,7 +1911,7 @@ Assignment at $315.00 means buying TSLA at a 14.3% discount to today.
 </div>
 <div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ffb74d;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Position shows +13.6% gain as the sold calls have decayed from $4.46 to $3.85, which is profitable for a covered call seller. At 21 DTE we&#x27;re at the rolling threshold, but the gain hasn&#x27;t reached the 50% profit target for closing. The bearish signal supports holding as continued downward pressure should accelerate time decay. Current option price of $3.85 remains well below the $8.92 stop-loss level.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current position shows +13.6% gain as the option has decayed from $4.46 to $3.85, which is profitable for a covered call seller. With 21 DTE remaining and the bearish signal keeping AMZN below EMAs at $205.37, time decay is working in our favor. The position hasn&#x27;t reached the 50% profit target yet, and we&#x27;re well below the $8.92 stop-loss level, so holding allows more premium collection.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1890,7 +1959,7 @@ $210 strike
 </div>
 <div style="background:#0a1628;border-left:3px solid #00e676;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Exceptional +73.4% gain with options decaying from $8.01 to just $2.13 - far exceeding the 50% profit target for closing covered calls. This massive time decay represents excellent income for the CC seller and should be captured immediately. The bearish signal confirms the favorable environment, and with MSFT earnings on Apr 28, closing now avoids potential volatility expansion. At $2.13 current price, this is well below the $16.02 stop level.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Exceptional +73.4% gain as the option decayed from $8.01 to $2.13, far exceeding the 50% profit target for covered call sellers. With MSFT bearish at $381.87 and the option value well below our $16.02 stop-loss, this is an ideal time to capture profits. The dramatic decay combined with 21 DTE remaining makes closing now the optimal move to lock in gains.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
