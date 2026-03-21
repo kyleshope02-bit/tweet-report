@@ -30,10 +30,11 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-21 01:29 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 9 across 147 tickers</div>
+<div class="muted">Updated 2026-03-21 01:38 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 9 across 147 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Signals (9)</button>
+  <button id="btn-hist"    class="tabbtn off" data-tabbtn="1" onclick="showTab('hist')">📅 Historical (10)</button>
   <button id="btn-mag7"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mag7')">Mag 7</button>
   <button id="btn-mycc"    class="tabbtn off" data-tabbtn="1" onclick="showTab('mycc')">💼 Kyle's Covered Calls</button>
 </div>
@@ -552,6 +553,186 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <span style="font-size:11px;color:#00e676;background:#13263d;padding:2px 8px;border-radius:5px">PT2: $164.78</span>
 </div>
 </div>
+</div>
+</div>
+
+<div id="tab-hist" class="hidden" data-tab="1">
+<div class="card">
+<h3>&#128200; Historical Signals — 2026 &nbsp;<span class="fresh">Score &ge;90 | Bullish only | Jan 1 – today</span></h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:16px">
+<div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Total Signals</div>
+<div style="font-size:18px;font-weight:900;color:#e8edf5">10</div></div>
+<div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">U&R Reclaims</div>
+<div style="font-size:18px;font-weight:900;color:#00e676">8</div></div>
+<div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">SMC Sweeps</div>
+<div style="font-size:18px;font-weight:900;color:#7e57c2">2</div></div>
+<div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Grade A (90-100)</div>
+<div style="font-size:18px;font-weight:900;color:#FFD700">10</div></div>
+<div style="background:#0d1b2a;border-radius:7px;padding:9px 12px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Unique Tickers</div>
+<div style="font-size:18px;font-weight:900;color:#42a5f5">6</div></div>
+</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:12px">
+<thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Date</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ticker</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Signal</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Type</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Score</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Grade</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Vol</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Body%</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">MA Dist%</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Undercut%</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Close</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Description</th>
+</tr></thead><tbody>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-03-19</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$FDX <a href="https://www.tradingview.com/chart/?symbol=FDX&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Sweep + Demand Bounce</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SMC</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">100</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.9&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">84%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+2.10%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">1.33%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$356.11</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Low ($344.15) swept below prior swing low ($348.78), reversed to close $356.11. Vol 2.9× avg | Body 84%. Strong reversal — institutions absorbed sellers.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-30</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$VZ <a href="https://www.tradingview.com/chart/?symbol=VZ&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 100-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">92</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">4.2&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">77%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+10.85%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">0.81%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$44.52</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 100-Day SMA ($40.16) — prev close $39.81 below, closed $44.52 above (+10.85%). Vol 4.2× avg | Body 77% | Undercut depth 0.81%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-30</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$VZ <a href="https://www.tradingview.com/chart/?symbol=VZ&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 200-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">92</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">4.2&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">77%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+9.22%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">2.30%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$44.52</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 200-Day SMA ($40.76) — prev close $39.81 below, closed $44.52 above (+9.22%). Vol 4.2× avg | Body 77% | Undercut depth 2.30%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-28</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$ELV <a href="https://www.tradingview.com/chart/?symbol=ELV&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 100-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">90</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.9&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">82%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+1.18%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">4.32%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$339.76</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 100-Day SMA ($335.79) — prev close $320.94 below, closed $339.76 above (+1.18%). Vol 2.9× avg | Body 82% | Undercut depth 4.32%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-12</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$BABA <a href="https://www.tradingview.com/chart/?symbol=BABA&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 50-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">100</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">3.5&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">86%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+6.00%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">3.95%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$166.31</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 50-Day SMA ($156.90) — prev close $150.96 below, closed $166.31 above (+6.00%). Vol 3.5× avg | Body 86% | Undercut depth 3.95%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-12</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$BABA <a href="https://www.tradingview.com/chart/?symbol=BABA&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 100-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">100</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">3.5&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">86%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+5.29%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">4.15%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$166.31</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 100-Day SMA ($157.96) — prev close $150.96 below, closed $166.31 above (+5.29%). Vol 3.5× avg | Body 86% | Undercut depth 4.15%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-12</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$TCEHY <a href="https://www.tradingview.com/chart/?symbol=TCEHY&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 50-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">100</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.7&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">96%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+3.58%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">0.82%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$82.40</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 50-Day SMA ($79.55) — prev close $78.94 below, closed $82.40 above (+3.58%). Vol 2.7× avg | Body 96% | Undercut depth 0.82%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-12</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$TCEHY <a href="https://www.tradingview.com/chart/?symbol=TCEHY&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 100-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">100</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.7&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">96%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+2.30%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">1.91%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$82.40</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 100-Day SMA ($80.55) — prev close $78.94 below, closed $82.40 above (+2.30%). Vol 2.7× avg | Body 96% | Undercut depth 1.91%.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-08</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$BABA <a href="https://www.tradingview.com/chart/?symbol=BABA&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Sweep + Demand Bounce</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#7e57c2;color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">SMC</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">90</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.3&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">84%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+6.06%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">0.25%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$154.47</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Low ($145.27) swept below prior swing low ($145.64), reversed to close $154.47. Vol 2.3× avg | Body 84%. Strong reversal — institutions absorbed sellers.</td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;color:#8ab4d4;text-align:right;white-space:nowrap">2026-01-06</td>
+<td style="padding:7px 10px;font-weight:900;color:#e8edf5;text-align:right">$TXN <a href="https://www.tradingview.com/chart/?symbol=TXN&interval=D" target="_blank" style="color:#42a5f5">↗</a></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right;white-space:nowrap">Reclaim 200-Day SMA</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#1a5c2a;color:#00e676;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">U&R</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:14px;text-align:right">90</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:11px;font-weight:900;padding:2px 8px;border-radius:5px">A</span></td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">2.1&times;</td>
+<td style="padding:7px 10px;color:#d0daea;text-align:right">94%</td>
+<td style="padding:7px 10px;color:#00e676;text-align:right">+7.06%</td>
+<td style="padding:7px 10px;color:#ef9a9a;text-align:right">1.22%</td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">$190.85</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;max-width:320px;line-height:1.5">Reclaimed 200-Day SMA ($178.28) — prev close $176.02 below, closed $190.85 above (+7.06%). Vol 2.1× avg | Body 94% | Undercut depth 1.22%.</td>
+</tr>
+</tbody></table></div>
 </div>
 </div>
 
@@ -1574,7 +1755,7 @@ The 95% floor is the price level that has held on 95% of trading days over the p
 </div>
 <div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ffb74d;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows a +40.7% gain as the option decayed from $4.46 to $2.65, which is excellent for a covered call seller since we profit from time decay. This exceeds the 50% profit-taking rule and should be closed immediately to lock in gains. The bearish signal supports closing now rather than risking a reversal, and with 20 DTE remaining, there&#x27;s still time value that could work against us if momentum shifts.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current position shows +40.7% gain as the option has decayed from $4.46 to $2.65, which is highly profitable for a covered call seller. While we&#x27;re at 20 DTE and could roll, the bearish signal with price at $205.37 suggests continued downward pressure that benefits our short position. The option needs to decay just $1.42 more to reach our 50% profit target, and with bearish momentum this should happen naturally without needing to roll now.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1622,7 +1803,7 @@ $210 strike
 </div>
 <div style="background:#0a1628;border-left:3px solid #00e676;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">The position shows an outstanding +73.4% gain as the option decayed from $8.01 to $2.13, far exceeding the 50% profit-taking threshold for covered call sellers. This massive time decay represents excellent income generation and should be closed immediately to secure profits. The bearish signal confirms the favorable environment, and with earnings on April 28th approaching, closing now avoids potential volatility expansion that could erode these exceptional gains.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current position shows exceptional +73.4% gain as the option decayed from $8.01 to $2.13, far exceeding our 50% profit target rule. This represents $1,176 in profit that should be locked in immediately rather than risked. The bearish signal supports closing now, and with MSFT earnings on April 28, taking this substantial win eliminates any earnings volatility risk while banking an excellent covered call outcome.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
