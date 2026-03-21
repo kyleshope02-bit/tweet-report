@@ -30,7 +30,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-03-20 11:43 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
+<div class="muted">Updated 2026-03-20 11:54 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 5 across 147 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Reclaims (5)</button>
@@ -314,106 +314,111 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <div class="card">
 <h3>Mag 7 <span class="fresh">Mar 20, 2026 — live</span></h3>
 <div style="background:#0a1628;border-radius:12px;padding:16px 20px;margin-bottom:20px">
-<div style="font-size:14px;font-weight:900;color:#FFD700;margin-bottom:4px">📊 CSP Rankings — Best Strike by Confidence Level</div>
-<div style="font-size:11px;color:#5a7fa0;margin-bottom:12px">Ranked by 75% support OTM% descending — more OTM = more cushion. ✅ = recommended strike.</div>
+<div style="font-size:14px;font-weight:900;color:#FFD700;margin-bottom:4px">📊 CSP Rankings — Ranked by Proximity to 95% Support Floor</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:12px">Sorted by how close the stock is to its 95% annual floor — nearest = highest conviction CSP zone. ⚡ = within 15% of 95% floor (act now). 95% floor = price held above this level 95% of the past year.</div>
 <div style="overflow-x:auto">
 <table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Rank</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ticker</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Price</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Confidence</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">95% Support</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">75% Support</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">50% Support</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Best Strike</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Signal</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">95% Floor ⭐</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM from 95%</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Near Floor?</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">75% Level</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">50% Level</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Chart</th>
 </tr></thead><tbody>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#FFD700;text-align:right">#1</td>
-<td style="padding:7px 10px;font-weight:900;color:#4285F4;text-align:right">GOOGL</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$301.00</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">CAUTION</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$151.67</td><td style="padding:7px 10px;color:#00e676;text-align:right">49.6%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $172.42</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">42.7%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$239.38</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">20.5%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$172.42</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=GOOGL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#00e676;text-align:right">#2</td>
-<td style="padding:7px 10px;font-weight:900;color:#76b900;text-align:right">NVDA</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$172.70</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">LOW</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$103.63</td><td style="padding:7px 10px;color:#00e676;text-align:right">40.0%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $143.18</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">17.1%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$175.55</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">-1.7%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$143.18</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=NVDA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#00e676;text-align:right">#3</td>
-<td style="padding:7px 10px;font-weight:900;color:#555;text-align:right">AAPL</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$247.99</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">CAUTION</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$194.48</td><td style="padding:7px 10px;color:#00e676;text-align:right">21.6%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $207.09</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">16.5%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$239.75</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">3.3%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$207.09</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AAPL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#4</td>
-<td style="padding:7px 10px;font-weight:900;color:#cc0000;text-align:right">TSLA</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$367.96</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">LOW</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$244.43</td><td style="padding:7px 10px;color:#00e676;text-align:right">33.6%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $315.45</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">14.3%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$383.76</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">-4.3%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$315.45</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=TSLA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#5</td>
-<td style="padding:7px 10px;font-weight:900;color:#FF9900;text-align:right">AMZN</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$205.37</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">LOW</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$178.85</td><td style="padding:7px 10px;color:#00e676;text-align:right">12.9%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $205.18</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">0.1%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$219.12</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">-6.7%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$205.18</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AMZN&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#6</td>
-<td style="padding:7px 10px;font-weight:900;color:#1877F2;text-align:right">META</td>
-<td style="padding:7px 10px;color:#e8edf5;text-align:right">$593.66</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">LOW</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$526.95</td><td style="padding:7px 10px;color:#00e676;text-align:right">11.2%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $623.57</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">-5.0%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$656.09</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">-10.5%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$623.57</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=META&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040">
-<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#7</td>
+<tr style="border-bottom:1px solid #0d2040;background:#0a2010;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#00e676;text-align:right">⚡1</td>
 <td style="padding:7px 10px;font-weight:900;color:#00a4ef;text-align:right">MSFT</td>
 <td style="padding:7px 10px;color:#e8edf5;text-align:right">$381.87</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">LOW</span></td>
-<td style="padding:7px 10px;color:#00e676;text-align:right">$370.39</td><td style="padding:7px 10px;color:#00e676;text-align:right">3.0%</td>
-<td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">✅ $421.29</td><td style="padding:7px 10px;color:#FFD700;font-weight:700;text-align:right">-10.3%</td>
-<td style="padding:7px 10px;color:#ffb74d;text-align:right">$474.78</td><td style="padding:7px 10px;color:#ffb74d;text-align:right">-24.3%</td>
-<td style="padding:7px 10px;background:#0d2040;font-weight:900;color:#FFD700;text-align:right">$421.29</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">HIGH — CSP ZONE</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$370.39</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">3.0%</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 8px;border-radius:5px">⚡ ACT NOW</span></td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$421.29 (-10.3%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$474.78 (-24.3%)</td>
 <td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=MSFT&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a2010;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#00e676;text-align:right">⚡2</td>
+<td style="padding:7px 10px;font-weight:900;color:#1877F2;text-align:right">META</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$593.66</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">HIGH — CSP ZONE</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$526.95</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">11.2%</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 8px;border-radius:5px">⚡ ACT NOW</span></td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$623.57 (-5.0%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$656.09 (-10.5%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=META&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a2010;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#00e676;text-align:right">⚡3</td>
+<td style="padding:7px 10px;font-weight:900;color:#FF9900;text-align:right">AMZN</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$205.37</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">HIGH — CSP ZONE</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$178.85</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">12.9%</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#00e676;color:#000;font-size:10px;font-weight:900;padding:2px 8px;border-radius:5px">⚡ ACT NOW</span></td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$205.18 (0.1%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$219.12 (-6.7%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AMZN&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#4</td>
+<td style="padding:7px 10px;font-weight:900;color:#555;text-align:right">AAPL</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$247.99</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">PULLBACK</span></td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:900;text-align:right">$194.48</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">21.6%</td>
+<td style="padding:7px 10px;color:#555;font-size:11px;text-align:right">watching</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$207.09 (16.5%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$239.75 (3.3%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AAPL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#5</td>
+<td style="padding:7px 10px;font-weight:900;color:#cc0000;text-align:right">TSLA</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$367.96</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">WEAK</span></td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:900;text-align:right">$244.43</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">33.6%</td>
+<td style="padding:7px 10px;color:#555;font-size:11px;text-align:right">watching</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$315.45 (14.3%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$383.76 (-4.3%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=TSLA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#6</td>
+<td style="padding:7px 10px;font-weight:900;color:#76b900;text-align:right">NVDA</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$172.70</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ef5350;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">WEAK</span></td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:900;text-align:right">$103.63</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">40.0%</td>
+<td style="padding:7px 10px;color:#555;font-size:11px;text-align:right">watching</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$143.18 (17.1%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$175.55 (-1.7%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=NVDA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;">
+<td style="padding:7px 10px;font-size:15px;font-weight:900;color:#e8edf5;text-align:right">#7</td>
+<td style="padding:7px 10px;font-weight:900;color:#4285F4;text-align:right">GOOGL</td>
+<td style="padding:7px 10px;color:#e8edf5;text-align:right">$301.00</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:10px;font-weight:800;padding:1px 7px;border-radius:4px">PULLBACK</span></td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:900;text-align:right">$151.67</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">49.6%</td>
+<td style="padding:7px 10px;color:#555;font-size:11px;text-align:right">watching</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$172.42 (42.7%)</td>
+<td style="padding:7px 10px;color:#ffb74d;text-align:right">$239.38 (20.5%)</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=GOOGL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
 </tr>
 </tbody></table></div>
 </div>
 <div style="font-size:11px;color:#5a7fa0;margin-bottom:16px;padding:0 4px">
-Rankings show the 75% support level (recommended CSP strike) — price held above this level 75% of trading days over the past year. 
-Higher rank = more OTM cushion between current price and strike = lower assignment risk.
+⚡ ACT NOW = stock is within 15% of its 95% annual support floor — highest conviction zone to sell long-dated puts. 
+The 95% floor is the price level that has held on 95% of trading days over the past year.
 </div>
 <div style="background:#0d1b2a;border-left:4px solid #555;border-radius:12px;padding:18px 22px;margin-bottom:16px">
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
@@ -421,9 +426,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Apple Inc.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$247.99</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-0.39% today</span>
-<span style="background:#ffb74d;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">CAUTION CONFIDENCE</span>
+<span style="background:#ffb74d;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">PULLBACK CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 SMA but above 200 — pullback within longer uptrend. Watch for 50 SMA reclaim.</div>
+<div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 SMA but above 200 — pullback within longer uptrend. Watch for 50 SMA reclaim. 95% floor: $194.48 (21.6% OTM).</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -626,9 +631,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Microsoft Corp.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$381.87</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-1.84% today</span>
-<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">LOW CONFIDENCE</span>
+<span style="background:#00e676;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">HIGH — CSP ZONE CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure. Only 0% of MAs below price.</div>
+<div style="background:#0a1628;border-left:3px solid #00e676;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Price is 3.0% above its 95% annual support floor ($370.39). This is the statistical bottom — held on 95% of trading days over the past year. High conviction zone to sell long-dated cash-secured puts.</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -835,9 +840,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">NVIDIA Corp.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$172.70</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-3.28% today</span>
-<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">LOW CONFIDENCE</span>
+<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">WEAK CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure. Only 0% of MAs below price.</div>
+<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure (0% of MAs above price). Wait for stabilisation before selling puts. 95% floor: $103.63 (40.0% OTM).</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -1044,9 +1049,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Amazon.com Inc.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$205.37</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-1.62% today</span>
-<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">LOW CONFIDENCE</span>
+<span style="background:#00e676;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">HIGH — CSP ZONE CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure. Only 0% of MAs below price.</div>
+<div style="background:#0a1628;border-left:3px solid #00e676;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Price is 12.9% above its 95% annual support floor ($178.85). This is the statistical bottom — held on 95% of trading days over the past year. High conviction zone to sell long-dated cash-secured puts.</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -1254,9 +1259,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Alphabet Inc.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$301.00</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-2.00% today</span>
-<span style="background:#ffb74d;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">CAUTION CONFIDENCE</span>
+<span style="background:#ffb74d;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">PULLBACK CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 SMA but above 200 — pullback within longer uptrend. Watch for 50 SMA reclaim.</div>
+<div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 SMA but above 200 — pullback within longer uptrend. Watch for 50 SMA reclaim. 95% floor: $151.67 (49.6% OTM).</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -1464,9 +1469,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Meta Platforms Inc.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$593.66</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-2.15% today</span>
-<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">LOW CONFIDENCE</span>
+<span style="background:#00e676;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">HIGH — CSP ZONE CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure. Only 0% of MAs below price.</div>
+<div style="background:#0a1628;border-left:3px solid #00e676;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Price is 11.2% above its 95% annual support floor ($526.95). This is the statistical bottom — held on 95% of trading days over the past year. High conviction zone to sell long-dated cash-secured puts.</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -1669,9 +1674,9 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 <span style="font-size:14px;color:#8ab4d4">Tesla Inc.</span>
 <span style="font-size:20px;font-weight:900;color:#fff">$367.96</span>
 <span style="font-size:13px;color:#ef5350;font-weight:700">-3.24% today</span>
-<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">LOW CONFIDENCE</span>
+<span style="background:#ef5350;color:#000;font-size:12px;font-weight:900;padding:3px 14px;border-radius:10px;margin-left:auto">WEAK CONFIDENCE</span>
 </div>
-<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure. Only 0% of MAs below price.</div>
+<div style="background:#0a1628;border-left:3px solid #ef5350;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#dde8f8">Below 50 &amp; 200 SMA — downtrend structure (0% of MAs above price). Wait for stabilisation before selling puts. 95% floor: $244.43 (33.6% OTM).</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px">
 <div style="background:#13263d;border-radius:7px;padding:8px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">52-wk High</div>
@@ -1911,7 +1916,7 @@ Higher rank = more OTM cushion between current price and strike = lower assignme
 </div>
 <div style="background:#0a1628;border-left:3px solid #ffb74d;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#ffb74d;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Current position shows +13.6% gain as the option has decayed from $4.46 to $3.85, which is profitable for a covered call seller. With 21 DTE remaining and the bearish signal keeping AMZN below EMAs at $205.37, time decay is working in our favor. The position hasn&#x27;t reached the 50% profit target yet, and we&#x27;re well below the $8.92 stop-loss level, so holding allows more premium collection.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Position shows +13.6% gain meaning the options have decayed favorably for the covered call seller. With 21 DTE remaining and the bearish signal keeping price pressure down at $205.37, there&#x27;s still good potential for further decay toward the 50% profit target. The current option price of $3.85 is well below the stop-loss level of $8.92, so risk remains manageable while we harvest more time decay.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
@@ -1959,7 +1964,7 @@ $210 strike
 </div>
 <div style="background:#0a1628;border-left:3px solid #00e676;border-radius:6px;padding:9px 13px;margin-bottom:10px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:3px">RECOMMENDATION</div>
-<div style="font-size:12px;color:#dde8f8;line-height:1.6">Exceptional +73.4% gain as the option decayed from $8.01 to $2.13, far exceeding the 50% profit target for covered call sellers. With MSFT bearish at $381.87 and the option value well below our $16.02 stop-loss, this is an ideal time to capture profits. The dramatic decay combined with 21 DTE remaining makes closing now the optimal move to lock in gains.</div>
+<div style="font-size:12px;color:#dde8f8;line-height:1.6">Excellent +73.4% gain far exceeds the 50% profit-taking rule, meaning these options have decayed dramatically in our favor as covered call sellers. With the bearish signal supporting continued downward pressure at $381.87, we should lock in these substantial profits now. The current option price of $2.13 versus our $8.01 sold price represents a major win that should be captured immediately rather than risking a reversal.</div>
 </div>
 <div style="background:#0d2a18;border-radius:8px;padding:10px 14px">
 <div style="font-size:11px;font-weight:800;color:#00e676;margin-bottom:6px">SUGGESTED ROLL TARGET</div>
