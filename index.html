@@ -30,7 +30,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-04-14 09:34 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 0 across 152 tickers</div>
+<div class="muted">Updated 2026-04-14 09:41 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 0 across 152 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Signals (0)</button>
@@ -273,7 +273,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <h3>Mag 7 <span class="fresh">Apr 14, 2026 — live</span></h3>
 <div style="background:#0a1628;border-radius:12px;padding:16px 20px;margin-bottom:20px">
 <div style="font-size:14px;font-weight:900;color:#FFD700;margin-bottom:4px">📊 Mag 7 — Options Strategy Summary</div>
-<div style="font-size:11px;color:#5a7fa0;margin-bottom:12px">Best strategy for each stock based on price position, MA structure, earnings proximity, and support levels. CSP Score 0-100: proximity to 95% floor (40pts) + confidence (30pts) + Fib confluence (30pts). Scroll down for full detail on each stock.</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:12px">Best strategy for each stock based on price position, MA structure, earnings proximity, and support levels. Score 0-100: setup quality (33pts) + confirmation signals (34pts) + timing (33pts). Scroll down for full detail on each stock.</div>
 <div style="overflow-x:auto">
 <table style="width:100%;border-collapse:collapse;font-size:12px">
 <thead><tr style="background:#0d2040;border-bottom:2px solid #1e3a5f">
@@ -281,7 +281,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Ticker</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Price</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Best Strategy</th>
-<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">CSP Score</th>
+<th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">Score</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">95% Put Strike</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">OTM %</th>
 <th style="padding:7px 10px;color:#7eb8f7;font-weight:700;text-align:right;white-space:nowrap">75% Strike</th>
@@ -293,87 +293,87 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <td style="padding:7px 10px;font-weight:900;color:#00a4ef;text-align:right;font-size:14px">MSFT</td>
 <td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$393.11</td>
 <td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🛡️ PROTECTIVE PUT</span></td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">90</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">94</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$369.50</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:700;text-align:right">6.0%</td>
 <td style="padding:7px 10px;color:#FFD700;text-align:right">$421.67 (-7.3%)</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 28 in 14d — below 200 SMA, hedge binary risk</td>
 <td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=MSFT&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
 </tr>
-<tr style="border-bottom:1px solid #0d2040;">
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
 <td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#2</td>
-<td style="padding:7px 10px;font-weight:900;color:#555;text-align:right;font-size:14px">AAPL</td>
-<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$258.83</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🚀 BULL CALL SPREAD</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">35</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$196.18</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">24.2%</td>
-<td style="padding:7px 10px;color:#FFD700;text-align:right">$208.37 (19.5%)</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings May 01 in 17d — defined risk play into bullish print</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AAPL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#3</td>
-<td style="padding:7px 10px;font-weight:900;color:#1877F2;text-align:right;font-size:14px">META</td>
-<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$662.49</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🛡️ PROTECTIVE PUT</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">35</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$542.43</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">18.1%</td>
-<td style="padding:7px 10px;color:#FFD700;text-align:right">$624.96 (5.7%)</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 23 in 9d — below 200 SMA, hedge binary risk</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=META&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#4</td>
-<td style="padding:7px 10px;font-weight:900;color:#cc0000;text-align:right;font-size:14px">TSLA</td>
-<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$364.20</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🛡️ PROTECTIVE PUT</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">25</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$273.21</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">25.0%</td>
-<td style="padding:7px 10px;color:#FFD700;text-align:right">$323.61 (11.1%)</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 22 in 8d — below 200 SMA, hedge binary risk</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=TSLA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#5</td>
-<td style="padding:7px 10px;font-weight:900;color:#76b900;text-align:right;font-size:14px">NVDA</td>
-<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$196.51</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#42a5f5;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">📞 COVERED CALL</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">20</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$111.27</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">43.4%</td>
-<td style="padding:7px 10px;color:#FFD700;text-align:right">$164.27 (16.4%)</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Near 52wk high (-7.4%) — sell calls to capture premium at the top</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=NVDA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#6</td>
-<td style="padding:7px 10px;font-weight:900;color:#4285F4;text-align:right;font-size:14px">GOOGL</td>
-<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$332.91</td>
-<td style="padding:7px 10px;text-align:right"><span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🚀 BULL CALL SPREAD</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">20</td>
-<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$155.71</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">53.2%</td>
-<td style="padding:7px 10px;color:#FFD700;text-align:right">$181.19 (45.6%)</td>
-<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 29 in 15d — defined risk play into bullish print</td>
-<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=GOOGL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
-</tr>
-<tr style="border-bottom:1px solid #0d2040;">
-<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#7</td>
 <td style="padding:7px 10px;font-weight:900;color:#FF9900;text-align:right;font-size:14px">AMZN</td>
 <td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$249.02</td>
 <td style="padding:7px 10px;text-align:right"><span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🚀 BULL CALL SPREAD</span></td>
-<td style="padding:7px 10px;color:#ef5350;font-weight:900;font-size:16px;text-align:right">10</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">83</td>
 <td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$185.49</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">25.5%</td>
 <td style="padding:7px 10px;color:#FFD700;text-align:right">$208.15 (16.4%)</td>
 <td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 30 in 16d — defined risk play into bullish print</td>
 <td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AMZN&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
 </tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#3</td>
+<td style="padding:7px 10px;font-weight:900;color:#4285F4;text-align:right;font-size:14px">GOOGL</td>
+<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$332.91</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🚀 BULL CALL SPREAD</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">83</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$155.71</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">53.2%</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$181.19 (45.6%)</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 29 in 15d — defined risk play into bullish print</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=GOOGL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#4</td>
+<td style="padding:7px 10px;font-weight:900;color:#555;text-align:right;font-size:14px">AAPL</td>
+<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$258.83</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#FFD700;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🚀 BULL CALL SPREAD</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">72</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$196.18</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">24.2%</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$208.37 (19.5%)</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings May 01 in 17d — defined risk play into bullish print</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=AAPL&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1200;">
+<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#5</td>
+<td style="padding:7px 10px;font-weight:900;color:#cc0000;text-align:right;font-size:14px">TSLA</td>
+<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$364.20</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🛡️ PROTECTIVE PUT</span></td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;font-size:16px;text-align:right">70</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$273.21</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">25.0%</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$323.61 (11.1%)</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 22 in 8d — below 200 SMA, hedge binary risk</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=TSLA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1628;">
+<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#6</td>
+<td style="padding:7px 10px;font-weight:900;color:#1877F2;text-align:right;font-size:14px">META</td>
+<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$662.49</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#ffb74d;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">🛡️ PROTECTIVE PUT</span></td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:900;font-size:16px;text-align:right">62</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$542.43</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">18.1%</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$624.96 (5.7%)</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Earnings Apr 23 in 9d — below 200 SMA, hedge binary risk</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=META&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
+<tr style="border-bottom:1px solid #0d2040;background:#0a1628;">
+<td style="padding:7px 10px;font-weight:900;color:#5a7fa0;text-align:right">#7</td>
+<td style="padding:7px 10px;font-weight:900;color:#76b900;text-align:right;font-size:14px">NVDA</td>
+<td style="padding:7px 10px;color:#e8edf5;font-weight:700;text-align:right">$196.51</td>
+<td style="padding:7px 10px;text-align:right"><span style="background:#42a5f5;color:#000;font-size:11px;font-weight:900;padding:3px 10px;border-radius:5px">📞 COVERED CALL</span></td>
+<td style="padding:7px 10px;color:#FFD700;font-weight:900;font-size:16px;text-align:right">43</td>
+<td style="padding:7px 10px;color:#00e676;font-weight:900;text-align:right">$111.27</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-weight:700;text-align:right">43.4%</td>
+<td style="padding:7px 10px;color:#FFD700;text-align:right">$164.27 (16.4%)</td>
+<td style="padding:7px 10px;color:#8ab4d4;font-size:11px;text-align:right;max-width:240px">Near 52wk high (-7.4%) — sell calls to capture premium at the top</td>
+<td style="padding:7px 10px;text-align:right"><a href="https://www.tradingview.com/chart/?symbol=NVDA&interval=D" target="_blank" style="color:#42a5f5;font-size:11px">↗</a></td>
+</tr>
 </tbody></table></div></div>
-<div style="font-size:11px;color:#5a7fa0;margin-bottom:16px;padding:0 4px">⚡ CSP Score ≥70 = HIGH conviction (green). 40-69 = MODERATE. &lt;40 = WATCH. Click any ticker name below to jump to its full analysis card.</div>
+<div style="font-size:11px;color:#5a7fa0;margin-bottom:16px;padding:0 4px">⚡ Score ≥70 = HIGH conviction (green). 40-69 = MODERATE. &lt;40 = WATCH. Scroll down for full analysis on each stock.</div>
 <div style="background:#0d1b2a;border-left:4px solid #555;border-radius:12px;padding:18px 22px;margin-bottom:16px">
 <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px">
 <span style="font-size:24px;font-weight:900;color:#555">AAPL</span>
