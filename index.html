@@ -30,7 +30,7 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 <body>
 
 <h2>Stock Dashboard</h2>
-<div class="muted">Updated 2026-04-14 09:41 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 0 across 152 tickers</div>
+<div class="muted">Updated 2026-04-14 09:49 PM • yfinance cache 0m old (TTL 6h) • Reclaims: 0 across 152 tickers</div>
 
 <div class="tabs">
   <button id="btn-signals" class="tabbtn on"  data-tabbtn="1" onclick="showTab('signals')">📊 Signals (0)</button>
@@ -546,45 +546,51 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #FFD70044;border-left:4px solid #FFD700;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#FFD700">📈 BULL CALL SPREAD</span>
 <span style="font-size:11px;color:#ef5350">Earnings: May 01 (17d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 08, 2026 (24d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 08, 2026</strong> (24d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px;margin-bottom:12px">
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">BULL CALL SPREAD</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $240</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Buy (long) call</div>
+<div style="font-size:11px;font-weight:800;color:#00e676">$260 call @ $7.78</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$21.40/sh</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sell (short) call</div>
+<div style="font-size:11px;font-weight:800;color:#ef9a9a">$280 call @ $1.68</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$2140</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Net debit</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$6.10/sh = $610/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Spread width</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">$20</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max profit</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">$1390/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max loss</div>
+<div style="font-size:13px;font-weight:800;color:#ef5350">$610/contract</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$261.40</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$266.10</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~135.6%</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Risk/Reward</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">1 : 2.3</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">38%</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 08, 2026</div>
-</div>
+<div style="background:#0a1200;border-radius:6px;padding:9px 12px;margin-bottom:10px;font-size:11px;line-height:1.8">
+<div style="color:#5a7fa0;font-weight:700;margin-bottom:4px">PAYOFF AT EXPIRY</div>
+<span style="color:#ef5350">▼ Below $260:</span> Max loss <strong style="color:#ef5350">-$610</strong> &nbsp;|&nbsp; 
+<span style="color:#8ab4d4">◆ Breakeven:</span> <strong style="color:#e8edf5">$266.10</strong> &nbsp;|&nbsp; 
+<span style="color:#00e676">▲ Above $280:</span> Max profit <strong style="color:#00e676">+$1390</strong>
 </div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#FFD700">Why this strategy:</strong> Earnings in 17 days (May 01). AAPL is above its 200 SMA — bullish bias into the print. Buy ATM call + sell OTM call to cap cost while participating in an upside beat. Avoid selling naked premium into the IV spike — IV crush will hurt sellers after the print.
@@ -764,46 +770,13 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #ef9a9a44;border-left:4px solid #ef9a9a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#ef9a9a">🛡️ PROTECTIVE PUT</span>
 <span style="font-size:11px;color:#ef5350">Earnings: Apr 28 (14d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 15, 2026 (31d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 15, 2026</strong> (31d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#ef9a9a">PROTECTIVE PUT</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $420</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$7.53/sh</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$753</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$427.53</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~21.1%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">38%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 15, 2026</div>
-</div>
-</div>
+<div style="color:#ffb74d;font-size:12px;margin-bottom:10px">Live option prices unavailable — check broker for current chain.</div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#ef9a9a">Why this strategy:</strong> Earnings in 14 days — MSFT is below the 200 SMA (weak structure). If you hold shares, buy a short-dated protective put at the 75% support level to cap downside through the binary event. Avoid selling premium — IV is elevated and actual downside risk is real.
 </div></div>
@@ -984,44 +957,36 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #42a5f544;border-left:4px solid #42a5f5;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#42a5f5">📞 COVERED CALL</span>
 <span style="font-size:11px;color:#5a7fa0">Earnings: May 28 (44d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 22, 2026 (38d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 22, 2026</strong> (38d)</span>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#42a5f5">COVERED CALL</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $185</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Action</div>
+<div style="font-size:12px;font-weight:800;color:#42a5f5">Sell NVDA $210 call</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$17.50/sh</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$4.97/share</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$1750</div>
+<div style="font-size:12px;font-weight:800;color:#00e676">$497</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$202.50</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$214.97</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~90.9%</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">~22.7%</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">44%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 22, 2026</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">40%</div>
 </div>
 </div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
@@ -1202,45 +1167,51 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #FFD70044;border-left:4px solid #FFD700;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#FFD700">📈 BULL CALL SPREAD</span>
 <span style="font-size:11px;color:#ef5350">Earnings: Apr 30 (16d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 08, 2026 (24d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 08, 2026</strong> (24d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px;margin-bottom:12px">
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">BULL CALL SPREAD</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $230</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Buy (long) call</div>
+<div style="font-size:11px;font-weight:800;color:#00e676">$250 call @ $11.20</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$23.75/sh</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sell (short) call</div>
+<div style="font-size:11px;font-weight:800;color:#ef9a9a">$270 call @ $4.08</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$2375</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Net debit</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$7.12/sh = $712/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Spread width</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">$20</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max profit</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">$1288/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max loss</div>
+<div style="font-size:13px;font-weight:800;color:#ef5350">$712/contract</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$253.75</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$257.12</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~157.0%</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Risk/Reward</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">1 : 1.8</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">49%</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 08, 2026</div>
-</div>
+<div style="background:#0a1200;border-radius:6px;padding:9px 12px;margin-bottom:10px;font-size:11px;line-height:1.8">
+<div style="color:#5a7fa0;font-weight:700;margin-bottom:4px">PAYOFF AT EXPIRY</div>
+<span style="color:#ef5350">▼ Below $250:</span> Max loss <strong style="color:#ef5350">-$712</strong> &nbsp;|&nbsp; 
+<span style="color:#8ab4d4">◆ Breakeven:</span> <strong style="color:#e8edf5">$257.12</strong> &nbsp;|&nbsp; 
+<span style="color:#00e676">▲ Above $270:</span> Max profit <strong style="color:#00e676">+$1288</strong>
 </div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#FFD700">Why this strategy:</strong> Earnings in 16 days (Apr 30). AMZN is above its 200 SMA — bullish bias into the print. Buy ATM call + sell OTM call to cap cost while participating in an upside beat. Avoid selling naked premium into the IV spike — IV crush will hurt sellers after the print.
@@ -1420,45 +1391,51 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #FFD70044;border-left:4px solid #FFD700;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#FFD700">📈 BULL CALL SPREAD</span>
 <span style="font-size:11px;color:#ef5350">Earnings: Apr 29 (15d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 08, 2026 (24d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 08, 2026</strong> (24d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px;margin-bottom:12px">
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">BULL CALL SPREAD</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $305</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Buy (long) call</div>
+<div style="font-size:11px;font-weight:800;color:#00e676">$335 call @ $12.38</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$31.93/sh</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Sell (short) call</div>
+<div style="font-size:11px;font-weight:800;color:#ef9a9a">$360 call @ $4.03</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$3193</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Net debit</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">$8.35/sh = $835/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Spread width</div>
+<div style="font-size:12px;font-weight:800;color:#8ab4d4">$25</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max profit</div>
+<div style="font-size:13px;font-weight:800;color:#00e676">$1665/contract</div>
+</div>
+<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Max loss</div>
+<div style="font-size:13px;font-weight:800;color:#ef5350">$835/contract</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
 <div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$336.93</div>
+<div style="font-size:12px;font-weight:800;color:#e8edf5">$343.35</div>
 </div>
 <div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~159.2%</div>
+<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Risk/Reward</div>
+<div style="font-size:12px;font-weight:800;color:#FFD700">1 : 2.0</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">49%</div>
 </div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 08, 2026</div>
-</div>
+<div style="background:#0a1200;border-radius:6px;padding:9px 12px;margin-bottom:10px;font-size:11px;line-height:1.8">
+<div style="color:#5a7fa0;font-weight:700;margin-bottom:4px">PAYOFF AT EXPIRY</div>
+<span style="color:#ef5350">▼ Below $335:</span> Max loss <strong style="color:#ef5350">-$835</strong> &nbsp;|&nbsp; 
+<span style="color:#8ab4d4">◆ Breakeven:</span> <strong style="color:#e8edf5">$343.35</strong> &nbsp;|&nbsp; 
+<span style="color:#00e676">▲ Above $360:</span> Max profit <strong style="color:#00e676">+$1665</strong>
 </div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#FFD700">Why this strategy:</strong> Earnings in 15 days (Apr 29). GOOGL is above its 200 SMA — bullish bias into the print. Buy ATM call + sell OTM call to cap cost while participating in an upside beat. Avoid selling naked premium into the IV spike — IV crush will hurt sellers after the print.
@@ -1640,46 +1617,13 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #ef9a9a44;border-left:4px solid #ef9a9a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#ef9a9a">🛡️ PROTECTIVE PUT</span>
 <span style="font-size:11px;color:#ef5350">Earnings: Apr 23 (9d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 08, 2026 (24d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 08, 2026</strong> (24d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#ef9a9a">PROTECTIVE PUT</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $625</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$53.50/sh</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$5350</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$678.50</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~130.2%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">48%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 08, 2026</div>
-</div>
-</div>
+<div style="color:#ffb74d;font-size:12px;margin-bottom:10px">Live option prices unavailable — check broker for current chain.</div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#ef9a9a">Why this strategy:</strong> Earnings in 9 days — META is below the 200 SMA (weak structure). If you hold shares, buy a short-dated protective put at the 75% support level to cap downside through the binary event. Avoid selling premium — IV is elevated and actual downside risk is real.
 </div></div>
@@ -1850,46 +1794,13 @@ td{padding:7px 10px;border-bottom:1px solid #0d2040;font-size:12px;text-align:ri
 </div>
 </div>
 <div style="background:#0d1b2a;border:1px solid #ef9a9a44;border-left:4px solid #ef9a9a;border-radius:10px;padding:14px 16px;margin-top:4px">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
 <span style="font-size:11px;font-weight:700;color:#5a7fa0">📐 OPTIONS STRATEGY</span>
 <span style="font-size:14px;font-weight:900;color:#ef9a9a">🛡️ PROTECTIVE PUT</span>
 <span style="font-size:11px;color:#ef5350">Earnings: Apr 22 (8d away)</span>
-<span style="font-size:11px;color:#8ab4d4">Suggested expiry: May 08, 2026 (24d)</span>
+<span style="font-size:11px;color:#8ab4d4">Expiry: <strong style="color:#e8edf5">May 08, 2026</strong> (24d)</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;margin-bottom:10px">
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Strategy</div>
-<div style="font-size:12px;font-weight:800;color:#ef9a9a">PROTECTIVE PUT</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Primary leg</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">Call $325</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Mid premium</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$44.40/sh</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Per contract</div>
-<div style="font-size:12px;font-weight:800;color:#00e676">$4440</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Breakeven</div>
-<div style="font-size:12px;font-weight:800;color:#e8edf5">$369.40</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Ann. return</div>
-<div style="font-size:12px;font-weight:800;color:#FFD700">~207.8%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">IV</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">53%</div>
-</div>
-<div style="background:#0a1628;border-radius:6px;padding:7px 10px">
-<div style="font-size:10px;color:#5a7fa0;margin-bottom:2px">Expiry</div>
-<div style="font-size:12px;font-weight:800;color:#8ab4d4">May 08, 2026</div>
-</div>
-</div>
+<div style="color:#ffb74d;font-size:12px;margin-bottom:10px">Live option prices unavailable — check broker for current chain.</div>
 <div style="font-size:11px;color:#8ab4d4;line-height:1.7;border-top:1px solid #0d2040;padding-top:8px">
 <strong style="color:#ef9a9a">Why this strategy:</strong> Earnings in 8 days — TSLA is below the 200 SMA (weak structure). If you hold shares, buy a short-dated protective put at the 75% support level to cap downside through the binary event. Avoid selling premium — IV is elevated and actual downside risk is real.
 </div></div>
