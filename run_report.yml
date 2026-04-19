@@ -1,0 +1,75 @@
+name: Run Stock Report
+
+on:
+  schedule:
+    # 8am-5pm EST/EDT Mon-Fri (EDT = UTC-4, EST = UTC-5)
+    # Using UTC-4 (EDT, current) so 8am EDT = 12:00 UTC
+    # These 10 crons cover 8:00am through 5:00pm EDT
+    - cron: '0 12 * * 1-5'   #  8:00 AM EDT
+    - cron: '0 13 * * 1-5'   #  9:00 AM EDT
+    - cron: '0 14 * * 1-5'   # 10:00 AM EDT
+    - cron: '0 15 * * 1-5'   # 11:00 AM EDT
+    - cron: '0 16 * * 1-5'   # 12:00 PM EDT
+    - cron: '0 17 * * 1-5'   #  1:00 PM EDT
+    - cron: '0 18 * * 1-5'   #  2:00 PM EDT
+    - cron: '0 19 * * 1-5'   #  3:00 PM EDT
+    - cron: '0 20 * * 1-5'   #  4:00 PM EDT
+    - cron: '0 21 * * 1-5'   #  5:00 PM EDT
+  workflow_dispatch:           # manual trigger from GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install yfinance pandas requests anthropic
+
+      - name: Restore cache files
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache_yfinance.json
+            .cache_signals.json
+            .cache_options.json
+            .cache_hist_signals.json
+          key: yf-cache-${{ runner.os }}
+          restore-keys: yf-cache-
+
+      - name: Run report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python export_report.py
+        continue-on-error: true
+
+      - name: Save cache files
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache_yfinance.json
+            .cache_signals.json
+            .cache_options.json
+            .cache_hist_signals.json
+          key: yf-cache-${{ runner.os }}-${{ github.run_id }}
+
+      - name: Commit and push report
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add report.html || true
+          git diff --staged --quiet || git commit -m "report: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
